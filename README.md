@@ -1,5 +1,5 @@
 Work in progress project
-#Goals :
+# Goals :
     - Have fun
     - Help friends
     - Learn c++
