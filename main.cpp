@@ -1,9 +1,14 @@
-#include "SequenceReader.hpp"
+
+#include "FastaSeq.hpp"
+#include <string>
+#include <iostream> // pour cout/endl/...
+#include <fstream>  // pour ifstream
 
 int main() {
 
-    SequenceReader test = SequenceReader();
-    test.isAminoChar('h');
-    
+    FastaSeq fseq = FastaSeq();
+    fseq.isAminoChar('h');
+    fseq.readFasta("Tests/Fastas/multi.fasta");
     return 0;
 }
+

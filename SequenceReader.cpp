@@ -1,6 +1,8 @@
 #include "SequenceReader.hpp"
 #include <set>
 
+
+
 // --- --- --- --- Static attributes --- --- --- --- 
 std::set<char> SequenceReader::legalNucleicChar = {
     'A', 'a', //A → Adenine 
@@ -60,6 +62,15 @@ std::set<char> SequenceReader::legalAminoChar = {
     '*', //translation stop
 };
 
+std::set<char> SequenceReader::legalHeaderChar = {
+    ';',
+    '>',
+};
+
+std::set<char> SequenceReader::legalCommentChar = {
+    ';',
+};
+
 std::set<char> SequenceReader::blankChar = {
     (char)1,
     (char)2,
@@ -95,6 +106,8 @@ std::set<char> SequenceReader::blankChar = {
     (char)32,
 };
 
+
+
 // --- --- --- --- Static Methods --- --- --- --- 
 bool SequenceReader::isNucleicChar(char nucleic){
     return (legalNucleicChar.find(nucleic) != legalNucleicChar.end());
@@ -104,8 +117,17 @@ bool SequenceReader::isAminoChar(char amino) {
     return (legalAminoChar.find(amino) != legalAminoChar.end());
 }
 
+bool SequenceReader::isHeaderChar(char header_char) {
+    return (legalHeaderChar.find(header_char) != legalHeaderChar.end());
+}
+
+bool SequenceReader::isCommentChar(char comment_char) {
+    return (legalCommentChar.find(comment_char) != legalCommentChar.end());
+}
+
 bool SequenceReader::isBlankChar(char blank) {
     return (blankChar.find(blank) != blankChar.end());
 }
+
 
 
