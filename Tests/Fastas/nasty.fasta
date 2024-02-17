@@ -1,0 +1,45 @@
+
+  
+  ; la ligne précédente et la suivante contiennent des espaces !
+  
+
+; Un entête sans séquence
+; et sur plusieurs lignes
+; qui ne commence pas en première ligne...
+
+> ma seconde séquence qui commence plus loin
+
+  ACGCTGACGG ACGACTAGCG ACGAGCATGC GCATCAGCTA CGATCAGCAT
+
+    CAGCGACTAC GCATACTGAC AGCAGCATCG ACGACGATCG AGACACGTAC ; Ici j'ai 100 nucl.
+  
+       GATCTAGCAC GAC ;; Donc ici j'en ai 113.
+
+  ; C'est juste pour voir si le programme peut gérer correctement les espaces de début de ligne
+  ; ainsi que les lignes vides (la ligne 15 contient 2 espaces).
+
+; Ma troisième séquence avec des caractères invalides aux positions 11 et 21
+; ainsi que des des caractères dégénérés aux positions paires de 2 à 26
+ABCDGHTVAW XSPCYAMAKG ZNA.C-ACAN CGACATCGACA
+
+; une quatrième séquence biscornue avec des commentaires et des choses pas terribles...
+
+ __________________________________
+/ ACGTCAGCAC actactatca BDHVWSMKPY \
+\ bdhvwsmkpy TCGATCGATC nN-.aAcUGT /
+ ----------------------------------
+   \
+    \
+        .--.
+       |o_o |
+       |:_/ |       ;; Cette image a été générée avec la commande
+      //   \ \      ;;   cowsay -f tux -W 33 "ACGTCAGCAC actactatca BDHVWSMKPY bdhvwsmkpy TCGATCGATC nN-.aAcUGT"
+     (|     | )
+    /'\_   _/`\
+    \___)=(___/
+
+> Une cinquième séquence pleine de vide
+
+
+
+            ; les lignes précédentes contiennent des espaces et celle-ci se termine sans retour à la ligne.
