@@ -8,7 +8,9 @@ int main() {
 
     FastaSeq fseq = FastaSeq();
     fseq.isAminoChar('h');
-    fseq.readFasta("Tests/Fastas/multi.fasta");
+    std::ifstream file_flux("Tests/Fastas/nasty.fasta");
+    fseq.readFasta(file_flux);
+    std::cout<<"Yey"<<std::endl;
     return 0;
 }
 

@@ -62,8 +62,11 @@ std::set<char> SequenceReader::legalAminoChar = {
     '*', //translation stop
 };
 
-std::set<char> SequenceReader::legalHeaderChar = {
+std::set<char> SequenceReader::legalMultiHeaderChar = {
     ';',
+};
+
+std::set<char> SequenceReader::legalMonoHeaderChar = {
     '>',
 };
 
@@ -81,7 +84,7 @@ std::set<char> SequenceReader::blankChar = {
     (char)7,
     (char)8,
     (char)9,
-    // (char)10,
+    (char)10, // \n
     (char)11,
     (char)12,
     (char)13,
@@ -118,7 +121,15 @@ bool SequenceReader::isAminoChar(char amino) {
 }
 
 bool SequenceReader::isHeaderChar(char header_char) {
-    return (legalHeaderChar.find(header_char) != legalHeaderChar.end());
+    return (isMonoHeaderChar(header_char) || isMultiHeaderChar(header_char));
+}
+
+bool SequenceReader::isMonoHeaderChar(char header_char) {
+    return (legalMonoHeaderChar.find(header_char) != legalMonoHeaderChar.end());
+}
+
+bool SequenceReader::isMultiHeaderChar(char header_char) {
+    return (legalMultiHeaderChar.find(header_char) != legalMultiHeaderChar.end());
 }
 
 bool SequenceReader::isCommentChar(char comment_char) {
