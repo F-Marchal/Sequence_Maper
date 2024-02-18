@@ -120,6 +120,10 @@ bool SequenceReader::isAminoChar(char amino) {
     return (legalAminoChar.find(amino) != legalAminoChar.end());
 }
 
+bool SequenceReader::isLegalChar(char aminoNucl) {
+     return (isAminoChar(aminoNucl) || isNucleicChar(aminoNucl));
+}
+
 bool SequenceReader::isHeaderChar(char header_char) {
     return (isMonoHeaderChar(header_char) || isMultiHeaderChar(header_char));
 }
