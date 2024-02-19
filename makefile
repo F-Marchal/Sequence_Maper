@@ -2,7 +2,7 @@ XX = g++
 
 all: main
 
-# Compil files
+# Compil filesgit switch <branch_name>
 main: main.cpp SequenceReader.cpp FastaSeq.cpp
 	$(CXX) -Wall -Wextra -o main $^
 
