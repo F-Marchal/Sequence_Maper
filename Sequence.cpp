@@ -5,24 +5,55 @@
 #include <stdexcept>
 #include <set>
 
-Sequence::Sequence(std::string sequence) {
-    Sequence(sequence, 'U', false);
-}
-
-Sequence::Sequence(std::string sequence, bool verbose) {
-    Sequence(sequence, 'U', verbose);
-}
-
-Sequence::Sequence(std::string sequence, char mod) {
-    ParseSeq(sequence, mod, false);
-}
-
+// Getter
 Sequence::Sequence(std::string sequence, char mod, bool verbose) {
     std::tuple<std::string, char, bool>  result = ParseSeq(sequence, mod, verbose);
+
     this->seq = std::get<0>(result);
     this->type = std::get<1>(result);
     this->strict = std::get<2>(result);
+
 }
+
+void Sequence::addComment(size_t position, std::string comment) {
+    if (position >= this->seq.size()) {
+        return ;
+    }
+    
+    if (this->isCommentedPos(position)){
+        this->comments[position] += comment;
+
+    } else {
+        this->comments[position] = comment;
+    }
+}
+
+void Sequence::loadComments(std::map<size_t, std::string>& comment_map) {
+     for(const auto& elem : comment_map) {
+        this->addComment(elem.first, elem.second);
+     }
+}
+
+
+void Sequence::removeComment(size_t position) {
+    if (this->isCommentedPos(position)){
+        this->comments.erase(position);
+    } 
+}
+
+std::string Sequence::getComment(size_t position) {
+    if (this->isCommentedPos(position)){
+        return this->comments[position];
+    } 
+    return "";
+}
+
+bool Sequence::isCommentedPos(size_t position) {
+    return (this->comments.count(position) >= 1);
+}
+
+
+
 
 std::tuple<std::string, char, bool> Sequence::ParseSeq(std::string sequence, char mod, bool verbose) {
     mod = (char)toupper(mod);
@@ -59,6 +90,7 @@ std::tuple<std::string, char, bool> Sequence::ParseSeq(std::string sequence, cha
             is_amino = false;
         }
 
+        clean_seq += symbol;
         i += 1;
     }
 
