@@ -1,23 +1,11 @@
 
-#include "FastaSeq.hpp"
+#include "Sequence.hpp"
 #include <string>
 #include <iostream> // pour cout/endl/...
 #include <fstream>  // pour ifstream
 
 int main() {
-
-    FastaSeq fseq = FastaSeq();
-    fseq.isAminoChar('h');
-
-    std::ifstream file_flux("Tests/Fastas/nasty.fasta");
-
-    while (file_flux)
-    {
-        fseq.readFasta(file_flux);
-    }
-    
-
-
+    Sequence seq("Alpha99");
 
     std::cout<<"Yey"<<std::endl;
     return 0;
