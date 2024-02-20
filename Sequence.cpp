@@ -16,10 +16,15 @@ Sequence::Sequence(std::string sequence, char mod, bool verbose) {
 }
 
 void Sequence::addComment(size_t position, std::string comment) {
-    if (position >= this->seq.size()) {
+    if (position > this->seq.size()) {
         return ;
     }
     
+    size_t lineB_pos = comment.find('\n');
+    if (lineB_pos < comment.length()) {
+        throw std::invalid_argument("Comments are not allowed to contain \\n");
+    }
+
     if (this->isCommentedPos(position)){
         this->comments[position] += comment;
 
@@ -30,6 +35,7 @@ void Sequence::addComment(size_t position, std::string comment) {
 
 void Sequence::loadComments(std::map<size_t, std::string>& comment_map) {
      for(const auto& elem : comment_map) {
+        std::cout << "COM:" << elem.first << " " << elem.second << std::endl;
         this->addComment(elem.first, elem.second);
      }
 }
@@ -38,6 +44,7 @@ void Sequence::loadComments(std::map<size_t, std::string>& comment_map) {
 void Sequence::removeComment(size_t position) {
     if (this->isCommentedPos(position)){
         this->comments.erase(position);
+ 
     } 
 }
 
@@ -200,4 +207,5 @@ bool Sequence::isDnaSpecific(char symbol) {
 bool Sequence::isRnaSpecific(char symbol) {
     return (rnaSpecific.find(symbol) != rnaSpecific.end());
 }
+
 

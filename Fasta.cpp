@@ -204,7 +204,8 @@ Fasta::parseFasta(std::ifstream& file_flux, unsigned int& current_line, bool ver
         last_char = current_char;
     }
 
-    /* DEBUG block : Display result
+    /* 
+    // DEBUG block : Display result
     std::cout << header << std::endl;
     std::cout << sequence << std::endl;
     for(const auto& elem : comments) {std::cout << elem.first << " " << elem.second << "\n";}
@@ -240,18 +241,93 @@ std::vector<Fasta> Fasta::loadFastaFromFile(std::string path, bool verbose) {
 
 }
 
-Fasta::Fasta(std::string header, Sequence sequence) {
-    this->raw_header = header;
+Fasta::Fasta(std::string header, Sequence& sequence) {
+    this->setHeader(header);
     this->sequence = sequence;
 }
-
 /*
+void Fasta::write(std::string path) {
+    return this->write(path, false, true);
+}
 
-Fasta::Fasta(std::string name, bool append) {
+void Fasta::write(std::string path, bool append, bool comments) {
+    return this->write(path, append, 10, 6, comments);
+}
+
+void Fasta::write(std::string path, unsigned int word_size, unsigned int paragraph_size) {
+    return this->write(path, word_size, paragraph_size, true);
+}
+
+void Fasta::write(std::string path, unsigned int word_size, unsigned int paragraph_size, bool comments) {
+    return this->write(path, false, word_size, paragraph_size, comments);
+}
+*/
+
+void Fasta::write(std::string path, bool append=false, unsigned int word_size=10, unsigned int paragraph_size=6, bool comments=true) {
+    std::ofstream file_flux;
     if (append) {
-        std::ios_base::app;
+        file_flux.open(path, std::ios_base::app);
     } else {
+        file_flux.open(path, std::ios_base::trunc);
+    }
+    file_flux << this->getCleanSequence(word_size, paragraph_size, comments);
+    file_flux.close();
+}
+
+void Fasta::write(std::vector<Fasta> fasta_vector, std::string path, unsigned int word_size=10, unsigned int paragraph_size=6, bool comments=true) {
+    bool first = true;
+    for(Fasta& fasta : fasta_vector) {
+        if (first) {
+            first = false;
+            fasta.write(path, false, word_size, paragraph_size, comments);
+        } else {
+            fasta.write(path, true, word_size, paragraph_size, comments);
+        }
+    }
+}
+
+
+std::string Fasta::getCleanSequence(unsigned int word_size, unsigned int paragraph_size, bool comments) {
+    std::string result = "";
+    Sequence& seqOBJ = this->getSequence();
+    std::string seq = seqOBJ.getSeq();
+ 
+    unsigned int current_paragraph_size = 0;
+    unsigned int current_word_size = 0;
+
+    size_t pos = 0;
+    for (char c : seq) {
+        result += c;
+        pos += 1;
+
+        current_word_size += 1;
+
+        if (comments || seqOBJ.isCommentedPos(pos)) {
+            result += " ;" + seqOBJ.getComment(pos) + '\n';
+            current_paragraph_size = 0;
+            current_word_size = 0;
+        }
+
+        else if (current_word_size >= word_size) {
+            if (word_size > 0) {
+                // When word_size == 0, a word have the same size as a paragraph
+                result += ' ';
+            }
+            current_word_size = 0;
+
+            current_paragraph_size += 1;
+
+            if (current_paragraph_size >= paragraph_size) {
+
+                if (paragraph_size > 0) {
+                    result += '\n';
+                }
+                current_paragraph_size = 0;
+
+            }
+        }
+
 
     }
-}*/
-
+    return result;
+}

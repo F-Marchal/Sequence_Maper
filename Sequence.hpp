@@ -22,6 +22,8 @@ private:
 public:
     // --- --- --- Getter & Setters --- --- --
     std::string getSeq() {return this->seq;};
+     std::map<size_t, std::string> getAllComment() {return this->comments;};
+
     char getType() {return this->type;}
     bool getStrict() {return this->strict;}
     std::map<size_t, std::string>  getComment() {return this->comments;}
@@ -49,6 +51,7 @@ public:
     static bool isLegalSymbol(char symbol);
     static bool isDnaSpecific(char symbol);
     static bool isRnaSpecific(char symbol);
+
 
 };
 
