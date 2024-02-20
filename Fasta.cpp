@@ -76,7 +76,6 @@ bool Fasta::isBlankChar(char blank) {
 
 
 
-
 std::tuple<std::string, std::string, std::map<size_t, std::string>>
 Fasta::parseFasta(std::ifstream& file_flux, unsigned int& current_line, bool verbose) {
     bool in_sequence = false;       // Do <current_char> is inside a sequence ?
@@ -245,3 +244,14 @@ Fasta::Fasta(std::string header, Sequence sequence) {
     this->raw_header = header;
     this->sequence = sequence;
 }
+
+/*
+
+Fasta::Fasta(std::string name, bool append) {
+    if (append) {
+        std::ios_base::app;
+    } else {
+
+    }
+}*/
+
