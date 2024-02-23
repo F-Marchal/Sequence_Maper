@@ -1,11 +1,11 @@
 #ifndef FASTASEQUENCE_HPP
 #define FASTASEQUENCE_HPP
-
+#include "FastaRelated.hpp"
 #include "../Global/Sequence.hpp"
 #include <string>
 #include <map>
 
-class FastaSequence : public Sequence {
+class FastaSequence : public FastaRelated, public Sequence {
 private:
     std::map<size_t, std::string> comments;
 

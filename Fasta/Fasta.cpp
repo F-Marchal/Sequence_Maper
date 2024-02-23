@@ -7,75 +7,6 @@
 #include <tuple>
 #include <vector>
 
-std::set<char> Fasta::legalMultiHeaderChar = {
-    ';',
-};
-
-std::set<char> Fasta::legalMonoHeaderChar = {
-    '>',
-};
-
-std::set<char> Fasta::legalCommentChar = {
-    ';',
-};
-
-std::set<char> Fasta::blankChar = {
-    (char)1,
-    (char)2,
-    (char)3,
-    (char)4,
-    (char)5,
-    (char)6,
-    (char)7,
-    (char)8,
-    (char)9,
-    (char)10, // \n
-    (char)11,
-    (char)12,
-    (char)13,
-    (char)14,
-    (char)15,
-    (char)16,
-    (char)17,
-    (char)18,
-    (char)19,
-    (char)20,
-    (char)21,
-    (char)22,
-    (char)23,
-    (char)24,
-    (char)25,
-    (char)26,
-    (char)27,
-    (char)28,
-    (char)29,
-    (char)30,
-    (char)31,
-    (char)32,
-};
-
-bool Fasta::isHeaderChar(char header_char) {
-    return (isMonoHeaderChar(header_char) || isMultiHeaderChar(header_char));
-}
-
-bool Fasta::isMonoHeaderChar(char header_char) {
-    return (legalMonoHeaderChar.find(header_char) != legalMonoHeaderChar.end());
-}
-
-bool Fasta::isMultiHeaderChar(char header_char) {
-    return (legalMultiHeaderChar.find(header_char) != legalMultiHeaderChar.end());
-}
-
-bool Fasta::isCommentChar(char comment_char) {
-    return (legalCommentChar.find(comment_char) != legalCommentChar.end());
-}
-
-bool Fasta::isBlankChar(char blank) {
-    return (blankChar.find(blank) != blankChar.end());
-}
-
-
-
 std::tuple<std::string, std::string, std::map<size_t, std::string>>
 Fasta::parseFasta(std::ifstream& file_flux, unsigned int& current_line, bool verbose) {
     bool in_sequence = false;       // Do <current_char> is inside a sequence ?
@@ -274,7 +205,7 @@ void Fasta::write(std::string path, bool append=false, unsigned int word_size=10
     file_flux.close();
 }
 
-void Fasta::write(std::vector<Fasta> fasta_vector, std::string path, unsigned int word_size=10, unsigned int paragraph_size=6, bool comments=true) {
+void Fasta::write(std::vector<Fasta> fasta_vector, std::string path, unsigned int word_size, unsigned int paragraph_size, bool comments) {
     bool first = true;
     for(Fasta& fasta : fasta_vector) {
         if (first) {

@@ -1,4 +1,5 @@
 #include "Fasta/Fasta.hpp"
+#include "Fasta/FastaHeader.hpp"
 #include <time.h>
 #include <string>
 #include <iostream> // pour cout/endl/...
@@ -16,6 +17,7 @@
  *
 */
 
+/*
 int main() {
     std::cout<< "Start : " << std::endl;
 
@@ -34,3 +36,9 @@ int main() {
     return 0;
 }
 
+*/
+int main() {
+    std::cout<< "Start : " << std::endl;
+    FastaHeader("gi|numéro gi|gb|numéro d'accession|locus prout adn alpha=1");
+    std::cout<<"Yey"<<std::endl;
+}

@@ -1,5 +1,6 @@
 #ifndef FASTA_HPP
 #define FASTA_HPP
+#include "FastaRelated.hpp"
 
 #include "FastaSequence.hpp"
 #include <fstream>
@@ -9,15 +10,12 @@
 #include <set>
 #include <vector>
 
-class Fasta {
+class Fasta : public FastaRelated{
 private:
     FastaSequence sequence;
     std::string header;
 
-    static std::set<char> legalMultiHeaderChar;
-    static std::set<char> legalMonoHeaderChar;
-    static std::set<char> legalCommentChar;
-    static std::set<char> blankChar;
+
 
     static std::map<std::string, std::tuple<char, bool>> extension_types;
 
@@ -36,11 +34,7 @@ public:
 
     std::string getHeader() {return this->header;}
 
-    static bool isHeaderChar(char header_char);
-    static bool isMonoHeaderChar(char header_char);
-    static bool isMultiHeaderChar(char header_char);
-    static bool isCommentChar(char comment_char);
-    static bool isBlankChar(char blank);
+
 
     Fasta(std::string header, FastaSequence& sequence);
     FastaSequence& getSequence() {return this->sequence;}
