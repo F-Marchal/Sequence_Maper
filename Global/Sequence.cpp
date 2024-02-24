@@ -1,3 +1,5 @@
+
+
 #include "Sequence.hpp"
 #include <fstream>
 #include <string>
@@ -162,5 +164,4 @@ bool Sequence::isDnaSpecific(char symbol) {
 bool Sequence::isRnaSpecific(char symbol) {
     return (rnaSpecific.find(symbol) != rnaSpecific.end());
 }
-
 

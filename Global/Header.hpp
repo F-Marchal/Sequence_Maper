@@ -66,7 +66,8 @@ private:
 public:
     std::string getComment () {return this->comment;};
     void setComment (std::string comment) { this->comment = comment;};
-    
+
+
     // void static clear_string(std::string&) {};
 
 };

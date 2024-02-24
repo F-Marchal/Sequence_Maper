@@ -1,5 +1,9 @@
+#include "Global/Sequence.hpp"
+#include "Global/Header.hpp"
+#include "Fasta/FastaSequence.hpp"
 #include "Fasta/Fasta.hpp"
 #include "Fasta/FastaHeader.hpp"
+
 #include <time.h>
 #include <string>
 #include <iostream> // pour cout/endl/...
@@ -13,9 +17,18 @@
  *  - TODO: Test complexité
  *
  *
- * TODO: FastQ
+ * TODO: FastQ 
  *
 */
+
+int main() {
+    std::cout<< "Start : " << std::endl;
+    FastaHeader head;
+    std::cout<<head.parse_text(";;;    |qsdq |Gamma|")<<std::endl;
+
+    std::cout<< "End : " << std::endl;
+
+}
 
 /*
 int main() {
@@ -37,8 +50,3 @@ int main() {
 }
 
 */
-int main() {
-    std::cout<< "Start : " << std::endl;
-    FastaHeader("gi|numéro gi|gb|numéro d'accession|locus prout adn alpha=1");
-    std::cout<<"Yey"<<std::endl;
-}

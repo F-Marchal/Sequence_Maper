@@ -1,6 +1,7 @@
 #ifndef SEQUENCE_HPP
 #define SEQUENCE_HPP
 
+
 #include <string>
 #include <iostream> // pour cout/endl/..
 #include <set>
@@ -34,7 +35,7 @@ public:
     Sequence(std::string sequence) : Sequence(sequence, 'U', false) {};
 
     // --- --- --- Methods --- --- --
-    size_t size() {return this->seq.size(); };
+    size_t size() {return this->seq.size();}
 
     // --- statics ---
     static std::tuple<std::string, char, bool> ParseSeq(std::string sequence, char mod, bool verbose);

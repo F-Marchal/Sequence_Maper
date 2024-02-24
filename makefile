@@ -3,7 +3,7 @@ XX = g++
 all: main
 
 # Compil files
-main: main.cpp ./Global/Header.cpp ./Global/Sequence.cpp ./Fasta/Fasta.cpp ./Fasta/FastaSequence.cpp
+main: main.cpp ./Global/*.cpp ./Fasta/*.cpp
 	$(CXX) -Wall -Wextra -o main $^
 
 # Start the program
