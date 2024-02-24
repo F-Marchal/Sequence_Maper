@@ -24,7 +24,7 @@
 int main() {
     std::cout<< "Start : " << std::endl;
     FastaHeader head;
-    std::cout<<head.parse_text(";;;    |qsdq |Gamma|")<<std::endl;
+    for(const auto& elem : FastaHeader::parseGenbankHeader(";;gb|35|palo arg")) {std::cout << elem.first << " " << elem.second << "\n";}
 
     std::cout<< "End : " << std::endl;
 
