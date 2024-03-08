@@ -31,7 +31,6 @@ size_t FastaHeader::findFirstWord(std::string text) {
 }
 
 std::vector<std::string> FastaHeader::cutRawHeader(std::string raw_header) {
-    size_t i = 0;
     std::vector<std::string> text_subparts;
     std::string current_part = "";
 
@@ -55,7 +54,6 @@ std::vector<std::string> FastaHeader::cutRawHeader(std::string raw_header) {
 std::map<std::string, std::string> FastaHeader::parseRawHeader(std::vector<std::string> cut_raw_header) {
     std::string format;
     format = cut_raw_header[0];
-
 };
 
 std::map<std::string, std::string> FastaHeader::parseRawHeader(std::string raw_header) {return parseRawHeader(cutRawHeader(raw_header));}
@@ -202,7 +200,7 @@ std::map<std::string, std::string> FastaHeader::parseGenbankHeader(std::vector<s
 }
 
 std::map<std::string, std::string> FastaHeader::parseGenbankHeader(std::string raw_header) {
-    return parsePIRHeader(cutRawHeader(raw_header));
+    return parseGenbankHeader(cutRawHeader(raw_header));
 }
 
 // --- ---- ---- ---- --- EMBL --- ---- ---- ---- --- 
@@ -245,27 +243,6 @@ std::map<std::string, std::string> FastaHeader::parseEMBLHeader(std::vector<std:
 
 std::map<std::string, std::string> FastaHeader::parseEMBLHeader(std::string raw_header) {
     return parseEMBLHeader(cutRawHeader(raw_header));
-}
-
-// --- ---- ---- ---- --- PIR --- ---- ---- ---- --- 
-std::map<std::string, std::string> FastaHeader::makePIRHeader(std::string accession, std::string name, std::string comments) {
-    std::map<std::string, std::string> final_map;
-    final_map["Complete"] = "pir|" + accession + "|" + name;
-    final_map["Format"] = "pir";
-    final_map["Comments"] = comments;
-    final_map["accession"] = accession;
-    final_map["name"] = name;
-
-    return final_map;
-}
-
-std::map<std::string, std::string> FastaHeader::parsePIRHeader(std::vector<std::string> text_header) {
-    std::tuple<std::string, std::string> temp_tup = intermediateMakeFormatFromVector(text_header, 3, "pir");
-    return makePIRHeader(text_header[1], std::get<0>(temp_tup), std::get<1>(temp_tup));
-}
-
-std::map<std::string, std::string> FastaHeader::parsePIRHeader(std::string raw_header) {
-    return parsePIRHeader(cutRawHeader(raw_header));
 }
 
 // --- ---- ---- ---- --- PIF --- ---- ---- ---- --- 
@@ -461,8 +438,8 @@ std::map<std::string, std::string> FastaHeader::parseNCBIRefSeqHeader(std::strin
 }
 
 
-// --- ---- ---- ---- --- Patent --- ---- ---- ---- --- 
-std::map<std::string, std::string> FastaHeader::makePatentHeader(std::string accession, std::string name, std::string comments) {
+// --- ---- ---- ---- --- PatentS --- ---- ---- ---- --- 
+std::map<std::string, std::string> FastaHeader::makePatentSHeader(std::string accession, std::string name, std::string comments) {
     std::map<std::string, std::string> final_map;
     final_map["Complete"] = "pat|" + accession + "|" + name;
     final_map["Format"] = "pat";
@@ -473,13 +450,13 @@ std::map<std::string, std::string> FastaHeader::makePatentHeader(std::string acc
     return final_map;
 }
 
-std::map<std::string, std::string> FastaHeader::parsePatentHeader(std::vector<std::string> text_header) {
+std::map<std::string, std::string> FastaHeader::parsePatentSHeader(std::vector<std::string> text_header) {
     std::tuple<std::string, std::string> temp_tup = intermediateMakeFormatFromVector(text_header, 3, "pat");
-    return makePatentHeader(text_header[1], std::get<0>(temp_tup), std::get<1>(temp_tup));
+    return makePatentSHeader(text_header[1], std::get<0>(temp_tup), std::get<1>(temp_tup));
 }
 
-std::map<std::string, std::string> FastaHeader::parsePatentHeader(std::string raw_header) {
-    return parsePatentHeader(cutRawHeader(raw_header));
+std::map<std::string, std::string> FastaHeader::parsePatentSHeader(std::string raw_header) {
+    return parsePatentSHeader(cutRawHeader(raw_header));
 }
 
 // --- ---- ---- ---- --- DDBJ --- ---- ---- ---- --- 
@@ -504,3 +481,46 @@ std::map<std::string, std::string> FastaHeader::parseDDBJHeader(std::string raw_
 }
 
 // --- --- ---- --- --- --- --- --- 4 --- --- ---- --- --- --- --- ---
+
+std::map<std::string, std::string> FastaHeader::makePatentLHeader(std::string country, std::string patent, std::string sequence_number, std::string comments) {
+    std::map<std::string, std::string> final_map;
+    final_map["Complete"] = "pat|" + country + "|" + patent + "|" + sequence_number;
+    final_map["Format"] = "pat";
+    final_map["Comments"] = comments;
+    final_map["country"] = country;
+    final_map["patent"] = patent;
+    final_map["sequence_number"] = sequence_number;
+    return final_map;
+}
+
+std::map<std::string, std::string> FastaHeader::parsePatentLHeader(std::vector<std::string> text_header) {
+    std::tuple<std::string, std::string> temp_tup = intermediateMakeFormatFromVector(text_header, 4, "pat");
+    return makePatentLHeader(text_header[1], text_header[2], std::get<0>(temp_tup), std::get<1>(temp_tup));
+}
+
+std::map<std::string, std::string> FastaHeader::parsePatentLHeader(std::string raw_header) {
+    return parsePatentLHeader(cutRawHeader(raw_header));
+}
+
+
+std::map<std::string, std::string> FastaHeader::makePreGrantPatentHeader(std::string country, std::string application_number, std::string sequence_number, std::string comments) {
+    std::map<std::string, std::string> final_map;
+    final_map["Complete"] = "pgp|" + country + "|" + application_number + "|" + sequence_number;
+    final_map["Format"] = "pgp";
+    final_map["Comments"] = comments;
+    final_map["country"] = country;
+    final_map["application_number"] = application_number;
+    final_map["sequence_number"] = sequence_number;
+    return final_map;
+}
+
+std::map<std::string, std::string> FastaHeader::parsePreGrantPatentHeader(std::vector<std::string> text_header) {
+    std::tuple<std::string, std::string> temp_tup = intermediateMakeFormatFromVector(text_header, 4, "pgp");
+    return makePreGrantPatentHeader(text_header[1], text_header[2], std::get<0>(temp_tup), std::get<1>(temp_tup));
+}
+
+std::map<std::string, std::string> FastaHeader::parsePreGrantPatentHeader(std::string raw_header) {
+    return parsePreGrantPatentHeader(cutRawHeader(raw_header));
+}
+
+// --- --- ---- --- --- --- --- --- 5 --- --- ---- --- --- --- --- ---

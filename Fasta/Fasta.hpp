@@ -1,7 +1,7 @@
 #ifndef FASTA_HPP
 #define FASTA_HPP
 #include "FastaRelated.hpp"
-
+#include "FastaHeader.hpp"
 #include "FastaSequence.hpp"
 #include <fstream>
 #include <string>
@@ -13,7 +13,7 @@
 class Fasta : public FastaRelated{
 private:
     FastaSequence sequence;
-    std::string header;
+    FastaHeader header;
 
 
 
@@ -24,19 +24,17 @@ public:
     static std::tuple<std::string, std::string, std::map<size_t, std::string>>
     parseFasta(std::ifstream& file_flux, unsigned int& current_line, bool verbose);
 
-
-
     static std::vector<Fasta> loadFastaFromFile(std::string path);
     static std::vector<Fasta> loadFastaFromFile(std::string path, bool verbose);
     
     std::string getCleanSequence(unsigned int word_size, unsigned int paragraph_size) {return getCleanSequence(word_size, paragraph_size, false);};
     std::string getCleanSequence(unsigned int word_size, unsigned int paragraph_size, bool comments);
 
-    std::string getHeader() {return this->header;}
+    FastaHeader getHeader() {return this->header;}
 
 
 
-    Fasta(std::string header, FastaSequence& sequence);
+    Fasta(FastaHeader header, FastaSequence& sequence);
     FastaSequence& getSequence() {return this->sequence;}
     
 
@@ -50,11 +48,6 @@ public:
     */
     void write(std::string path, bool append, unsigned int word_size, unsigned int paragraph_size, bool comments);
     void write(std::vector<Fasta> fasta_vector, std::string path, unsigned int word_size=10, unsigned int paragraph_size=6, bool comments=true);
-    
-    //
-    void setHeader(std::string header) {
-        this->header = header;
-    }
 
     
 };

@@ -1,5 +1,6 @@
 #include "FastaSequence.hpp"
 #include "Fasta.hpp"
+#include "FastaHeader.hpp"
 #include <string>
 #include <iostream> // pour cout/endl/...
 #include <fstream>  // pour ifstream
@@ -166,14 +167,16 @@ std::vector<Fasta> Fasta::loadFastaFromFile(std::string path, bool verbose) {
         );
         c_seq.loadComments(std::get<2>(result_tup));
 
-        all_fasta.insert(all_fasta.end(), Fasta(std::get<0>(result_tup), c_seq));
+        FastaHeader header = FastaHeader(std::get<0>(result_tup));
+
+        all_fasta.insert(all_fasta.end(), Fasta(header, c_seq));
     }
     return all_fasta;
 
 }
 
-Fasta::Fasta(std::string header, FastaSequence& sequence) {
-    this->setHeader(header);
+Fasta::Fasta(FastaHeader header, FastaSequence& sequence) {
+    this->header = header;
     this->sequence = sequence;
 }
 /*

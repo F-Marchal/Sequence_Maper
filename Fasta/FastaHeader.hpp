@@ -12,15 +12,6 @@ class FastaHeader : public FastaRelated, public Header {
 private:
     std::string identifier_format;
     std::map<std::string, std::string> identifier;
-    static std::map< 
-                    std::tuple<
-                            std::string, 
-                            size_t
-                            >, 
-                    std::function<void()>
-                    > header_parsers; 
-
-    //  std::function<std::string()>
 
 public:
     static size_t findFirstWord(std::string text);     
@@ -102,20 +93,27 @@ public:
     static std::map<std::string, std::string> parseNCBIRefSeqHeader(std::vector<std::string> text_header);
     static std::map<std::string, std::string> parseNCBIRefSeqHeader(std::string raw_header);
     
-    static std::map<std::string, std::string> makePatentHeader(std::string accession, std::string name, std::string comments="");
-    static std::map<std::string, std::string> parsePatentHeader(std::vector<std::string> text_header);
-    static std::map<std::string, std::string> parsePatentHeader(std::string raw_header);
+    static std::map<std::string, std::string> makePatentSHeader(std::string accession, std::string name, std::string comments="");
+    static std::map<std::string, std::string> parsePatentSHeader(std::vector<std::string> text_header);
+    static std::map<std::string, std::string> parsePatentSHeader(std::string raw_header);
     
-        
     static std::map<std::string, std::string> makeDDBJHeader(std::string accession, std::string name, std::string comments="");
     static std::map<std::string, std::string> parseDDBJHeader(std::vector<std::string> text_header);
     static std::map<std::string, std::string> parseDDBJHeader(std::string raw_header);
+    
+    static std::map<std::string, std::string> makePatentLHeader(std::string country, std::string patent, std::string sequence_number, std::string comments="");
+    static std::map<std::string, std::string> parsePatentLHeader(std::vector<std::string> text_header);
+    static std::map<std::string, std::string> parsePatentLHeader(std::string raw_header);
+    
+    static std::map<std::string, std::string> makePreGrantPatentHeader(std::string country, std::string application_number, std::string sequence_number, std::string comments="");
+    static std::map<std::string, std::string> parsePreGrantPatentHeader(std::vector<std::string> text_header);
+    static std::map<std::string, std::string> parsePreGrantPatentHeader(std::string raw_header);
     
 
 
 
     FastaHeader() {this->identifier_format="";}
-
+    FastaHeader(std::string raw_header) {this->identifier_format="";}
 
 };
 
