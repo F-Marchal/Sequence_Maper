@@ -54,8 +54,8 @@ public:
     // --- --- --- Sequence edition --- --- --
     void insertSeq(size_t position, const Sequence& seq, bool verbose=false);
     void virtual insertSeq(size_t position, std::string seq, bool verbose=false);
-    
     void virtual eraseSeq(size_t index, size_t length);
+    
     
     // --- --- Biological transformations --- ---
     bool canBeTranscribed() const;
@@ -66,12 +66,31 @@ public:
     Sequence getReverseComplement(bool verbose=false) const;
 
     // --- --- Utilities --- --
-    size_t size() const {return this->seq.size();} 
-    virtual std::string toString() const {return this->getSeq();} ;
+    size_t size() const; 
+    virtual std::string toString() const;
 
+
+    // --- --- Overloading operator --- --
     friend std::ostream& operator<<(std::ostream& os, const Sequence& seq_obj) {
         os << seq_obj.toString();
         return os;
+    }
+
+    virtual bool operator==(const Sequence& other) const {
+        return this->seq == other.getSeq();
+    }
+
+    bool operator>(const Sequence& other) const {
+        return this->size() > other.size();
+    }
+    bool operator>=(const Sequence& other) const {
+        return this->size() >= other.size();
+    }
+    bool operator<(const Sequence& other) const {
+        return this->size() < other.size();
+    }
+    bool operator<=(const Sequence& other) const {
+        return this->size() <= other.size();
     }
 
     // --- --- ---  statics --- --- --- 

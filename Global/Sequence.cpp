@@ -101,66 +101,17 @@ Sequence Sequence::getReverseComplement(bool verbose) const {
     return Sequence(new_sequence, this->type, verbose);
 }
 
+// --- --- Utilities --- --
+size_t Sequence::size() const {
+    return this->seq.size();
+}
+
+std::string Sequence::toString() const {
+    return this->getSeq();
+}
 
 // --- --- ---  statics --- --- --- 
 // --- --- Attributes --- --
-std::tuple<std::string, char, bool> Sequence::ParseSeq(std::string sequence, char mod, bool verbose) {
-    mod = (char)toupper(mod);
-    bool is_amino = !(mod == 'R' || mod == 'D') ;
-    bool is_nucleic = !(mod == 'P');
-    char symbol;
-    std::string clean_seq = "";
-
-    size_t rna_marks = 0;
-    size_t dna_marks = 0;
-    size_t i = 0;
-
-    while ((is_amino || is_nucleic) && i < sequence.length()) {
-        symbol = sequence[i];
-
-        if (!isLegalSymbol(symbol)) {
-            if (verbose) {std::cout << "ParseSeq: ignored char at the position " << i << " : '" << symbol << "' (" << (int)symbol << ")." << std::endl;}
-            i += 1;
-            continue;
-        }
-
-        if (is_nucleic) {
-            if (!isLegalNucleic(symbol)) {
-                is_nucleic = false;
-            } else if (isDNASpecific(symbol)) {
-                dna_marks += 1;
-            } else if (isRNASpecific(symbol)) {
-                rna_marks += 1;
-            }
-        }
-
-        if (is_amino && !isLegalAmino(symbol)) {
-            is_amino = false;
-        }
-
-        clean_seq += symbol;
-        i += 1;
-    }
-
-    if (is_nucleic) {
-        if (mod == 'D') {
-            return std::tuple<std::string, char, bool> {clean_seq, 'D', (rna_marks==0)};
-        } else if (mod == 'R' || rna_marks > dna_marks) {
-            return std::tuple<std::string, char, bool> {clean_seq, 'R', (dna_marks==0)};
-        } else {
-            return std::tuple<std::string, char, bool> {clean_seq, 'D', (rna_marks==0)};
-        }
-    
-    } else if (is_amino) {
-        return std::tuple<std::string, char, bool> {clean_seq, 'P', true};
-
-    } else {
-        throw std::invalid_argument("Can not proccess this sequence.");
-    }
-
-    
-}
-
 std::map<char, char> Sequence::legalDNA = {
     {'A', 'T'}, {'a', 't'}, //A → Adenine 
     {'B', 'V'}, {'b', 'v'}, //not A (i.e. C, G, T) → B comes after A
@@ -281,6 +232,63 @@ bool Sequence::isRNASpecific(char symbol) {
     return (!isDNA(symbol) && isRNA(symbol));
 }
 
+
+std::tuple<std::string, char, bool> Sequence::ParseSeq(std::string sequence, char mod, bool verbose) {
+    mod = (char)toupper(mod);
+    bool is_amino = !(mod == 'R' || mod == 'D') ;
+    bool is_nucleic = !(mod == 'P');
+    char symbol;
+    std::string clean_seq = "";
+
+    size_t rna_marks = 0;
+    size_t dna_marks = 0;
+    size_t i = 0;
+
+    while ((is_amino || is_nucleic) && i < sequence.length()) {
+        symbol = sequence[i];
+
+        if (!isLegalSymbol(symbol)) {
+            if (verbose) {std::cout << "ParseSeq: ignored char at the position " << i << " : '" << symbol << "' (" << (int)symbol << ")." << std::endl;}
+            i += 1;
+            continue;
+        }
+
+        if (is_nucleic) {
+            if (!isLegalNucleic(symbol)) {
+                is_nucleic = false;
+            } else if (isDNASpecific(symbol)) {
+                dna_marks += 1;
+            } else if (isRNASpecific(symbol)) {
+                rna_marks += 1;
+            }
+        }
+
+        if (is_amino && !isLegalAmino(symbol)) {
+            is_amino = false;
+        }
+
+        clean_seq += symbol;
+        i += 1;
+    }
+
+    if (is_nucleic) {
+        if (mod == 'D') {
+            return std::tuple<std::string, char, bool> {clean_seq, 'D', (rna_marks==0)};
+        } else if (mod == 'R' || rna_marks > dna_marks) {
+            return std::tuple<std::string, char, bool> {clean_seq, 'R', (dna_marks==0)};
+        } else {
+            return std::tuple<std::string, char, bool> {clean_seq, 'D', (rna_marks==0)};
+        }
+    
+    } else if (is_amino) {
+        return std::tuple<std::string, char, bool> {clean_seq, 'P', true};
+
+    } else {
+        throw std::invalid_argument("Can not proccess this sequence.");
+    }
+
+    
+}
 
 // --- --- Getter --- --
 const std::map<char, char>& Sequence::getLegalDNA() {

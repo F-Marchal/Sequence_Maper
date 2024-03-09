@@ -84,21 +84,30 @@
  * TODO: FastQ 
  *
 */
+char generator(const std::string& str, int& index) {
+    if (index >= str.length()) {
+        // If index is out of bounds, return '\0' (null character) as an indicator
+        return '\0';
+    }
+    return str[index++];
+}
 
 int main() {
     std::cout<< "Start : " << std::endl;
+    Sequence seq("ATCG ATCG ATC");
 
-    FastaSequence seq("ATCGTTT");
-    FastaSequence seq_2("ATA");
-    seq.addComment(4, "Un endroit sympa");
-    seq_2.addComment(3, "U$$");
+    std::cout << seq << std::endl;
 
-    std::cout << "INI\n" << seq << std::endl << std::endl;
-    seq.insertSeq(1, seq_2);
+    
 
-    std::cout << "A\n" << seq << std::endl << std::endl;
-    seq.eraseSeq(1, 3);
-    std::cout << "B\n" << seq << std::endl << std::endl;
+
+
+    // std::cout << "INI\n" << seq << std::endl << std::endl;
+    // seq.insertSeq(1, seq_2);
+
+    // std::cout << "A\n" << seq << std::endl << std::endl;
+    // seq.eraseSeq(1, 3);
+    // std::cout << "B\n" << seq << std::endl << std::endl;
 
 }
 

@@ -5,8 +5,16 @@
 #include <map>
 #include <tuple>
 #include <vector>
-// Header can not have " " inside theirs pipes 
 
+
+FastaHeader::FastaHeader(std::string raw_header) {
+    for (std::string items: this->cutRawHeader(raw_header)) {
+        std::cout  << items << std::endl;
+    }
+}
+
+
+// ---------------------------------------------------------------------------------------------
 void FastaHeader::clearRawHeader(std::string& raw_header) {
     size_t i = 0;
     while (i < raw_header.size() && (isHeaderChar(raw_header[i]) || isBlankChar(raw_header[i]))){
@@ -17,6 +25,7 @@ void FastaHeader::clearRawHeader(std::string& raw_header) {
         raw_header.erase(0, i);
     }
 }
+
 size_t FastaHeader::findFirstWord(std::string text) {
     if (text.size() == 0) {
         return 0;

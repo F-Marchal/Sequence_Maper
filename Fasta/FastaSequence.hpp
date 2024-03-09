@@ -24,7 +24,6 @@ public:
     std::string toString(unsigned int word_size, unsigned int paragraph_size, bool comments=true) const;
     std::string toString(unsigned int word_size, bool comments=true) const;
 
-
     // --- comments ---
     void addComment(size_t position, std::string comment);
     void loadComments(std::map<size_t, std::string>& comment_map);
