@@ -23,7 +23,6 @@ class Sequence {
 private:
     std::string seq;
     char type;
-    bool strict;
 
     static std::map<char, char> legalDNA;
     static std::map<char, char> legalRNA;
@@ -48,9 +47,7 @@ public:
     const std::string& getSeq() const;
 
     char getType() const;
-    bool getStrict() const;
     void updateStrict();
-    void updateStrict(bool verbose);
 
     // --- --- --- Sequence edition --- --- --
     void insertSeq(size_t position, const Sequence& seq, bool verbose=false);
@@ -94,20 +91,37 @@ public:
         return this->size() <= other.size();
     }
 
+    operator bool() const {
+        return (this->type != 'U');
+    }
+
     // --- --- ---  statics --- --- --- 
     // --- --- Utilities --- --
-    static std::tuple<std::string, char, bool> ParseSeq(std::string sequence, char mod, bool symbolErrorMode=false);
+    static std::tuple<std::string, char> ParseSeq(std::string sequence, char mod, bool errorMode=true, bool symbolErrorMode=false);
+    
+    // ParseSeq should be replaced by stepParse.
+    // stepParse should be private
+    void stepParser(char symbol, char mod, bool errorMode=true, bool symbolErrorMode=false, bool flush=false);
+
+
     static char identifyChar(char symbol, bool errorMode=false);
+    static void RnaDnaAminoBoolManager(char mod, char symbol, char symbol_mod, bool (&boolArray)[3]);
+    static char SequenceGuessType(const bool (&boolArray)[3]);
+
     static bool canBeRna(char mod);
     static bool canBeDna(char mod);
     static bool canBeAmino(char mod);
+    static bool canBeNucleic(char mod);
     static bool isLegalNucleic(char symbol);
     static bool isLegalAmino(char symbol);
     static bool isLegalSymbol(char symbol);
     static bool isDNA(char symbol);
     static bool isRNA(char symbol);
-    static bool isDNASpecific(char symbol);
-    static bool isRNASpecific(char symbol);
+    static bool isAmino(char symbol);
+    static bool isNucleic(char symbol);
+    static bool isDnaSpecificNucleotide(char nucleic);
+    static bool isRnaSpecificNucleotide(char nucleic);
+    static bool isAminoSpecific(char symbol);
     static bool isValidMod(char symbol);
 
     // --- --- Getter --- --

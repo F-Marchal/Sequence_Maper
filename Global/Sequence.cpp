@@ -15,10 +15,9 @@ Sequence::Sequence(std::string sequence, char mod, bool verbose) {
 
 // --- --- --- Getter & Setters --- --- ---
 void Sequence::setSeq(std::string sequence, char mod, bool verbose) {
-    std::tuple<std::string, char, bool>  result = ParseSeq(sequence, mod, verbose);
+    std::tuple<std::string, char>  result = ParseSeq(sequence, mod, verbose);
     this->seq = std::get<0>(result);
     this->type = std::get<1>(result);
-    this->strict = std::get<2>(result);
 }
 
 void Sequence::setSeq(std::string sequence) {
@@ -41,27 +40,13 @@ char Sequence::getType() const {
     return this->type;
 };
 
-bool Sequence::getStrict() const {
-    return this->strict;
-};
-
-void Sequence::updateStrict() {
-    this->updateStrict(false);
-}
-
-void Sequence::updateStrict(bool verbose) {
-     std::tuple<std::string, char, bool>  result = ParseSeq(seq, this->getType(), verbose);
-     this->strict = std::get<2>(result);
-}
-
 
  // --- --- --- Sequence edition --- --- --
 void Sequence::insertSeq(size_t position, const Sequence& seq, bool verbose)       {this->insertSeq(position, seq.getSeq(), verbose);}
 
 void Sequence::insertSeq(size_t position, std::string seq, bool verbose) {
-    std::tuple<std::string, char, bool>  result = ParseSeq(seq, this->getType(), verbose);
+    std::tuple<std::string, char>  result = ParseSeq(seq, this->getType(), verbose);
     this->seq.insert(position, seq);
-    this->strict = this->strict && std::get<2>(result);
 }
 
 void Sequence::eraseSeq(size_t index, size_t length) {
@@ -231,23 +216,32 @@ bool Sequence::isRNA(char symbol) {
     return (legalRNA.find(symbol) != legalRNA.end());
 }
 
-bool Sequence::isDNASpecific(char symbol) {
-    return (isDNA(symbol) && !isRNA(symbol));
+bool Sequence::isNucleic(char symbol) {
+     return (isDNA(symbol) || isRNA(symbol));
 }
 
-bool Sequence::isRNASpecific(char symbol) {
-    return (!isDNA(symbol) && isRNA(symbol));
+bool Sequence::isAmino(char symbol){
+    return isLegalAmino(symbol);
+}
+
+bool Sequence::isDnaSpecificNucleotide(char nucleic) {
+    return (isDNA(nucleic) && !isRNA(nucleic));
+}
+
+bool Sequence::isRnaSpecificNucleotide(char nucleic) {
+    return (!isDNA(nucleic) && isRNA(nucleic));
+}
+
+bool Sequence::isAminoSpecific(char symbol) {
+    return (!isNucleic(symbol) && isAmino(symbol));
 }
 
 bool Sequence::isValidMod(char symbol) {
        return (validMod.find(symbol) != validMod.end());
 }
 
-std::tuple<std::string, char, bool> Sequence::ParseSeq(std::string sequence, char mod, bool symbolErrorMode) {
+std::tuple<std::string, char> Sequence::ParseSeq(std::string sequence, char mod, bool errorMode, bool symbolErrorMode) {
     mod = (char)toupper(mod);
-    bool can_be_rna = canBeRna(mod);
-    bool can_be_dna = canBeDna(mod);
-    bool can_be_protein = canBeAmino(mod);
 
     if (!isValidMod(mod)){
         throw std::invalid_argument("Invalid mod. Try 'U', 'N', 'P', 'D', 'R' instead of : " + mod);
@@ -259,16 +253,38 @@ std::tuple<std::string, char, bool> Sequence::ParseSeq(std::string sequence, cha
     char symbol_mod;
     char symbol;
     size_t i = 0;
-    while ((can_be_rna || can_be_dna || can_be_protein) && i < sequence.length()) {
-        symbol_mod = identifyChar(symbol, symbolErrorMode);
-        
-        // Manage illegal chars
-
-
-        i++;
-        symbol = sequence[i];
+    bool result[3] = {false, false, false}; 
+    if (mod != 'U') {
+        result[0] = canBeDna(mod);
+        result[1] = canBeRna(mod);
+        result[2] = canBeAmino(mod);
     }
+
+
+    while (i < sequence.length()) {
+        symbol = sequence[i];
+        i++;
+
+        symbol_mod = identifyChar(symbol, symbolErrorMode);
+        if (symbol_mod == 'U') {
+            // Unknown symbol.
+            continue;
+        }
+        RnaDnaAminoBoolManager(mod, symbol, symbol_mod);
+        clean_seq += symbol;
+    }
+
+    if (mod == 'U') {
+        mod = SequenceGuessType(result);
+    }
+
+    return std::tuple<std::string, char> {clean_seq, mod};
 }
+
+ void Sequence::stepParser(char symbol, char mod, bool errorMode, bool symbolErrorMode, bool flush) {
+    
+ }
+
 //     if (is_nucleic) {
 //         if (mod == 'D') {
 //             return std::tuple<std::string, char, bool> {clean_seq, 'D', (rna_marks==0)};
@@ -295,10 +311,10 @@ char Sequence::identifyChar(char symbol, bool errorMod) {
         return 'U';
     }
     if (isLegalNucleic(symbol)) {
-        if (isDNASpecific(symbol)) {
+        if (isDnaSpecificNucleotide(symbol)) {
             return 'D';
 
-        } else if (isRNASpecific(symbol)) {
+        } else if (isRnaSpecificNucleotide(symbol)) {
             return 'R';
 
         } else {
@@ -313,18 +329,73 @@ char Sequence::identifyChar(char symbol, bool errorMod) {
     return 'U';
 }
  
+void Sequence::RnaDnaAminoBoolManager(char mod, char symbol, char symbol_mod, bool (&boolArray)[3]) {
+    bool dna_bool = boolArray[0];
+    bool rna_bool = boolArray[1];
+    bool amino_bool = boolArray[2];
 
- bool canBeRna(char mod) {
+    if (mod == 'U') {
+        if (!amino_bool) {
+            amino_bool = isAminoSpecific(symbol);
+        }
+        if (!rna_bool) {
+            rna_bool = isRnaSpecificNucleotide(symbol);
+        } 
+        if (!dna_bool) {
+            dna_bool = isDnaSpecificNucleotide(symbol);
+        }
+    } else {  
+        if (dna_bool && !canBeDna(symbol_mod)) {
+            throw std::domain_error(" Only DNA is accepted by this sequence. Got : " + symbol);
+        }
+
+        if (rna_bool && !canBeRna(symbol_mod)) {
+            throw std::domain_error(" Only RNA is accepted by this sequence. Got : " + symbol);
+
+        } 
+        if (amino_bool && !canBeAmino(symbol)) {
+            throw std::domain_error(" Only Amino are accepted by this sequence. Got : " + symbol);
+
+        }
+    }
+
+    boolArray[0] = dna_bool;
+    boolArray[1] = rna_bool;
+    boolArray[2] = amino_bool;
+}
+
+char Sequence::SequenceGuessType(const bool (&boolArray)[3]) {
+    bool dna_bool = boolArray[0];
+    bool rna_bool = boolArray[1];
+    bool amino_bool = boolArray[2];
+    if (amino_bool) {
+        return 'P';
+    } else if (dna_bool && rna_bool) {
+        return 'N';
+    } else if (dna_bool) {
+        return 'D';
+    } else if (rna_bool) {
+        return 'R';
+    } 
+    throw std::domain_error(" Unable to determine sequence type. ");
+    
+}
+
+
+ bool Sequence::canBeRna(char mod) {
     return (mod == 'R'  || mod == 'N' || mod == 'U');
  }
- bool canBeDna(char mod) {
+ bool Sequence::canBeDna(char mod) {
     return (mod == 'D'  || mod == 'N' || mod == 'U');
  }  
- bool canBeAmino(char mod) {
-    return (mod == 'P'  || mod == 'U');
+
+bool Sequence::canBeNucleic(char mod) {
+    return (canBeRna(mod) || canBeDna(mod));
  }  
 
-
+ bool Sequence::canBeAmino(char mod) {
+    return (mod == 'P'  || mod == 'U');
+ }  
 
 
 
@@ -355,32 +426,31 @@ std::string Sequence::makeReverseComplement(const Sequence& seq, bool change_typ
     std::map<char, char>* equivalence_map;
     bool (*is_right_nucleotide_type)(char symbol);
     bool (*is_specific_to_nucleotide_type)(char symbol);
-    bool is_strict = seq.getStrict();
 
     if (seq.getType() == 'D') {
         equivalence_map = &legalDNA;
         is_right_nucleotide_type = isDNA;
-        is_specific_to_nucleotide_type = isDNASpecific;
+        is_specific_to_nucleotide_type = isDnaSpecificNucleotide;
 
     } else if (seq.getType() == 'R') {
         equivalence_map = &legalRNA;
         is_right_nucleotide_type = isRNA;
-        is_specific_to_nucleotide_type = isRNASpecific;
+        is_specific_to_nucleotide_type = isRnaSpecificNucleotide;
 
     } else {
         throw std::domain_error("Can not make Reverse complement of a protein.");
     }
 
-    if (!is_strict) {
-        // std::cout << "This sequence is not strict. Their might be some data loss during the proccess. Sequence : \n" << seq << std::endl;
-    }
+    // if (!is_strict) {
+    //     // std::cout << "This sequence is not strict. Their might be some data loss during the proccess. Sequence : \n" << seq << std::endl;
+    // }
 
     for (char symbols : seq.getSeq()) {
-        if (!is_strict) {
-            if (!is_right_nucleotide_type(symbols)) {
-                symbols = bridgeDNA_RNA.at(symbols);
-            }
-        }
+        // if (!is_strict) {
+        //     if (!is_right_nucleotide_type(symbols)) {
+        //         symbols = bridgeDNA_RNA.at(symbols);
+        //     }
+        // }
 
         symbols = equivalence_map->at(symbols);
 

@@ -85,15 +85,17 @@
  *
 */
 
+void Test() {
+    static size_t count = 0;
+    count += 1;
+    std::cout << count << std::endl;
+}
 
 int main() {
     std::cout<< "Start : " << std::endl;
-    
-    std::tuple<std::string, char, bool> myTuple = Sequence::ParseSeq("ATTTCG", 'U', false);
-    std::cout << "First item: " << std::get<0>(myTuple) << std::endl;
-    std::cout << "Second item: " << std::get<1>(myTuple) << std::endl;
-    std::cout << "Third item: " << std::get<2>(myTuple) << std::endl;
 
+    Sequence seq("ATT");
+    std::cout << "INI\n" << seq << std::endl << std::endl;
     // std::cout << "INI\n" << seq << std::endl << std::endl;
     // seq.insertSeq(1, seq_2);
 
