@@ -253,11 +253,11 @@ std::tuple<std::string, char> Sequence::ParseSeq(std::string sequence, char mod,
     char symbol_mod;
     char symbol;
     size_t i = 0;
-    bool result[3] = {false, false, false}; 
+    bool dna_rna_amino_bool[3] = {false, false, false}; 
     if (mod != 'U') {
-        result[0] = canBeDna(mod);
-        result[1] = canBeRna(mod);
-        result[2] = canBeAmino(mod);
+        dna_rna_amino_bool[0] = canBeDna(mod);
+        dna_rna_amino_bool[1] = canBeRna(mod);
+        dna_rna_amino_bool[2] = canBeAmino(mod);
     }
 
 
@@ -270,12 +270,12 @@ std::tuple<std::string, char> Sequence::ParseSeq(std::string sequence, char mod,
             // Unknown symbol.
             continue;
         }
-        RnaDnaAminoBoolManager(mod, symbol, symbol_mod);
+        RnaDnaAminoBoolManager(mod, symbol, symbol_mod, dna_rna_amino_bool);
         clean_seq += symbol;
     }
 
     if (mod == 'U') {
-        mod = SequenceGuessType(result);
+        mod = SequenceGuessType(dna_rna_amino_bool);
     }
 
     return std::tuple<std::string, char> {clean_seq, mod};
@@ -284,24 +284,6 @@ std::tuple<std::string, char> Sequence::ParseSeq(std::string sequence, char mod,
  void Sequence::stepParser(char symbol, char mod, bool errorMode, bool symbolErrorMode, bool flush) {
     
  }
-
-//     if (is_nucleic) {
-//         if (mod == 'D') {
-//             return std::tuple<std::string, char, bool> {clean_seq, 'D', (rna_marks==0)};
-//         } else if (mod == 'R' || rna_marks > dna_marks) {
-//             return std::tuple<std::string, char, bool> {clean_seq, 'R', (dna_marks==0)};
-//         } else {
-//             return std::tuple<std::string, char, bool> {clean_seq, 'D', (rna_marks==0)};
-//         }
-    
-//     } else if (is_amino) {
-//         return std::tuple<std::string, char, bool> {clean_seq, 'P', true};
-
-//     } else {
-//         throw std::invalid_argument("Can not proccess this sequence.");
-//     }
-// }
-
 char Sequence::identifyChar(char symbol, bool errorMod) {
     if (!isLegalSymbol(symbol)) {
         if (errorMod) {
