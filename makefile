@@ -10,3 +10,6 @@ main: main.cpp ./Global/*.cpp ./Fasta/*.cpp
 # Start the program
 run: main
 	./main
+
+startDoxygen:
+	doxywizard &

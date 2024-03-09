@@ -18,6 +18,7 @@
 #include <map>
 #include <tuple>
 
+
 class Sequence {
 private:
     std::string seq;
@@ -32,20 +33,18 @@ private:
 public:
     // --- --- --- Constructors --- --- --
     Sequence(std::string sequence, char mod, bool verbose);
-
     Sequence()                                          : Sequence("", 'U', false) {};
     Sequence(std::string sequence, char mod)            : Sequence(sequence, mod, false) {};
     Sequence(std::string sequence, bool verbose)        : Sequence(sequence, 'U', verbose) {};
     Sequence(std::string sequence)                      : Sequence(sequence, 'U', false) {};
 
     // --- --- --- Getter & Setters --- --- --
-
-
     void setSeq(std::string sequence, char mod, bool verbose);
     void setSeq(std::string sequence, char mod);
     void setSeq(std::string sequence, bool verbose);
     void setSeq(std::string sequence);
-    std::string getSeq() const;
+
+    const std::string& getSeq() const;
 
     char getType() const;
     bool getStrict() const;
@@ -53,26 +52,30 @@ public:
     void updateStrict(bool verbose);
 
     // --- --- --- Sequence edition --- --- --
-    void insertSeq(size_t position, Sequence seq, bool verbose);
-    void insertSeq(size_t position, std::string seq, bool verbose);
-    void insertSeq(size_t position, Sequence seq);
-    void insertSeq(size_t position, std::string seq);
+    void insertSeq(size_t position, const Sequence& seq, bool verbose=false);
+    void virtual insertSeq(size_t position, std::string seq, bool verbose=false);
     
-    void eraseSeq(size_t index, size_t length);
+    void virtual eraseSeq(size_t index, size_t length);
     
-    // dup
-    bool canBeTranscribed();
-    bool canBeRetroTranscribed();
+    // --- --- Biological transformations --- ---
+    bool canBeTranscribed() const;
+    bool canBeRetroTranscribed() const;
     
-    Sequence getTranscribedSequence(bool verbose=false);
-    Sequence getRetroTranscribedSequence(bool verbose=false);
-    Sequence getReverseComplement(bool verbose=false);
+    Sequence getTranscribedSequence(bool verbose=false) const;
+    Sequence getRetroTranscribedSequence(bool verbose=false) const;
+    Sequence getReverseComplement(bool verbose=false) const;
 
-    // --- --- --- Utilities --- --- --
-    size_t size() {return this->seq.size();}
-    std::string toString() {return this->getSeq();};
+    // --- --- Utilities --- --
+    size_t size() const {return this->seq.size();} 
+    virtual std::string toString() const {return this->getSeq();} ;
 
-    // --- statics ---
+    friend std::ostream& operator<<(std::ostream& os, const Sequence& seq_obj) {
+        os << seq_obj.toString();
+        return os;
+    }
+
+    // --- --- ---  statics --- --- --- 
+    // --- --- Utilities --- --
     static std::tuple<std::string, char, bool> ParseSeq(std::string sequence, char mod, bool verbose);
 
     static bool isLegalNucleic(char symbol);
@@ -83,13 +86,16 @@ public:
     static bool isDNASpecific(char symbol);
     static bool isRNASpecific(char symbol);
 
+    // --- --- Getter --- --
     static const std::map<char, char>& getLegalDNA();
     static const std::map<char, char>& getLegalRNA();
     static const std::set<char>&  getLegalAmino();
-    static const  std::map<char, char>& getBridgeDNA_RNA();
+    static const std::map<char, char>& getBridgeDNA_RNA();
 
+    // --- --- Biological transformations --- --
     static std::string makeReverseComplement(const Sequence& seq, bool change_type=false, bool verbose=false);
     
+   
 
 };
 

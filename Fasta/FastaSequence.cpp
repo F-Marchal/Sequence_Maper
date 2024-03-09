@@ -1,6 +1,20 @@
 #include "FastaSequence.hpp"
 #include <string>
 #include <map>
+#include <stdexcept>
+
+void FastaSequence::insertSeq(size_t position, std::string seq, bool verbose) {
+    Sequence::insertSeq(position, seq, verbose);
+
+    for (size_t displaced_pos = position; displaced_pos < position + seq.size(); displaced_pos++) {
+        this->displaceComment(position, position + seq.size());
+    }
+}
+
+void FastaSequence::eraseSeq(size_t index, size_t length) {
+    Sequence::eraseSeq(index, length);
+}
+
 
 void FastaSequence::addComment(size_t position, std::string comment) {
     if (position > this->size()) {
@@ -27,12 +41,21 @@ void FastaSequence::loadComments(std::map<size_t, std::string>& comment_map) {
      }
 }
 
-
 void FastaSequence::removeComment(size_t position) {
     if (this->isCommentedPos(position)){
         this->comments.erase(position);
  
     } 
+}
+
+void FastaSequence::displaceComment(size_t current_position, size_t new_position) {
+    if (!this->isCommentedPos(current_position)) {
+        throw std::invalid_argument("Current position does not have any comment : " + current_position);
+    }
+
+    std::string comment = this->getComment(current_position);
+    this->removeComment(current_position);
+    this->addComment(new_position, comment);
 }
 
 std::string FastaSequence::getComment(size_t position) {
@@ -45,3 +68,4 @@ std::string FastaSequence::getComment(size_t position) {
 bool FastaSequence::isCommentedPos(size_t position) {
     return (this->comments.count(position) >= 1);
 }
+

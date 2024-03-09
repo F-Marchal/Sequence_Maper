@@ -8,12 +8,12 @@
 #include <set>
 #include <map>
 
-  // --- --- --- Constructors --- --- --
+// --- --- --- Constructors --- --- --
 Sequence::Sequence(std::string sequence, char mod, bool verbose) {
     this->setSeq(sequence, mod, verbose);
 }
 
-// --- --- --- Getter & Setters --- --- --
+// --- --- --- Getter & Setters --- --- ---
 void Sequence::setSeq(std::string sequence, char mod, bool verbose) {
     std::tuple<std::string, char, bool>  result = ParseSeq(sequence, mod, verbose);
     this->seq = std::get<0>(result);
@@ -33,7 +33,7 @@ void Sequence::setSeq(std::string sequence, bool verbose) {
      this->setSeq(sequence, 'U', verbose);
 }
 
-std::string Sequence::getSeq() const {
+const std::string& Sequence::getSeq() const {
     return this->seq;
 };
 
@@ -47,16 +47,16 @@ bool Sequence::getStrict() const {
 };
 
 void Sequence::updateStrict()             {this->updateStrict(false);}
+
 void Sequence::updateStrict(bool verbose) {
      std::tuple<std::string, char, bool>  result = ParseSeq(seq, this->getType(), verbose);
      this->strict = std::get<2>(result);
 }
 
 
-// --- --- --- Sequence edition --- --- --
-void Sequence::insertSeq(size_t position, Sequence seq)                     {this->insertSeq(position, seq, false);}
-void Sequence::insertSeq(size_t position, std::string seq)                  {this->insertSeq(position, seq, false);}
-void Sequence::insertSeq(size_t position, Sequence seq, bool verbose)       {this->insertSeq(position, seq.toString(), verbose);}
+ // --- --- --- Sequence edition --- --- --
+void Sequence::insertSeq(size_t position, const Sequence& seq, bool verbose)       {this->insertSeq(position, seq.getSeq(), verbose);}
+
 void Sequence::insertSeq(size_t position, std::string seq, bool verbose) {
     std::tuple<std::string, char, bool>  result = ParseSeq(seq, this->getType(), verbose);
     this->seq.insert(position, seq);
@@ -67,6 +67,42 @@ void Sequence::eraseSeq(size_t index, size_t length) {
     this->seq.erase(index, length);
 }
 
+
+ // --- --- Biological transformations --- ---
+bool Sequence::canBeTranscribed() const {
+    return (this->type == 'D');
+}
+
+bool Sequence::canBeRetroTranscribed() const {
+    return (this->type == 'R');
+}
+
+Sequence Sequence::getTranscribedSequence(bool verbose) const {
+    if (!this->canBeTranscribed()) {
+        throw std::domain_error("Can only transcribe DNA sequences. Got : " + this->type);
+    }
+    
+    std::string new_sequence = this->makeReverseComplement(*this, true, verbose);
+    return Sequence(new_sequence, 'R', verbose);
+}
+
+Sequence Sequence::getRetroTranscribedSequence(bool verbose) const {
+    if  (!this->canBeRetroTranscribed()) {
+        throw std::domain_error("Can only retro-transcribe RNA sequences. Got : " + this->type);
+    }
+    
+    std::string new_sequence = this->makeReverseComplement(*this, true, verbose);
+    return Sequence(new_sequence, 'D', verbose);
+}
+
+Sequence Sequence::getReverseComplement(bool verbose) const { 
+    std::string new_sequence = this->makeReverseComplement(*this, false, verbose);
+    return Sequence(new_sequence, this->type, verbose);
+}
+
+
+// --- --- ---  statics --- --- --- 
+// --- --- Attributes --- --
 std::tuple<std::string, char, bool> Sequence::ParseSeq(std::string sequence, char mod, bool verbose) {
     mod = (char)toupper(mod);
     bool is_amino = !(mod == 'R' || mod == 'D') ;
@@ -122,83 +158,6 @@ std::tuple<std::string, char, bool> Sequence::ParseSeq(std::string sequence, cha
     }
 
     
-}
-
-
-std::string Sequence::makeReverseComplement(const Sequence& seq, bool change_type, bool verbose) {
-    std::string result = "";
-    std::map<char, char>* equivalence_map;
-    bool (*is_right_nucleotide_type)(char symbol);
-    bool (*is_specific_to_nucleotide_type)(char symbol);
-    bool is_strict = seq.getStrict();
-
-    if (seq.getType() == 'D') {
-        equivalence_map = &legalDNA;
-        is_right_nucleotide_type = isDNA;
-        is_specific_to_nucleotide_type = isDNASpecific;
-
-    } else if (seq.getType() == 'R') {
-        equivalence_map = &legalRNA;
-        is_right_nucleotide_type = isRNA;
-        is_specific_to_nucleotide_type = isRNASpecific;
-
-    } else {
-        throw std::domain_error("Can not make Reverse complement of a protein.");
-    }
-
-    if (!is_strict) {
-        // std::cout << "This sequence is not strict. Their might be some data loss during the proccess. Sequence : \n" << seq << std::endl;
-    }
-
-    for (char symbols : seq.getSeq()) {
-        if (!is_strict) {
-            if (!is_right_nucleotide_type(symbols)) {
-                symbols = bridgeDNA_RNA.at(symbols);
-            }
-        }
-
-        symbols = equivalence_map->at(symbols);
-
-        if (change_type && is_specific_to_nucleotide_type(symbols)) {
-            symbols = bridgeDNA_RNA.at(symbols);
-        }
-        
-        result.insert(0, 1, symbols);
-
-    }
-
-    return result;
-}
-
-bool Sequence::canBeTranscribed() {
-    return (this->type == 'D');
-}
-
-bool Sequence::canBeRetroTranscribed() {
-    return (this->type == 'R');
-}
-
-Sequence Sequence::getTranscribedSequence(bool verbose) {
-    if (!this->canBeTranscribed()) {
-        throw std::domain_error("Can only transcribe DNA sequences. Got : " + this->type);
-    }
-    
-    std::string new_sequence = this->makeReverseComplement(*this, true, verbose);
-    return Sequence(new_sequence, 'R', verbose);
-}
-
-Sequence Sequence::getRetroTranscribedSequence(bool verbose) {
-    if  (!this->canBeRetroTranscribed()) {
-        throw std::domain_error("Can only retro-transcribe RNA sequences. Got : " + this->type);
-    }
-    
-    std::string new_sequence = this->makeReverseComplement(*this, true, verbose);
-    return Sequence(new_sequence, 'D', verbose);
-}
-
-Sequence Sequence::getReverseComplement(bool verbose) { 
-    std::string new_sequence = this->makeReverseComplement(*this, false, verbose);
-    return Sequence(new_sequence, this->type, verbose);
 }
 
 std::map<char, char> Sequence::legalDNA = {
@@ -286,12 +245,13 @@ std::set<char> Sequence::legalAmino = {
     '*', //translation stop
 };
 
-
 std::map<char, char> Sequence::bridgeDNA_RNA{
     {'t', 'u'}, {'T', 'U'},
     {'u', 't'}, {'U', 'T'}
 };
 
+
+// --- --- Utilities --- --
 bool Sequence::isLegalNucleic(char symbol) {
     return (isDNA(symbol) || isRNA(symbol));
 }
@@ -320,12 +280,16 @@ bool Sequence::isRNASpecific(char symbol) {
     return (!isDNA(symbol) && isRNA(symbol));
 }
 
+
+// --- --- Getter --- --
 const std::map<char, char>& Sequence::getLegalDNA() {
     return legalDNA;
 }
+
 const std::map<char, char>& Sequence::getLegalRNA() {
     return legalRNA;
 }
+
 const std::set<char>& Sequence::getLegalAmino() {
     return legalAmino;
 }
@@ -334,5 +298,51 @@ const  std::map<char, char>& Sequence::getBridgeDNA_RNA() {
     return bridgeDNA_RNA;
 }
 
+
+// --- --- Biological transformations --- --
+std::string Sequence::makeReverseComplement(const Sequence& seq, bool change_type, bool verbose) {
+    std::string result = "";
+    std::map<char, char>* equivalence_map;
+    bool (*is_right_nucleotide_type)(char symbol);
+    bool (*is_specific_to_nucleotide_type)(char symbol);
+    bool is_strict = seq.getStrict();
+
+    if (seq.getType() == 'D') {
+        equivalence_map = &legalDNA;
+        is_right_nucleotide_type = isDNA;
+        is_specific_to_nucleotide_type = isDNASpecific;
+
+    } else if (seq.getType() == 'R') {
+        equivalence_map = &legalRNA;
+        is_right_nucleotide_type = isRNA;
+        is_specific_to_nucleotide_type = isRNASpecific;
+
+    } else {
+        throw std::domain_error("Can not make Reverse complement of a protein.");
+    }
+
+    if (!is_strict) {
+        // std::cout << "This sequence is not strict. Their might be some data loss during the proccess. Sequence : \n" << seq << std::endl;
+    }
+
+    for (char symbols : seq.getSeq()) {
+        if (!is_strict) {
+            if (!is_right_nucleotide_type(symbols)) {
+                symbols = bridgeDNA_RNA.at(symbols);
+            }
+        }
+
+        symbols = equivalence_map->at(symbols);
+
+        if (change_type && is_specific_to_nucleotide_type(symbols)) {
+            symbols = bridgeDNA_RNA.at(symbols);
+        }
+        
+        result.insert(0, 1, symbols);
+
+    }
+
+    return result;
+}
 
 // Message de Margaux Imbert : ":)"

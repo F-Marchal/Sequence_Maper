@@ -10,16 +10,22 @@ private:
     std::map<size_t, std::string> comments;
 
 public:
-    std::map<size_t, std::string> getAllComment() {return this->comments;};
-    std::map<size_t, std::string>  getComment() {return this->comments;}
+    const std::map<size_t, std::string>& getAllComment() const {return this->comments;};
 
     using Sequence::Sequence;
+
+    // Polymorphism
+    void virtual insertSeq(size_t position, std::string seq, bool verbose=false);
+    void eraseSeq(size_t index, size_t length);
 
     // --- comments ---
     void addComment(size_t position, std::string comment);
     void loadComments(std::map<size_t, std::string>& comment_map);
     void removeComment(size_t position);
+    void displaceComment(size_t current_position, size_t new_position);
+    
     bool isCommentedPos(size_t position);
+
     std::string getComment(size_t position);
 };
 

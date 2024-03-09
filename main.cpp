@@ -1,3 +1,14 @@
+/**
+ * @file main.cpp
+ * @author your name (you@domain.com)
+ * @brief 
+ * @version 0.1
+ * @date 2024-03-08
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+
 #include "Global/Sequence.hpp"
 #include "Global/Header.hpp"
 #include "Fasta/FastaSequence.hpp"
@@ -77,10 +88,13 @@
 int main() {
     std::cout<< "Start : " << std::endl;
 
-    Sequence seq("ATCG");
-    std::cout << "INI   " << seq.getSeq() << std::endl;
-    std::cout << "Rev   " << seq.getReverseComplement().toString() << std::endl;
-    std::cout << "Trans " << seq.makeReverseComplement(seq) << std::endl;
+    FastaSequence seq("ATCG");
+    seq.addComment(2, "Un endroit sympa");
+    std::cout << "INI\n" << seq << std::endl << std::endl;
+    seq.insertSeq(1, "ATA");
+    std::cout << "A\n" << seq << std::endl << std::endl;
+    seq.eraseSeq(1, 3);
+    std::cout << "B\n" << seq << std::endl << std::endl;
 
     std::cout<< seq.toString() << std::endl;
     std::cout<< "End : " << std::endl;
