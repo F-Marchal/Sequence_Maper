@@ -37,7 +37,6 @@ const std::string& Sequence::getSeq() const {
     return this->seq;
 };
 
-
 char Sequence::getType() const {
     return this->type;
 };
@@ -46,7 +45,9 @@ bool Sequence::getStrict() const {
     return this->strict;
 };
 
-void Sequence::updateStrict()             {this->updateStrict(false);}
+void Sequence::updateStrict() {
+    this->updateStrict(false);
+}
 
 void Sequence::updateStrict(bool verbose) {
      std::tuple<std::string, char, bool>  result = ParseSeq(seq, this->getType(), verbose);

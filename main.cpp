@@ -88,16 +88,17 @@
 int main() {
     std::cout<< "Start : " << std::endl;
 
-    FastaSequence seq("ATCG");
-    seq.addComment(2, "Un endroit sympa");
+    FastaSequence seq("ATCGTTT");
+    FastaSequence seq_2("ATA");
+    seq.addComment(4, "Un endroit sympa");
+    seq_2.addComment(3, "U$$");
+
     std::cout << "INI\n" << seq << std::endl << std::endl;
-    seq.insertSeq(1, "ATA");
+    seq.insertSeq(1, seq_2);
+
     std::cout << "A\n" << seq << std::endl << std::endl;
     seq.eraseSeq(1, 3);
     std::cout << "B\n" << seq << std::endl << std::endl;
-
-    std::cout<< seq.toString() << std::endl;
-    std::cout<< "End : " << std::endl;
 
 }
 

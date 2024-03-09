@@ -15,8 +15,15 @@ public:
     using Sequence::Sequence;
 
     // Polymorphism
-    void virtual insertSeq(size_t position, std::string seq, bool verbose=false);
+    void insertSeq(size_t position, std::string seq, bool verbose=false);
+    void insertSeq(size_t position, const FastaSequence & seq, bool verbose=false);
     void eraseSeq(size_t index, size_t length);
+
+    std::string toString() const;
+    std::string toString(bool comments) const;
+    std::string toString(unsigned int word_size, unsigned int paragraph_size, bool comments=true) const;
+    std::string toString(unsigned int word_size, bool comments=true) const;
+
 
     // --- comments ---
     void addComment(size_t position, std::string comment);
@@ -24,9 +31,10 @@ public:
     void removeComment(size_t position);
     void displaceComment(size_t current_position, size_t new_position);
     
-    bool isCommentedPos(size_t position);
+    bool isCommentedPos(size_t position) const;
 
-    std::string getComment(size_t position);
+    std::string getComment(size_t position) const;
+
 };
 
 #endif
