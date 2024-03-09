@@ -19,7 +19,7 @@
 #include <string>
 #include <iostream> // pour cout/endl/...
 #include <fstream>  // pour ifstream
-
+#include <sstream>
 /* Methodes abstracts :
  * Les fonctions sans corps sont abstraites ET DOIVENT être implementés dans les class filles
  *
@@ -84,23 +84,15 @@
  * TODO: FastQ 
  *
 */
-char generator(const std::string& str, int& index) {
-    if (index >= str.length()) {
-        // If index is out of bounds, return '\0' (null character) as an indicator
-        return '\0';
-    }
-    return str[index++];
-}
+
 
 int main() {
     std::cout<< "Start : " << std::endl;
-    Sequence seq("ATCG ATCG ATC");
-
-    std::cout << seq << std::endl;
-
     
-
-
+    std::tuple<std::string, char, bool> myTuple = Sequence::ParseSeq("ATTTCG", 'U', false);
+    std::cout << "First item: " << std::get<0>(myTuple) << std::endl;
+    std::cout << "Second item: " << std::get<1>(myTuple) << std::endl;
+    std::cout << "Third item: " << std::get<2>(myTuple) << std::endl;
 
     // std::cout << "INI\n" << seq << std::endl << std::endl;
     // seq.insertSeq(1, seq_2);

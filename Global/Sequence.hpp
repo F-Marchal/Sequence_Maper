@@ -29,6 +29,7 @@ private:
     static std::map<char, char> legalRNA;
     static std::map<char, char> bridgeDNA_RNA;
     static std::set<char> legalAmino;
+    static std::set<char> validMod;
 
 public:
     // --- --- --- Constructors --- --- --
@@ -55,7 +56,7 @@ public:
     void insertSeq(size_t position, const Sequence& seq, bool verbose=false);
     void virtual insertSeq(size_t position, std::string seq, bool verbose=false);
     void virtual eraseSeq(size_t index, size_t length);
-    
+
     
     // --- --- Biological transformations --- ---
     bool canBeTranscribed() const;
@@ -95,8 +96,11 @@ public:
 
     // --- --- ---  statics --- --- --- 
     // --- --- Utilities --- --
-    static std::tuple<std::string, char, bool> ParseSeq(std::string sequence, char mod, bool verbose);
-
+    static std::tuple<std::string, char, bool> ParseSeq(std::string sequence, char mod, bool symbolErrorMode=false);
+    static char identifyChar(char symbol, bool errorMode=false);
+    static bool canBeRna(char mod);
+    static bool canBeDna(char mod);
+    static bool canBeAmino(char mod);
     static bool isLegalNucleic(char symbol);
     static bool isLegalAmino(char symbol);
     static bool isLegalSymbol(char symbol);
@@ -104,12 +108,14 @@ public:
     static bool isRNA(char symbol);
     static bool isDNASpecific(char symbol);
     static bool isRNASpecific(char symbol);
+    static bool isValidMod(char symbol);
 
     // --- --- Getter --- --
     static const std::map<char, char>& getLegalDNA();
     static const std::map<char, char>& getLegalRNA();
     static const std::set<char>&  getLegalAmino();
     static const std::map<char, char>& getBridgeDNA_RNA();
+    static const std::set<char>&  getValidMod();
 
     // --- --- Biological transformations --- --
     static std::string makeReverseComplement(const Sequence& seq, bool change_type=false, bool verbose=false);
