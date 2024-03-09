@@ -202,13 +202,6 @@ std::map<char, char> Sequence::bridgeDNA_RNA{
     {'u', 't'}, {'U', 'T'}
 };
 
-std::set<char> Sequence::validMod = {
-    'P',
-    'D',
-    'R',
-    'N',
-    'U'
-};
 
 // --- --- Utilities --- --
 bool Sequence::isLegalNucleic(char symbol) {
@@ -239,94 +232,63 @@ bool Sequence::isRNASpecific(char symbol) {
     return (!isDNA(symbol) && isRNA(symbol));
 }
 
-bool Sequence::isValidMod(char symbol) {
-       return (validMod.find(symbol) != validMod.end());
-}
 
-std::tuple<std::string, char, bool> Sequence::ParseSeq(std::string sequence, char mod, bool symbolErrorMode) {
+std::tuple<std::string, char, bool> Sequence::ParseSeq(std::string sequence, char mod, bool verbose) {
     mod = (char)toupper(mod);
-    bool can_be_rna = canBeRna(mod);
-    bool can_be_dna = canBeDna(mod);
-    bool can_be_protein = canBeAmino(mod);
-
-    if (!isValidMod(mod)){
-        throw std::invalid_argument("Invalid mod. Try 'U', 'N', 'P', 'D', 'R' instead of : " + mod);
-    }
-
+    bool is_amino = !(mod == 'R' || mod == 'D') ;
+    bool is_nucleic = !(mod == 'P');
+    char symbol;
     std::string clean_seq = "";
 
-
-    char symbol_mod;
-    char symbol;
+    size_t rna_marks = 0;
+    size_t dna_marks = 0;
     size_t i = 0;
-    while ((can_be_rna || can_be_dna || can_be_protein) && i < sequence.length()) {
-        symbol_mod = identifyChar(symbol, symbolErrorMode);
-        
-        // Manage illegal chars
 
-
-        i++;
+    while ((is_amino || is_nucleic) && i < sequence.length()) {
         symbol = sequence[i];
-    }
-}
-//     if (is_nucleic) {
-//         if (mod == 'D') {
-//             return std::tuple<std::string, char, bool> {clean_seq, 'D', (rna_marks==0)};
-//         } else if (mod == 'R' || rna_marks > dna_marks) {
-//             return std::tuple<std::string, char, bool> {clean_seq, 'R', (dna_marks==0)};
-//         } else {
-//             return std::tuple<std::string, char, bool> {clean_seq, 'D', (rna_marks==0)};
-//         }
-    
-//     } else if (is_amino) {
-//         return std::tuple<std::string, char, bool> {clean_seq, 'P', true};
 
-//     } else {
-//         throw std::invalid_argument("Can not proccess this sequence.");
-//     }
-// }
-
-char Sequence::identifyChar(char symbol, bool errorMod) {
-    if (!isLegalSymbol(symbol)) {
-        if (errorMod) {
-            throw std::domain_error("Illegal symbol found in this sequence : " + symbol);
+        if (!isLegalSymbol(symbol)) {
+            if (verbose) {std::cout << "ParseSeq: ignored char at the position " << i << " : '" << symbol << "' (" << (int)symbol << ")." << std::endl;}
+            i += 1;
+            continue;
         }
 
-        return 'U';
+        if (is_nucleic) {
+            if (!isLegalNucleic(symbol)) {
+                is_nucleic = false;
+            } else if (isDNASpecific(symbol)) {
+                dna_marks += 1;
+            } else if (isRNASpecific(symbol)) {
+                rna_marks += 1;
+            }
+        }
+
+        if (is_amino && !isLegalAmino(symbol)) {
+            is_amino = false;
+        }
+
+        clean_seq += symbol;
+        i += 1;
     }
-    if (isLegalNucleic(symbol)) {
-        if (isDNASpecific(symbol)) {
-            return 'D';
 
-        } else if (isRNASpecific(symbol)) {
-            return 'R';
-
+    if (is_nucleic) {
+        if (mod == 'D') {
+            return std::tuple<std::string, char, bool> {clean_seq, 'D', (rna_marks==0)};
+        } else if (mod == 'R' || rna_marks > dna_marks) {
+            return std::tuple<std::string, char, bool> {clean_seq, 'R', (dna_marks==0)};
         } else {
-            return 'N';
+            return std::tuple<std::string, char, bool> {clean_seq, 'D', (rna_marks==0)};
         }
+    
+    } else if (is_amino) {
+        return std::tuple<std::string, char, bool> {clean_seq, 'P', true};
 
-    } else if (isLegalAmino(symbol)) {
-        return 'P';
+    } else {
+        throw std::invalid_argument("Can not proccess this sequence.");
     }
 
-    // Not supposed to be reached.
-    return 'U';
+    
 }
- 
-
- bool canBeRna(char mod) {
-    return (mod == 'R'  || mod == 'N' || mod == 'U');
- }
- bool canBeDna(char mod) {
-    return (mod == 'D'  || mod == 'N' || mod == 'U');
- }  
- bool canBeAmino(char mod) {
-    return (mod == 'P'  || mod == 'U');
- }  
-
-
-
-
 
 // --- --- Getter --- --
 const std::map<char, char>& Sequence::getLegalDNA() {
@@ -345,9 +307,6 @@ const  std::map<char, char>& Sequence::getBridgeDNA_RNA() {
     return bridgeDNA_RNA;
 }
 
-const std::set<char>& Sequence::getValidMod() {
-    return validMod;
-}
 
 // --- --- Biological transformations --- --
 std::string Sequence::makeReverseComplement(const Sequence& seq, bool change_type, bool verbose) {
