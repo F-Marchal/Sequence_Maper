@@ -119,20 +119,9 @@ std::set<char> Sequence::validType = {
 
 // --- --- Private Methods --- ---
 void Sequence::addSeq(std::string sequence, size_t position, bool errorMod) {
-
-    bool* dna_rna_amino_bool[3];
-    for (int i = 0; i < 3; ++i) {
-        dna_rna_amino_bool[i] = new bool;
-    }
-
+    std::array<bool, 3> dna_rna_amino_bool = this->makeRnaDnaAminoBool();
     std::string final_seq = "";
     bool is_usable_char;
-
-    std::cout<< "A : " << std::endl;
-
-
-    this->PrepareRnaDnaAminoBool(dna_rna_amino_bool);
-
 
     for (char symbol : sequence) {
         is_usable_char = parseChar(symbol, dna_rna_amino_bool, errorMod);
@@ -142,6 +131,7 @@ void Sequence::addSeq(std::string sequence, size_t position, bool errorMod) {
     }
     
     this->guessAndSetType(dna_rna_amino_bool);
+    this->seq = final_seq;
 
 }
 
@@ -153,7 +143,7 @@ Sequence::Sequence(std::string sequence, char type, bool errorMod) {
 }
 
 // --- Parsers ---
-bool Sequence::parseChar(char symbol, bool* dna_rna_amino_bool[3], bool errorMode) {
+bool Sequence::parseChar(char symbol, std::array<bool, 3> & dna_rna_amino_bool, bool errorMode) {
     char symbol_type = identifyChar(symbol, errorMode);
     if (symbol_type == 'Z') {
         // Unknown symbol.
@@ -163,24 +153,15 @@ bool Sequence::parseChar(char symbol, bool* dna_rna_amino_bool[3], bool errorMod
     return true;
  }
 
-void Sequence::PrepareRnaDnaAminoBool(bool* dna_rna_amino_bool[3]) {
-
+std::array<bool, 3> Sequence::makeRnaDnaAminoBool() {
     if (this->type != 'U') {
-        
-        *(dna_rna_amino_bool[0]) = canBeDna(this->type);
-        *(dna_rna_amino_bool[1]) = canBeRna(this->type);
-        *(dna_rna_amino_bool[2]) = canBeAmino(this->type);
+         return std::array<bool, 3> {canBeDna(this->type), canBeRna(this->type), canBeAmino(this->type)};
     } else {
-    std::cout<< "go : " << (dna_rna_amino_bool == nullptr) << std::endl;
-        *dna_rna_amino_bool[0] = false;
-        *dna_rna_amino_bool[1] = false;
-        *dna_rna_amino_bool[2] = false;
-            std::cout<< "Good : " << std::endl;
-
+        return std::array<bool, 3> {false, false, false};
     }
 }
 
-void Sequence::guessAndSetType(bool* dna_rna_amino_bool[3]) {
+void Sequence::guessAndSetType( std::array<bool, 3> & dna_rna_amino_bool) {
     if (this->type != 'U') {
         return ;
     }
@@ -216,10 +197,10 @@ char Sequence::identifyChar(char symbol, bool errorType) {
     return 'Z';
 }
 
-void Sequence::RnaDnaAminoBoolManager(char type, char symbol, char symbol_type, bool* dna_rna_amino_bool[3]) {
-    bool dna_bool = *(dna_rna_amino_bool[0]);
-    bool rna_bool = *(dna_rna_amino_bool[1]);
-    bool amino_bool = *(dna_rna_amino_bool[2]);
+void Sequence::RnaDnaAminoBoolManager(char type, char symbol, char symbol_type, std::array<bool, 3> & dna_rna_amino_bool) {
+    bool dna_bool = dna_rna_amino_bool[0];
+    bool rna_bool = dna_rna_amino_bool[1];
+    bool amino_bool = dna_rna_amino_bool[2];
 
     if (type == 'U') {
         if (!amino_bool) {
@@ -246,15 +227,15 @@ void Sequence::RnaDnaAminoBoolManager(char type, char symbol, char symbol_type, 
         }
     }
 
-    *(dna_rna_amino_bool[0]) = dna_bool;
-    *(dna_rna_amino_bool[1]) = rna_bool;
-    *(dna_rna_amino_bool[2]) = amino_bool;
+    dna_rna_amino_bool[0] = dna_bool;
+    dna_rna_amino_bool[1] = rna_bool;
+    dna_rna_amino_bool[2] = amino_bool;
 }
 
-char Sequence::SequenceGuessType(bool* dna_rna_amino_bool[3]) {
-    bool dna_bool = *(dna_rna_amino_bool[0]);
-    bool rna_bool = *(dna_rna_amino_bool[1]);
-    bool amino_bool = *(dna_rna_amino_bool[2]);
+char Sequence::SequenceGuessType(std::array<bool, 3> & dna_rna_amino_bool) {
+    bool dna_bool = dna_rna_amino_bool[0];
+    bool rna_bool = dna_rna_amino_bool[1];
+    bool amino_bool = dna_rna_amino_bool[2];
 
     if (amino_bool) {
         return 'P';
@@ -267,7 +248,6 @@ char Sequence::SequenceGuessType(bool* dna_rna_amino_bool[3]) {
     } 
     std::cout << dna_bool << " " << rna_bool << " " << amino_bool << " " << std::endl;
     throw std::domain_error(" Unable to determine sequence type. ");
-    
 }
 
 

@@ -89,7 +89,7 @@ void test(std::array<bool, 3> & arr) {
     arr[0] = true;
 }
 
- std::array<bool, 3> makeArray() {
+std::array<bool, 3> makeArray() {
     return std::array<bool, 3> {false, false, false};
 }
 

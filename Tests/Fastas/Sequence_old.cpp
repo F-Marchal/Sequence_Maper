@@ -1,6 +1,6 @@
 
 
-#include "Sequence.hpp"
+#include "Sequence_old.hpp"
 #include <fstream>
 #include <string>
 #include <iostream>
@@ -143,6 +143,7 @@ std::map<char, char> Sequence::legalDNA = {
 
     {'-', '-'} //gap of indeterminate length 	
 };
+
 
 std::map<char, char> Sequence::legalRNA = {
     {'A', 'U'}, {'a', 'u'}, //A → Adenine 

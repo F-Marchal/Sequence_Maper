@@ -45,15 +45,15 @@ public:
     Sequence(std::string sequence)                       : Sequence(sequence, 'U', false) {};
 
     // --- Parsers ---
-    bool parseChar(char symbol, bool* dna_rna_amino_bool[3], bool errorMode=true);
-    void PrepareRnaDnaAminoBool(bool* dna_rna_amino_bool[3]);
-    void guessAndSetType(bool* dna_rna_amino_bool[3]);
+    bool parseChar(char symbol,  std::array<bool, 3> & dna_rna_amino_bool, bool errorMode=true);
+    std::array<bool, 3> makeRnaDnaAminoBool();
+    void guessAndSetType( std::array<bool, 3> & dna_rna_amino_bool);
     
     // --- --- Static Utilities --- ---
     // --- Sequence parsing ---
     static char identifyChar(char symbol, bool errorType=false);
-    static void RnaDnaAminoBoolManager(char type, char symbol, char symbol_type, bool* boolArray[3]);
-    static char SequenceGuessType(bool* dna_rna_amino_bool[3]);
+    static void RnaDnaAminoBoolManager(char type, char symbol, char symbol_type, std::array<bool, 3> & boolArray);
+    static char SequenceGuessType(std::array<bool, 3> & dna_rna_amino_bool);
 
     // --- Symbols ---
     static bool isLegalNucleic(char symbol);
