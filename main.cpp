@@ -10,16 +10,14 @@
  */
 
 #include "Global/Sequence.hpp"
-#include "Global/Header.hpp"
-#include "Fasta/FastaSequence.hpp"
-#include "Fasta/Fasta.hpp"
-#include "Fasta/FastaHeader.hpp"
 
 #include <time.h>
 #include <string>
 #include <iostream> // pour cout/endl/...
 #include <fstream>  // pour ifstream
-#include <sstream>
+
+
+#include <array>
 /* Methodes abstracts :
  * Les fonctions sans corps sont abstraites ET DOIVENT être implementés dans les class filles
  *
@@ -85,17 +83,26 @@
  *
 */
 
-void Test() {
-    static size_t count = 0;
-    count += 1;
-    std::cout << count << std::endl;
+
+
+void test(std::array<bool, 3> & arr) {
+    arr[0] = true;
 }
 
-int main() {
-    std::cout<< "Start : " << std::endl;
+ std::array<bool, 3> makeArray() {
+    return std::array<bool, 3> {false, false, false};
+}
 
-    Sequence seq("ATT");
-    std::cout << "INI\n" << seq << std::endl << std::endl;
+
+int main() {
+    std::array<bool, 3> boolArray = makeArray();
+    test(boolArray);
+    
+    std::cout<< "Start : " <<  boolArray[0] << std::endl;
+    // Sequence seq("ATCG")
+
+
+
     // std::cout << "INI\n" << seq << std::endl << std::endl;
     // seq.insertSeq(1, seq_2);
 

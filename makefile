@@ -3,7 +3,7 @@ XX = g++
 all: main
 
 # Compil files
-main: main.cpp ./Global/*.cpp ./Fasta/*.cpp
+main: main.cpp ./Global/*.cpp
 	$(CXX) -Wall -Wextra -o main $^
 # -ansi -pedantic
 
