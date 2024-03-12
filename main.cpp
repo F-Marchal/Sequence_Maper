@@ -13,6 +13,7 @@
 
 #include <time.h>
 #include <string>
+#include "Global/Utilities.hpp"
 #include <iostream> // pour cout/endl/...
 #include <fstream>  // pour ifstream
 
@@ -65,45 +66,59 @@
  * 
  * 
  * 
+ * R O U D O U D O U $
+ * 1 2 3 4 5 6 7 8 9 10
+ * 
+ * D est en position 4 et 7
+ * D : 4, 7 :
+ * O : 2, 5, 8:
+ * 
+ * A B C
+ * 0 0 &
+ * 7 0 Dou&
+ * 4 3 DouDou&
+ * 8 0 Ou$
+ * 5 2 OuDou&
+ * 2 5 OuDouDou&
+ * 9 0 U&
+ * 6 1 UDou&
+ * 3 4 UDouDou&
+ * 1 0 RouDouDou&
  * 
  * 
+ * A = Table des suffixes
+ * C = Equivalent en lettre des suffixes MOT[B[I] : ]
+ * B = Nombre de lettre en commun avec le precedent suffixe (LCP)
+ * 
+ * Tout est ranger par ordre alphabetique.
+ * 
+ * 
+ *  
+ * 
+ * Economiser de l'espace en "compressant" les chars en bytes : A, T, C, G = 00, 01, 10, 11 : Codage sur 2 bytes
  * 
  * 
  * 
  */
 
-/* TODO: Netoyer les fonctions 
- * TODO: Ranger les fonctions 
- * TODO: Faire les docstrings
- *  - TODO: Test de fonctionnenement
- *  - TODO: Test complexité
- *
- * TODO: Convention de nommage : _privateAttr
- * TODO: FastQ 
- *
-*/
 
-
-
-void test(std::array<bool, 3> & arr) {
-    arr[0] = true;
-}
-
-std::array<bool, 3> makeArray() {
-    return std::array<bool, 3> {false, false, false};
-}
 
 
 int main() {
-    std::array<bool, 3> boolArray = makeArray();
-    test(boolArray);
-    
-    std::cout<< "Start : " <<  boolArray[0] << std::endl;
-    // Sequence seq("ATCG")
+    Sequence seq("ACG", display);
 
+    std::cout << "Seq\n" << seq << std::endl << std::endl;
+    std::cout << "Type\n" << seq.getType() << std::endl << std::endl;
 
+    seq.activeTypeResearch();
 
-    // std::cout << "INI\n" << seq << std::endl << std::endl;
+    seq.insertFront("T");
+
+    seq.endTypeResearch();
+    seq.insertFront("U");
+
+    std::cout << "Seq\n" << seq << std::endl << std::endl;
+    std::cout << "Type\n" << seq.getType() << std::endl << std::endl;
     // seq.insertSeq(1, seq_2);
 
     // std::cout << "A\n" << seq << std::endl << std::endl;

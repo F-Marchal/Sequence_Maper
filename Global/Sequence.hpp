@@ -1,12 +1,10 @@
 
 /*
-    Ajouts futurs
-        Methode pour verifier que deux sequences sont égales
-        Support des << pour pour pouboir cout la class
-        Traduction / retroTraduction des sequences
-        
 
+    TODO: Autoriser les sequence en plus des strings.
+    TODO: Ajouter les foctions de 'complement inverse', 'transcription', 'retroTranscription'
 
+    TODO: Compresser les caractéres utilisés dans la sequence
 
 */
 #ifndef SEQUENCE_HPP
@@ -17,13 +15,13 @@
 #include <set>
 #include <map>
 #include <tuple>
-
+#include "Utilities.hpp"
 
 class Sequence {
 private:
-    char type;
+    std::array<bool, 5> type;
     std::string seq;
-    
+
     // --- --- Private attributes --- ---
     static std::map<char, char> legalDNA;
     static std::map<char, char> legalRNA;
@@ -31,30 +29,45 @@ private:
     static std::set<char> legalAmino;
     static std::set<char> validType;
 
-    // --- --- Private Methods --- ---
-    void addSeq(std::string sequence, size_t position, bool errorMod=false);
-
+protected:
+    bool parseChar(char symbol, errorMods error_mod=display);
 
 public:
-    // --- --- Constructors and parsers --- ---
-     // --- Constructors ---
-    Sequence(std::string sequence, char type, bool errorMod);
-    Sequence()                                           : Sequence("", 'U', false) {};
-    Sequence(std::string sequence, char type)            : Sequence(sequence, type, false) {};
-    Sequence(std::string sequence, bool errorMod)        : Sequence(sequence, 'U', errorMod) {};
-    Sequence(std::string sequence)                       : Sequence(sequence, 'U', false) {};
+    // --- --- Constructors --- ---
+    Sequence(std::string sequence, char type, errorMods error_mod, bool finalis_type = true);
+    Sequence()                                           : Sequence("", 'U', display, true) {};
+    Sequence(std::string sequence, char type)            : Sequence(sequence, type, display) {};
+    Sequence(std::string sequence, errorMods error_mod)  : Sequence(sequence, 'U', error_mod) {};
+    Sequence(std::string sequence)                       : Sequence(sequence, 'U', display) {};
 
-    // --- Parsers ---
-    bool parseChar(char symbol,  std::array<bool, 3> & dna_rna_amino_bool, bool errorMode=true);
-    std::array<bool, 3> makeRnaDnaAminoBool();
-    void guessAndSetType( std::array<bool, 3> & dna_rna_amino_bool);
+
+    // --- --- Utilities --- ---
+    // --- Getters and equivalents ---
+    const std::string & getSeq() const;
+    char getType() const;
+    std::array<bool, 5>  getTypeArray() const;
+
+    size_t size() const;
+    std::string toString() const;
     
-    // --- --- Static Utilities --- ---
-    // --- Sequence parsing ---
-    static char identifyChar(char symbol, bool errorType=false);
-    static void RnaDnaAminoBoolManager(char type, char symbol, char symbol_type, std::array<bool, 3> & boolArray);
-    static char SequenceGuessType(std::array<bool, 3> & dna_rna_amino_bool);
+    // --- Modify sequence ---
+    void activeTypeResearch();
+    void endTypeResearch();
 
+    void insert(const std::string & sequence, size_t position, errorMods errorMod=display);
+    void insert(const Sequence & sequence, size_t position, errorMods errorMod=display);
+    void insert(const char & symbol, size_t position, errorMods errorMod=display);
+
+    void insertFront(const std::string & sequence, errorMods errorMod=display);
+    void insertBack(const std::string & sequence, errorMods errorMod=display);
+
+    void insertFront(const Sequence & sequence, errorMods errorMod=display);
+    void insertBack(const Sequence & sequence, errorMods errorMod=display);
+
+    void insertFront(const char & sequence, errorMods errorMod=display);
+    void insertBack(const char & sequence, errorMods errorMod=display);
+
+    // --- --- Static Utilities --- ---
     // --- Symbols ---
     static bool isLegalNucleic(char symbol);
     static bool isLegalAmino(char symbol);
@@ -66,14 +79,46 @@ public:
     static bool isDnaSpecificNucleotide(char nucleic);
     static bool isRnaSpecificNucleotide(char nucleic);
     static bool isAminoSpecific(char symbol);
+    static bool isNucleicSpecific(char symbol);
     static bool isValidType(char symbol);
 
     // --- Type ---
+    static char readTypeArray(std::array<bool, 5> type, bool ignore_illegal=false);
+    static std::array<bool, 5> readTypeChar(char type);
+    static std::array<bool, 5> identifySymbolType(char symbol);
+
     static bool canBeRna(char type);
     static bool canBeDna(char type);
     static bool canBeAmino(char type);
     static bool canBeNucleic(char type);
 
+    //
+    friend std::ostream& operator<<(std::ostream& os, const Sequence& seq_obj) {
+        os << seq_obj.toString();
+    return os;
+    }
+
+    virtual bool operator==(const Sequence& other) const {
+        return this->seq == other.getSeq();
+    }
+
+    bool operator>(const Sequence& other) const {
+        return this->size() > other.size();
+    }
+    bool operator>=(const Sequence& other) const {
+        return this->size() >= other.size();
+    }
+    bool operator<(const Sequence& other) const {
+        return this->size() < other.size();
+    }
+    bool operator<=(const Sequence& other) const {
+        return this->size() <= other.size();
+    }
+
+    operator bool() const {
+        bool search_mod = this->type[3];
+        return (!search_mod);
+    }
 };
 
 #endif
