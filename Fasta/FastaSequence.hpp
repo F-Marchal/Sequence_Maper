@@ -5,6 +5,7 @@
 #include <string>
 #include <map>
 
+
 class FastaSequence : public FastaRelated, public Sequence {
 private:
     std::map<size_t, std::string> comments;

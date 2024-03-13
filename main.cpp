@@ -10,6 +10,7 @@
  */
 
 #include "Global/Sequence.hpp"
+#include "Fasta/Fasta.hpp"
 
 #include <time.h>
 #include <string>
@@ -105,6 +106,8 @@
 
 
 int main() {
+
+
     Sequence seq("ACG", display);
 
     std::cout << "Seq\n" << seq << std::endl << std::endl;
@@ -115,6 +118,7 @@ int main() {
     seq.insertFront("T");
 
     seq.endTypeResearch();
+
     seq.insertFront("U");
 
     std::cout << "Seq\n" << seq << std::endl << std::endl;

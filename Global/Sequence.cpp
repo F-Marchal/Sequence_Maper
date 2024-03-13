@@ -188,7 +188,7 @@ bool Sequence::parseChar(char symbol, errorMods error_mod) {
         }
 
         if (sequence_is_nucleic_specific && !canBeNucleic(symbol)) {
-            displayDomainError(error_mod, "Only Nucleic Acid are accepted by this sequence. Got : '" + std::string(1, symbol) + "'", __FILE__, __func__);
+            displayDomainError(error_mod, "Only Nucleic Acid are accepted by this sequence. Got : " + std::string(1, symbol) + "'", __FILE__, __func__);
             return false;
         }
     }
@@ -201,7 +201,7 @@ Sequence::Sequence(std::string sequence, char type, errorMods error_mod, bool fi
     type = (char)toupper(type);
     this->type = this->readTypeChar(type);
     
-    this->insert(sequence, this->seq.size(), error_mod);
+    this->insertFront(sequence, error_mod);
 
     if (finalis_type) {
         this->endTypeResearch();
@@ -288,7 +288,14 @@ void Sequence::insertBack(const char & symbol, errorMods errorMod) {
 }
 
 
+void Sequence::erase(size_t start, size_t length) {
+    if (start >= this->size()) {
+        return ;
+    }
 
+    this->seq.erase(start, length);
+    
+}
 
 // --- Symbols ---
 bool Sequence::isLegalNucleic(char symbol) {

@@ -15,6 +15,7 @@
 #include <set>
 #include <map>
 #include <tuple>
+#include <array>
 #include "Utilities.hpp"
 
 class Sequence {
@@ -67,6 +68,8 @@ public:
     void insertFront(const char & sequence, errorMods errorMod=display);
     void insertBack(const char & sequence, errorMods errorMod=display);
 
+    void erase(size_t start, size_t length);
+    
     // --- --- Static Utilities --- ---
     // --- Symbols ---
     static bool isLegalNucleic(char symbol);
