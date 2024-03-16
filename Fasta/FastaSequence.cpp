@@ -63,6 +63,7 @@ std::string FastaSequence::toString() const {
 std::string FastaSequence::toString(bool comments) const {
     return toString(10, 6, comments);
 }
+
 std::string FastaSequence::toString(unsigned int word_size, bool comments) const {
     return toString(word_size, 6, comments);
 }

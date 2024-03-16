@@ -14,6 +14,9 @@ private:
     std::map<std::string, std::string> identifier;
 
 public:
+    FastaHeader(std::string raw_header);
+
+    //
     static size_t findFirstWord(std::string text);     
     static void clearRawHeader(std::string& raw_header);
     static std::vector<std::string> cutRawHeader(std::string raw_header);
@@ -108,13 +111,6 @@ public:
     static std::map<std::string, std::string> makePreGrantPatentHeader(std::string country, std::string application_number, std::string sequence_number, std::string comments="");
     static std::map<std::string, std::string> parsePreGrantPatentHeader(std::vector<std::string> text_header);
     static std::map<std::string, std::string> parsePreGrantPatentHeader(std::string raw_header);
-    
-
-
-
-    FastaHeader() {this->identifier_format="";}
-    FastaHeader(std::string raw_header) {this->identifier_format="";}
-
 };
 
 
