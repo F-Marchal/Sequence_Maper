@@ -1,12 +1,10 @@
 
 /*
-
-    TODO: Autoriser les sequence en plus des strings.
-    TODO: Ajouter les foctions de 'complement inverse', 'transcription', 'retroTranscription'
-
-    TODO: Compresser les caractéres utilisés dans la sequence
-
+    Changements mineurs :
+        TODO: Ajouter les foctions de 'complement inverse', 'transcription', 'retroTranscription'
+        TODO: Compresser les caractéres utilisés dans la sequence
 */
+
 #ifndef SEQUENCE_HPP
 #define SEQUENCE_HPP
 
@@ -35,16 +33,41 @@ protected:
 
 public:
     // --- --- Constructors --- ---
+
+    /**
+     * @brief Main Constructor. Construct a new Sequence object
+     * 
+     * @param sequence          A string that represent a sequence of DNA / RNA / AMINO.
+     * @param type              Specify type of this sequence. 'D'=DNA, 'R'=RNA, 'P'=Protein, 'N'=DNA and / or RNA 'U'=Unknown (Sequence will analyze chars in order to determine its type)
+     * @param error_mod         See values inside Utilities::errorMods
+     * @param finalis_type      Do this sequence will continue analyze chars in order to determine its type.
+     */
     Sequence(std::string sequence, char type, errorMods error_mod, bool finalis_type = true);
+    
+    /**
+     * @brief Default Constructor. Construct a new Sequence object. Equivalent to 
+     * 
+     */
     Sequence()                                           : Sequence("", 'U', display, true) {};
     Sequence(std::string sequence, char type)            : Sequence(sequence, type, display) {};
     Sequence(std::string sequence, errorMods error_mod)  : Sequence(sequence, 'U', error_mod) {};
     Sequence(std::string sequence)                       : Sequence(sequence, 'U', display) {};
 
-
     // --- --- Utilities --- ---
     // --- Getters and equivalents ---
+
+    /**
+     * @brief Get the sequence contain in this object
+     * 
+     * @return const std::string& The sequence contain in this object
+     */
     const std::string & getSeq() const;
+
+    /**
+     * @brief Get a char that represent sequence type.
+     * 
+     * @return char 'D'=DNA, 'R'=RNA, 'P'=Protein, 'N'=DNA and / or RNA 'U'=Unspecified, 'Z'=Invalid type.
+     */
     char getType() const;
     std::array<bool, 5>  getTypeArray() const;
 

@@ -196,7 +196,8 @@ bool Sequence::parseChar(char symbol, errorMods error_mod) {
     return true;
 }
 
-// --- --- Constructors and parsers --- ---
+// --- --- Constructors --- ---
+
 Sequence::Sequence(std::string sequence, char type, errorMods error_mod, bool finalis_type) {
     type = (char)toupper(type);
     this->type = this->readTypeChar(type);
@@ -210,6 +211,7 @@ Sequence::Sequence(std::string sequence, char type, errorMods error_mod, bool fi
 
 // --- --- Utilities --- ---
 // --- Getters and equivalents ---
+
 const std::string & Sequence::getSeq() const {
     return this->seq;
 }

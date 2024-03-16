@@ -112,7 +112,7 @@ int main() {
 
     std::cout << "Seq\n" << seq << std::endl << std::endl;
     std::cout << "Type\n" << seq.getType() << std::endl << std::endl;
-
+    
     seq.activeTypeResearch();
 
     seq.insertFront("T");
