@@ -10,6 +10,7 @@
  */
 
 #include "Global/Sequence.hpp"
+#include "Global/BitVector.hpp"
 #include "Fasta/Fasta.hpp"
 
 #include <time.h>
@@ -94,11 +95,16 @@
  * Tout est ranger par ordre alphabetique.
  * 
  * 
- *  
+ *  Construteur par copie  + Destructeur + destructeur
  * 
  * Economiser de l'espace en "compressant" les chars en bytes : A, T, C, G = 00, 01, 10, 11 : Codage sur 2 bytes
  * 
+ * Operateur d'afectation if (&A != this) {...} retturn *this
  * 
+ * ++ return nouvel seq
+ * 
+ * 
+ * TODO: Lire compter la taille de la seqeunce pour faire l'alocation de maniére propre
  * 
  */
 
@@ -106,30 +112,38 @@
 
 
 int main() {
+    BitVector vec(0);
+    size_t alpha = 0.356898;
 
-
-    Sequence seq("ACG", display);
-
-    std::cout << "Seq\n" << seq << std::endl << std::endl;
-    std::cout << "Type\n" << seq.getType() << std::endl << std::endl;
+    size_t veta = alpha;
+    std::cout << veta << std::endl; 
+    size_t geta = veta * 1000;
+    std::cout << geta << std::endl; 
+    std::cout << SIZE_MAX << std::endl; 
     
-    seq.activeTypeResearch();
 
-    seq.insertFront("T");
+}
+    // Sequence seq("ACG", display);
 
-    seq.endTypeResearch();
+    // std::cout << "Seq\n" << seq << std::endl << std::endl;
+    // std::cout << "Type\n" << seq.getType() << std::endl << std::endl;
+    
+    // seq.activeTypeResearch();
 
-    seq.insertFront("U");
+    // seq.insertFront("T");
 
-    std::cout << "Seq\n" << seq << std::endl << std::endl;
-    std::cout << "Type\n" << seq.getType() << std::endl << std::endl;
+    // seq.endTypeResearch();
+
+    // seq.insertFront("U");
+
+    // std::cout << "Seq\n" << seq << std::endl << std::endl;
+    // std::cout << "Type\n" << seq.getType() << std::endl << std::endl;
     // seq.insertSeq(1, seq_2);
 
     // std::cout << "A\n" << seq << std::endl << std::endl;
     // seq.eraseSeq(1, 3);
     // std::cout << "B\n" << seq << std::endl << std::endl;
 
-}
 
 /*
 int main() {
