@@ -61,14 +61,3 @@ void displayOutOfRangeError(errorMods error_mod, std::string message, std::strin
         std::cout << "(out of range error ignored) " << message << std::endl;
      } 
 }
-
- unsigned int getFirstDigits(size_t number, unsigned int digits) {
-    // https://stackoverflow.com/questions/62857025/how-do-i-get-the-only-the-first-3-digits-of-a-number
-    std::string str_number = std::to_string(number);
-
-    if (str_number.size() <= digits) {
-        return number;
-    }
-
-    return std::stoi(str_number.substr(str_number.size() - digits, str_number.size() - 1));
-}
