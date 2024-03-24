@@ -10,6 +10,7 @@
  */
 
 #include "Global/Sequence.hpp"
+#include "Global/BitVector.hpp"
 #include "Fasta/Fasta.hpp"
 
 #include <time.h>
@@ -94,42 +95,111 @@
  * Tout est ranger par ordre alphabetique.
  * 
  * 
- *  
+ *  Construteur par copie  + Destructeur + destructeur
  * 
  * Economiser de l'espace en "compressant" les chars en bytes : A, T, C, G = 00, 01, 10, 11 : Codage sur 2 bytes
  * 
+ * Operateur d'afectation if (&A != this) {...} retturn *this
  * 
+ * ++ return nouvel seq
+ * 
+ * 
+ * TODO: Lire compter la taille de la seqeunce pour faire l'alocation de maniére propre
  * 
  */
 
 
 
 
+
 int main() {
 
+    BitVector vec(2);
 
-    Sequence seq("ACG", display);
+    // Loop 
+    size_t capacity = 1;
+    short unsigned int octet_remaining_capacity = 8;
 
-    std::cout << "Seq\n" << seq << std::endl << std::endl;
-    std::cout << "Type\n" << seq.getType() << std::endl << std::endl;
+    // Item related
+    short unsigned int item_size = 5;
+    short unsigned int item_remaining_bit = item_size;
+
+
+    // Counter
+    size_t element_number = 0;
+
+    while(capacity != 0 || octet_capacity != 0) {
+        if (octet_capacity == 0 && capacity != 0) { 
+            // New octet reached
+            octet_capacity = 8;
+            capacity -= 1;
+        }
+
+        if (item_remaining_bit == 0) {
+            item_remaining_bit = item_size;
+            element_number += 1;
+        }
+        
+        if (item_remaining_bit >= octet_capacity) {
+            item_remaining_bit -= octet_capacity;
+            octet_capacity = 0;
+        
+        } else /*item_remaining_bit < octet_capacity*/  {
+            octet_capacity -= item_remaining_bit;
+            item_remaining_bit = 0;
+        } 
+    }
+
+    std::cout << element_number << std::endl; 
+
+
+}
+    // float temp = 1.0 / 3.0;
+    // float a = 0;
+    // float b = 0;
+    // float temp2;
+    // std::cout << temp * 3 <<  " " << temp * 3.0 + 1.0 / 10.0 << std::endl; 
+    // short unsigned int i = 1;
+    // float j = 1;
+    // while (i != 0) {
+    //     i+=1;
+    //     j+=1;
+
+    //     b = j;
+    //     a = 8;
+    //     temp = a / b;
+    //     temp2 = (1.0 / temp * a);
+        
+    //     std::cout << "Bool=" << (temp2==j) << " " << temp2 << " " << j  << " "<< (j == i)<< " "<< (unsigned int)(temp2) <<std::endl;
+    // }
+    // std::cout << 1.0 / 3 * 3  <<std::endl;
+
+
+    // std::cout << a / 3 << " " << a / 6 <<  " " << a / 7 << std::endl; 
+ 
+    // Double Size : b = a * 2 SI a < b
+
+    // Sequence seq("ACG", display);
+
+    // std::cout << "Seq\n" << seq << std::endl << std::endl;
+    // std::cout << "Type\n" << seq.getType() << std::endl << std::endl;
     
-    seq.activeTypeResearch();
+    // seq.activeTypeResearch();
 
-    seq.insertFront("T");
+    // seq.insertFront("T");
 
-    seq.endTypeResearch();
+    // seq.endTypeResearch();
 
-    seq.insertFront("U");
+    // seq.insertFront("U");
 
-    std::cout << "Seq\n" << seq << std::endl << std::endl;
-    std::cout << "Type\n" << seq.getType() << std::endl << std::endl;
+    // std::cout << "Seq\n" << seq << std::endl << std::endl;
+    // std::cout << "Type\n" << seq.getType() << std::endl << std::endl;
     // seq.insertSeq(1, seq_2);
 
     // std::cout << "A\n" << seq << std::endl << std::endl;
     // seq.eraseSeq(1, 3);
     // std::cout << "B\n" << seq << std::endl << std::endl;
 
-}
 
 /*
 int main() {
