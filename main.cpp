@@ -21,6 +21,7 @@
 
 
 #include <array>
+#include <map>
 /* Methodes abstracts :
  * Les fonctions sans corps sont abstraites ET DOIVENT être implementés dans les class filles
  *
@@ -104,6 +105,13 @@
  * ++ return nouvel seq
  * 
  * 
+ * 
+ * Doxy -X : Update doc ?
+ * 
+ * TODO: Debian test unnitaires
+ * 
+ * TODO: CICD
+ * 
  * TODO: Lire compter la taille de la seqeunce pour faire l'alocation de maniére propre
  * 
  */
@@ -113,66 +121,21 @@
 
 
 int main() {
+    std::map<char, char> alpha;
 
     BitVector vec(2);
+    // void reserveCapacity(size_t element_number);
+    // void resizeCapacity(size_t element_number);
+    // void shrinkCapacity();
 
-    // Loop 
-    size_t capacity = 1;
-    short unsigned int octet_remaining_capacity = 8;
-
-    // Item related
-    short unsigned int item_size = 5;
-    short unsigned int item_remaining_bit = item_size;
+    // void append(const & std::array<short unsigned int> values);
+    // void insert(size_t position, const & std::array<short unsigned int> values);
 
 
-    // Counter
-    size_t element_number = 0;
-
-    while(capacity != 0 || octet_capacity != 0) {
-        if (octet_capacity == 0 && capacity != 0) { 
-            // New octet reached
-            octet_capacity = 8;
-            capacity -= 1;
-        }
-
-        if (item_remaining_bit == 0) {
-            item_remaining_bit = item_size;
-            element_number += 1;
-        }
-        
-        if (item_remaining_bit >= octet_capacity) {
-            item_remaining_bit -= octet_capacity;
-            octet_capacity = 0;
-        
-        } else /*item_remaining_bit < octet_capacity*/  {
-            octet_capacity -= item_remaining_bit;
-            item_remaining_bit = 0;
-        } 
-    }
-
-    std::cout << element_number << std::endl; 
 
 
 }
-    // float temp = 1.0 / 3.0;
-    // float a = 0;
-    // float b = 0;
-    // float temp2;
-    // std::cout << temp * 3 <<  " " << temp * 3.0 + 1.0 / 10.0 << std::endl; 
-    // short unsigned int i = 1;
-    // float j = 1;
-    // while (i != 0) {
-    //     i+=1;
-    //     j+=1;
-
-    //     b = j;
-    //     a = 8;
-    //     temp = a / b;
-    //     temp2 = (1.0 / temp * a);
-        
-    //     std::cout << "Bool=" << (temp2==j) << " " << temp2 << " " << j  << " "<< (j == i)<< " "<< (unsigned int)(temp2) <<std::endl;
-    // }
-    // std::cout << 1.0 / 3 * 3  <<std::endl;
+    
 
 
     // std::cout << a / 3 << " " << a / 6 <<  " " << a / 7 << std::endl; 

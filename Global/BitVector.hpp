@@ -1,5 +1,6 @@
 #include <iostream>
 #include <tuple>
+#include <map>
 #include "Utilities.hpp"
 // Parler de : Construction de getElementNumber / getPosInArray;
 //          Pb mathematics pour l'ameiorer (*1000, decouverte float, peurs de floatr = apro, test)
@@ -14,43 +15,59 @@ private:
     char * _data = NULL;
     
     size_t _data_size = 0;
-    size_t _element_number = 0;
 
     short unsigned int _element_size;
 
+
 protected:
+
     void _killInternalData();
     
 public:
+    // --- --- Constructors --- ---
     BitVector(short unsigned int block_size);
+
+    // --- --- Destructor --- ---
     ~BitVector();
-    
 
-    std::tuple<size_t, short unsigned int> getPosInArray(size_t element_number, errorMods error_mod=raise);
-    size_t getElementNumber(size_t char_position, short unsigned int block_position_in_char, errorMods error_mod=raise);
-    
-    // size_t maximumElementNumber();
-    std::tuple<size_t, short unsigned int> maxPositionInArray();
-
+    // --- --- Getters --- ---
     size_t getDataSize();
     size_t getElementNumber();
     size_t size();
+
+    // --- --- Utilities --- --- 
+    static std::map<char, size_t> searchElement(size_t data_size, short unsigned int element_size, bool (*func)(const std::map<char, size_t> &));
+    static std::map<char, size_t> searchElement(size_t data_size, short unsigned int element_size, size_t octet_position, short unsigned int bit_position, bool (*func)(const std::map<char, size_t> &));
+    std::map<char, size_t>  searchElement(bool (*func)(const std::map<char, size_t> &));
+
+    void doubleSize();
+
+    void resize(size_t data_size);
+
+    //
+    bool maxSizeIsReached();
+    size_t maxOctetNumber();
+
+    // TODO:
+    // std::tuple<size_t, short unsigned int> getPosInArray(size_t element_number, errorMods error_mod=raise);
+   
+
+    // std::tuple<size_t, short unsigned int> maxPositionInArray();
+
+  
     size_t getCurrentCapacity();
     
     static size_t maximalInternalSize();
 
     size_t extractPosition(size_t position_in_data, short unsigned int position_in_char);
 
-    void doubleSize();
 
-    void resize(size_t data_size);
-    // void reserveCapacity(size_t element_number);
-    // void resizeCapacity(size_t element_number);
-    // void shrinkCapacity();
+    static std::map<char, size_t> searchElement(bool (*func)(const std::map<char, size_t> &));
 
-    // void append(const & std::array<short unsigned int> values);
-    // void insert(size_t position, const & std::array<short unsigned int> values);
+    
 
+
+    size_t index(size_t element_position);
 
 
 
