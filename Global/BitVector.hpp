@@ -1,6 +1,7 @@
 #include <iostream>
 #include <tuple>
 #include <map>
+
 #include "Utilities.hpp"
 // Parler de : Construction de getElementNumber / getPosInArray;
 //          Pb mathematics pour l'ameiorer (*1000, decouverte float, peurs de floatr = apro, test)
@@ -15,7 +16,7 @@ private:
     char * _data = NULL;
     
     size_t _data_size = 0;
-
+    size_t _element_number;
     short unsigned int _element_size;
 
 
@@ -35,40 +36,45 @@ public:
     size_t getElementNumber();
     size_t size();
 
+    // --- index ---
+    std::tuple<size_t, unsigned short int> indexElement(size_t element_position);
+    size_t indexCoordinate(size_t octet, unsigned short int bit, errorMods strictness=ignore);
+    std::tuple<size_t, size_t, size_t> indexUntreatedCoordinate(size_t octet_number, unsigned short int bit);
+   
+    // --- Limitation ---
+    // static bool stopFunctionGetMaximalNumberOfOctet(const std::map<char, size_t>& InfMap);
+    // size_t getMaximalNumberOfOctet();
+    // static bool stopFunctionMaximalNumberOfElements(const std::map<char, size_t>& InfMap);
+    // size_t getMaximalNumberOfElements();
+
     // --- --- Utilities --- --- 
-    static std::map<char, size_t> searchElement(size_t data_size, short unsigned int element_size, bool (*func)(const std::map<char, size_t> &));
-    static std::map<char, size_t> searchElement(size_t data_size, short unsigned int element_size, size_t octet_position, short unsigned int bit_position, bool (*func)(const std::map<char, size_t> &));
-    std::map<char, size_t>  searchElement(bool (*func)(const std::map<char, size_t> &));
 
+
+    // --- Research ---
+    // static std::map<char, size_t> searchElement(size_t data_size, short unsigned int element_size, bool (*func)(const std::map<char, size_t> &)=NULL);
+    // static std::map<char, size_t> searchElement(size_t data_size, short unsigned int element_size, size_t octet_position, short unsigned int bit_position, bool (*func)(const std::map<char, size_t> &)=NULL);
+    // std::map<char, size_t>  searchElement(bool (*func)(const std::map<char, size_t> &)=NULL);
+
+    // --- size ---
     void doubleSize();
-
     void resize(size_t data_size);
+
+    // --- 
+    
+    // 
 
     //
     bool maxSizeIsReached();
-    size_t maxOctetNumber();
-
-    // TODO:
-    // std::tuple<size_t, short unsigned int> getPosInArray(size_t element_number, errorMods error_mod=raise);
-   
-
-    // std::tuple<size_t, short unsigned int> maxPositionInArray();
-
-  
-    size_t getCurrentCapacity();
+    bool maxDataSizeIsReached();
+    bool maxElementSizeIsReached();
+    size_t upperOctetLimit();
+    size_t upperElementLimit();
     
-    static size_t maximalInternalSize();
+    static size_t maximumOctetNumber();
+    static size_t maximumElementNumber();
 
-    size_t extractPosition(size_t position_in_data, short unsigned int position_in_char);
-
-
-    static std::map<char, size_t> searchElement(bool (*func)(const std::map<char, size_t> &));
 
     
-
-
-    size_t index(size_t element_position);
-
 
 
 };

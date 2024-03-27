@@ -121,9 +121,90 @@
 
 
 int main() {
-    std::map<char, char> alpha;
+    // BitVector vec(8);
 
-    BitVector vec(2);
+    // std::cout << vec.getMaximalNumberOfElements() <<std::endl;
+    // std::cout << vec.getMaximalNumberOfOctet() << std::endl;
+
+
+    // size_t elementNumber = SIZE_MAX - 1;
+    // unsigned short int element_size = 9;
+    
+    // double octet_usage_per_element = element_size / 8.0;
+    // size_t octet_number = elementNumber * octet_usage_per_element;
+
+
+    // std::cout <<octet_number << " " << octet_usage_per_element << std::endl; 
+
+
+    // Do not wotk due to double memory limitations.
+    // size_t octet_number =  (__SIZE_MAX__) / 10;
+    // size_t bit_number = 8;
+    // unsigned short int element_size = 9;
+
+
+    // double element_per_octet = 8.0 / element_size;
+    // size_t elements_count = octet_number * element_per_octet;
+    // std::cout << octet_number << " " <<  elements_count / element_per_octet << std::endl; 
+    // size_t bit_left = (octet_number - elements_count / element_per_octet) * 8 + bit_number;
+    // std::cout << elements_count << " " << bit_left << std::endl; 
+    // elements_count += bit_left / element_size;
+    // bit_left -= (bit_left / element_size) * element_size;
+    // std::cout <<elements_count << " " << bit_left << std::endl; 
+    
+
+    size_t octet_number =  (__SIZE_MAX__) / 1000 * 1000;
+    // size_t bit_number = 8;
+    unsigned short int element_size = 8;
+    std::cout << element_size << " " << ( unsigned short int)((double)(element_size)) << std::endl;
+    // Missing bits :
+    
+    // Extract number of octet that can be filled by a unique element.
+    unsigned short int uncompleted_octet_per_element = element_size / 8;  
+    unsigned short int bit_per_element = element_size - uncompleted_octet_per_element * 8;  
+
+    size_t octet_per_element = uncompleted_octet_per_element * 1000 + (bit_per_element / 8.0) * 1000;
+    
+    // Use the power of division to retrieve how much can be stuffed intoo octet_number
+    size_t number_of_elements = octet_number / octet_per_element;
+    size_t really_used_octet = octet_number / octet_per_element * octet_per_element;
+    size_t unused_octet = octet_number - really_used_octet;
+
+    
+    std::cout << number_of_elements << " \n" << really_used_octet << " \n" << unused_octet << std::endl;
+    
+    // Retransform to vit
+
+
+    // size_t i = 0;
+    // while (i != 48) {
+    //    i ++;
+    // }
+
+    // size_t alpha = SIZE_MAX;
+
+
+
+            // float temp = 1.0 / 3.0;
+    // float a = 0;
+    // float b = 0;
+    // float temp2;
+    // std::cout << temp * 3 <<  " " << temp * 3.0 + 1.0 / 10.0 << std::endl; 
+    // short unsigned int i = 1;
+    // float j = 1;
+    // while (i != 0) {
+    //     i+=1;
+    //     j+=1;
+    //     b = j;
+    //     a = 8;
+    //     temp = a / b;
+    //     temp2 = (1.0 / temp * a);
+    //     std::cout << "Bool=" << (temp2==j) << " " << temp2 << " " << j  << " "<< (j == i)<< " "<< (unsigned int)(temp2) <<std::endl;
+    // }
+    // std::cout << 1.0 / 3 * 3  <<std::endl;
+    }
+
+    // BitVector vec(2);
     // void reserveCapacity(size_t element_number);
     // void resizeCapacity(size_t element_number);
     // void shrinkCapacity();
@@ -134,7 +215,7 @@ int main() {
 
 
 
-}
+
     
 
 

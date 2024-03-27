@@ -1,0 +1,76 @@
+// Loop size_t data_size, short unsigned int element_size, size_t octet_position, short unsigned int  bit_position, bool (*func)(const std::map<char, size_t> &)
+short unsigned int item_remaining_bit = element_size;   // Represent the number of bit that we should find to have a full element
+size_t element_number = 0;                              // Represent the number of full element found.
+bool stop = false;                                      // Do the loop should stop. This variable is modified by \p func in order to 'break' the loop.
+
+std::map<char, size_t> f_map ;                          // A map that will be returned. Also used by \p func.
+
+if (data_size == 0) {
+    displayLengthError(raise, "Too small array (0 items). Can not proceed.", __FILE__, __func__);
+}
+
+while((octet_position < data_size - 1 || bit_position >= 8) && stop == false) {
+    
+    if (bit_position >= 8 && octet_position < data_size - 1) { 
+        // New octet reached
+        bit_position = 0;
+        octet_position += 1;
+    }
+    
+    // Advance in the analyze.
+    if (item_remaining_bit >= 8 - bit_position) {
+        item_remaining_bit -= 8 - bit_position;
+        bit_position = 8;
+    
+    } else /*8 - bit_position > item_remaining_bit*/  {
+        bit_position += item_remaining_bit;
+        item_remaining_bit = 0;
+    } 
+
+    // Did we find a new element ?
+    if (item_remaining_bit == 0) {
+        item_remaining_bit = element_size;
+        element_number += 1;
+        f_map['C'] = true;
+
+        f_map['S'] = f_map['E'];
+        f_map['T'] = f_map['F'];
+        f_map['E'] = octet_position;
+        f_map['F'] = bit_position;
+
+    } else {
+        f_map['C'] = false;
+    }
+
+    // This is very likely to be inefficient BUT I do believe that this improve readability. |
+    // Alternative could be to :                                                             |
+    //      - replace all vars and only use the dict                                         |
+    //      - only fill the dict if (func != NULL) and at the end of the loop                |
+    f_map['B'] = bit_position;          //                                                   |
+    f_map['O'] = octet_position;        //                                                   |
+    f_map['R'] = item_remaining_bit;    //                                                   |
+    f_map['N'] = element_number;        //                                                   |
+    // ------------------------------------------------------------------------------------- |
+
+    // Call func
+    if (func != NULL) {
+        stop = func(f_map);
+    }
+}
+
+return  f_map;
+
+// 
+size_t octet_number =  __SIZE_MAX__ - 1;
+size_t bit_number = 8;
+unsigned short int element_size = 9;
+
+
+double element_per_octet = 8.0 / element_size;
+size_t elements_count = octet_number * element_per_octet;
+std::cout << octet_number << " " <<  elements_count / element_per_octet << std::endl; 
+size_t bit_left = (octet_number - elements_count / element_per_octet) * 8 + bit_number;
+std::cout << elements_count << " " << bit_left << std::endl; 
+elements_count += bit_left / element_size;
+bit_left -= (bit_left / element_size) * element_size;
+std::cout <<elements_count << " " << bit_left << std::endl; 
