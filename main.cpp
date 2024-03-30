@@ -20,7 +20,7 @@
 #include <fstream>  // pour ifstream
 
 
-#include <array>
+#include <vector>
 #include <map>
 /* Methodes abstracts :
  * Les fonctions sans corps sont abstraites ET DOIVENT être implementés dans les class filles
@@ -120,59 +120,52 @@
 
 
 
+
+
 int main() {
-    // BitVector vec(8);
-
-    // std::cout << vec.getMaximalNumberOfElements() <<std::endl;
-    // std::cout << vec.getMaximalNumberOfOctet() << std::endl;
-
-
-    // size_t elementNumber = SIZE_MAX - 1;
-    // unsigned short int element_size = 9;
+    std::vector<int> alpha {0b00000110, 0b00000110};
+    std::vector<int> obj {0b00100000, 0b11000000};
     
-    // double octet_usage_per_element = element_size / 8.0;
-    // size_t octet_number = elementNumber * octet_usage_per_element;
+    BitVector::Coords element_coord(1, 3);
+    BitVector::Coords vec_coord(0, 0);
+    BitVector::Coords obj_coord(0, 0);
+
+    unsigned short int vec_pos = 0;
+    unsigned short int obj_pos;
+    while (vec_coord != element_coord) {
 
 
-    // std::cout <<octet_number << " " << octet_usage_per_element << std::endl; 
+        if (vec_coord.getOctet() == element_coord.getOctet()) {
+            vec_pos = vec_coord.getBit();
+        } else {
+            vec_pos = 7 - vec_coord.getBit();
+        }
+        obj_pos = 7 - obj_coord.getBit();
 
-
-    // Do not wotk due to double memory limitations.
-    // size_t octet_number =  (__SIZE_MAX__) / 10;
-    // size_t bit_number = 8;
-    // unsigned short int element_size = 9;
-
-
-    // double element_per_octet = 8.0 / element_size;
-    // size_t elements_count = octet_number * element_per_octet;
-    // std::cout << octet_number << " " <<  elements_count / element_per_octet << std::endl; 
-    // size_t bit_left = (octet_number - elements_count / element_per_octet) * 8 + bit_number;
-    // std::cout << elements_count << " " << bit_left << std::endl; 
-    // elements_count += bit_left / element_size;
-    // bit_left -= (bit_left / element_size) * element_size;
-    // std::cout <<elements_count << " " << bit_left << std::endl; 
-    
-
-    size_t octet_number =  (__SIZE_MAX__) / 1000 * 1000;
-    // size_t bit_number = 8;
-    unsigned short int element_size = 8;
-    std::cout << element_size << " " << ( unsigned short int)((double)(element_size)) << std::endl;
-    // Missing bits :
-    
-    // Extract number of octet that can be filled by a unique element.
-    unsigned short int uncompleted_octet_per_element = element_size / 8;  
-    unsigned short int bit_per_element = element_size - uncompleted_octet_per_element * 8;  
-
-    size_t octet_per_element = uncompleted_octet_per_element * 1000 + (bit_per_element / 8.0) * 1000;
-    
-    // Use the power of division to retrieve how much can be stuffed intoo octet_number
-    size_t number_of_elements = octet_number / octet_per_element;
-    size_t really_used_octet = octet_number / octet_per_element * octet_per_element;
-    size_t unused_octet = octet_number - really_used_octet;
 
     
-    std::cout << number_of_elements << " \n" << really_used_octet << " \n" << unused_octet << std::endl;
-    
+        char vec_mask = 1 << vec_pos;
+        char obj_mask = 1 << obj_pos;
+        
+        if (alpha[vec_coord.getOctet()] & vec_mask) { // Do a bit is present at the postion [vec_pos] of this octet ?
+            // Set the obj_pos th bit to  obj_mask
+            obj[obj_coord.getOctet()] |= obj_mask;
+        } else {
+            // Set the obj_pos th bit  to obj_mask
+            obj[obj_coord.getOctet()] &= ~obj_mask;
+        }
+
+        vec_coord.increment();
+        obj_coord.increment();
+    }
+     std::cout << std::endl;
+
+    for (char c : obj) {
+        displayBits(c);
+    }
+
+
+
     // Retransform to vit
 
 

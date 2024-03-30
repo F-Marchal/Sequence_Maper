@@ -1,7 +1,7 @@
 #include <iostream>
 #include <tuple>
 #include <map>
-
+#include <vector>
 #include "Utilities.hpp"
 // Parler de : Construction de getElementNumber / getPosInArray;
 //          Pb mathematics pour l'ameiorer (*1000, decouverte float, peurs de floatr = apro, test)
@@ -25,6 +25,70 @@ protected:
     void _killInternalData();
     
 public:
+
+    // Coords
+    class Coords {
+    private:
+        size_t octet;
+        unsigned short int bit;
+    
+    public:
+        Coords();
+        Coords(size_t octet, unsigned short int bit);
+        Coords(size_t value);
+        
+        size_t toSize_t() const;
+        std::string toString() const;
+
+        unsigned short int getBit() const;
+        size_t getOctet() const;
+
+        void setOctet(size_t octet);
+        void setBit(unsigned short int bit);
+
+        static size_t maximumOctetNumber();
+
+        // TODO: += 
+        // TODO: -= 
+
+        bool operator==(const Coords & other) const {
+            return (this->octet == other.getOctet() && this->bit == other.getBit()) ;
+        }
+
+
+        bool operator!=(const Coords & other) const {
+            return !(*this==other);
+        }
+
+        // TODO: >
+        // TODO: >=
+        // TODO: <
+        // TODO: <=
+        // TODO: ++ 
+        // TODO: --
+        void increment() {
+            if (this->bit == 7) {
+                this->setBit(0);
+                this->setOctet(this->octet + 1);
+
+            } else {
+                this->setBit(this->bit + 1);
+            }
+        }
+
+        void decrement() {
+            if (this->bit == 0) {
+                this->setBit(7);
+                this->setOctet(this->octet - 1);
+
+            } else {
+                this->setBit(this->bit - 1);
+            }
+        }
+    };
+
+
+    
     // --- --- Constructors --- ---
     BitVector(short unsigned int block_size);
 
@@ -34,36 +98,27 @@ public:
     // --- --- Getters --- ---
     size_t getDataSize();
     size_t getElementNumber();
+    
     size_t size();
 
     // --- index ---
-    std::tuple<size_t, unsigned short int> indexElement(size_t element_position);
-    size_t indexCoordinate(size_t octet, unsigned short int bit, errorMods strictness=ignore);
-    std::tuple<size_t, size_t, size_t> indexUntreatedCoordinate(size_t octet_number, unsigned short int bit);
+    Coords indexElement(size_t element_position);
+    size_t indexElementUntreated(size_t element_position);
+
+    size_t indexCoordinate(const Coords & coord, errorMods strictness=ignore);
+    std::tuple<size_t, size_t, size_t> indexCoordinateUntreated(const Coords & coord);
+
    
-    // --- Limitation ---
-    // static bool stopFunctionGetMaximalNumberOfOctet(const std::map<char, size_t>& InfMap);
-    // size_t getMaximalNumberOfOctet();
-    // static bool stopFunctionMaximalNumberOfElements(const std::map<char, size_t>& InfMap);
-    // size_t getMaximalNumberOfElements();
-
-    // --- --- Utilities --- --- 
-
-
-    // --- Research ---
-    // static std::map<char, size_t> searchElement(size_t data_size, short unsigned int element_size, bool (*func)(const std::map<char, size_t> &)=NULL);
-    // static std::map<char, size_t> searchElement(size_t data_size, short unsigned int element_size, size_t octet_position, short unsigned int bit_position, bool (*func)(const std::map<char, size_t> &)=NULL);
-    // std::map<char, size_t>  searchElement(bool (*func)(const std::map<char, size_t> &)=NULL);
+    // --- Interaction ---
 
     // --- size ---
     void doubleSize();
     void resize(size_t data_size);
-
-    // --- 
-    
-    // 
+    void shrink();
 
     //
+    Coords getCoordUnit();
+    
     bool maxSizeIsReached();
     bool maxDataSizeIsReached();
     bool maxElementSizeIsReached();
@@ -72,12 +127,15 @@ public:
     
     static size_t maximumOctetNumber();
     static size_t maximumElementNumber();
-
-
     
+    //
+    char operator[](size_t p) const;
 
-
+    // test
+    static int testClass();
 };
+
+
 //  public:
 //   char *_data;
 //   size_t _size;

@@ -2,18 +2,75 @@
 #include "Utilities.hpp"
 #include <map>
 #include <string>
-
+#include <vector>
 // TODO: Proteger les taleaux des copies
+
+BitVector::Coords::Coords() {
+    this->setBit(0);
+    this->setOctet(0);
+}
+
+BitVector::Coords::Coords(size_t octet, unsigned short int bit) {
+    this->setBit(bit);
+    this->setOctet(octet);
+}
+
+BitVector::Coords::Coords(size_t value) {
+    size_t octet_number = value / 1000;
+    unsigned short int bit_number = (value - (octet_number * 1000)) * 8 / 1000;
+    this->setBit(bit_number);
+    this->setOctet(octet_number);
+}
+
+size_t BitVector::Coords::toSize_t() const {
+    return this->octet + (this->bit * 1000 / 8.0);
+}
+
+std::string BitVector::Coords::toString() const {
+    return "(O=" + std::to_string(this->octet) + " ; B=" + std::to_string(this->bit) + ")";
+}
+
+unsigned short int BitVector::Coords::getBit() const {
+    return this->bit;
+}
+
+size_t BitVector::Coords::getOctet() const {
+    return this->octet;
+}
+
+void BitVector::Coords::setOctet(size_t octet) {
+    if (octet > this->maximumOctetNumber()) {
+        displayInvalidArgument(raise, "\\p octet should be smaller than maximumOctetNumber(). Got : " 
+                                + std::to_string(octet) + " > " + std::to_string(this->maximumOctetNumber()), __FILE__, __func__);
+        octet = this->maximumOctetNumber();
+    }
+
+    this->octet = octet;
+}
+
+void BitVector::Coords::setBit(unsigned short int bit) {
+    if (bit >= 8) {
+        displayInvalidArgument(raise, "\\p bit should be strictly lower than 8. Got : " 
+                                + std::to_string(bit), __FILE__, __func__);
+        bit = 7;
+    }
+    this->bit = bit;
+}
+
+size_t BitVector::Coords::maximumOctetNumber() {
+    return BitVector::maximumOctetNumber();
+}
+
 
 // --- --- Constructors --- ---
 BitVector::BitVector(short unsigned int block_size) {
     if (block_size == 0) {
         displayInvalidArgument(raise, "Element size should be greater than 0. (Got 0.)", __FILE__, __func__);
     }
-
+    std::cout << block_size << std::endl;
     this->_element_size = block_size;
-
     this->resize(100);
+
 }
 
 // --- --- Destructor --- ---
@@ -44,110 +101,57 @@ size_t BitVector::size() {
     return this->getElementNumber();
 }
 
+
+
+
+
 // --- index ---
-size_t BitVector::indexCoordinate(size_t octet, unsigned short int bit, errorMods strictness) {
-    std::tuple<size_t, size_t, size_t> coord = this->indexUntreatedCoordinate(octet, bit);
+
+size_t BitVector::indexCoordinate(const Coords & coord, errorMods strictness) {
+    std::tuple<size_t, size_t, size_t> untread_coord = this->indexCoordinateUntreated(coord);
     
-    if (strictness) {
-        // TODO:
+    if (std::get<2>(untread_coord)!= 0) {
+        displayDomainError(strictness, "Coordinate does not strictly match with any element. Got bit left" + std::to_string(std::get<2>(untread_coord) * 8 / 1000), __FILE__, __func__);
     }
 
-    return std::get<0>(coord);
+    return std::get<0>(untread_coord);
 }
 
-std::tuple<size_t, size_t, size_t> BitVector::indexUntreatedCoordinate(size_t octet_number, unsigned short int bit) {
-    unsigned short int element_size = this->_element_number;
-
-    if (octet_number > BitVector::maximumOctetNumber()) {
-        displayInvalidArgument(raise, "\\p octet_number is too large : " + std::to_string(octet_number) + " > " + std::to_string(BitVector::maximumOctetNumber()), __FILE__, __func__);
-        return std::tuple<size_t, size_t, size_t> {0, 0, 0} ;
-
-    } else if (element_size <= 0) {
-        displayInvalidArgument(raise, "\\p element_size should be greater than 0. Got : " + std::to_string(element_size), __FILE__, __func__);
-        return std::tuple<size_t, size_t, size_t> {0, 0, 0} ;
+std::tuple<size_t, size_t, size_t> BitVector::indexCoordinateUntreated(const Coords & coord) {
+    size_t element = this->getCoordUnit().toSize_t();
+    size_t octet_number = coord.toSize_t();
     
-    } else if (octet_number > this->upperOctetLimit()) {
-        // TODO: > or >=
-        displayInvalidArgument(raise, "\\p octet_number should be smaller than upperOctetLimit(). Got : " 
-                                + std::to_string(octet_number) + " > " + std::to_string(this->upperOctetLimit()), __FILE__, __func__);
-        return std::tuple<size_t, size_t, size_t> {0, 0, 0} ;
-    } 
-    
-
-    // Transform \p octet_number
-    octet_number = octet_number * 1000 + ((bit / 8.0) * 1000);
-
-    // Extract number of octet that can be filled by a unique element.
-    unsigned short int uncompleted_octet_per_element = element_size / 8;  
-    unsigned short int bit_per_element = element_size - uncompleted_octet_per_element * 8;  
-
-    size_t octet_per_element = uncompleted_octet_per_element * 1000 + (bit_per_element / 8.0) * 1000;
-
-    // Use the power of division to retrieve how much can be stuffed intoo octet_number
-    size_t number_of_elements = octet_number / octet_per_element;
-    size_t really_used_octet = octet_number / octet_per_element * octet_per_element;
+    // Use the power of division to retrieve how much element can be stuffed intoo octet_number
+    size_t number_of_elements = octet_number / element;
+    size_t really_used_octet = number_of_elements * element;
     size_t unused_octet = octet_number - really_used_octet;
 
     return std::tuple<size_t, size_t, size_t> {number_of_elements, really_used_octet, unused_octet} ;
 }
- 
 
+BitVector::Coords BitVector::indexElement(size_t element) {
+    return Coords(indexElementUntreated(element));
+}
 
-// --- limitations ---
-// bool BitVector::stopFunctionGetMaximalNumberOfOctet(const std::map<char, size_t>& InfMap) {
-//     return (InfMap.at('B') == maximumLength());
-// }
+size_t BitVector::indexElementUntreated(size_t element) {
+    if (element > this->upperElementLimit()) {
+        displayInvalidArgument(raise, "\\p element should be smaller than upperOctetLimit(). Got : " 
+                                + std::to_string(element) + " > " + std::to_string(this->upperElementLimit()), __FILE__, __func__);
+        element = this->upperElementLimit();
+    }
 
-// size_t BitVector::getMaximalNumberOfOctet() {
-//     static std::map<short unsigned int, size_t> element_size_map;
-//     if (this->_element_size <= 8) {
+    // Elements
+    return getCoordUnit().toSize_t() * element ;
+    
+}
 
-        
-//         if (element_size_map.find(this->_element_size) == element_size_map.end()) { 
-//             // This is the first time that this situation is encountered
-//             // Let's count the number of element that can be filled inside this object until we reach the maximal number of octet.
-           
+BitVector::Coords BitVector::getCoordUnit() {
+    unsigned short int octet_per_element = this->_element_size / 8;  
+    unsigned short int bit_per_element = this->_element_size - (octet_per_element * 8);  
 
-//             std::map<char, size_t> research_result = this->searchElement(this->maximumLength(), this->_element_size, this->stopFunctionGetMaximalNumberOfOctet);
-//             element_size_map[this->_element_size] = research_result['N'];
-            
+    return BitVector::Coords(octet_per_element, bit_per_element);
+} 
 
-//         }
-
-//         return element_size_map.at(_element_number);
-//     } else {
-//         // We might need all size_t value.
-//         return this->maximumLength();;
-//     }
-   
-// }
-
-// bool BitVector::stopFunctionMaximalNumberOfElements(const std::map<char, size_t>& InfMap) {
-//     return (InfMap.at('N') == maximumLength());
-// }
-
-// size_t BitVector::getMaximalNumberOfElements() {
-//     // The following map store result of situation that require the usage of function with a complexity greater than O(1)
-//     // in order to reduce time usage when getMaximalNumberOfElements is used multiple time by similar objects.
-//     static std::map<short unsigned int, size_t> element_size_map;
-
-//     if (this->_element_size <= 8) {
-//         // The only limitation is the maximal value of size_t.
-//         return this->maximumLength();
-
-//     } else {
-       
-//         if (element_size_map.find(this->_element_size) == element_size_map.end()) { 
-//             // This is the first time that this situation is encountered
-//             // Let's count the number of element that can be filled inside this object until we reach the maximal number of octet.
-
-//             std::map<char, size_t> research_result = this->searchElement(this->getMaximalNumberOfOctet(), this->_element_size, stopFunctionMaximalNumberOfElements);
-//             element_size_map[this->_element_size] = research_result['B'];
-//         }
-
-//         return element_size_map.at(this->_element_size);
-//     }
-// }
 
 // --- --- Utilities --- --- 
 void BitVector::doubleSize() {
@@ -156,30 +160,32 @@ void BitVector::doubleSize() {
         return ;
     }
 
-    if (this->_data_size < (this->maximumOctetNumber()) / 2) {;
+    if (this->_data_size < (this->upperOctetLimit()) / 2) {;
         this->resize(this->_data_size * 2);
 
     } else {
-        this->resize(this->maximumOctetNumber());
+        this->resize(this->upperOctetLimit());
     }
 
     
 }
 
-void BitVector::resize(size_t data_size) {
+void BitVector::resize(size_t new_data_size) {
  
-    if (data_size == 0) {
+    if (new_data_size == 0) {
         this->_killInternalData ();
         return ;
 
-    } else if (data_size > this->maximumOctetNumber()) {
-         displayLengthError(raise, "Maximal size reached " + std::to_string(data_size) + " > " + std::to_string(this->maximumOctetNumber())  +  " unable to proceed.", __FILE__, __func__);
+    } else if (new_data_size == this->_data_size) {
+        return ;
+
+    } else if (new_data_size > this->upperOctetLimit()) {
+         displayLengthError(raise, "Maximal size reached " + std::to_string(new_data_size) + " > " + std::to_string(this->maximumOctetNumber())  +  " unable to proceed.", __FILE__, __func__);
     }
 
+    char * new_tab = new char[new_data_size];
 
-    char * new_tab = new char[data_size];
-
-    for (size_t i=0; i <= data_size - 1; i++) {
+    for (size_t i=0; i <= new_data_size - 1; i++) {
         if (i <= this->_data_size && this->_data != NULL) {
             new_tab[i] = _data[i];
 
@@ -188,32 +194,35 @@ void BitVector::resize(size_t data_size) {
         }
     }
     
-    // TODO: Warning lost data this->_data_size > data_size
+    if (this->_data_size > new_data_size) {
+        this->_element_number = (new_data_size * 1000 + (1000 / 8)) / this->getCoordUnit().toSize_t();
+    }
 
     this->_killInternalData ();
-    this->_data_size = data_size;
+    this->_data_size = new_data_size;
     this->_data = new_tab;
     
 }
 
-
+void BitVector::shrink() {
+    // Extract number of octet needed and resize data.
+    this->resize(this->_element_number * this->getCoordUnit().toSize_t() / 1000) ;
+}
 
 size_t BitVector::upperOctetLimit() {
-    // TODO: Finir
-    return maximumOctetNumber();
+    return this->upperElementLimit() * this->getCoordUnit().toSize_t();
 }
 
 size_t BitVector::upperElementLimit() {
-    // TODO: Finir
-    return maximumElementNumber();
+    return std::min(this->maximumOctetNumber() / this->getCoordUnit().toSize_t(), this->maximumElementNumber());
 }
 
 bool BitVector::maxDataSizeIsReached() {
-    return (this->upperOctetLimit() > this->_data_size);
+    return (this->upperOctetLimit() <= this->_data_size);
 }
 
 bool BitVector::maxElementSizeIsReached() {
-    return (this->upperElementLimit() > this->_element_number);
+    return (this->upperElementLimit() <= this->_element_number);
 }
 
 bool BitVector::maxSizeIsReached() {
@@ -228,6 +237,9 @@ size_t BitVector::maximumOctetNumber() {
 size_t BitVector::maximumElementNumber() {
     return __SIZE_MAX__ - 1;
 }
+
+
+
 
 // std::map<char, size_t> BitVector::searchElement(size_t data_size, short unsigned int element_size, size_t octet_position, short unsigned int  bit_position, bool (*func)(const std::map<char, size_t> &)) {
 //     // float temp = 1.0 / 3.0;

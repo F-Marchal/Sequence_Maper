@@ -26,4 +26,8 @@ void displayOutOfRangeError(errorMods error_mod, std::string message, std::strin
 
 unsigned int getFirstDigits(size_t number, unsigned int digits);
 
+size_t safe_multiply(size_t a, size_t b, size_t maximal_value);
+
+void displayBits(char bits, bool endl=true);
+
 #endif

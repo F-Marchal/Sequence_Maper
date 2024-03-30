@@ -72,3 +72,26 @@ void displayOutOfRangeError(errorMods error_mod, std::string message, std::strin
 
     return std::stoi(str_number.substr(str_number.size() - digits, str_number.size() - 1));
 }
+
+size_t safe_multiply(size_t a, size_t b, size_t maximal_value) {
+    if (a == 0 || b == 0) {
+        // Avoid division by 0 in the next condition
+        return 0;
+
+    } else if (a > maximal_value / b) {
+        // Le résultat de la multiplication dépasserait SIZE_MAX.
+        return maximal_value;
+
+    } else {
+        return a * b;
+    }
+}
+
+void displayBits(char bits, bool endl) {
+    for (int i = 7; i >= 0; --i) {
+        std::cout << ((bits >> i) & 1); // Extract each bit
+    }
+    if (endl) {
+        std::cout << std::endl;
+    }
+}
