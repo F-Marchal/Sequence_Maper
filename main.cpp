@@ -45,7 +45,7 @@
  * mot clef const :  (lecture seule)
  *      dans fonction(const item) -- On ne peut utilisier que les methodes 'const') 
  *      'const' permet de passer une reference (moins gourmand que qu'une copie complete) mais restreind les methodes 
- *      Les methodes ne modifiant pas l'objet doivent être marqués const
+ *      Les methodes ne modifiant pas l'modifet doivent être marqués const
  *       
  * 
  * 
@@ -93,7 +93,7 @@
  * C = Equivalent en lettre des suffixes MOT[B[I] : ]
  * B = Nombre de lettre en commun avec le precedent suffixe (LCP)
  * 
- * Tout est ranger par ordre alphabetique.
+ * Tout est ranger par ordre main_tabbetique.
  * 
  * 
  *  Construteur par copie  + Destructeur + destructeur
@@ -118,52 +118,7 @@
 
 
 
-
-
-
-
 int main() {
-    std::vector<int> alpha {0b00000110, 0b00000110};
-    std::vector<int> obj {0b00100000, 0b11000000};
-    
-    BitVector::Coords element_coord(1, 3);
-    BitVector::Coords vec_coord(0, 0);
-    BitVector::Coords obj_coord(0, 0);
-
-    unsigned short int vec_pos = 0;
-    unsigned short int obj_pos;
-    while (vec_coord != element_coord) {
-
-
-        if (vec_coord.getOctet() == element_coord.getOctet()) {
-            vec_pos = vec_coord.getBit();
-        } else {
-            vec_pos = 7 - vec_coord.getBit();
-        }
-        obj_pos = 7 - obj_coord.getBit();
-
-
-    
-        char vec_mask = 1 << vec_pos;
-        char obj_mask = 1 << obj_pos;
-        
-        if (alpha[vec_coord.getOctet()] & vec_mask) { // Do a bit is present at the postion [vec_pos] of this octet ?
-            // Set the obj_pos th bit to  obj_mask
-            obj[obj_coord.getOctet()] |= obj_mask;
-        } else {
-            // Set the obj_pos th bit  to obj_mask
-            obj[obj_coord.getOctet()] &= ~obj_mask;
-        }
-
-        vec_coord.increment();
-        obj_coord.increment();
-    }
-     std::cout << std::endl;
-
-    for (char c : obj) {
-        displayBits(c);
-    }
-
 
 
     // Retransform to vit
@@ -174,7 +129,7 @@ int main() {
     //    i ++;
     // }
 
-    // size_t alpha = SIZE_MAX;
+    // size_t main_tab = SIZE_MAX;
 
 
 

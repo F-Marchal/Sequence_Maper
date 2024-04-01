@@ -37,6 +37,7 @@ public:
         Coords(size_t octet, unsigned short int bit);
         Coords(size_t value);
         
+
         size_t toSize_t() const;
         std::string toString() const;
 
@@ -45,27 +46,80 @@ public:
 
         void setOctet(size_t octet);
         void setBit(unsigned short int bit);
+        void setSize_t(size_t octet);
 
         static size_t maximumOctetNumber();
-
-        // TODO: += 
-        // TODO: -= 
+        static size_t maximumSize_t();
 
         bool operator==(const Coords & other) const {
             return (this->octet == other.getOctet() && this->bit == other.getBit()) ;
         }
 
-
         bool operator!=(const Coords & other) const {
             return !(*this==other);
         }
 
-        // TODO: >
-        // TODO: >=
-        // TODO: <
-        // TODO: <=
+        bool operator>(const Coords & other) const {
+            return (this->octet > other.getOctet() || (this->octet == other.getOctet() && this->bit > other.getBit()));
+        }
+
+        bool operator>=(const Coords & other) const {
+            return (this->octet > other.getOctet() || (this->octet == other.getOctet() && this->bit >= other.getBit()));
+        }
+
+        bool operator<(const Coords & other) const {
+            return (this->octet < other.getOctet() || (this->octet == other.getOctet() && this->bit < other.getBit()));
+        }
+
+        bool operator<=(const Coords & other) const {
+            return (this->octet < other.getOctet() || (this->octet == other.getOctet() && this->bit <= other.getBit()));
+        }
+
+        Coords & operator*=(size_t value) {
+            //WARNING: no protection on value
+            value = (value * 1000 * 7 / 1000);
+
+            size_t this_size = this->toSize_t();
+            if (value == 0) {
+                // Avoid division by 0 in the next condition
+                this->setSize_t(value);
+
+            } else if (this_size > this->maximumSize_t() / value) {
+                // The result will be greater than .
+                displayLengthError(raise, "Can not proceed this multiplication, maximum size would be reached", __FILE__, __func__);
+
+            } else {
+                 this->setSize_t(value * this_size);
+            }
+
+            return *this;
+        }
+
+        Coords & operator/=(size_t value) {
+            value = (value * 1000 * 7 / 1000);
+            this->setSize_t(this->toSize_t() / value);
+            return *this;
+        }
+
+        Coords operator+(const Coords other) {
+            if (other.toSize_t() > this->maximumSize_t() - this->toSize_t())  {
+                displayLengthError(raise, "Can not proceed this sum, maximum size would be reached", __FILE__, __func__);
+            }
+
+            return Coords(other.toSize_t() + this->toSize_t());
+        }
+
+        Coords operator-(const Coords other) {
+            if (other.toSize_t() >  this->toSize_t())  {
+                displayLengthError(raise, "Can not proceed this subtraction, a negative number would be reached", __FILE__, __func__);
+            }
+
+            return Coords(other.toSize_t() - this->toSize_t());
+        }
+
         // TODO: ++ 
         // TODO: --
+
         void increment() {
             if (this->bit == 7) {
                 this->setBit(0);
@@ -96,17 +150,17 @@ public:
     ~BitVector();
 
     // --- --- Getters --- ---
-    size_t getDataSize();
-    size_t getElementNumber();
+    size_t getDataSize() const;
+    size_t getElementNumber() const;
     
-    size_t size();
+    size_t size() const;
 
     // --- index ---
-    Coords indexElement(size_t element_position);
-    size_t indexElementUntreated(size_t element_position);
+    Coords indexElement(size_t element_position) const;
+    size_t indexElementUntreated(size_t element_position) const;
 
-    size_t indexCoordinate(const Coords & coord, errorMods strictness=ignore);
-    std::tuple<size_t, size_t, size_t> indexCoordinateUntreated(const Coords & coord);
+    size_t indexCoordinate(const Coords & coord, errorMods strictness=ignore) const;
+    std::tuple<size_t, size_t, size_t> indexCoordinateUntreated(const Coords & coord) const;
 
    
     // --- Interaction ---
@@ -117,19 +171,24 @@ public:
     void shrink();
 
     //
-    Coords getCoordUnit();
-    
-    bool maxSizeIsReached();
-    bool maxDataSizeIsReached();
-    bool maxElementSizeIsReached();
-    size_t upperOctetLimit();
-    size_t upperElementLimit();
+    Coords getCoordUnit() const;
+    size_t getSize_tUnit() const;
+    bool maxSizeIsReached() const;
+    bool maxDataSizeIsReached() const;
+    bool maxElementSizeIsReached() const;
+    size_t upperOctetLimit() const;
+    size_t upperElementLimit() const;
     
     static size_t maximumOctetNumber();
     static size_t maximumElementNumber();
     
+    static void copyBits(char * main_tab, char * modif, Coords element_coord, Coords main_coord,  Coords modif_coord, bool from_right=false, bool to_right=false);
+    
     //
-    char operator[](size_t p) const;
+    bool get(Coords coord) const;
+    bool operator[](Coords coord) const;
+    std::vector<char>  get(size_t index) const;
+    std::vector<char>  operator[](size_t index) const;
 
     // test
     static int testClass();
