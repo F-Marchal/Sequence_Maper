@@ -1,0 +1,5 @@
+<map id="BitVector::Coords::canBeSubtractedBy" name="BitVector::Coords::canBeSubtractedBy">
+<area shape="rect" id="Node000001" title="Do another Coords can be subtracted to this coord (without any error) ?" alt="" coords="5,5,155,45"/>
+<area shape="rect" id="Node000002" href="$class_bit_vector_1_1_coords.html#a3a4fac9de925974af9c8a66a1d0179e6" title="Translate octet and bit value inside a size_t. Allow easier mathematic computations." alt="" coords="203,5,345,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="155,23,189,23,189,28,155,28"/>
+</map>

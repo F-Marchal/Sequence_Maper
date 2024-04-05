@@ -1,0 +1,223 @@
+\doxysection{Bit\+Vector.\+hpp}
+\hypertarget{_bit_vector_8hpp_source}{}\label{_bit_vector_8hpp_source}\index{BitVector.hpp@{BitVector.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <tuple>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Utilities.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ Parler\ de\ :\ Construction\ de\ getElementNumber\ /\ getPosInArray;}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ TODO:\ Faire\ maxPositionInArray;}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ TODO:\ Tester\ les\ func}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ TODO:\ Finir\ les\ autres\ implementations}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_bit_vector}{BitVector}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{char}\ *\ \_data\ =\ NULL;}
+\DoxyCodeLine{00015\ \ \ \ \ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \_data\_size\ =\ 0;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \_element\_number;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{short}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \_element\_size;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \_killInternalData();}
+\DoxyCodeLine{00024\ \ \ \ \ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ octet;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ \textcolor{keywordtype}{int}\ bit;}
+\DoxyCodeLine{00041\ \ \ \ \ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ -\/-\/-\/\ Constructor\ -\/-\/-\/\ -\/-\/-\/}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_vector_1_1_coords_a4597c3633519643ceddf0f098317cf33}{Coords}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_vector_1_1_coords_a4597c3633519643ceddf0f098317cf33}{Coords}}(\textcolor{keywordtype}{size\_t}\ octet,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ \textcolor{keywordtype}{int}\ bit);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_vector_1_1_coords_a4597c3633519643ceddf0f098317cf33}{Coords}}(\textcolor{keywordtype}{size\_t}\ value);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_vector_1_1_coords_a6eab388bb38b2dc872b16473fd2080b4}{Coords}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}\ \&\ other)\ :\ \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}(other.\mbox{\hyperlink{class_bit_vector_1_1_coords_a3a4fac9de925974af9c8a66a1d0179e6}{toSize\_t}}())\ \{\}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ -\/-\/-\/\ Conversion\ -\/-\/-\/\ -\/-\/-\/}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_vector_1_1_coords_a3a4fac9de925974af9c8a66a1d0179e6}{toSize\_t}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{class_bit_vector_1_1_coords_ab25824f36841ddbae32da1271f9060a8}{toString}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ -\/-\/-\/\ Getters\ and\ setters\ -\/-\/-\/\ -\/-\/-\/}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_vector_1_1_coords_a393207c752f8f9121aca38c938914154}{getBit}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_vector_1_1_coords_a2892f7f46c4af93f9733e312229d8ec1}{getOctet}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bit_vector_1_1_coords_a19516be1a614f2078b9fa96d42724e2e}{setOctet}}(\textcolor{keywordtype}{size\_t}\ octet);}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bit_vector_1_1_coords_a2368da9407016aec60da11f41d59a96b}{setBit}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ \textcolor{keywordtype}{int}\ bit);}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bit_vector_1_1_coords_a20e302b03f7971717dc68ecd352f90b5}{setSize\_t}}(\textcolor{keywordtype}{size\_t}\ value);}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bit_vector_1_1_coords_a20e302b03f7971717dc68ecd352f90b5}{setSize\_t}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}\ \&\ coord);}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ -\/-\/-\/\ Limitations\ -\/-\/-\/\ -\/-\/-\/}}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_vector_1_1_coords_a3a65d4174d8f88cc4f2faed6cfefdf74}{maximumOctetNumber}}();}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_vector_1_1_coords_a2273bc2036bc18cdaaf62593bfde5324}{maximumSize\_t}}();}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ -\/-\/-\/\ operators\ -\/-\/-\/\ -\/-\/-\/}}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bit_vector_1_1_coords_affcbbf9a8227cce0e73e7414630bab58}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}\ \&\ other)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bit_vector_1_1_coords_a52595ca554859bcebb4c76c9bd349685}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}\ \&\ other)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bit_vector_1_1_coords_acb3c8b40df76676ac60fdbdbfcdf2cf6}{operator>}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}\ \&\ other)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bit_vector_1_1_coords_acc695afed31907ef4457395147d6b11f}{operator>=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}\ \&\ other)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bit_vector_1_1_coords_a78d1ac1068b38dccaea420492c79eef7}{operator<}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}\ \&\ other)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bit_vector_1_1_coords_a6ee61908cf4cf82d94d28153590b2348}{operator<=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}\ \&\ other)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}\ \&\ \mbox{\hyperlink{class_bit_vector_1_1_coords_abe44d2d29ea7783ec08ed1b84c8820d5}{operator*=}}(\textcolor{keywordtype}{size\_t}\ value)\ ;}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}\ \&\ \mbox{\hyperlink{class_bit_vector_1_1_coords_aa325e9526dd3a7d091fe088ae2f1dd98}{operator/=}}(\textcolor{keywordtype}{size\_t}\ value)\ ;}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}\ \&\ \mbox{\hyperlink{class_bit_vector_1_1_coords_a83a1cfb4afae0aed3ccc769d4eb82302}{operator+=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}\ \&\ other)\ ;}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}\ \&\ \mbox{\hyperlink{class_bit_vector_1_1_coords_ae1e572daa7fef873148816c3499a3968}{operator-\/=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}\ \&\ other)\ ;}
+\DoxyCodeLine{00313\ }
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}\ \mbox{\hyperlink{class_bit_vector_1_1_coords_ab3c2dce52e46cb111b49626c8615ad64}{operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}\ \&\ other)\ ;}
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}\ \mbox{\hyperlink{class_bit_vector_1_1_coords_a7a9d3235b586dec8118f946804562dd0}{operator-\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}\ \&\ other)\ ;}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}\ \mbox{\hyperlink{class_bit_vector_1_1_coords_afc6d664f2ee77a2469e454f3f12ff8cf}{operator*}}(\textcolor{keywordtype}{size\_t}\ value)\ ;}
+\DoxyCodeLine{00346\ }
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}\ \mbox{\hyperlink{class_bit_vector_1_1_coords_a7e6ebc214fec7a5e3ed1993e7e4d0795}{operator/}}(\textcolor{keywordtype}{size\_t}\ value)\ ;}
+\DoxyCodeLine{00357\ }
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}\&\ \mbox{\hyperlink{class_bit_vector_1_1_coords_abc443fc6742518fb13e606389ea5995e}{operator++}}()\ ;}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}\ \mbox{\hyperlink{class_bit_vector_1_1_coords_abc443fc6742518fb13e606389ea5995e}{operator++}}(\textcolor{keywordtype}{int})\ ;}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}\&\ \mbox{\hyperlink{class_bit_vector_1_1_coords_a9937965375151ef9558ec7af712b6483}{operator-\/-\/}}()\ ;}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}\ \mbox{\hyperlink{class_bit_vector_1_1_coords_a9937965375151ef9558ec7af712b6483}{operator-\/-\/}}(\textcolor{keywordtype}{int})\ ;}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bit_vector_1_1_coords_a9862c87ea93b2ab42ff2aa7b78868861}{increment}}()\ ;}
+\DoxyCodeLine{00406\ }
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bit_vector_1_1_coords_afd7e1ac7d32a10fa0529e87a023769e4}{decrement}}()\ ;}
+\DoxyCodeLine{00415\ }
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bit_vector_1_1_coords_a4890717747110e1d72e428798352b343}{canBeAddedBy}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}\ \&\ other)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bit_vector_1_1_coords_a7c928afd26dcbe5a4bf67cf3edb8bd68}{canBeSubtractedBy}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}\ \&\ other)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00439\ }
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bit_vector_1_1_coords_a3ec84115811da3e842bf35aa8be95083}{canMultiplyBy}}(\textcolor{keywordtype}{size\_t}\ value)\ ;}
+\DoxyCodeLine{00451\ \ \ \ \ \};}
+\DoxyCodeLine{00452\ }
+\DoxyCodeLine{00453\ }
+\DoxyCodeLine{00454\ \ \ \ \ }
+\DoxyCodeLine{00455\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ -\/-\/-\/\ Constructors\ -\/-\/-\/\ -\/-\/-\/}}
+\DoxyCodeLine{00456\ \ \ \ \ \mbox{\hyperlink{class_bit_vector}{BitVector}}(\textcolor{keywordtype}{short}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ block\_size);}
+\DoxyCodeLine{00457\ }
+\DoxyCodeLine{00458\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ -\/-\/-\/\ Destructor\ -\/-\/-\/\ -\/-\/-\/}}
+\DoxyCodeLine{00459\ \ \ \ \ \mbox{\hyperlink{class_bit_vector}{\string~BitVector}}();}
+\DoxyCodeLine{00460\ }
+\DoxyCodeLine{00461\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ -\/-\/-\/\ Getters\ -\/-\/-\/\ -\/-\/-\/}}
+\DoxyCodeLine{00462\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ getDataSize()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00463\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ getElementNumber()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00464\ \ \ \ \ }
+\DoxyCodeLine{00465\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00466\ }
+\DoxyCodeLine{00467\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ index\ -\/-\/-\/}}
+\DoxyCodeLine{00468\ \ \ \ \ Coords\ indexElement(\textcolor{keywordtype}{size\_t}\ element\_position)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00469\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ indexElementUntreated(\textcolor{keywordtype}{size\_t}\ element\_position)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00470\ }
+\DoxyCodeLine{00471\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ indexCoordinate(\textcolor{keyword}{const}\ Coords\ \&\ coord,\ errorMods\ strictness=ignore)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00472\ \ \ \ \ std::tuple<size\_t,\ size\_t,\ size\_t>\ indexCoordinateUntreated(\textcolor{keyword}{const}\ Coords\ \&\ coord)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00473\ }
+\DoxyCodeLine{00474\ \ \ \ }
+\DoxyCodeLine{00475\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Interaction\ -\/-\/-\/}}
+\DoxyCodeLine{00476\ \ \ \ \ Coords\ start()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00477\ \ \ \ \ Coords\ end()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00478\ }
+\DoxyCodeLine{00479\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ size\ -\/-\/-\/}}
+\DoxyCodeLine{00480\ \ \ \ \ \textcolor{keywordtype}{void}\ doubleSize();}
+\DoxyCodeLine{00481\ \ \ \ \ \textcolor{keywordtype}{void}\ resize(\textcolor{keywordtype}{size\_t}\ data\_size);}
+\DoxyCodeLine{00482\ \ \ \ \ \textcolor{keywordtype}{void}\ shrink();}
+\DoxyCodeLine{00483\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ currentCapacity()\ \{}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>indexCoordinate(\mbox{\hyperlink{class_bit_vector_1_1_coords}{BitVector::Coords}}(this-\/>\_data\_size\ ,\ 0));\ }
+\DoxyCodeLine{00485\ \ \ \ \ \}}
+\DoxyCodeLine{00486\ \ \ \ \ Coords\ lastBit()\ \{}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Coords(this-\/>\_data\_size,\ 7);\ }
+\DoxyCodeLine{00488\ \ \ \ \ \}}
+\DoxyCodeLine{00489\ \ \ \ \ }
+\DoxyCodeLine{00490\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00491\ \ \ \ \ Coords\ getCoordUnit()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00492\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ getSize\_tUnit()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00493\ \ \ \ \ \textcolor{keywordtype}{bool}\ maxSizeIsReached()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00494\ \ \ \ \ \textcolor{keywordtype}{bool}\ maxDataSizeIsReached()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00495\ \ \ \ \ \textcolor{keywordtype}{bool}\ maxElementSizeIsReached()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00496\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ upperOctetLimit()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00497\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ upperElementLimit()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00498\ \ \ \ \ Coords\ MaximalCoordLimit()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00499\ }
+\DoxyCodeLine{00500\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{size\_t}\ maximumOctetNumber();}
+\DoxyCodeLine{00501\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{size\_t}\ maximumElementNumber();}
+\DoxyCodeLine{00502\ \ \ \ \ }
+\DoxyCodeLine{00503\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ copyBits(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ from,\ \textcolor{keywordtype}{char}\ *\ to\_tab,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_bit_vector_1_1_coords}{BitVector::Coords}}\ element\_coord,\ \ \mbox{\hyperlink{class_bit_vector_1_1_coords}{BitVector::Coords}}\ from\_coord,\ \mbox{\hyperlink{class_bit_vector_1_1_coords}{BitVector::Coords}}\ to\_coord,\ \textcolor{keywordtype}{bool}\ from\_right=\textcolor{keyword}{false},\ \textcolor{keywordtype}{bool}\ to\_right=\textcolor{keyword}{false});}
+\DoxyCodeLine{00504\ \ \ \ \ }
+\DoxyCodeLine{00505\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00506\ \ \ \ \ \textcolor{keywordtype}{bool}\ get(Coords\ coord)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00507\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator[](Coords\ coord)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00508\ \ \ \ \ \textcolor{keywordtype}{char}\ *\ get(\textcolor{keywordtype}{size\_t}\ index)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00509\ \ \ \ \ \textcolor{keywordtype}{char}\ *\ operator[](\textcolor{keywordtype}{size\_t}\ index)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00510\ \ \ \ \ }
+\DoxyCodeLine{00511\ \ \ \ \ \textcolor{keywordtype}{void}\ set(\textcolor{keywordtype}{size\_t}\ index,\ \textcolor{keywordtype}{char}\ *\ tab,\ \textcolor{keywordtype}{bool}\ restrictions\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00512\ \ \ \ \ \textcolor{keywordtype}{void}\ set(Coords\ coord,\ \textcolor{keywordtype}{bool}\ value,\ \textcolor{keywordtype}{bool}\ restrictions\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00513\ }
+\DoxyCodeLine{00514\ }
+\DoxyCodeLine{00515\ \ \ \ \ \textcolor{comment}{//\ test}}
+\DoxyCodeLine{00516\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ testClass(errorMods\ error\_mod);}
+\DoxyCodeLine{00517\ \};}
+\DoxyCodeLine{00518\ }
+\DoxyCodeLine{00519\ }
+\DoxyCodeLine{00520\ \textcolor{comment}{//\ \ public:}}
+\DoxyCodeLine{00521\ \textcolor{comment}{//\ \ \ char\ *\_data;}}
+\DoxyCodeLine{00522\ \textcolor{comment}{//\ \ \ size\_t\ \_size;}}
+\DoxyCodeLine{00523\ \textcolor{comment}{//\ \ \ size\_t\ \_raw\_capacity;}}
+\DoxyCodeLine{00524\ \textcolor{comment}{//\ \ \ EncodedSequence(const\ char\ *cstr\ =\ NULL);}}
+\DoxyCodeLine{00525\ \textcolor{comment}{//\ \ \ EncodedSequence(const\ std::string\ \&s);}}
+\DoxyCodeLine{00526\ \textcolor{comment}{//\ \ \ EncodedSequence(const\ EncodedSequence\ \&es);}}
+\DoxyCodeLine{00527\ \textcolor{comment}{//\ \ \ \string~EncodedSequence();}}
+\DoxyCodeLine{00528\ \textcolor{comment}{//\ \ \ EncodedSequence\ \&operator=(const\ EncodedSequence\ \&es);}}
+\DoxyCodeLine{00529\ \textcolor{comment}{//\ \ \ inline\ size\_t\ size()\ const\ \{}}
+\DoxyCodeLine{00530\ \textcolor{comment}{//\ \ \ \ \ return\ \_size;}}
+\DoxyCodeLine{00531\ \textcolor{comment}{//\ \ \ \}}}
+\DoxyCodeLine{00532\ \textcolor{comment}{//\ \ \ inline\ size\_t\ length()\ const\ \{}}
+\DoxyCodeLine{00533\ \textcolor{comment}{//\ \ \ \ \ return\ size();}}
+\DoxyCodeLine{00534\ \textcolor{comment}{//\ \ \ \}}}
+\DoxyCodeLine{00535\ \textcolor{comment}{//\ \ \ inline\ size\_t\ capacity()\ const\ \{}}
+\DoxyCodeLine{00536\ \textcolor{comment}{//\ \ \ \ \ return\ \_raw\_capacity\ <<\ 2;}}
+\DoxyCodeLine{00537\ \textcolor{comment}{//\ \ \ \}}}
+\DoxyCodeLine{00538\ \textcolor{comment}{//\ \ \ size\_t\ rawSize()\ const;}}
+\DoxyCodeLine{00539\ \textcolor{comment}{//\ \ \ std::string\ decode()\ const;}}
+\DoxyCodeLine{00540\ \textcolor{comment}{//\ \ \ void\ affiche(std::ostream\ \&os)\ const;}}
+\DoxyCodeLine{00541\ \textcolor{comment}{//\ \ \ char\ operator[](size\_t\ p)\ const;}}
+\DoxyCodeLine{00542\ \textcolor{comment}{//\ \ \ void\ setNucleotide(size\_t\ p,\ char\ c);}}
+\DoxyCodeLine{00543\ \textcolor{comment}{//\ \ \ void\ ajouteNucleotide(char\ c);}}
+\DoxyCodeLine{00544\ \textcolor{comment}{//\ \ \ void\ resize(size\_t\ n);}}
+\DoxyCodeLine{00545\ \textcolor{comment}{//\ \ \ void\ reserve(size\_t\ n);}}
+\DoxyCodeLine{00546\ \textcolor{comment}{//\ \ \ void\ clear();}}
+\DoxyCodeLine{00547\ \textcolor{comment}{//\ \ \ void\ shrink\_to\_fit();}}
+\DoxyCodeLine{00548\ \textcolor{comment}{//\ \ \ int\ compare(const\ EncodedSequence\ \&e)\ const;}}
+\DoxyCodeLine{00549\ \textcolor{comment}{//\ \};}}
+\DoxyCodeLine{00550\ }
+\DoxyCodeLine{00551\ }
+\DoxyCodeLine{00552\ }
+
+\end{DoxyCode}

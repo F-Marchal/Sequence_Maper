@@ -24,6 +24,8 @@ void displayLengthError(errorMods error_mod, std::string message, std::string fi
 
 void displayOutOfRangeError(errorMods error_mod, std::string message, std::string file_name, std::string function_name);
 
+void displayMessage(errorMods error_mod, std::string message);
+
 unsigned int getFirstDigits(size_t number, unsigned int digits);
 
 size_t safe_multiply(size_t a, size_t b, size_t maximal_value);

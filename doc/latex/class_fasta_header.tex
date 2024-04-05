@@ -1,0 +1,262 @@
+\doxysection{Fasta\+Header Class Reference}
+\hypertarget{class_fasta_header}{}\label{class_fasta_header}\index{FastaHeader@{FastaHeader}}
+
+
+Inheritance diagram for Fasta\+Header\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{class_fasta_header__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Fasta\+Header\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{class_fasta_header__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_fasta_header_a3c8ae1370cb8045162803a2ed790d987}\label{class_fasta_header_a3c8ae1370cb8045162803a2ed790d987} 
+{\bfseries Fasta\+Header} (std\+::string raw\+\_\+header)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_header}{Header}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bfseries get\+Comment} ()
+\item 
+void {\bfseries set\+Comment} (std\+::string comment)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_fasta_header_aed823c72199866547facd4e206fb2b6e}\label{class_fasta_header_aed823c72199866547facd4e206fb2b6e} 
+static size\+\_\+t {\bfseries find\+First\+Word} (std\+::string text)
+\item 
+\Hypertarget{class_fasta_header_ad62c42568225155c94739e415e787f64}\label{class_fasta_header_ad62c42568225155c94739e415e787f64} 
+static void {\bfseries clear\+Raw\+Header} (std\+::string \&raw\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_a05167351fef9da2be56b85a1cb3cbb9b}\label{class_fasta_header_a05167351fef9da2be56b85a1cb3cbb9b} 
+static std\+::vector$<$ std\+::string $>$ {\bfseries cut\+Raw\+Header} (std\+::string raw\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_ac7b7be25340fd33d1e57dc344d6a81d2}\label{class_fasta_header_ac7b7be25340fd33d1e57dc344d6a81d2} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+Raw\+Header} (std\+::string raw\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_ae579fe1c68ef66146dfc213074f6259f}\label{class_fasta_header_ae579fe1c68ef66146dfc213074f6259f} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+Raw\+Header} (std\+::vector$<$ std\+::string $>$)
+\item 
+\Hypertarget{class_fasta_header_a315c2c6643d248fdec4a535a9e3c725f}\label{class_fasta_header_a315c2c6643d248fdec4a535a9e3c725f} 
+static std\+::tuple$<$ std\+::string, std\+::string $>$ {\bfseries intermediate\+Make\+Format\+From\+Vector} (std\+::vector$<$ std\+::string $>$ text\+\_\+header, unsigned int min\+\_\+size, std\+::string format)
+\item 
+\Hypertarget{class_fasta_header_a64021f10e9f0d3236cc7c64fcff0e513}\label{class_fasta_header_a64021f10e9f0d3236cc7c64fcff0e513} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries make\+Gen\+Info\+Backbone\+Id\+Header} (std\+::string accession, std\+::string comments="{}"{})
+\item 
+\Hypertarget{class_fasta_header_aeb8b4442b6a23847ee1c1619c24a11ea}\label{class_fasta_header_aeb8b4442b6a23847ee1c1619c24a11ea} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+Gen\+Info\+Backbone\+Id\+Header} (std\+::vector$<$ std\+::string $>$ text\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_a389beb99900b2eeae23ef7dc4be23c42}\label{class_fasta_header_a389beb99900b2eeae23ef7dc4be23c42} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+Gen\+Info\+Backbone\+Id\+Header} (std\+::string raw\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_af9f44f4befb7fa1d5d28a3cf9dfbe667}\label{class_fasta_header_af9f44f4befb7fa1d5d28a3cf9dfbe667} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries make\+Gen\+Info\+Backbone\+Moltype\+Header} (std\+::string accession, std\+::string comments="{}"{})
+\item 
+\Hypertarget{class_fasta_header_a6094fe0d4dd4d34425c39657c2f6b482}\label{class_fasta_header_a6094fe0d4dd4d34425c39657c2f6b482} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+Gen\+Info\+Backbone\+Moltype\+Header} (std\+::vector$<$ std\+::string $>$ text\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_a36be2846223e686996cd0952c1c8134c}\label{class_fasta_header_a36be2846223e686996cd0952c1c8134c} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+Gen\+Info\+Backbone\+Moltype\+Header} (std\+::string raw\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_a4ff77bd6907768594941c54ef6b6f53e}\label{class_fasta_header_a4ff77bd6907768594941c54ef6b6f53e} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries make\+Gen\+Info\+Import\+Id\+Header} (std\+::string accession, std\+::string comments="{}"{})
+\item 
+\Hypertarget{class_fasta_header_a5b5e4d88531e4dbb233e161f71397aac}\label{class_fasta_header_a5b5e4d88531e4dbb233e161f71397aac} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+Gen\+Info\+Import\+Id\+Header} (std\+::vector$<$ std\+::string $>$ text\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_a25adb9dd42d74da425fb68adbc3794bb}\label{class_fasta_header_a25adb9dd42d74da425fb68adbc3794bb} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+Gen\+Info\+Import\+Id\+Header} (std\+::string raw\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_a45bdf034172b4e84dc62d555f82ee98a}\label{class_fasta_header_a45bdf034172b4e84dc62d555f82ee98a} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries make\+Gen\+Info\+Integrated\+Database\+Header} (std\+::string accession, std\+::string comments="{}"{})
+\item 
+\Hypertarget{class_fasta_header_a35e2972bb893c82059dadc7eb5e22258}\label{class_fasta_header_a35e2972bb893c82059dadc7eb5e22258} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+Gen\+Info\+Integrated\+Database\+Header} (std\+::vector$<$ std\+::string $>$ text\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_afde89d3754b0c145a284d4511ce82013}\label{class_fasta_header_afde89d3754b0c145a284d4511ce82013} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+Gen\+Info\+Integrated\+Database\+Header} (std\+::string raw\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_a87204266c55692ee6d302abedb727a2e}\label{class_fasta_header_a87204266c55692ee6d302abedb727a2e} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries make\+Local\+Sequence\+Identifier\+Header} (std\+::string accession, std\+::string comments="{}"{})
+\item 
+\Hypertarget{class_fasta_header_aca64e29f80e25f251624ee32f2b5f019}\label{class_fasta_header_aca64e29f80e25f251624ee32f2b5f019} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+Local\+Sequence\+Identifier\+Header} (std\+::vector$<$ std\+::string $>$ text\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_aaf3089806de5a85f2708974a264740e3}\label{class_fasta_header_aaf3089806de5a85f2708974a264740e3} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+Local\+Sequence\+Identifier\+Header} (std\+::string raw\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_a9a06af02ba35479e2069a8a61a6c4680}\label{class_fasta_header_a9a06af02ba35479e2069a8a61a6c4680} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries make\+Genbank\+Header} (std\+::string accession, std\+::string locus, std\+::string comments="{}"{})
+\item 
+\Hypertarget{class_fasta_header_a642b0d5aa413a37c4665d4cac60a975f}\label{class_fasta_header_a642b0d5aa413a37c4665d4cac60a975f} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+Genbank\+Header} (std\+::vector$<$ std\+::string $>$ text\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_a9308e0e48c432fc6244c587711d22922}\label{class_fasta_header_a9308e0e48c432fc6244c587711d22922} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+Genbank\+Header} (std\+::string raw\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_a4f9e8db883f6ff4b3f5407b257993c10}\label{class_fasta_header_a4f9e8db883f6ff4b3f5407b257993c10} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries make\+EMBLHeader} (std\+::string accession, std\+::string locus, std\+::string comments="{}"{})
+\item 
+\Hypertarget{class_fasta_header_a29c03cf435baf4ee0b3b761c80042e53}\label{class_fasta_header_a29c03cf435baf4ee0b3b761c80042e53} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+EMBLHeader} (std\+::vector$<$ std\+::string $>$ text\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_a8a6a16105b4fabd599a083e0371c61e5}\label{class_fasta_header_a8a6a16105b4fabd599a083e0371c61e5} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+EMBLHeader} (std\+::string raw\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_aa49f1bb1d670ef611bba50f560ce4912}\label{class_fasta_header_aa49f1bb1d670ef611bba50f560ce4912} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries make\+PIRHeader} (std\+::string accession, std\+::string name, std\+::string comments="{}"{})
+\item 
+\Hypertarget{class_fasta_header_a6fcef86686bcea784970f2da1a9c388a}\label{class_fasta_header_a6fcef86686bcea784970f2da1a9c388a} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+PIRHeader} (std\+::vector$<$ std\+::string $>$ text\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_a0ac229b329ca49b63866f290b17b223a}\label{class_fasta_header_a0ac229b329ca49b63866f290b17b223a} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+PIRHeader} (std\+::string raw\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_aafc05b3983a941704281a04d0df91a01}\label{class_fasta_header_aafc05b3983a941704281a04d0df91a01} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries make\+PIFHeader} (std\+::string accession, std\+::string name, std\+::string comments="{}"{})
+\item 
+\Hypertarget{class_fasta_header_a36438469d8a036913c228404dc98424e}\label{class_fasta_header_a36438469d8a036913c228404dc98424e} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+PIFHeader} (std\+::vector$<$ std\+::string $>$ text\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_af1869ffc71ec35d3983504efc6734b3a}\label{class_fasta_header_af1869ffc71ec35d3983504efc6734b3a} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+PIFHeader} (std\+::string raw\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_aa003e251a5a25546630c0d77af511758}\label{class_fasta_header_aa003e251a5a25546630c0d77af511758} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries make\+Swiss\+Prot\+Header} (std\+::string accession, std\+::string name, std\+::string comments="{}"{})
+\item 
+\Hypertarget{class_fasta_header_a471931c5016fddc90e5050b320e6c0a3}\label{class_fasta_header_a471931c5016fddc90e5050b320e6c0a3} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+Swiss\+Prot\+Header} (std\+::vector$<$ std\+::string $>$ text\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_ac7e805756570edc83f02e26834ea90b0}\label{class_fasta_header_ac7e805756570edc83f02e26834ea90b0} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+Swiss\+Prot\+Header} (std\+::string raw\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_a4c2560bd087e70c0552da5a1196422bb}\label{class_fasta_header_a4c2560bd087e70c0552da5a1196422bb} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries make\+Tr\+EMBLHeader} (std\+::string accession, std\+::string name, std\+::string comments="{}"{})
+\item 
+\Hypertarget{class_fasta_header_a9228d2c4583f064bbd54b5248410d5ff}\label{class_fasta_header_a9228d2c4583f064bbd54b5248410d5ff} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+Tr\+EMBLHeader} (std\+::vector$<$ std\+::string $>$ text\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_a68d981c9d7ee7a8b08db100c379e6c53}\label{class_fasta_header_a68d981c9d7ee7a8b08db100c379e6c53} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+Tr\+EMBLHeader} (std\+::string raw\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_a08ecd81bd1ccaee8c60ba12e05c0d867}\label{class_fasta_header_a08ecd81bd1ccaee8c60ba12e05c0d867} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries make\+Third\+Party\+Genbank\+Header} (std\+::string accession, std\+::string name, std\+::string comments="{}"{})
+\item 
+\Hypertarget{class_fasta_header_a6bb8571676daf34968eede02b41fbd21}\label{class_fasta_header_a6bb8571676daf34968eede02b41fbd21} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+Third\+Party\+Genbank\+Header} (std\+::vector$<$ std\+::string $>$ text\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_a867396163714282537ccb72eff4e96ae}\label{class_fasta_header_a867396163714282537ccb72eff4e96ae} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+Third\+Party\+Genbank\+Header} (std\+::string raw\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_ab2f8d3444d9c200bc83d1c311943cc7f}\label{class_fasta_header_ab2f8d3444d9c200bc83d1c311943cc7f} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries make\+Third\+Party\+EMBLHeader} (std\+::string accession, std\+::string name, std\+::string comments="{}"{})
+\item 
+\Hypertarget{class_fasta_header_ad0eaf1a48c1122ca5dfa1389b4f208d3}\label{class_fasta_header_ad0eaf1a48c1122ca5dfa1389b4f208d3} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+Third\+Party\+EMBLHeader} (std\+::vector$<$ std\+::string $>$ text\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_a84daae49fc65e05af311d5de5e839413}\label{class_fasta_header_a84daae49fc65e05af311d5de5e839413} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+Third\+Party\+EMBLHeader} (std\+::string raw\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_a7131c33aeae6470707da2aab948e8260}\label{class_fasta_header_a7131c33aeae6470707da2aab948e8260} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries make\+Third\+Party\+DDBJHeader} (std\+::string accession, std\+::string name, std\+::string comments="{}"{})
+\item 
+\Hypertarget{class_fasta_header_a5125f621a66c2aa7cb44b5e06c6608f8}\label{class_fasta_header_a5125f621a66c2aa7cb44b5e06c6608f8} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+Third\+Party\+DDBJHeader} (std\+::vector$<$ std\+::string $>$ text\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_abe0597565509d8fe630c0f8416b6b13a}\label{class_fasta_header_abe0597565509d8fe630c0f8416b6b13a} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+Third\+Party\+DDBJHeader} (std\+::string raw\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_a68909442cc77a155265fd96f57947398}\label{class_fasta_header_a68909442cc77a155265fd96f57947398} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries make\+PDBHeader} (std\+::string accession, std\+::string name, std\+::string comments="{}"{})
+\item 
+\Hypertarget{class_fasta_header_a8388ff7fcc3a78cc7efb3098f87d23e1}\label{class_fasta_header_a8388ff7fcc3a78cc7efb3098f87d23e1} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+PDBHeader} (std\+::vector$<$ std\+::string $>$ text\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_afa727e34bf90fe0e8109aabcaae2989b}\label{class_fasta_header_afa727e34bf90fe0e8109aabcaae2989b} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+PDBHeader} (std\+::string raw\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_a6a8fdcf3a8ffd737fd5d4b1ad69a2c02}\label{class_fasta_header_a6a8fdcf3a8ffd737fd5d4b1ad69a2c02} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries make\+GNLHeader} (std\+::string accession, std\+::string name, std\+::string comments="{}"{})
+\item 
+\Hypertarget{class_fasta_header_a795eaa06a6d1a46e7c0e74f03cb2a6e3}\label{class_fasta_header_a795eaa06a6d1a46e7c0e74f03cb2a6e3} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+GNLHeader} (std\+::vector$<$ std\+::string $>$ text\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_a1ddec40ce9cdc852137661967e62f748}\label{class_fasta_header_a1ddec40ce9cdc852137661967e62f748} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+GNLHeader} (std\+::string raw\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_af54c8473e22de0630dfe3a338b9dd6d5}\label{class_fasta_header_af54c8473e22de0630dfe3a338b9dd6d5} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries make\+NCBIRef\+Seq\+Header} (std\+::string accession, std\+::string name, std\+::string comments="{}"{})
+\item 
+\Hypertarget{class_fasta_header_a0efb5dd5c92789e28fddef16459aedb9}\label{class_fasta_header_a0efb5dd5c92789e28fddef16459aedb9} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+NCBIRef\+Seq\+Header} (std\+::vector$<$ std\+::string $>$ text\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_a536d47020a394a5dfbaed81a1f723dd2}\label{class_fasta_header_a536d47020a394a5dfbaed81a1f723dd2} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+NCBIRef\+Seq\+Header} (std\+::string raw\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_a1587d7c7563feca5f6de2123f403a465}\label{class_fasta_header_a1587d7c7563feca5f6de2123f403a465} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries make\+Patent\+SHeader} (std\+::string accession, std\+::string name, std\+::string comments="{}"{})
+\item 
+\Hypertarget{class_fasta_header_a71daea696a99fab8b3bb853620ea757a}\label{class_fasta_header_a71daea696a99fab8b3bb853620ea757a} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+Patent\+SHeader} (std\+::vector$<$ std\+::string $>$ text\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_a3172388249ebe9ddbd6bcacc0c4e523e}\label{class_fasta_header_a3172388249ebe9ddbd6bcacc0c4e523e} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+Patent\+SHeader} (std\+::string raw\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_a03c03a611e8ed9c155a3cc211a914c07}\label{class_fasta_header_a03c03a611e8ed9c155a3cc211a914c07} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries make\+DDBJHeader} (std\+::string accession, std\+::string name, std\+::string comments="{}"{})
+\item 
+\Hypertarget{class_fasta_header_adc01c734d43c6fb837d720834661ce40}\label{class_fasta_header_adc01c734d43c6fb837d720834661ce40} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+DDBJHeader} (std\+::vector$<$ std\+::string $>$ text\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_a8d7b1502ddd326c71a763be7b6a58d99}\label{class_fasta_header_a8d7b1502ddd326c71a763be7b6a58d99} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+DDBJHeader} (std\+::string raw\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_aae2a527dfaca66bf75da09137f720922}\label{class_fasta_header_aae2a527dfaca66bf75da09137f720922} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries make\+Patent\+LHeader} (std\+::string country, std\+::string patent, std\+::string sequence\+\_\+number, std\+::string comments="{}"{})
+\item 
+\Hypertarget{class_fasta_header_aecaa5d4ea47cea4b3aaefb4a61c0767e}\label{class_fasta_header_aecaa5d4ea47cea4b3aaefb4a61c0767e} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+Patent\+LHeader} (std\+::vector$<$ std\+::string $>$ text\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_a5f7a508a1c0372dea84a0c844faf2227}\label{class_fasta_header_a5f7a508a1c0372dea84a0c844faf2227} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+Patent\+LHeader} (std\+::string raw\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_a66e0c4c3e0b7b5c9f1a1611a907e98b6}\label{class_fasta_header_a66e0c4c3e0b7b5c9f1a1611a907e98b6} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries make\+Pre\+Grant\+Patent\+Header} (std\+::string country, std\+::string application\+\_\+number, std\+::string sequence\+\_\+number, std\+::string comments="{}"{})
+\item 
+\Hypertarget{class_fasta_header_ac20ec71b1c385ca5b196fd0ef791d7f1}\label{class_fasta_header_ac20ec71b1c385ca5b196fd0ef791d7f1} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+Pre\+Grant\+Patent\+Header} (std\+::vector$<$ std\+::string $>$ text\+\_\+header)
+\item 
+\Hypertarget{class_fasta_header_a2ab4194abbc35172776c249f454b0d82}\label{class_fasta_header_a2ab4194abbc35172776c249f454b0d82} 
+static std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries parse\+Pre\+Grant\+Patent\+Header} (std\+::string raw\+\_\+header)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_fasta_related}{Fasta\+Related}}}
+\begin{DoxyCompactItemize}
+\item 
+static bool {\bfseries is\+Header\+Char} (char header\+\_\+char)
+\item 
+static bool {\bfseries is\+Mono\+Header\+Char} (char header\+\_\+char)
+\item 
+static bool {\bfseries is\+Multi\+Header\+Char} (char header\+\_\+char)
+\item 
+static bool {\bfseries is\+Comment\+Char} (char comment\+\_\+char)
+\item 
+static bool {\bfseries is\+Blank\+Char} (char blank)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Fasta\+Header.\+hpp\item 
+Fasta\+Header.\+cpp\end{DoxyCompactItemize}

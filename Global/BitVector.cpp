@@ -3,8 +3,11 @@
 #include <map>
 #include <string>
 #include <vector>
+
 // TODO: Proteger les taleaux des copies
 
+// --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- Coords --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+// --- --- Constructor --- ---
 BitVector::Coords::Coords() {
     this->setBit(0);
     this->setOctet(0);
@@ -19,6 +22,7 @@ BitVector::Coords::Coords(size_t value) {
     this->setSize_t(value);
 }
 
+// --- --- Conversion --- ---
 size_t BitVector::Coords::toSize_t() const {
     return this->octet + (this->bit * 1000 / 8.0);
 }
@@ -27,6 +31,7 @@ std::string BitVector::Coords::toString() const {
     return "(O=" + std::to_string(this->octet) + " ; B=" + std::to_string(this->bit) + ")";
 }
 
+// --- --- Getters and setters --- ---
 unsigned short int BitVector::Coords::getBit() const {
     return this->bit;
 }
@@ -54,7 +59,6 @@ void BitVector::Coords::setBit(unsigned short int bit) {
     this->bit = bit;
 }
 
-
 void BitVector::Coords::setSize_t(size_t number) {
     size_t octet_number = number / 1000;
     unsigned short int bit_number = (number - (octet_number * 1000)) * 8 / 1000;
@@ -62,22 +66,166 @@ void BitVector::Coords::setSize_t(size_t number) {
     this->setOctet(octet_number);
 }
 
+void BitVector::Coords::setSize_t(const BitVector::Coords & coord) {
+    this->setSize_t(coord.toSize_t());
+}
+
+// --- --- Limitations --- ---
 size_t BitVector::Coords::maximumOctetNumber() {
     return BitVector::maximumOctetNumber();
 }
+
 size_t BitVector::Coords::maximumSize_t() {
     return BitVector::maximumOctetNumber() * 1000 + (7 * 1000 / 8);
 }
 
+// --- --- operators --- ---
 
+bool BitVector::Coords::operator==(const BitVector::Coords & other) const {
+    return (this->octet == other.getOctet() && this->bit == other.getBit()) ;
+}
+
+bool BitVector::Coords::operator!=(const BitVector::Coords & other) const {
+    return !(*this==other);
+}
+
+bool BitVector::Coords::operator>(const BitVector::Coords & other) const {
+    return (this->octet > other.getOctet() || (this->octet == other.getOctet() && this->bit > other.getBit()));
+}
+
+bool BitVector::Coords::operator>=(const BitVector::Coords & other) const {
+    return (this->octet > other.getOctet() || (this->octet == other.getOctet() && this->bit >= other.getBit()));
+}
+
+bool BitVector::Coords::operator<(const BitVector::Coords & other) const {
+    return (this->octet < other.getOctet() || (this->octet == other.getOctet() && this->bit < other.getBit()));
+}
+
+bool BitVector::Coords::operator<=(const BitVector::Coords & other) const {
+    return (this->octet < other.getOctet() || (this->octet == other.getOctet() && this->bit <= other.getBit()));
+}
+
+BitVector::Coords & BitVector::Coords::operator*=(size_t value) {
+    this->setSize_t(*this * value);
+    return *this;
+}
+
+BitVector::Coords & BitVector::Coords::operator/=(size_t value) {
+    this->setSize_t(*this / value);
+    return *this;
+}
+
+BitVector::Coords & BitVector::Coords::operator+=(const BitVector::Coords & other) {
+    this->setSize_t(*this + other);
+    return *this;
+}
+
+BitVector::Coords & BitVector::Coords::operator-=(const BitVector::Coords & other) {
+    this->setSize_t(*this - other);
+    return *this;
+}
+
+BitVector::Coords BitVector::Coords::operator+(const BitVector::Coords & other) {
+    if (!this->canBeAddedBy(other)) {
+        displayLengthError(raise, "Can not proceed this sum, maximum size would be reached", __FILE__, __func__);
+    }
+
+    return Coords(other.toSize_t() + this->toSize_t());
+}
+
+BitVector::Coords BitVector::Coords::operator-(const BitVector::Coords & other) {
+    if (!this->canBeSubtractedBy(other))  {
+        displayLengthError(raise, "Can not proceed this subtraction, a negative number would be reached", __FILE__, __func__);
+    }
+    return Coords(other.toSize_t() - this->toSize_t());
+}
+
+BitVector::Coords BitVector::Coords::operator*(size_t value) {
+    value = value * (1000 / 8);
+    Coords final_coord;
+
+    if (value == 0) {
+        // Avoid division by 0 in the next condition
+        final_coord.setSize_t(value);
+
+    } else if (!this->canMultiplyBy(value)) {
+        // The result will be greater than .
+        displayLengthError(raise, "Can not proceed this multiplication, maximum size would be reached", __FILE__, __func__);
+
+    } else {
+            final_coord.setSize_t(value * this->toSize_t());
+    }
+
+    return final_coord;
+}
+
+BitVector::Coords BitVector::Coords::operator/(size_t value) {
+    value =  value * (1000 / 8);
+    return Coords(this->toSize_t() / value);
+}
+
+BitVector::Coords& BitVector::Coords::operator++() {
+    this->increment();
+    return *this;
+}
+
+BitVector::Coords BitVector::Coords::operator++(int) {
+    Coords temp(this->getOctet(), this->getBit());
+    this->increment();
+    return temp;
+}
+
+BitVector::Coords& BitVector::Coords::operator--() {
+    this->decrement();
+    return *this;
+}
+
+BitVector::Coords BitVector::Coords::operator--(int) {
+    Coords temp(this->getOctet(), this->getBit());
+    this->decrement();
+    return temp;
+}
+
+void BitVector::Coords::increment() {
+    if (this->bit == 7) {
+        this->setBit(0);
+        this->setOctet(this->octet + 1);
+
+    } else {
+        this->setBit(this->bit + 1);
+    }
+}
+
+void BitVector::Coords::decrement() {
+    if (this->bit == 0) {
+        this->setBit(7);
+        this->setOctet(this->octet - 1);
+
+    } else {
+        this->setBit(this->bit - 1);
+    }
+}
+
+bool BitVector::Coords::canBeAddedBy(const Coords & other) const {
+    return (other.toSize_t() > this->maximumSize_t() - this->toSize_t());  
+}
+
+bool BitVector::Coords::canBeSubtractedBy(const Coords & other) const {
+    return (other.toSize_t() > this->toSize_t());  
+}
+
+bool BitVector::Coords::canMultiplyBy(size_t value) {
+    return (this->toSize_t() <= this->maximumSize_t() / value);
+}
+// --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- BitVector --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 // --- --- Constructors --- ---
 BitVector::BitVector(short unsigned int block_size) {
     if (block_size == 0) {
         displayInvalidArgument(raise, "Element size should be greater than 0. (Got 0.)", __FILE__, __func__);
     }
-    std::cout << block_size << std::endl;
+    this->_element_number = 0;
     this->_element_size = block_size;
-    this->resize(100);
+    this->resize(2);
 
 }
 
@@ -150,7 +298,6 @@ size_t BitVector::indexElementUntreated(size_t element)  const {
 
     // Elements
     return getSize_tUnit() * element ;
-    
 }
 
 BitVector::Coords BitVector::getCoordUnit() const  {
@@ -162,6 +309,14 @@ BitVector::Coords BitVector::getCoordUnit() const  {
 
 size_t BitVector::getSize_tUnit() const  {
     return getCoordUnit().toSize_t();
+}
+
+BitVector::Coords BitVector::start() const  {
+    return Coords(0, 0);
+}
+
+BitVector::Coords BitVector::end() const  {
+    return getCoordUnit() * this->_element_number;
 }
 
 // --- --- Utilities --- --- 
@@ -220,8 +375,12 @@ void BitVector::shrink() {
     this->resize(this->_element_number * this->getSize_tUnit() / 1000) ;
 }
 
+BitVector::Coords BitVector::MaximalCoordLimit() const {
+    return Coords(this->upperElementLimit() * this->getSize_tUnit());
+} 
+
 size_t BitVector::upperOctetLimit()  const {
-    return this->upperElementLimit() * this->getSize_tUnit();
+    return this->MaximalCoordLimit().getOctet();
 }
 
 size_t BitVector::upperElementLimit() const  {
@@ -249,12 +408,13 @@ size_t BitVector::maximumElementNumber() {
 }
 
 
-void BitVector::copyBits(char * from, char * to_tab, BitVector::Coords element_coord, BitVector::Coords to_coord,  BitVector::Coords from_coord, bool from_right, bool to_right) {
+void BitVector::copyBits(const char * from, char * to_tab, const BitVector::Coords element_coord,  BitVector::Coords from_coord, BitVector::Coords to_coord, bool from_right, bool to_right) {
     unsigned short int to_pos;
     unsigned short int from_pos;
+    BitVector::Coords current_coord_in_element;
 
-    while (to_coord != element_coord) {
-        if (to_coord.getOctet() == element_coord.getOctet()) {
+    while (current_coord_in_element != element_coord) {
+        if (current_coord_in_element.getOctet() == element_coord.getOctet()) {
             // Only bit at the left interesse us (the others are just placeholder)
             if (from_right) {
                 from_pos = from_coord.getBit();
@@ -276,14 +436,15 @@ void BitVector::copyBits(char * from, char * to_tab, BitVector::Coords element_c
         char to_mask = 1 << to_pos;
         char from_mask = 1 << from_pos;
         
-        if (to_tab[to_coord.getOctet()] & to_mask) { // Do a bit is present at the postion [to_pos] of this octet ?
+        if (from[from_coord.getOctet()] & to_mask) { // Do a bit is present at the postion [to_pos] of this octet ?
             // Set the from_pos th bit to  from_mask
-            from[from_coord.getOctet()] |= from_mask;
+            to_tab[to_coord.getOctet()] |= from_mask;
         } else {
             // Set the from_pos th bit  to from_mask
-            from[from_coord.getOctet()] &= ~from_mask;
+            to_tab[to_coord.getOctet()] &= ~from_mask;
         }
 
+        current_coord_in_element.increment();
         to_coord.increment();
         from_coord.increment();
     }
@@ -301,17 +462,71 @@ bool BitVector::operator[]( BitVector::Coords coord) const {
     return this->get(coord);
 }
 
-std::vector<char> BitVector::get(size_t index) const {
-    
+char * BitVector::get(size_t index) const {
+    if (index > this->_element_number) {
+        displayLengthError(raise, "Maximum length reached : " + std::to_string(index) + " > " + std::to_string(this->_element_number) + ".", __FILE__, __func__);
+    }
     BitVector::Coords start = this->indexElement(index);
     BitVector::Coords element = this->getCoordUnit();
-    BitVector::Coords end = start + element;
-    return std::vector<char> {};
+    char * to_tab = new char[this->_element_size / 8 + 1 ];
+    BitVector::copyBits(this->_data, to_tab, element, start, BitVector::Coords(), true, false);
+    return to_tab;
 }   
 
-std::vector<char>  BitVector::operator[](size_t index) const {
+char * BitVector::operator[](size_t index) const {
     return this->get(index);
 }
+
+void BitVector::set(size_t index, char * tab, bool restrictions) {
+    Coords coord = this->indexElement(index);
+    if (coord > this->lastBit()) {
+        displayLengthError(raise, "Invalid coordinates, maximal position exceed : " + coord.toString() + " > " + this->lastBit().toString(), __FILE__, __func__);
+    } 
+    if (restrictions && coord > this->end()) {
+        displayLengthError(raise, "Invalid coordinates, last element position exceed : " + coord.toString() + " > " + this->lastBit().toString(), __FILE__, __func__);
+    }
+    BitVector::copyBits(tab, this->_data, this->getCoordUnit(), Coords(0, 0), coord, false, true);
+}
+
+void BitVector::set(Coords coord, bool value, bool restrictions) {
+    if (coord > this->MaximalCoordLimit()) {
+        displayLengthError(raise, "Invalid coordinates, maximal position exceed : " + coord.toString() + " > " + this->lastBit().toString(), __FILE__, __func__);
+
+    } if (restrictions && coord > this->end()) {
+        displayLengthError(raise, "Invalid coordinates, last element position exceed : " + coord.toString() + " > " + this->lastBit().toString(), __FILE__, __func__);
+    }
+
+    char mask = 1 << coord.getBit();
+    if (value) {
+        this->_data[coord.getOctet()] |= mask;
+    } else {
+        this->_data[coord.getOctet()] &= ~mask;
+    }
+}
+
+
+int BitVector::testClass(errorMods error_mod) {
+    displayMessage(error_mod, " -- Initialisation of a vector with element size 8 -- ");
+    BitVector vec8(8);
+
+    displayMessage(error_mod, " -- Initialisation of a vector with element size 11 -- ");
+    BitVector vec11(11);
+
+    displayMessage(error_mod, " -- Initialisation of a vector with element size 5 -- ");
+    BitVector vec5(5);
+
+    unsigned short int max_element_size = 0;
+    max_element_size -= 1;
+    displayMessage(error_mod, " -- Initialisation of a vector with element size " + std::to_string(max_element_size) + " (maximum size)");
+    BitVector vecMax(max_element_size);
+
+    displayMessage(error_mod, vec5.end().toString());
+    vec5.set(Coords(0, 1), true);
+    std::cout << vec5.get(Coords(0, 2)) << std::endl; 
+    return 0;
+ }
+
+
 // std::map<char, size_t> BitVector::searchElement(size_t data_size, short unsigned int element_size, size_t octet_position, short unsigned int  bit_position, bool (*func)(const std::map<char, size_t> &)) {
 //     // float temp = 1.0 / 3.0;
 //     // float a = 0;

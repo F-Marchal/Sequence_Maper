@@ -119,7 +119,10 @@
 
 
 int main() {
-
+    unsigned int alpha = 0;
+    alpha --;
+    displayMessage(display, std::to_string(alpha));
+    BitVector::testClass(display);
 
     // Retransform to vit
 

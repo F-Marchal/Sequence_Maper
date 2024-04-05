@@ -1,0 +1,124 @@
+\doxysection{Bit\+Vector Class Reference}
+\hypertarget{class_bit_vector}{}\label{class_bit_vector}\index{BitVector@{BitVector}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}
+\begin{DoxyCompactList}\small\item\em Class that represent coordinates inside a \doxylink{class_bit_vector}{Bit\+Vector}. It memorize octet position and bit position n order to facilitate accession to elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_bit_vector_a3a10dc26ed8d3adc29372d8e82b4e9f5}\label{class_bit_vector_a3a10dc26ed8d3adc29372d8e82b4e9f5} 
+{\bfseries Bit\+Vector} (short unsigned int block\+\_\+size)
+\item 
+\Hypertarget{class_bit_vector_a49233caeb2137deab3cd9de111e2a5fe}\label{class_bit_vector_a49233caeb2137deab3cd9de111e2a5fe} 
+size\+\_\+t {\bfseries get\+Data\+Size} () const
+\item 
+\Hypertarget{class_bit_vector_a5339660cfb315ab5de7f78bdf5af4ce1}\label{class_bit_vector_a5339660cfb315ab5de7f78bdf5af4ce1} 
+size\+\_\+t {\bfseries get\+Element\+Number} () const
+\item 
+\Hypertarget{class_bit_vector_ab30ea2b408107e4e6bc8095b5a64a1dd}\label{class_bit_vector_ab30ea2b408107e4e6bc8095b5a64a1dd} 
+size\+\_\+t {\bfseries size} () const
+\item 
+\Hypertarget{class_bit_vector_a93ab8bc2ec39bf299ae28ffcad504b41}\label{class_bit_vector_a93ab8bc2ec39bf299ae28ffcad504b41} 
+\mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}} {\bfseries index\+Element} (size\+\_\+t element\+\_\+position) const
+\item 
+\Hypertarget{class_bit_vector_a04e6d0b67ee9b42ccec437b0176067fe}\label{class_bit_vector_a04e6d0b67ee9b42ccec437b0176067fe} 
+size\+\_\+t {\bfseries index\+Element\+Untreated} (size\+\_\+t element\+\_\+position) const
+\item 
+\Hypertarget{class_bit_vector_a5af3c70f593aac387de23c7e6e5ae57e}\label{class_bit_vector_a5af3c70f593aac387de23c7e6e5ae57e} 
+size\+\_\+t {\bfseries index\+Coordinate} (const \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}} \&coord, error\+Mods strictness=ignore) const
+\item 
+\Hypertarget{class_bit_vector_a354c83853bc3622efa5d45efcae97286}\label{class_bit_vector_a354c83853bc3622efa5d45efcae97286} 
+std\+::tuple$<$ size\+\_\+t, size\+\_\+t, size\+\_\+t $>$ {\bfseries index\+Coordinate\+Untreated} (const \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}} \&coord) const
+\item 
+\Hypertarget{class_bit_vector_acdd09c93f400ac2e0680f90ae051f604}\label{class_bit_vector_acdd09c93f400ac2e0680f90ae051f604} 
+\mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}} {\bfseries start} () const
+\item 
+\Hypertarget{class_bit_vector_a52e225a302d21efcd4f182c960a6277c}\label{class_bit_vector_a52e225a302d21efcd4f182c960a6277c} 
+\mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}} {\bfseries end} () const
+\item 
+\Hypertarget{class_bit_vector_a9f4b8b754c1ca59027f7e0384d0c3577}\label{class_bit_vector_a9f4b8b754c1ca59027f7e0384d0c3577} 
+void {\bfseries double\+Size} ()
+\item 
+\Hypertarget{class_bit_vector_ae70704fa90bd9b35b92adf2ef64bf6e3}\label{class_bit_vector_ae70704fa90bd9b35b92adf2ef64bf6e3} 
+void {\bfseries resize} (size\+\_\+t data\+\_\+size)
+\item 
+\Hypertarget{class_bit_vector_a80a4aa212535129b881b4fb2623ce222}\label{class_bit_vector_a80a4aa212535129b881b4fb2623ce222} 
+void {\bfseries shrink} ()
+\item 
+\Hypertarget{class_bit_vector_a30e79c2961a0d900bb8b3202955a6215}\label{class_bit_vector_a30e79c2961a0d900bb8b3202955a6215} 
+size\+\_\+t {\bfseries current\+Capacity} ()
+\item 
+\Hypertarget{class_bit_vector_abce09ed2bb35b011fd954101fc59f472}\label{class_bit_vector_abce09ed2bb35b011fd954101fc59f472} 
+\mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}} {\bfseries last\+Bit} ()
+\item 
+\Hypertarget{class_bit_vector_a115789c8a9812eabb52f8843cd4e9965}\label{class_bit_vector_a115789c8a9812eabb52f8843cd4e9965} 
+\mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}} {\bfseries get\+Coord\+Unit} () const
+\item 
+\Hypertarget{class_bit_vector_af68cda7444ec4459393bbfa423f0a7dd}\label{class_bit_vector_af68cda7444ec4459393bbfa423f0a7dd} 
+size\+\_\+t {\bfseries get\+Size\+\_\+t\+Unit} () const
+\item 
+\Hypertarget{class_bit_vector_a87e099aba27ebb0f67c07dd8314828e7}\label{class_bit_vector_a87e099aba27ebb0f67c07dd8314828e7} 
+bool {\bfseries max\+Size\+Is\+Reached} () const
+\item 
+\Hypertarget{class_bit_vector_a00aeec5e60b478d74e1540f34f46e37c}\label{class_bit_vector_a00aeec5e60b478d74e1540f34f46e37c} 
+bool {\bfseries max\+Data\+Size\+Is\+Reached} () const
+\item 
+\Hypertarget{class_bit_vector_a346dbe2e158d2cfda20212e7f93e8402}\label{class_bit_vector_a346dbe2e158d2cfda20212e7f93e8402} 
+bool {\bfseries max\+Element\+Size\+Is\+Reached} () const
+\item 
+\Hypertarget{class_bit_vector_a09df6c026291cf6288192f3a014046c0}\label{class_bit_vector_a09df6c026291cf6288192f3a014046c0} 
+size\+\_\+t {\bfseries upper\+Octet\+Limit} () const
+\item 
+\Hypertarget{class_bit_vector_a2bd3ec220fc613a76395a28ff2f4e862}\label{class_bit_vector_a2bd3ec220fc613a76395a28ff2f4e862} 
+size\+\_\+t {\bfseries upper\+Element\+Limit} () const
+\item 
+\Hypertarget{class_bit_vector_a214e556dd89acce2427a378c5520adbd}\label{class_bit_vector_a214e556dd89acce2427a378c5520adbd} 
+\mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}} {\bfseries Maximal\+Coord\+Limit} () const
+\item 
+\Hypertarget{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}\label{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d} 
+bool {\bfseries get} (\mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}} coord) const
+\item 
+\Hypertarget{class_bit_vector_a1fe4772dbd79ee266a2617f842d6d826}\label{class_bit_vector_a1fe4772dbd79ee266a2617f842d6d826} 
+bool {\bfseries operator\mbox{[}$\,$\mbox{]}} (\mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}} coord) const
+\item 
+\Hypertarget{class_bit_vector_a2d0fe43b80b63edbd64dc887fd87d915}\label{class_bit_vector_a2d0fe43b80b63edbd64dc887fd87d915} 
+char \texorpdfstring{$\ast$}{*} {\bfseries get} (size\+\_\+t index) const
+\item 
+\Hypertarget{class_bit_vector_adf6f5604931d8bace36496046ed30bf7}\label{class_bit_vector_adf6f5604931d8bace36496046ed30bf7} 
+char \texorpdfstring{$\ast$}{*} {\bfseries operator\mbox{[}$\,$\mbox{]}} (size\+\_\+t index) const
+\item 
+\Hypertarget{class_bit_vector_a688521e26eb27149d1625e9229222153}\label{class_bit_vector_a688521e26eb27149d1625e9229222153} 
+void {\bfseries set} (size\+\_\+t index, char \texorpdfstring{$\ast$}{*}tab, bool restrictions=true)
+\item 
+\Hypertarget{class_bit_vector_a9c63a7f853693a19595fa92d487f92b5}\label{class_bit_vector_a9c63a7f853693a19595fa92d487f92b5} 
+void {\bfseries set} (\mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}} coord, bool value, bool restrictions=true)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_bit_vector_aa3228d2bacb1bb0f6072d73d43a49456}\label{class_bit_vector_aa3228d2bacb1bb0f6072d73d43a49456} 
+static size\+\_\+t {\bfseries maximum\+Octet\+Number} ()
+\item 
+\Hypertarget{class_bit_vector_a68b14af0886039ddcf55c82a250deb4c}\label{class_bit_vector_a68b14af0886039ddcf55c82a250deb4c} 
+static size\+\_\+t {\bfseries maximum\+Element\+Number} ()
+\item 
+\Hypertarget{class_bit_vector_a6b894661b342948ee55ee4828697a166}\label{class_bit_vector_a6b894661b342948ee55ee4828697a166} 
+static void {\bfseries copy\+Bits} (const char \texorpdfstring{$\ast$}{*}from, char \texorpdfstring{$\ast$}{*}to\+\_\+tab, const \mbox{\hyperlink{class_bit_vector_1_1_coords}{Bit\+Vector\+::\+Coords}} element\+\_\+coord, \mbox{\hyperlink{class_bit_vector_1_1_coords}{Bit\+Vector\+::\+Coords}} from\+\_\+coord, \mbox{\hyperlink{class_bit_vector_1_1_coords}{Bit\+Vector\+::\+Coords}} to\+\_\+coord, bool from\+\_\+right=false, bool to\+\_\+right=false)
+\item 
+\Hypertarget{class_bit_vector_a7290f33b28dfe93c7020372651b5d848}\label{class_bit_vector_a7290f33b28dfe93c7020372651b5d848} 
+static int {\bfseries test\+Class} (error\+Mods error\+\_\+mod)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_bit_vector_aece011ed1a0d697e5f777a7c2e147fcd}\label{class_bit_vector_aece011ed1a0d697e5f777a7c2e147fcd} 
+void {\bfseries \+\_\+kill\+Internal\+Data} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Bit\+Vector.\+hpp\item 
+Bit\+Vector.\+cpp\end{DoxyCompactItemize}

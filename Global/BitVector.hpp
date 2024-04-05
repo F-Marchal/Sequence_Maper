@@ -4,9 +4,7 @@
 #include <vector>
 #include "Utilities.hpp"
 // Parler de : Construction de getElementNumber / getPosInArray;
-//          Pb mathematics pour l'ameiorer (*1000, decouverte float, peurs de floatr = apro, test)
-// TODO: Remplacer jeu sur *1000 / 1000 dans par la methode dans maximumElementNumber getPosInArray 
-// TODO:        Remplacer maximalInternalSize ??
+
 // TODO: Faire maxPositionInArray;
 // TODO: Tester les func
 // TODO: Finir les autres implementations
@@ -26,119 +24,430 @@ protected:
     
 public:
 
-    // Coords
+    /**
+     * @brief Class that represent coordinates inside a \ref BitVector. It memorize octet position and bit position n order 
+     * to facilitate accession to elements.
+     */
     class Coords {
     private:
+        /**
+         * @brief Position of an octet inside a \ref BitVector. Can not be greater than : \ref Coords::maximumOctetNumber.
+         */
         size_t octet;
+        /**
+         * @brief Position of a bit inside an octet. Can not be greater than 7.
+         */
         unsigned short int bit;
     
     public:
-        Coords();
-        Coords(size_t octet, unsigned short int bit);
-        Coords(size_t value);
-        
+        // --- --- Constructor --- ---
 
+        /**
+         * @brief Construct a new Coords object. \ref Coords::octet = 0 and \ref Coords::bit = 0. 
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         */
+        Coords();
+
+        /**
+         * @brief Construct a new Coords object.
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @param octet initialise \ref Coords::octet.
+         * @param bit initialise \ref Coords::bit.
+         */
+        Coords(size_t octet, unsigned short int bit);
+
+        /**
+         * @brief Construct a new Coords object using a size_t. (See \ref Coords::toSize_t)
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @param value A size_t value that contain intel about bit value and octet value. See \ref Coords::toSize_t)
+         */
+        Coords(size_t value);
+
+        /**
+         * @brief Construct a new Coords object by copy.
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @param other The object to copy.
+         */
+        Coords(const Coords & other) : Coords(other.toSize_t()) {}
+
+        // --- --- Conversion --- ---
+
+        /**
+         * @brief Translate octet and bit value inside a size_t. Allow easier mathematic computations.
+         *  - The last 3 digit represent the bit (n / 8 * 1000). The  
+         *  - The other digit represent the octet
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @return size_t that represent octet and bit value.
+         */
         size_t toSize_t() const;
+
+        /**
+         * @brief Turn Coordinates inside a string.
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @return std::string "(O=X, B=N)"
+         */
         std::string toString() const;
 
-        unsigned short int getBit() const;
+        // --- --- Getters and setters --- ---
+
+        /**
+         * @brief Get \ref Coords::bit .
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @return unsigned short int Bit position int the octet.
+         */
+        unsigned short int getBit() const ;
+
+        /**
+         * @brief Get \ref Coords::octet .
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @return size_t Octet position int a \ref BitVector.
+         */
         size_t getOctet() const;
 
+        /**
+         * @brief Set \ref Coords::octet value.
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @param octet A size_t that should be inferior to Coords::>maximumOctetNumber()
+         * @throw invalid_argument When \p octet > \ref Coords::maximumOctetNumber
+         */
         void setOctet(size_t octet);
-        void setBit(unsigned short int bit);
-        void setSize_t(size_t octet);
 
+        /**
+         * @brief Set \ref Coords::bit value
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @param bit unsigned short int lower or equal to 7.
+         * @throw invalid_argument When \p octet > 7.
+         */
+        void setBit(unsigned short int bit);
+
+        /**
+         * @brief Set \ref Coords::octet and \ref Coords::bit .
+         * @param value  size_t formatted like in Coords::toSize_t() .
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         */
+        void setSize_t(size_t value);
+        
+         /**
+         * @brief Set \ref Coords::octet and \ref Coords::bit .
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * (Assuming mathematics operations are O(1))
+         * @param value Coords .
+         */
+        void setSize_t(const Coords & coord);
+
+        // --- --- Limitations --- ---
+
+        /**
+         * @brief return the last octet position that can be hold by a \ref Coords. 
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @return size_t 
+         */
         static size_t maximumOctetNumber();
+
+        /**
+         * @brief return the maximum Size_t value that can be returned by a \ref Coords. 
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @return size_t formatted like in Coords::toSize_t() .
+         */
         static size_t maximumSize_t();
 
-        bool operator==(const Coords & other) const {
-            return (this->octet == other.getOctet() && this->bit == other.getBit()) ;
-        }
+        // --- --- operators --- ---
 
-        bool operator!=(const Coords & other) const {
-            return !(*this==other);
-        }
+        /**
+         * @brief Say if another Coords is equal to this one.
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @param other Another Coords.
+         * @return true 
+         * @return false 
+         */
+        bool operator==(const Coords & other) const ;
 
-        bool operator>(const Coords & other) const {
-            return (this->octet > other.getOctet() || (this->octet == other.getOctet() && this->bit > other.getBit()));
-        }
+        /**
+         * @brief Say if another Coords is not equal to this one.
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @param other Another Coords.
+         * @return true 
+         * @return false 
+         */
+        bool operator!=(const Coords & other) const ;
 
-        bool operator>=(const Coords & other) const {
-            return (this->octet > other.getOctet() || (this->octet == other.getOctet() && this->bit >= other.getBit()));
-        }
+        /**
+         * @brief Say if this object is bigger than another Coords.
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @param other Another Coords.
+         * @return true 
+         * @return false 
+         */
+        bool operator>(const Coords & other) const ;
 
-        bool operator<(const Coords & other) const {
-            return (this->octet < other.getOctet() || (this->octet == other.getOctet() && this->bit < other.getBit()));
-        }
+        /**
+         * @brief Say if this object is bigger or equal than another Coords.
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @param other Another Coords.
+         * @return true 
+         * @return false 
+         */
+        bool operator>=(const Coords & other) const ;
 
-        bool operator<=(const Coords & other) const {
-            return (this->octet < other.getOctet() || (this->octet == other.getOctet() && this->bit <= other.getBit()));
-        }
+        /**
+         * @brief Say if this object is lower than another Coords.
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @param other Another Coords.
+         * @return true 
+         * @return false 
+         */
+        bool operator<(const Coords & other) const ;
+        
+        /**
+         * @brief Say if this object is lower or equal than another Coords.
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @param other Another Coords.
+         * @return true 
+         * @return false 
+         */
+        bool operator<=(const Coords & other) const ;
 
-        Coords & operator*=(size_t value) {
-            //WARNING: no protection on value
-            value = (value * 1000 * 7 / 1000);
+        /**
+         * @brief Multiply this object by an integer.
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @param value an integer.
+         * @return Coords & (this object)
+         */
+        Coords & operator*=(size_t value) ;
 
-            size_t this_size = this->toSize_t();
-            if (value == 0) {
-                // Avoid division by 0 in the next condition
-                this->setSize_t(value);
+        /**
+         * @brief Divide this coordinate by an integer. (Work as integer division)
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @param value an integer.
+         * @return Coords & (this object)
+         */
+        Coords & operator/=(size_t value) ;
 
-            } else if (this_size > this->maximumSize_t() / value) {
-                // The result will be greater than .
-                displayLengthError(raise, "Can not proceed this multiplication, maximum size would be reached", __FILE__, __func__);
+        /**
+         * @brief Addition of two Coords. An error can be raised if \p other is too big for \ref Coords::maximumOctetNumber.
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @param other Another Coords.
+         * @return Coords& 
+         */
+        Coords & operator+=(const Coords & other) ;
+        
+        /**
+         * @brief subtraction of two Coords. An error can be raised if the result in lower than 0 octets.
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @param other 
+         * @return Coords& 
+         */
+        Coords & operator-=(const Coords & other) ;
 
-            } else {
-                 this->setSize_t(value * this_size);
-            }
+        /**
+         * @brief Addition of two Coords. An error can be raised if \p other is too big for \ref Coords::maximumOctetNumber.
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @param other Another Coords.
+         * @return Coords
+         */
+        Coords operator+(const Coords & other) ;
 
-            return *this;
-        }
+        /**
+         * @brief subtraction of two Coords. An error can be raised if the result in lower than 0 octets.
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @param other Another Coords.
+         * @return Coords& 
+         */
+        Coords operator-(const Coords & other) ;
 
-        Coords & operator/=(size_t value) {
-            value = (value * 1000 * 7 / 1000);
-            this->setSize_t(this->toSize_t() / value);
-            return *this;
-        }
+        /**
+         * @brief Multiply this object by an integer.
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @param value an integer.
+         * @return Coords
+         */
+        Coords operator*(size_t value) ;
 
-        Coords operator+(const Coords other) {
-            if (other.toSize_t() > this->maximumSize_t() - this->toSize_t())  {
-                displayLengthError(raise, "Can not proceed this sum, maximum size would be reached", __FILE__, __func__);
-            }
+        /**
+         * @brief Divide this coordinate by an integer. (Work as integer division)
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @param value an integer.
+         * @return Coords
+         */
+        Coords operator/(size_t value) ;
 
-            return Coords(other.toSize_t() + this->toSize_t());
-        }
+        /**
+         * @brief Increment this coordinates by 1 bit. (++Coord)
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @return Coords & 
+         */
+        Coords& operator++() ;
 
-        Coords operator-(const Coords other) {
-            if (other.toSize_t() >  this->toSize_t())  {
-                displayLengthError(raise, "Can not proceed this subtraction, a negative number would be reached", __FILE__, __func__);
-            }
+        /**
+         * @brief Increment this coordinates by 1 bit. (Coord++)
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @return Coords & 
+         */
+        Coords operator++(int) ;
+        
+        /**
+         * @brief decrement this coordinates by 1 bit. (--Coord)
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @return Coords & 
+         */
+        Coords& operator--() ;
+        
+        /**
+         * @brief decrement this coordinates by 1 bit. (Coord--)
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @return Coords & 
+         */
+        Coords operator--(int) ;
+        
+        /**
+         * @brief Increment this coordinates by 1 bit. (Coord++)
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         */
+        void increment() ;
 
-            return Coords(other.toSize_t() - this->toSize_t());
-        }
+        /**
+         * @brief decrement this coordinates by 1 bit
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         */
+        void decrement() ;
 
-        // TODO: ++ 
-        // TODO: --
+        /**
+         * @brief Do another Coords can be added to this coord (without any error) ?
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @param other another Coords
+         * @return true 
+         * @return false 
+         */
+        bool canBeAddedBy(const Coords & other) const ;
+       
+        /**
+         * @brief Do another Coords can be subtracted to this coord (without any error) ?
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @param other another Coords
+         * @return true 
+         * @return false 
+         */
+        bool canBeSubtractedBy(const Coords & other) const ;
 
-        void increment() {
-            if (this->bit == 7) {
-                this->setBit(0);
-                this->setOctet(this->octet + 1);
-
-            } else {
-                this->setBit(this->bit + 1);
-            }
-        }
-
-        void decrement() {
-            if (this->bit == 0) {
-                this->setBit(7);
-                this->setOctet(this->octet - 1);
-
-            } else {
-                this->setBit(this->bit - 1);
-            }
-        }
+        /**
+         * @brief Do this value can be used to multiply this coordinate ?
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @param value size_t
+         * @return true 
+         * @return false 
+         */
+        bool canMultiplyBy(size_t value) ;
     };
 
 
@@ -164,12 +473,20 @@ public:
 
    
     // --- Interaction ---
+    Coords start() const;
+    Coords end() const;
 
     // --- size ---
     void doubleSize();
     void resize(size_t data_size);
     void shrink();
-
+    size_t currentCapacity() {
+        return this->indexCoordinate(BitVector::Coords(this->_data_size , 0)); 
+    }
+    Coords lastBit() {
+        return Coords(this->_data_size, 7); 
+    }
+    
     //
     Coords getCoordUnit() const;
     size_t getSize_tUnit() const;
@@ -178,20 +495,25 @@ public:
     bool maxElementSizeIsReached() const;
     size_t upperOctetLimit() const;
     size_t upperElementLimit() const;
-    
+    Coords MaximalCoordLimit() const;
+
     static size_t maximumOctetNumber();
     static size_t maximumElementNumber();
     
-    static void copyBits(char * main_tab, char * modif, Coords element_coord, Coords main_coord,  Coords modif_coord, bool from_right=false, bool to_right=false);
+    static void copyBits(const char * from, char * to_tab, const BitVector::Coords element_coord,  BitVector::Coords from_coord, BitVector::Coords to_coord, bool from_right=false, bool to_right=false);
     
     //
     bool get(Coords coord) const;
     bool operator[](Coords coord) const;
-    std::vector<char>  get(size_t index) const;
-    std::vector<char>  operator[](size_t index) const;
+    char * get(size_t index) const;
+    char * operator[](size_t index) const;
+    
+    void set(size_t index, char * tab, bool restrictions = true);
+    void set(Coords coord, bool value, bool restrictions = true);
+
 
     // test
-    static int testClass();
+    static int testClass(errorMods error_mod);
 };
 
 

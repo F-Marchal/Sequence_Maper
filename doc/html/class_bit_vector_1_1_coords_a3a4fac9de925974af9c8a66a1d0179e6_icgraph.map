@@ -1,0 +1,13 @@
+<map id="BitVector::Coords::toSize_t" name="BitVector::Coords::toSize_t">
+<area shape="rect" id="Node000001" title="Translate octet and bit value inside a size_t. Allow easier mathematic computations." alt="" coords="203,133,345,173"/>
+<area shape="rect" id="Node000002" href="$class_bit_vector_1_1_coords.html#a4890717747110e1d72e428798352b343" title="Do another Coords can be added to this coord (without any error) ?" alt="" coords="9,5,151,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="239,126,199,92,153,60,131,48,134,43,156,55,203,88,243,122"/>
+<area shape="rect" id="Node000003" href="$class_bit_vector_1_1_coords.html#a7c928afd26dcbe5a4bf67cf3edb8bd68" title="Do another Coords can be subtracted to this coord (without any error) ?" alt="" coords="5,69,155,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="199,131,140,112,142,107,200,126"/>
+<area shape="rect" id="Node000004" href="$class_bit_vector_1_1_coords.html#ab3c2dce52e46cb111b49626c8615ad64" title="Addition of two Coords. An error can be raised if other is too big for Coords::maximumOctetNumber." alt="" coords="9,133,151,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="189,156,151,156,151,151,189,151"/>
+<area shape="rect" id="Node000005" href="$class_bit_vector_1_1_coords.html#a7a9d3235b586dec8118f946804562dd0" title="subtraction of two Coords. An error can be raised if the result in lower than 0 octets." alt="" coords="9,197,151,237"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="200,180,142,200,140,195,199,175"/>
+<area shape="rect" id="Node000006" href="$class_bit_vector_1_1_coords.html#af73d998e959c0225be25334fec589e35" title="Set Coords::octet and Coords::bit ." alt="" coords="9,261,151,301"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="243,185,203,219,156,252,134,264,131,259,153,247,199,215,239,181"/>
+</map>

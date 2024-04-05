@@ -1,0 +1,124 @@
+\doxysection{Fasta\+Header.\+hpp}
+\hypertarget{_fasta_header_8hpp_source}{}\label{_fasta_header_8hpp_source}\index{FastaHeader.hpp@{FastaHeader.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FASTAHEADER\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FASTAHEADER\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../Global/Header.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}FastaRelated.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <tuple>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_fasta_header}{FastaHeader}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_fasta_related}{FastaRelated}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_header}{Header}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ \ \ \ \ std::string\ identifier\_format;}
+\DoxyCodeLine{00014\ \ \ \ \ std::map<std::string,\ std::string>\ identifier;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_fasta_header}{FastaHeader}}(std::string\ raw\_header);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{size\_t}\ findFirstWord(std::string\ text);\ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ clearRawHeader(std::string\&\ raw\_header);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<std::string>\ cutRawHeader(std::string\ raw\_header);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseRawHeader(std::string\ raw\_header);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseRawHeader(std::vector<std::string>);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{static}\ std::tuple<std::string,\ std::string>\ intermediateMakeFormatFromVector(std::vector<std::string>\ text\_header,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ min\_size,\ std::string\ format);}
+\DoxyCodeLine{00027\ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ makeGenInfoBackboneIdHeader(std::string\ accession,\ std::string\ comments=\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseGenInfoBackboneIdHeader(std::vector<std::string>\ text\_header);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseGenInfoBackboneIdHeader(std::string\ raw\_header);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ makeGenInfoBackboneMoltypeHeader(std::string\ accession,\ std::string\ comments=\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseGenInfoBackboneMoltypeHeader(std::vector<std::string>\ text\_header);}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseGenInfoBackboneMoltypeHeader(std::string\ raw\_header);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ makeGenInfoImportIdHeader(std::string\ accession,\ std::string\ comments=\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseGenInfoImportIdHeader(std::vector<std::string>\ text\_header);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseGenInfoImportIdHeader(std::string\ raw\_header);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ makeGenInfoIntegratedDatabaseHeader(std::string\ accession,\ std::string\ comments=\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseGenInfoIntegratedDatabaseHeader(std::vector<std::string>\ text\_header);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseGenInfoIntegratedDatabaseHeader(std::string\ raw\_header);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ makeLocalSequenceIdentifierHeader(std::string\ accession,\ std::string\ comments=\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseLocalSequenceIdentifierHeader(std::vector<std::string>\ text\_header);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseLocalSequenceIdentifierHeader(std::string\ raw\_header);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ makeGenbankHeader(std::string\ accession,\ std::string\ locus,\ std::string\ comments=\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseGenbankHeader(std::vector<std::string>\ text\_header);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseGenbankHeader(std::string\ raw\_header);}
+\DoxyCodeLine{00054\ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ makeEMBLHeader(std::string\ accession,\ std::string\ locus,\ std::string\ comments=\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseEMBLHeader(std::vector<std::string>\ text\_header);}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseEMBLHeader(std::string\ raw\_header);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ makePIRHeader(std::string\ accession,\ std::string\ name,\ std::string\ comments=\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parsePIRHeader(std::vector<std::string>\ text\_header);}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parsePIRHeader(std::string\ raw\_header);}
+\DoxyCodeLine{00062\ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ makePIFHeader(std::string\ accession,\ std::string\ name,\ std::string\ comments=\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parsePIFHeader(std::vector<std::string>\ text\_header);}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parsePIFHeader(std::string\ raw\_header);}
+\DoxyCodeLine{00066\ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ makeSwissProtHeader(std::string\ accession,\ std::string\ name,\ std::string\ comments=\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseSwissProtHeader(std::vector<std::string>\ text\_header);}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseSwissProtHeader(std::string\ raw\_header);}
+\DoxyCodeLine{00070\ \ \ \ \ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ makeTrEMBLHeader(std::string\ accession,\ std::string\ name,\ std::string\ comments=\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseTrEMBLHeader(std::vector<std::string>\ text\_header);}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseTrEMBLHeader(std::string\ raw\_header);}
+\DoxyCodeLine{00074\ \ \ \ \ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ makeThirdPartyGenbankHeader(std::string\ accession,\ std::string\ name,\ std::string\ comments=\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseThirdPartyGenbankHeader(std::vector<std::string>\ text\_header);}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseThirdPartyGenbankHeader(std::string\ raw\_header);}
+\DoxyCodeLine{00078\ \ \ \ \ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ makeThirdPartyEMBLHeader(std::string\ accession,\ std::string\ name,\ std::string\ comments=\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseThirdPartyEMBLHeader(std::vector<std::string>\ text\_header);}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseThirdPartyEMBLHeader(std::string\ raw\_header);}
+\DoxyCodeLine{00082\ \ \ \ \ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ makeThirdPartyDDBJHeader(std::string\ accession,\ std::string\ name,\ std::string\ comments=\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseThirdPartyDDBJHeader(std::vector<std::string>\ text\_header);}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseThirdPartyDDBJHeader(std::string\ raw\_header);}
+\DoxyCodeLine{00086\ \ \ \ \ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ makePDBHeader(std::string\ accession,\ std::string\ name,\ std::string\ comments=\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parsePDBHeader(std::vector<std::string>\ text\_header);}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parsePDBHeader(std::string\ raw\_header);}
+\DoxyCodeLine{00090\ \ \ \ \ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ makeGNLHeader(std::string\ accession,\ std::string\ name,\ std::string\ comments=\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseGNLHeader(std::vector<std::string>\ text\_header);}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseGNLHeader(std::string\ raw\_header);}
+\DoxyCodeLine{00094\ \ \ \ \ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ makeNCBIRefSeqHeader(std::string\ accession,\ std::string\ name,\ std::string\ comments=\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseNCBIRefSeqHeader(std::vector<std::string>\ text\_header);}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseNCBIRefSeqHeader(std::string\ raw\_header);}
+\DoxyCodeLine{00098\ \ \ \ \ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ makePatentSHeader(std::string\ accession,\ std::string\ name,\ std::string\ comments=\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parsePatentSHeader(std::vector<std::string>\ text\_header);}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parsePatentSHeader(std::string\ raw\_header);}
+\DoxyCodeLine{00102\ \ \ \ \ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ makeDDBJHeader(std::string\ accession,\ std::string\ name,\ std::string\ comments=\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseDDBJHeader(std::vector<std::string>\ text\_header);}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parseDDBJHeader(std::string\ raw\_header);}
+\DoxyCodeLine{00106\ \ \ \ \ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ makePatentLHeader(std::string\ country,\ std::string\ patent,\ std::string\ sequence\_number,\ std::string\ comments=\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parsePatentLHeader(std::vector<std::string>\ text\_header);}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parsePatentLHeader(std::string\ raw\_header);}
+\DoxyCodeLine{00110\ \ \ \ \ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ makePreGrantPatentHeader(std::string\ country,\ std::string\ application\_number,\ std::string\ sequence\_number,\ std::string\ comments=\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parsePreGrantPatentHeader(std::vector<std::string>\ text\_header);}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ parsePreGrantPatentHeader(std::string\ raw\_header);}
+\DoxyCodeLine{00114\ \};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

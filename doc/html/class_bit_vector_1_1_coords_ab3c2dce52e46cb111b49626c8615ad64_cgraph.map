@@ -1,0 +1,5 @@
+<map id="BitVector::Coords::operator+" name="BitVector::Coords::operator+">
+<area shape="rect" id="Node000001" title="Addition of two Coords. An error can be raised if other is too big for Coords::maximumOctetNumber." alt="" coords="5,5,148,45"/>
+<area shape="rect" id="Node000002" href="$class_bit_vector_1_1_coords.html#a3a4fac9de925974af9c8a66a1d0179e6" title="Translate octet and bit value inside a size_t. Allow easier mathematic computations." alt="" coords="196,5,339,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,23,183,23,183,28,148,28"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="BitVector::Coords::getBit" name="BitVector::Coords::getBit">
+<area shape="rect" id="Node000001" title="Get Coords::bit ." alt="" coords="196,133,339,173"/>
+<area shape="rect" id="Node000002" href="$class_bit_vector_1_1_coords.html#a78d1ac1068b38dccaea420492c79eef7" title="Say if this object is lower than another Coords." alt="" coords="5,5,148,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="233,126,193,92,147,60,125,48,128,43,149,55,196,88,236,122"/>
+<area shape="rect" id="Node000003" href="$class_bit_vector_1_1_coords.html#a6ee61908cf4cf82d94d28153590b2348" title="Say if this object is lower or equal than another Coords." alt="" coords="5,69,148,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="193,131,136,112,138,107,195,126"/>
+<area shape="rect" id="Node000004" href="$class_bit_vector_1_1_coords.html#affcbbf9a8227cce0e73e7414630bab58" title="Say if another Coords is equal to this one." alt="" coords="5,133,148,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="183,156,148,156,148,151,183,151"/>
+<area shape="rect" id="Node000005" href="$class_bit_vector_1_1_coords.html#acb3c8b40df76676ac60fdbdbfcdf2cf6" title="Say if this object is bigger than another Coords." alt="" coords="5,197,148,237"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="195,180,138,200,136,195,193,175"/>
+<area shape="rect" id="Node000006" href="$class_bit_vector_1_1_coords.html#acc695afed31907ef4457395147d6b11f" title="Say if this object is bigger or equal than another Coords." alt="" coords="5,261,148,301"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="236,185,196,219,149,252,128,264,125,259,147,247,193,214,233,181"/>
+</map>

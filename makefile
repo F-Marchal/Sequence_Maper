@@ -14,3 +14,7 @@ run: main
 
 startDoxygen:
 	doxywizard &
+
+doxy:
+	doxygen Doxyfile  
+	firefox ./doc/html/index.html	
