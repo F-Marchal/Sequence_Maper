@@ -10,32 +10,33 @@
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Utilities.hpp"{}}}
 \DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{keyword}{enum}\ errorMods\ \{}
-\DoxyCodeLine{00010\ \ \ \ \ ignore\ \ =\ 0,}
-\DoxyCodeLine{00011\ \ \ \ \ display\ =\ 1,\ }
-\DoxyCodeLine{00012\ \ \ \ \ raise\ \ \ =\ 2,}
-\DoxyCodeLine{00013\ \};}
-\DoxyCodeLine{00014\ }
-\DoxyCodeLine{00015\ std::string\ makeErrorMessage(std::string\ message,\ std::string\ file\_name,\ std::string\ function\_name)\ ;}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \textcolor{keywordtype}{void}\ displayInvalidArgument(errorMods\ error\_mod,\ std::string\ message,\ std::string\ file\_name,\ std::string\ function\_name)\ ;}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \textcolor{keywordtype}{void}\ displayLogicError(errorMods\ error\_mod,\ std::string\ message,\ std::string\ file\_name,\ std::string\ function\_name)\ ;}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \textcolor{keywordtype}{void}\ displayDomainError(errorMods\ error\_mod,\ std::string\ message,\ std::string\ file\_name,\ std::string\ function\_name)\ ;}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \textcolor{keywordtype}{void}\ displayLengthError(errorMods\ error\_mod,\ std::string\ message,\ std::string\ file\_name,\ std::string\ function\_name);}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \textcolor{keywordtype}{void}\ displayOutOfRangeError(errorMods\ error\_mod,\ std::string\ message,\ std::string\ file\_name,\ std::string\ function\_name);}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \textcolor{keywordtype}{void}\ displayMessage(errorMods\ error\_mod,\ std::string\ message);}
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ getFirstDigits(\textcolor{keywordtype}{size\_t}\ number,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ digits);}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \textcolor{keywordtype}{size\_t}\ safe\_multiply(\textcolor{keywordtype}{size\_t}\ a,\ \textcolor{keywordtype}{size\_t}\ b,\ \textcolor{keywordtype}{size\_t}\ maximal\_value);}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \textcolor{keywordtype}{void}\ displayBits(\textcolor{keywordtype}{char}\ bits,\ \textcolor{keywordtype}{bool}\ endl=\textcolor{keyword}{true});}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{enum}\ errorMods\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ ignore\ \ =\ 0,}
+\DoxyCodeLine{00017\ \ \ \ \ display\ =\ 1,\ }
+\DoxyCodeLine{00018\ \ \ \ \ raise\ \ \ =\ 2,}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{throw}\ \ \ =\ 2,}
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00034\ std::string\ makeErrorMessage(std::string\ message,\ std::string\ file\_name,\ std::string\ function\_name)\ ;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00048\ \textcolor{keywordtype}{void}\ displayInvalidArgument(errorMods\ error\_mod,\ std::string\ message,\ std::string\ file\_name,\ std::string\ function\_name)\ ;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00062\ \textcolor{keywordtype}{void}\ displayLogicError(errorMods\ error\_mod,\ std::string\ message,\ std::string\ file\_name,\ std::string\ function\_name)\ ;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00076\ \textcolor{keywordtype}{void}\ displayDomainError(errorMods\ error\_mod,\ std::string\ message,\ std::string\ file\_name,\ std::string\ function\_name)\ ;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00090\ \textcolor{keywordtype}{void}\ displayLengthError(errorMods\ error\_mod,\ std::string\ message,\ std::string\ file\_name,\ std::string\ function\_name);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00104\ \textcolor{keywordtype}{void}\ displayOutOfRangeError(errorMods\ error\_mod,\ std::string\ message,\ std::string\ file\_name,\ std::string\ function\_name);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00115\ \textcolor{keywordtype}{void}\ displayMessage(errorMods\ error\_mod,\ std::string\ message);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00129\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ getFirstDigits(\textcolor{keywordtype}{size\_t}\ number,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ digits);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00142\ \textcolor{keywordtype}{size\_t}\ safe\_multiply(\textcolor{keywordtype}{size\_t}\ a,\ \textcolor{keywordtype}{size\_t}\ b,\ \textcolor{keywordtype}{size\_t}\ maximal\_value);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00153\ \textcolor{keywordtype}{void}\ displayBits(\textcolor{keywordtype}{char}\ bits,\ \textcolor{keywordtype}{bool}\ endl=\textcolor{keyword}{true});}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}
