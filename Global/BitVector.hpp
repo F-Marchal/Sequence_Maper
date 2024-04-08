@@ -448,13 +448,26 @@ public:
          * @return false 
          */
         bool canMultiplyBy(size_t value) ;
+        
+        /**
+         * @brief Allow std::cout << Coords
+         * 
+         * @param os The os object
+         * @param coords The coord object
+         * @return std::ostream& \p os
+         */
+        friend std::ostream& operator<<(std::ostream& os, const BitVector::Coords& coords) {
+            os << coords.toString();
+            return os;
+        }
     };
 
 
     
     // --- --- Constructors --- ---
-    BitVector(short unsigned int block_size);
-
+    BitVector(short unsigned int block_size, size_t alloc);
+    BitVector(short unsigned int block_size) : BitVector(block_size, 2) {};
+    void setElementNumber(size_t number);
     // --- --- Destructor --- ---
     ~BitVector();
 
@@ -463,6 +476,7 @@ public:
     size_t getElementNumber() const;
     
     size_t size() const;
+    size_t currentElementCapacity() const;
 
     // --- index ---
     Coords indexElement(size_t element_position) const;
@@ -478,14 +492,12 @@ public:
 
     // --- size ---
     void doubleSize();
-    void resize(size_t data_size);
+    void resize(size_t element_capacity);
     void shrink();
-    size_t currentCapacity() {
-        return this->indexCoordinate(BitVector::Coords(this->_data_size , 0)); 
-    }
-    Coords lastBit() {
-        return Coords(this->_data_size, 7); 
-    }
+    void clear();
+
+    size_t currentCapacity() const ;
+    Coords lastBit() const ;
     
     //
     Coords getCoordUnit() const;
@@ -493,15 +505,15 @@ public:
     bool maxSizeIsReached() const;
     bool maxDataSizeIsReached() const;
     bool maxElementSizeIsReached() const;
-    size_t upperOctetLimit() const;
-    size_t upperElementLimit() const;
+    size_t maxOctetLimit() const;
+    size_t maxElementLimit() const;
     Coords MaximalCoordLimit() const;
 
     static size_t maximumOctetNumber();
     static size_t maximumElementNumber();
     
-    static void copyBits(const char * from, char * to_tab, const BitVector::Coords element_coord,  BitVector::Coords from_coord, BitVector::Coords to_coord, bool from_right=false, bool to_right=false);
-    
+    static void copyBits(const char * pattern, char * final_list, const Coords element,  Coords pattern_coord, BitVector::Coords final_coord, bool final_end_is_right=false, bool pattern_end_is_right=false);
+    void copyBits(const char * pattern, char * final_list,  Coords pattern_coord, Coords final_coord, bool final_end_is_right=false, bool pattern_end_is_right=false) ;
     //
     bool get(Coords coord) const;
     bool operator[](Coords coord) const;
@@ -509,11 +521,9 @@ public:
     char * operator[](size_t index) const;
     
     void set(size_t index, char * tab, bool restrictions = true);
+    void set(size_t index, char value, bool restrictions = true);
     void set(Coords coord, bool value, bool restrictions = true);
 
-
-    // test
-    static int testClass(errorMods error_mod);
 };
 
 

@@ -119,10 +119,103 @@
 
 
 int main() {
-    unsigned int alpha = 0;
-    alpha --;
-    displayMessage(display, std::to_string(alpha));
-    BitVector::testClass(display);
+    // BitVector bv(5, 2);
+    // std::cout << "----" << std::endl;
+    // bv.set(0, (char) 0b00000111);
+    // bv.set(1, (char) 0b00000001);
+    // bv.set(2, (char) 0b00000111);
+    // std::cout << "----" << std::endl;
+    // char * str =  bv[0];
+
+    // for (long unsigned int i = 0; i < 2; i++) {
+    //     displayBits((char)str[i]);
+    // }
+    // delete [] str;
+    int * pattern = new int[1] {0b00011010};
+    int * final_list = new int [2] {0b00000000, 0b00000000};
+    BitVector::Coords element(0, 5);
+    BitVector::Coords pattern_coord(0, 0);
+    BitVector::Coords final_coord(0, 0);
+
+    BitVector::Coords pattern_end_coord = pattern_coord + element;
+    BitVector::Coords final_end_coord = final_coord + element;
+    BitVector::Coords step_left = element;
+    
+    
+    bool final_end_is_right = false;
+    bool pattern_end_is_right = true;
+
+    short unsigned int pattern_bit_value;
+    short unsigned int final_list_bit_value;
+
+    char pattern_bit;
+    char final_mask;
+
+    while (final_coord != final_end_coord) {
+        
+        if (final_end_is_right && final_coord.getOctet() == final_end_coord.getOctet()) {
+            final_list_bit_value = step_left.getBit();
+        } else {
+            final_list_bit_value = 7 - final_coord.getBit();
+        }
+
+        if (pattern_end_is_right && pattern_coord.getOctet() == pattern_end_coord.getOctet()) {
+            pattern_bit_value = step_left.getBit();
+        } else {
+            pattern_bit_value = 7 - pattern_coord.getBit();
+        }
+        
+        pattern_bit = 1 << pattern_bit_value;
+        final_mask = 1 << final_list_bit_value;
+        
+        std::cout << pattern_bit_value << " " <<step_left.getBit() << std::endl;
+
+        if (pattern[pattern_coord.getOctet()] & pattern_bit) {
+            final_list[final_coord.getOctet()] |= final_mask;
+
+        } else {
+            final_list[final_coord.getOctet()] &= ~final_mask;
+        }
+        
+        final_coord++;
+        pattern_coord++;
+        step_left --;
+
+        
+    }
+    displayBits(pattern[0]);
+    std::cout  << std::endl;
+    displayBits(final_list[0]);
+    displayBits(final_list[1]);
+    // BitVector::copyBits(from_1, to, element,  BitVector::Coords(0, 0), to_coord, false, false);
+    // displayBits(from_1[0]);
+    // std::cout  << std::endl;
+    // for (long unsigned int i = 0; i < 2; i++) {
+    //     displayBits(to[i]);
+    // }
+    // to_coord += element;
+
+    // std::cout << "----" << std::endl;
+    // BitVector::copyBits(from_2, to, element,  BitVector::Coords(0, 0), to_coord, false, true);
+    // displayBits(from_2[0]);
+    // std::cout  << std::endl;
+    // for (long unsigned int i = 0; i < 2; i++) {
+    //     displayBits(to[i]);
+    // }
+    // to_coord += element;
+
+    // std::cout << "----" << std::endl;
+    // BitVector::copyBits(from_3, to, element,  BitVector::Coords(0, 0), to_coord, false, true);
+    // displayBits(from_3[0]);
+    // std::cout  << std::endl;
+    // for (long unsigned int i = 0; i < 2; i++) {
+    //     displayBits(to[i]);
+    // }
+    // to_coord += element;
+
+
+
+
 
     // Retransform to vit
 

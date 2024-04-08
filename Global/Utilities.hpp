@@ -10,13 +10,12 @@
  * @brief Change the behaviour of "display" functions.
  * - ignore : Errors are not thrown nor shown.
  * - display : Errors are not thrown but are shown.
- * - raise / throw : throw an error.
+ * - raise : throw an error.
  */
 enum errorMods {
     ignore  = 0,
     display = 1, 
     raise   = 2,
-    throw   = 2,
 };
 
 /**
