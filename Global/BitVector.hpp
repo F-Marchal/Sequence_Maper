@@ -514,6 +514,7 @@ public:
     
     static void copyBits(const char * pattern, char * final_list, const Coords element,  Coords pattern_coord, BitVector::Coords final_coord, bool final_end_is_right=false, bool pattern_end_is_right=false);
     void copyBits(const char * pattern, char * final_list,  Coords pattern_coord, Coords final_coord, bool final_end_is_right=false, bool pattern_end_is_right=false) ;
+    
     //
     bool get(Coords coord) const;
     bool operator[](Coords coord) const;

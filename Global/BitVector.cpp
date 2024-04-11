@@ -24,7 +24,7 @@ BitVector::Coords::Coords(size_t value) {
 
 // --- --- Conversion --- ---
 size_t BitVector::Coords::toSize_t() const {
-    return this->octet + (this->bit * 1000 / 8.0);
+    return this->octet * 1000 + (this->bit * 1000 / 8.0);
 }
 
 std::string BitVector::Coords::toString() const {
@@ -129,7 +129,7 @@ BitVector::Coords BitVector::Coords::operator+(const BitVector::Coords & other) 
     if (!this->canBeAddedBy(other)) {
         displayLengthError(raise, "Can not proceed this sum, maximum size would be reached", __FILE__, __func__);
     }
-
+    std::cout << "  -  " << other << this->toString() <<other.toSize_t() << " "<<  this->toSize_t()<< std::endl;
     return Coords(other.toSize_t() + this->toSize_t());
 }
 
@@ -438,9 +438,9 @@ void BitVector::copyBits(const char * pattern, char * final_list, const BitVecto
 
     char pattern_bit;
     char final_mask;
-
+    std::cout << final_end_coord << element << std::endl;
     while (final_coord != final_end_coord) {
-        
+     
         if (final_end_is_right && final_coord.getOctet() == final_end_coord.getOctet()) {
             final_list_bit_value = step_left.getBit();
         } else {
@@ -455,11 +455,9 @@ void BitVector::copyBits(const char * pattern, char * final_list, const BitVecto
         
         pattern_bit = 1 << pattern_bit_value;
         final_mask = 1 << final_list_bit_value;
-        
-        std::cout << pattern_bit_value << " " <<step_left.getBit() << std::endl;
 
         if (pattern[pattern_coord.getOctet()] & pattern_bit) {
-            final_list[final_coord.getOctet()] |= final_mask;
+            final_list[final_coord.getOctet()] |= final_mask; 
 
         } else {
             final_list[final_coord.getOctet()] &= ~final_mask;
@@ -472,7 +470,7 @@ void BitVector::copyBits(const char * pattern, char * final_list, const BitVecto
 }
 
 void BitVector::copyBits(const char * pattern, char * final_list,  BitVector::Coords pattern_coord, BitVector::Coords final_coord, bool final_end_is_right, bool pattern_end_is_right) {
-    BitVector::copyBits(const char * pattern, char * final_list, this->getCoordUnit(), BitVector::Coords pattern_coord, BitVector::Coords final_coord, bool final_end_is_right, bool pattern_end_is_right)
+    BitVector::copyBits( pattern, final_list, this->getCoordUnit(), pattern_coord, final_coord, final_end_is_right, pattern_end_is_right);
 }
 bool BitVector::get( BitVector::Coords coord) const {
     char mask = 1 << coord.getBit();
@@ -517,15 +515,16 @@ void BitVector::set(size_t index, char * tab, bool restrictions) {
     bool push_limit = (coord == this->end());
     
     std::cout << this->getCoordUnit()<< Coords(0, 0) << " _" <<coord<< "_" <<std::endl;
-    BitVector::copyBits(tab, this->_data, this->getCoordUnit(), Coords(0, 0), coord, false, true);
+    BitVector::copyBits(tab, this->_data, Coords(0, 0), coord, false, true);
  
     if (push_limit) {
         this->_element_number += 1;
     }
-
-    for (long unsigned int i = 0; i < sizeof(this->_data); i++) {
-        displayBits((char)this->_data[i]);
-    }
+    displayBits((char)this->_data[0]);
+    displayBits((char)this->_data[1]);
+    // for (long unsigned int i = 0; i < sizeof(this->_data); i++) {
+    //     displayBits((char)this->_data[i]);
+    // }
 }
 
 void BitVector::set(size_t index, char value, bool restrictions) {
