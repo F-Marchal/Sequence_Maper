@@ -21,6 +21,7 @@ private:
 protected:
 
     void _killInternalData();
+    void _makeRoomForElement(size_t element_position, size_t room_required, bool erase=true);
     
 public:
 
@@ -402,7 +403,7 @@ public:
          * | Time  | O(1) |
          * | Space | O(1) |
          */
-        void increment() ;
+        virtual void increment() ;
 
         /**
          * @brief decrement this coordinates by 1 bit
@@ -411,7 +412,7 @@ public:
          * | Time  | O(1) |
          * | Space | O(1) |
          */
-        void decrement() ;
+        virtual void decrement() ;
 
         /**
          * @brief Do another Coords can be added to this coord (without any error) ?
@@ -462,11 +463,55 @@ public:
         }
     };
 
+    class Iterator : public Coords {
+    private:
+        const BitVector &_parent;
+        char * _element = NULL;
 
-    
+        void _nullifyElement ();
+
+    public:
+        Iterator(const BitVector &parent, size_t octet, unsigned short int bit) : Coords(octet, bit), _parent(parent) {loadValue();}
+        Iterator(const BitVector &parent, size_t value) : Coords(value), _parent(parent) {loadValue();}
+        Iterator(const BitVector &parent, const Coords & coord) : Coords(coord), _parent(parent) {loadValue();}
+        Iterator(const BitVector &parent) : Coords(), _parent(parent) {loadValue();}
+
+        ~Iterator() ;
+        void loadValue();
+
+        /**
+         * @brief Increment this coordinates by 1 coordUnit. (Coord++)
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         */
+        void increment() override;
+
+        /**
+         * @brief decrement this coordinates by 1 coordUnit
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         */
+        void decrement() override ;
+            
+            
+        operator bool() const;
+
+        char * operator*() const ;
+    };
+
+
+
     // --- --- Constructors --- ---
     BitVector(short unsigned int block_size, size_t alloc);
     BitVector(short unsigned int block_size) : BitVector(block_size, 2) {};
+    BitVector(const BitVector & bit_vector);
+    // BitVector(const & BitVector bit_vector) : BitVector(bit_vector.getElementNumber(), bit_vector.currentElementCapacity()) {
+ 
+    // };
     void setElementNumber(size_t number);
     // --- --- Destructor --- ---
     ~BitVector();
@@ -474,6 +519,7 @@ public:
     // --- --- Getters --- ---
     size_t getDataSize() const;
     size_t getElementNumber() const;
+    unsigned short int getElementSize() const;
     
     size_t size() const;
     size_t currentElementCapacity() const;
@@ -487,9 +533,11 @@ public:
 
    
     // --- Interaction ---
-    Coords start() const;
-    Coords end() const;
-
+    Iterator begin() const ;
+    Iterator end() const ;
+    Coords firstPos() const;
+    Coords lastPos() const;
+    
     // --- size ---
     void doubleSize();
     void resize(size_t element_capacity);
@@ -513,18 +561,24 @@ public:
     static size_t maximumElementNumber();
     
     static void copyBits(const char * pattern, char * final_list, const Coords element,  Coords pattern_coord, BitVector::Coords final_coord, bool final_end_is_right=false, bool pattern_end_is_right=false);
-    void copyBits(const char * pattern, char * final_list,  Coords pattern_coord, Coords final_coord, bool final_end_is_right=false, bool pattern_end_is_right=false) ;
-    
+
     //
     bool get(Coords coord) const;
     bool operator[](Coords coord) const;
     char * get(size_t index) const;
     char * operator[](size_t index) const;
     
-    void set(size_t index, char * tab, bool restrictions = true);
-    void set(size_t index, char value, bool restrictions = true);
+    void set(size_t index, char * tab, bool restrictions = true, bool push=true);
+    void set(size_t index, char value, bool restrictions = true, bool push=true);
     void set(Coords coord, bool value, bool restrictions = true);
 
+    void append(char * tab);
+    void append(char value);
+
+    void insert(size_t pos, size_t number_of_elements, char * tab ...);
+    void insert(size_t pos, size_t number_of_elements, char c ...);
+    
+    void remove(size_t element_position, size_t number_of_element);
 };
 
 

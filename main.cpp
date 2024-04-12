@@ -120,77 +120,30 @@
 
 int main() {
     
-    // BitVector bv(2, 2);
-    // std::cout << "----" << std::endl;
-    // bv.set(0, (char) 0b11000000);
-    // bv.set(1, (char) 0b00000011);
-    // // bv.set(2, (char) 0b00011111);
-    // std::cout << "----" << std::endl;
+    BitVector bv(2, 1);
+    std::cout << "----" << std::endl;
+    bv.set(0, (char) 0b00000011);
+    bv.append((char) 0b00000010);
+    bv.append((char) 0b00000001);
+    bv.set(3, (char) 0b00000000);
+    bv.append((char) 0b00000011);
+    bv.append((char) 0b00000001);
+    // bv.set(2, (char) 0b00011111);
+    std::cout << "--è--" << std::endl;
+    displayBits(bv.get(0)[0]);
+    std::cout << "--è--" << std::endl;
 
-    char temp =  static_cast<char>(0b00001111);
-    
-    char * pattern = new char[1] {temp};
-    char * final_list = new char [2] {0b00000000, 0b00000000};
-    BitVector::Coords element(0, 5);
-    BitVector::Coords pattern_coord(0, 0);
-    BitVector::Coords final_coord(0, 0);
-
-    BitVector::Coords pattern_end_coord = pattern_coord + element;
-    BitVector::Coords final_end_coord = final_coord + element;
-    BitVector::Coords step_left = element;
-    
-    
-    bool final_end_is_right = false;
-    bool pattern_end_is_right = true;
-
-    short unsigned int pattern_bit_value;
-    short unsigned int final_list_bit_value;
-
-    char pattern_bit;
-    char final_mask;
-
-    while (final_coord != final_end_coord) {
-        
-        if (final_end_is_right && final_coord.getOctet() == final_end_coord.getOctet()) {
-            final_list_bit_value = step_left.getBit();
-        } else {
-            final_list_bit_value = 7 - final_coord.getBit();
-            std::cout <<"la" << std::endl;
-        }
-
-        if (pattern_end_is_right && pattern_coord.getOctet() == pattern_end_coord.getOctet()) {
-            pattern_bit_value = step_left.getBit();
-        } else {
-            pattern_bit_value = 7 - pattern_coord.getBit();
-            std::cout <<"ici" << std::endl;
-        }
-        
-        pattern_bit = 1 << (pattern_bit_value - 1);
-        final_mask = 1 << (final_list_bit_value - 1);
-        
-        std::cout << "p=" << pattern_bit_value << " f=" << final_list_bit_value << std::endl;
-
-        if (pattern[pattern_coord.getOctet()] & pattern_bit) {
-            final_list[final_coord.getOctet()] |= final_mask;
-
-        } else {
-            final_list[final_coord.getOctet()] &= ~final_mask;
-        }
-        
-        final_coord++;
-        pattern_coord++;
-        step_left --;
-
-        
+    bv.insert(2, 3, 0b00000011, 0b00000011, 0b00000011);
+    bv.remove(9, 3);
+    std::cout << "--è--" << std::endl;
+    for (char * c: BitVector(bv)) {
+        displayBits(c[0]);
     }
-    displayBits(pattern[0]);
-    std::cout  << std::endl;
-    displayBits(final_list[0]);
-    displayBits(final_list[1]);
-
-
+    for (char * c: bv) {
+        displayBits(c[0]);
+    }
+  std::cout << "--'è'--" << std::endl;
    
-
 
 
 
