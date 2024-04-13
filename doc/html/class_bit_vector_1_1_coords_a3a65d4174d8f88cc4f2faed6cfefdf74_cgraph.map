@@ -1,0 +1,10 @@
+<map id="BitVector::Coords::maximumOctetNumber" name="BitVector::Coords::maximumOctetNumber">
+<area shape="rect" id="Node000001" title="return the last octet position that can be hold by a Coords." alt="" coords="5,22,181,62"/>
+<area shape="rect" id="Node000002" href="$class_bit_vector.html#aa3228d2bacb1bb0f6072d73d43a49456" title="How many octet can be contained in this kind of object." alt="" coords="229,29,472,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,39,215,39,215,45,182,45"/>
+<area shape="rect" id="Node000003" href="$class_bit_vector.html#aebe159444eb9d619959b7325ac5dac2d" title="Return the value of the bit at the position coord." alt="" coords="520,29,631,55"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="472,39,506,39,506,45,472,45"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="546,31,540,21,544,11,556,5,575,3,599,6,609,15,606,19,597,11,575,8,557,10,548,15,546,20,551,28"/>
+<area shape="rect" id="Node000004" href="$class_bit_vector_1_1_coords.html#a2892f7f46c4af93f9733e312229d8ec1" title="Get Coords::octet ." alt="" coords="679,22,821,62"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="631,39,665,39,665,45,631,45"/>
+</map>

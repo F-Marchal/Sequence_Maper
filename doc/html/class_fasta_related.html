@@ -73,6 +73,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="class_fasta_related-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">FastaRelated Class Reference</div></div>
 </div><!--header-->
@@ -107,7 +108,95 @@ static bool&#160;</td><td class="memItemRight" valign="bottom"><b>isCommentChar<
 <tr class="memitem:afa8fa72df1990eb2ee40593fe64c3e4e" id="r_afa8fa72df1990eb2ee40593fe64c3e4e"><td class="memItemLeft" align="right" valign="top"><a id="afa8fa72df1990eb2ee40593fe64c3e4e" name="afa8fa72df1990eb2ee40593fe64c3e4e"></a>
 static bool&#160;</td><td class="memItemRight" valign="bottom"><b>isBlankChar</b> (char blank)</td></tr>
 <tr class="separator:afa8fa72df1990eb2ee40593fe64c3e4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:ac771453d1873d1545b9d1ca21c246dce" id="r_ac771453d1873d1545b9d1ca21c246dce"><td class="memItemLeft" align="right" valign="top">static std::set&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac771453d1873d1545b9d1ca21c246dce">legalMultiHeaderChar</a></td></tr>
+<tr class="separator:ac771453d1873d1545b9d1ca21c246dce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8108fb4d0cc83057a3cff762c77cbf34" id="r_a8108fb4d0cc83057a3cff762c77cbf34"><td class="memItemLeft" align="right" valign="top">static std::set&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8108fb4d0cc83057a3cff762c77cbf34">legalMonoHeaderChar</a></td></tr>
+<tr class="separator:a8108fb4d0cc83057a3cff762c77cbf34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5639469121637d5ef3acb83a3cd6ecc0" id="r_a5639469121637d5ef3acb83a3cd6ecc0"><td class="memItemLeft" align="right" valign="top">static std::set&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5639469121637d5ef3acb83a3cd6ecc0">legalCommentChar</a></td></tr>
+<tr class="separator:a5639469121637d5ef3acb83a3cd6ecc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13a42fa0a2c2011055681fa6023f3837" id="r_a13a42fa0a2c2011055681fa6023f3837"><td class="memItemLeft" align="right" valign="top"><a id="a13a42fa0a2c2011055681fa6023f3837" name="a13a42fa0a2c2011055681fa6023f3837"></a>
+static std::set&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>blankChar</b></td></tr>
+<tr class="separator:a13a42fa0a2c2011055681fa6023f3837"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a5639469121637d5ef3acb83a3cd6ecc0" name="a5639469121637d5ef3acb83a3cd6ecc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5639469121637d5ef3acb83a3cd6ecc0">&#9670;&#160;</a></span>legalCommentChar</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::set&lt; char &gt; FastaRelated::legalCommentChar</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    <span class="charliteral">&#39;;&#39;</span>,</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8108fb4d0cc83057a3cff762c77cbf34" name="a8108fb4d0cc83057a3cff762c77cbf34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8108fb4d0cc83057a3cff762c77cbf34">&#9670;&#160;</a></span>legalMonoHeaderChar</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::set&lt; char &gt; FastaRelated::legalMonoHeaderChar</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    <span class="charliteral">&#39;&gt;&#39;</span>,</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac771453d1873d1545b9d1ca21c246dce" name="ac771453d1873d1545b9d1ca21c246dce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac771453d1873d1545b9d1ca21c246dce">&#9670;&#160;</a></span>legalMultiHeaderChar</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::set&lt; char &gt; FastaRelated::legalMultiHeaderChar</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    <span class="charliteral">&#39;;&#39;</span>,</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_fasta_related_8hpp_source.html">FastaRelated.hpp</a></li>
 <li><b>FastaRelated.cpp</b></li>

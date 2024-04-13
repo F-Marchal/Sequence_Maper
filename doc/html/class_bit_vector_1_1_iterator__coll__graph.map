@@ -1,0 +1,7 @@
+<map id="BitVector::Iterator" name="BitVector::Iterator">
+<area shape="rect" id="Node000001" title="Special version of a BitVector::Coords. Allow user to iter through a BitVector;." alt="" coords="69,93,207,119"/>
+<area shape="rect" id="Node000002" href="$class_bit_vector_1_1_coords.html" title="Class that represent coordinates inside a BitVector. It memorize octet position and bit position n or..." alt="" coords="5,5,140,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,40,131,91,127,94,88,43"/>
+<area shape="rect" id="Node000003" href="$class_bit_vector.html" title="Class that allow the storage of a number inside a char *. All element must be converted to a number o..." alt="" coords="164,5,245,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,43,149,94,145,91,185,40"/>
+</map>

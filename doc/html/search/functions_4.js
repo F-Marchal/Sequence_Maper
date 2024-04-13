@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['maximumoctetnumber_0',['maximumOctetNumber',['../class_bit_vector_1_1_coords.html#a3a65d4174d8f88cc4f2faed6cfefdf74',1,'BitVector::Coords']]],
-  ['maximumsize_5ft_1',['maximumSize_t',['../class_bit_vector_1_1_coords.html#a2273bc2036bc18cdaaf62593bfde5324',1,'BitVector::Coords']]]
+  ['decrement_0',['decrement',['../class_bit_vector_1_1_coords.html#afd7e1ac7d32a10fa0529e87a023769e4',1,'BitVector::Coords::decrement()'],['../class_bit_vector_1_1_iterator.html#a8d173205167f88b0a94830e9fb705519',1,'BitVector::Iterator::decrement()']]]
 ];

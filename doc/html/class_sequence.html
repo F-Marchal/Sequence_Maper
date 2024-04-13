@@ -75,6 +75,8 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="class_sequence-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Sequence Class Reference</div></div>
@@ -245,6 +247,28 @@ Protected Member Functions</h2></td></tr>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>parseChar</b> (char symbol, errorMods error_mod=display)</td></tr>
 <tr class="separator:a4a22ac7f3d5690b0330e98b56d313d73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a3889a45917edb9ccf8d7c3ecc3aff41c" id="r_a3889a45917edb9ccf8d7c3ecc3aff41c"><td class="memItemLeft" align="right" valign="top"><a id="a3889a45917edb9ccf8d7c3ecc3aff41c" name="a3889a45917edb9ccf8d7c3ecc3aff41c"></a>
+std::array&lt; bool, 5 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
+<tr class="separator:a3889a45917edb9ccf8d7c3ecc3aff41c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0af928e5b2ea7806b79df2bc3375b90a" id="r_a0af928e5b2ea7806b79df2bc3375b90a"><td class="memItemLeft" align="right" valign="top"><a id="a0af928e5b2ea7806b79df2bc3375b90a" name="a0af928e5b2ea7806b79df2bc3375b90a"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>seq</b></td></tr>
+<tr class="separator:a0af928e5b2ea7806b79df2bc3375b90a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a641179d0270e380c13be25106c5071b2" id="r_a641179d0270e380c13be25106c5071b2"><td class="memItemLeft" align="right" valign="top">static std::map&lt; char, char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a641179d0270e380c13be25106c5071b2">legalDNA</a></td></tr>
+<tr class="separator:a641179d0270e380c13be25106c5071b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebe0bfe42ba41cdf3e58503dd95e5b64" id="r_aebe0bfe42ba41cdf3e58503dd95e5b64"><td class="memItemLeft" align="right" valign="top">static std::map&lt; char, char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebe0bfe42ba41cdf3e58503dd95e5b64">legalRNA</a></td></tr>
+<tr class="separator:aebe0bfe42ba41cdf3e58503dd95e5b64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d408fde28bac4495cfc1d3302ad63ee" id="r_a3d408fde28bac4495cfc1d3302ad63ee"><td class="memItemLeft" align="right" valign="top">static std::map&lt; char, char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d408fde28bac4495cfc1d3302ad63ee">bridgeDNA_RNA</a></td></tr>
+<tr class="separator:a3d408fde28bac4495cfc1d3302ad63ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaff01fa11c62b4e61aa7dd467406d4ed" id="r_aaff01fa11c62b4e61aa7dd467406d4ed"><td class="memItemLeft" align="right" valign="top">static std::set&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaff01fa11c62b4e61aa7dd467406d4ed">legalAmino</a></td></tr>
+<tr class="separator:aaff01fa11c62b4e61aa7dd467406d4ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a076023b652704648a25f92914f06d3a6" id="r_a076023b652704648a25f92914f06d3a6"><td class="memItemLeft" align="right" valign="top">static std::set&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a076023b652704648a25f92914f06d3a6">validType</a></td></tr>
+<tr class="separator:a076023b652704648a25f92914f06d3a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:a2952e8386ce2cdbba388dbcddefd8f19" id="r_a2952e8386ce2cdbba388dbcddefd8f19"><td class="memItemLeft" align="right" valign="top"><a id="a2952e8386ce2cdbba388dbcddefd8f19" name="a2952e8386ce2cdbba388dbcddefd8f19"></a>
@@ -333,6 +357,211 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
 <p>Get a char that represent sequence type. </p>
 <dl class="section return"><dt>Returns</dt><dd>char 'D'=DNA, 'R'=RNA, 'P'=Protein, 'N'=DNA and / or RNA 'U'=Unspecified, 'Z'=Invalid type. </dd></dl>
 
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a3d408fde28bac4495cfc1d3302ad63ee" name="a3d408fde28bac4495cfc1d3302ad63ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d408fde28bac4495cfc1d3302ad63ee">&#9670;&#160;</a></span>bridgeDNA_RNA</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt; char, char &gt; Sequence::bridgeDNA_RNA</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">{</div>
+<div class="line">    {<span class="charliteral">&#39;t&#39;</span>, <span class="charliteral">&#39;u&#39;</span>}, {<span class="charliteral">&#39;T&#39;</span>, <span class="charliteral">&#39;U&#39;</span>},</div>
+<div class="line">    {<span class="charliteral">&#39;u&#39;</span>, <span class="charliteral">&#39;t&#39;</span>}, {<span class="charliteral">&#39;U&#39;</span>, <span class="charliteral">&#39;T&#39;</span>}</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aaff01fa11c62b4e61aa7dd467406d4ed" name="aaff01fa11c62b4e61aa7dd467406d4ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaff01fa11c62b4e61aa7dd467406d4ed">&#9670;&#160;</a></span>legalAmino</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::set&lt; char &gt; Sequence::legalAmino</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    <span class="charliteral">&#39;A&#39;</span>, <span class="charliteral">&#39;a&#39;</span>, </div>
+<div class="line">    <span class="charliteral">&#39;B&#39;</span>, <span class="charliteral">&#39;b&#39;</span>, </div>
+<div class="line">    <span class="charliteral">&#39;C&#39;</span>, <span class="charliteral">&#39;c&#39;</span>, </div>
+<div class="line">    <span class="charliteral">&#39;D&#39;</span>, <span class="charliteral">&#39;d&#39;</span>, </div>
+<div class="line">    <span class="charliteral">&#39;E&#39;</span>, <span class="charliteral">&#39;e&#39;</span>, </div>
+<div class="line">    <span class="charliteral">&#39;F&#39;</span>, <span class="charliteral">&#39;f&#39;</span>, </div>
+<div class="line">    <span class="charliteral">&#39;G&#39;</span>, <span class="charliteral">&#39;g&#39;</span>, </div>
+<div class="line">    <span class="charliteral">&#39;H&#39;</span>, <span class="charliteral">&#39;h&#39;</span>, </div>
+<div class="line">    <span class="charliteral">&#39;I&#39;</span>, <span class="charliteral">&#39;i&#39;</span>, </div>
+<div class="line">    <span class="charliteral">&#39;J&#39;</span>, <span class="charliteral">&#39;j&#39;</span>, </div>
+<div class="line">    <span class="charliteral">&#39;K&#39;</span>, <span class="charliteral">&#39;k&#39;</span>, </div>
+<div class="line">    <span class="charliteral">&#39;L&#39;</span>, <span class="charliteral">&#39;l&#39;</span>, </div>
+<div class="line">    <span class="charliteral">&#39;M&#39;</span>, <span class="charliteral">&#39;m&#39;</span>, </div>
+<div class="line">    <span class="charliteral">&#39;N&#39;</span>, <span class="charliteral">&#39;n&#39;</span>, </div>
+<div class="line">    <span class="charliteral">&#39;O&#39;</span>, <span class="charliteral">&#39;o&#39;</span>, </div>
+<div class="line">    <span class="charliteral">&#39;P&#39;</span>, <span class="charliteral">&#39;p&#39;</span>, </div>
+<div class="line">    <span class="charliteral">&#39;Q&#39;</span>, <span class="charliteral">&#39;q&#39;</span>, </div>
+<div class="line">    <span class="charliteral">&#39;R&#39;</span>, <span class="charliteral">&#39;r&#39;</span>, </div>
+<div class="line">    <span class="charliteral">&#39;S&#39;</span>, <span class="charliteral">&#39;s&#39;</span>, </div>
+<div class="line">    <span class="charliteral">&#39;T&#39;</span>, <span class="charliteral">&#39;t&#39;</span>, </div>
+<div class="line">    <span class="charliteral">&#39;U&#39;</span>, <span class="charliteral">&#39;u&#39;</span>, </div>
+<div class="line">    <span class="charliteral">&#39;V&#39;</span>, <span class="charliteral">&#39;v&#39;</span>, </div>
+<div class="line">    <span class="charliteral">&#39;W&#39;</span>, <span class="charliteral">&#39;w&#39;</span>, </div>
+<div class="line">    <span class="charliteral">&#39;Y&#39;</span>, <span class="charliteral">&#39;y&#39;</span>, </div>
+<div class="line">    <span class="charliteral">&#39;X&#39;</span>, <span class="charliteral">&#39;x&#39;</span>, </div>
+<div class="line">    <span class="charliteral">&#39;Z&#39;</span>, <span class="charliteral">&#39;z&#39;</span>, </div>
+<div class="line">    <span class="charliteral">&#39;-&#39;</span>, </div>
+<div class="line">    <span class="charliteral">&#39;*&#39;</span>, </div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a641179d0270e380c13be25106c5071b2" name="a641179d0270e380c13be25106c5071b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a641179d0270e380c13be25106c5071b2">&#9670;&#160;</a></span>legalDNA</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt; char, char &gt; Sequence::legalDNA</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    {<span class="charliteral">&#39;A&#39;</span>, <span class="charliteral">&#39;T&#39;</span>}, {<span class="charliteral">&#39;a&#39;</span>, <span class="charliteral">&#39;t&#39;</span>}, </div>
+<div class="line">    {<span class="charliteral">&#39;B&#39;</span>, <span class="charliteral">&#39;V&#39;</span>}, {<span class="charliteral">&#39;b&#39;</span>, <span class="charliteral">&#39;v&#39;</span>}, </div>
+<div class="line">    {<span class="charliteral">&#39;C&#39;</span>, <span class="charliteral">&#39;G&#39;</span>}, {<span class="charliteral">&#39;c&#39;</span>, <span class="charliteral">&#39;g&#39;</span>}, </div>
+<div class="line">    {<span class="charliteral">&#39;D&#39;</span>, <span class="charliteral">&#39;H&#39;</span>}, {<span class="charliteral">&#39;d&#39;</span>, <span class="charliteral">&#39;h&#39;</span>}, </div>
+<div class="line"> </div>
+<div class="line">    {<span class="charliteral">&#39;G&#39;</span>, <span class="charliteral">&#39;C&#39;</span>}, {<span class="charliteral">&#39;g&#39;</span>, <span class="charliteral">&#39;c&#39;</span>}, </div>
+<div class="line">    {<span class="charliteral">&#39;H&#39;</span>, <span class="charliteral">&#39;D&#39;</span>}, {<span class="charliteral">&#39;h&#39;</span>, <span class="charliteral">&#39;d&#39;</span>}, </div>
+<div class="line">    {<span class="charliteral">&#39;I&#39;</span>, <span class="charliteral">&#39;I&#39;</span>}, {<span class="charliteral">&#39;i&#39;</span>, <span class="charliteral">&#39;i&#39;</span>}, </div>
+<div class="line">    {<span class="charliteral">&#39;K&#39;</span>, <span class="charliteral">&#39;M&#39;</span>}, {<span class="charliteral">&#39;k&#39;</span>, <span class="charliteral">&#39;m&#39;</span>}, </div>
+<div class="line"> </div>
+<div class="line">    {<span class="charliteral">&#39;M&#39;</span>, <span class="charliteral">&#39;K&#39;</span>}, {<span class="charliteral">&#39;m&#39;</span>, <span class="charliteral">&#39;k&#39;</span>}, </div>
+<div class="line">    {<span class="charliteral">&#39;N&#39;</span>, <span class="charliteral">&#39;N&#39;</span>}, {<span class="charliteral">&#39;n&#39;</span>, <span class="charliteral">&#39;n&#39;</span>}, </div>
+<div class="line"> </div>
+<div class="line">    {<span class="charliteral">&#39;R&#39;</span>, <span class="charliteral">&#39;Y&#39;</span>}, {<span class="charliteral">&#39;r&#39;</span>, <span class="charliteral">&#39;y&#39;</span>}, </div>
+<div class="line">    {<span class="charliteral">&#39;S&#39;</span>, <span class="charliteral">&#39;S&#39;</span>}, {<span class="charliteral">&#39;s&#39;</span>, <span class="charliteral">&#39;s&#39;</span>}, </div>
+<div class="line"> </div>
+<div class="line">    {<span class="charliteral">&#39;T&#39;</span>, <span class="charliteral">&#39;A&#39;</span>}, {<span class="charliteral">&#39;t&#39;</span>, <span class="charliteral">&#39;a&#39;</span>}, </div>
+<div class="line"> </div>
+<div class="line">    {<span class="charliteral">&#39;V&#39;</span>, <span class="charliteral">&#39;B&#39;</span>}, {<span class="charliteral">&#39;v&#39;</span>, <span class="charliteral">&#39;b&#39;</span>}, </div>
+<div class="line">    {<span class="charliteral">&#39;W&#39;</span>, <span class="charliteral">&#39;W&#39;</span>}, {<span class="charliteral">&#39;w&#39;</span>, <span class="charliteral">&#39;w&#39;</span>}, </div>
+<div class="line">  </div>
+<div class="line">    {<span class="charliteral">&#39;Y&#39;</span>, <span class="charliteral">&#39;R&#39;</span>}, {<span class="charliteral">&#39;y&#39;</span>, <span class="charliteral">&#39;r&#39;</span>}, </div>
+<div class="line"> </div>
+<div class="line">    {<span class="charliteral">&#39;-&#39;</span>, <span class="charliteral">&#39;-&#39;</span>} </div>
+<div class="line">}</div>
+</div><!-- fragment --><p>Tester le constructeur Finit la class... </p>
+
+</div>
+</div>
+<a id="aebe0bfe42ba41cdf3e58503dd95e5b64" name="aebe0bfe42ba41cdf3e58503dd95e5b64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebe0bfe42ba41cdf3e58503dd95e5b64">&#9670;&#160;</a></span>legalRNA</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt; char, char &gt; Sequence::legalRNA</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    {<span class="charliteral">&#39;A&#39;</span>, <span class="charliteral">&#39;U&#39;</span>}, {<span class="charliteral">&#39;a&#39;</span>, <span class="charliteral">&#39;u&#39;</span>}, </div>
+<div class="line">    {<span class="charliteral">&#39;B&#39;</span>, <span class="charliteral">&#39;V&#39;</span>}, {<span class="charliteral">&#39;b&#39;</span>, <span class="charliteral">&#39;v&#39;</span>}, </div>
+<div class="line">    {<span class="charliteral">&#39;C&#39;</span>, <span class="charliteral">&#39;G&#39;</span>}, {<span class="charliteral">&#39;c&#39;</span>, <span class="charliteral">&#39;g&#39;</span>}, </div>
+<div class="line">    {<span class="charliteral">&#39;D&#39;</span>, <span class="charliteral">&#39;H&#39;</span>}, {<span class="charliteral">&#39;d&#39;</span>, <span class="charliteral">&#39;h&#39;</span>}, </div>
+<div class="line"> </div>
+<div class="line">    {<span class="charliteral">&#39;G&#39;</span>, <span class="charliteral">&#39;C&#39;</span>}, {<span class="charliteral">&#39;g&#39;</span>, <span class="charliteral">&#39;c&#39;</span>}, </div>
+<div class="line">    {<span class="charliteral">&#39;H&#39;</span>, <span class="charliteral">&#39;D&#39;</span>}, {<span class="charliteral">&#39;h&#39;</span>, <span class="charliteral">&#39;d&#39;</span>}, </div>
+<div class="line">    {<span class="charliteral">&#39;I&#39;</span>, <span class="charliteral">&#39;I&#39;</span>}, {<span class="charliteral">&#39;i&#39;</span>, <span class="charliteral">&#39;i&#39;</span>}, </div>
+<div class="line">    {<span class="charliteral">&#39;K&#39;</span>, <span class="charliteral">&#39;M&#39;</span>}, {<span class="charliteral">&#39;k&#39;</span>, <span class="charliteral">&#39;m&#39;</span>}, </div>
+<div class="line"> </div>
+<div class="line">    {<span class="charliteral">&#39;M&#39;</span>, <span class="charliteral">&#39;K&#39;</span>}, {<span class="charliteral">&#39;m&#39;</span>, <span class="charliteral">&#39;k&#39;</span>}, </div>
+<div class="line">    {<span class="charliteral">&#39;N&#39;</span>, <span class="charliteral">&#39;N&#39;</span>}, {<span class="charliteral">&#39;n&#39;</span>, <span class="charliteral">&#39;n&#39;</span>}, </div>
+<div class="line"> </div>
+<div class="line">    {<span class="charliteral">&#39;R&#39;</span>, <span class="charliteral">&#39;Y&#39;</span>}, {<span class="charliteral">&#39;r&#39;</span>, <span class="charliteral">&#39;y&#39;</span>}, </div>
+<div class="line">    {<span class="charliteral">&#39;S&#39;</span>, <span class="charliteral">&#39;S&#39;</span>}, {<span class="charliteral">&#39;s&#39;</span>, <span class="charliteral">&#39;s&#39;</span>}, </div>
+<div class="line"> </div>
+<div class="line">    {<span class="charliteral">&#39;U&#39;</span>, <span class="charliteral">&#39;A&#39;</span>}, {<span class="charliteral">&#39;u&#39;</span>, <span class="charliteral">&#39;a&#39;</span>}, </div>
+<div class="line"> </div>
+<div class="line">    {<span class="charliteral">&#39;V&#39;</span>, <span class="charliteral">&#39;B&#39;</span>}, {<span class="charliteral">&#39;v&#39;</span>, <span class="charliteral">&#39;b&#39;</span>}, </div>
+<div class="line">    {<span class="charliteral">&#39;W&#39;</span>, <span class="charliteral">&#39;W&#39;</span>}, {<span class="charliteral">&#39;w&#39;</span>, <span class="charliteral">&#39;w&#39;</span>}, </div>
+<div class="line"> </div>
+<div class="line">    {<span class="charliteral">&#39;Y&#39;</span>, <span class="charliteral">&#39;R&#39;</span>}, {<span class="charliteral">&#39;y&#39;</span>, <span class="charliteral">&#39;r&#39;</span>}, </div>
+<div class="line"> </div>
+<div class="line">    {<span class="charliteral">&#39;-&#39;</span>, <span class="charliteral">&#39;-&#39;</span>} </div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a076023b652704648a25f92914f06d3a6" name="a076023b652704648a25f92914f06d3a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a076023b652704648a25f92914f06d3a6">&#9670;&#160;</a></span>validType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::set&lt; char &gt; Sequence::validType</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    <span class="charliteral">&#39;P&#39;</span>, </div>
+<div class="line">    <span class="charliteral">&#39;D&#39;</span>, </div>
+<div class="line">    <span class="charliteral">&#39;R&#39;</span>, </div>
+<div class="line">    <span class="charliteral">&#39;N&#39;</span>, </div>
+<div class="line">    <span class="charliteral">&#39;U&#39;</span>  </div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>

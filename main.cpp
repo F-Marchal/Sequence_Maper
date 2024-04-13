@@ -120,63 +120,7 @@
 
 int main() {
     
-    BitVector bv(2, 1);
-    std::cout << "----" << std::endl;
-    bv.set(0, (char) 0b00000011);
-    bv.append((char) 0b00000010);
-    bv.append((char) 0b00000001);
-    bv.set(3, (char) 0b00000000);
-    bv.append((char) 0b00000011);
-    bv.append((char) 0b00000001);
-    // bv.set(2, (char) 0b00011111);
-    std::cout << "--è--" << std::endl;
-    displayBits(bv.get(0)[0]);
-    std::cout << "--è--" << std::endl;
-
-    bv.insert(2, 3, 0b00000011, 0b00000011, 0b00000011);
-    bv.remove(9, 3);
-    std::cout << "--è--" << std::endl;
-    for (char * c: BitVector(bv)) {
-        displayBits(c[0]);
-    }
-    for (char * c: bv) {
-        displayBits(c[0]);
-    }
-  std::cout << "--'è'--" << std::endl;
-   
-
-
-
-
-    // Retransform to vit
-
-
-    // size_t i = 0;
-    // while (i != 48) {
-    //    i ++;
-    // }
-
-    // size_t main_tab = SIZE_MAX;
-
-
-
-            // float temp = 1.0 / 3.0;
-    // float a = 0;
-    // float b = 0;
-    // float temp2;
-    // std::cout << temp * 3 <<  " " << temp * 3.0 + 1.0 / 10.0 << std::endl; 
-    // short unsigned int i = 1;
-    // float j = 1;
-    // while (i != 0) {
-    //     i+=1;
-    //     j+=1;
-    //     b = j;
-    //     a = 8;
-    //     temp = a / b;
-    //     temp2 = (1.0 / temp * a);
-    //     std::cout << "Bool=" << (temp2==j) << " " << temp2 << " " << j  << " "<< (j == i)<< " "<< (unsigned int)(temp2) <<std::endl;
-    // }
-    // std::cout << 1.0 / 3 * 3  <<std::endl;
+    
     }
 
     // BitVector vec(2);

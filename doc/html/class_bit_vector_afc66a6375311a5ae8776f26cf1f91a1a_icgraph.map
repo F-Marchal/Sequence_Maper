@@ -1,0 +1,7 @@
+<map id="BitVector::_makeRoomForElement" name="BitVector::_makeRoomForElement">
+<area shape="rect" id="Node000001" title="Insert a number of blank position inside BitVector::_data." alt="" coords="180,31,424,56"/>
+<area shape="rect" id="Node000002" href="$class_bit_vector.html#a9f86c96c013632abd9d18feafe78d72e" title="Insert a number_of_elements inside the vector at the index pos ." alt="" coords="5,5,132,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,32,132,27,133,22,172,26"/>
+<area shape="rect" id="Node000003" href="$class_bit_vector.html#a915743b3f94c75c22317d160bfa741ff" title="Insert a number_of_elements inside the vector at the index pos ." alt="" coords="5,55,132,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="167,60,132,64,132,58,166,55"/>
+</map>

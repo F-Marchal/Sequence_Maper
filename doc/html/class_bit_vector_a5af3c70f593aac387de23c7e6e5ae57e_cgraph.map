@@ -1,0 +1,19 @@
+<map id="BitVector::indexCoordinate" name="BitVector::indexCoordinate">
+<area shape="rect" id="Node000001" title="Find the element that correspond to coord ." alt="" coords="5,33,201,59"/>
+<area shape="rect" id="Node000002" href="$class_bit_vector.html#aebe159444eb9d619959b7325ac5dac2d" title="Return the value of the bit at the position coord." alt="" coords="901,29,1012,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,41,249,39,551,29,684,27,853,31,887,33,887,39,853,37,684,33,551,34,249,45,202,46"/>
+<area shape="rect" id="Node000004" href="$class_bit_vector.html#a354c83853bc3622efa5d45efcae97286" title="Give more detailed on BiteVector::indexCoordinate." alt="" coords="249,54,445,94"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="202,55,236,59,236,64,201,60"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="928,31,922,21,925,11,937,5,957,3,981,6,991,15,987,19,978,11,957,8,938,10,929,15,927,20,932,28"/>
+<area shape="rect" id="Node000003" href="$class_bit_vector_1_1_coords.html#a2892f7f46c4af93f9733e312229d8ec1" title="Get Coords::octet ." alt="" coords="1060,22,1203,62"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="1012,39,1046,39,1046,45,1012,45"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="445,66,887,43,887,48,446,72"/>
+<area shape="rect" id="Node000005" href="$class_bit_vector.html#af68cda7444ec4459393bbfa423f0a7dd" title="Get the Size_t value if a BitVector::CoordUnit." alt="" coords="493,79,631,119"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="446,83,480,87,479,92,445,88"/>
+<area shape="rect" id="Node000007" href="$class_bit_vector_1_1_coords.html#a3a4fac9de925974af9c8a66a1d0179e6" title="Translate octet and bit value inside a size_t. Allow easier mathematic computations." alt="" coords="695,134,837,174"/>
+<area shape="poly" id="edge10_Node000004_Node000007" title=" " alt="" coords="391,92,440,112,494,129,591,144,681,151,681,156,590,150,493,134,438,117,389,97"/>
+<area shape="rect" id="Node000006" href="$class_bit_vector.html#a115789c8a9812eabb52f8843cd4e9965" title="Give the a coord object that represent the size of 1 element inside BitVector::_data." alt="" coords="679,81,853,107"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="631,95,665,94,665,99,631,100"/>
+<area shape="poly" id="edge9_Node000005_Node000007" title=" " alt="" coords="632,115,682,129,681,134,630,120"/>
+<area shape="poly" id="edge8_Node000006_Node000002" title=" " alt="" coords="813,79,895,56,897,61,814,84"/>
+</map>

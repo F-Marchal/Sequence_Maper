@@ -1,0 +1,8 @@
+<map id="BitVector::operator[]" name="BitVector::operator[]">
+<area shape="rect" id="Node000001" title="Return the element at the position index." alt="" coords="5,29,160,55"/>
+<area shape="rect" id="Node000002" href="$class_bit_vector.html#aebe159444eb9d619959b7325ac5dac2d" title="Return the value of the bit at the position coord." alt="" coords="208,29,319,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,39,194,39,194,45,160,45"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="234,31,228,21,232,11,244,5,263,3,287,6,297,15,294,19,285,11,263,8,245,10,236,15,234,20,239,28"/>
+<area shape="rect" id="Node000003" href="$class_bit_vector_1_1_coords.html#a2892f7f46c4af93f9733e312229d8ec1" title="Get Coords::octet ." alt="" coords="367,22,509,62"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="319,39,353,39,353,45,319,45"/>
+</map>

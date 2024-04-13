@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['getbit_0',['getBit',['../class_bit_vector_1_1_coords.html#a393207c752f8f9121aca38c938914154',1,'BitVector::Coords']]],
-  ['getoctet_1',['getOctet',['../class_bit_vector_1_1_coords.html#a2892f7f46c4af93f9733e312229d8ec1',1,'BitVector::Coords']]],
-  ['getseq_2',['getSeq',['../class_sequence.html#a977ed0641af71694936687af9e5f2e5e',1,'Sequence']]],
-  ['gettype_3',['getType',['../class_sequence.html#a7561cc8bf09fa8056b3ddf14eaa4b0bb',1,'Sequence']]]
+  ['begin_0',['begin',['../class_bit_vector.html#a8f077fd00fdb5063895111bbf6a2f299',1,'BitVector']]],
+  ['bitvector_1',['BitVector',['../class_bit_vector.html#a23c1685317944b2a5c6f149a5fccc6bd',1,'BitVector::BitVector(short unsigned int block_size, size_t alloc)'],['../class_bit_vector.html#a3a10dc26ed8d3adc29372d8e82b4e9f5',1,'BitVector::BitVector(short unsigned int block_size)'],['../class_bit_vector.html#a5547d55a697d61de026d0a94e743624b',1,'BitVector::BitVector(const BitVector &amp;bit_vector)']]]
 ];

@@ -27,6 +27,60 @@ static bool {\bfseries is\+Comment\+Char} (char comment\+\_\+char)
 \Hypertarget{class_fasta_related_afa8fa72df1990eb2ee40593fe64c3e4e}\label{class_fasta_related_afa8fa72df1990eb2ee40593fe64c3e4e} 
 static bool {\bfseries is\+Blank\+Char} (char blank)
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::set$<$ char $>$ \mbox{\hyperlink{class_fasta_related_ac771453d1873d1545b9d1ca21c246dce}{legal\+Multi\+Header\+Char}}
+\item 
+static std\+::set$<$ char $>$ \mbox{\hyperlink{class_fasta_related_a8108fb4d0cc83057a3cff762c77cbf34}{legal\+Mono\+Header\+Char}}
+\item 
+static std\+::set$<$ char $>$ \mbox{\hyperlink{class_fasta_related_a5639469121637d5ef3acb83a3cd6ecc0}{legal\+Comment\+Char}}
+\item 
+\Hypertarget{class_fasta_related_a13a42fa0a2c2011055681fa6023f3837}\label{class_fasta_related_a13a42fa0a2c2011055681fa6023f3837} 
+static std\+::set$<$ char $>$ {\bfseries blank\+Char}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_fasta_related_a5639469121637d5ef3acb83a3cd6ecc0}\label{class_fasta_related_a5639469121637d5ef3acb83a3cd6ecc0} 
+\index{FastaRelated@{FastaRelated}!legalCommentChar@{legalCommentChar}}
+\index{legalCommentChar@{legalCommentChar}!FastaRelated@{FastaRelated}}
+\doxysubsubsection{\texorpdfstring{legalCommentChar}{legalCommentChar}}
+{\footnotesize\ttfamily std\+::set$<$ char $>$ Fasta\+Related\+::legal\+Comment\+Char\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{charliteral}{';'},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{class_fasta_related_a8108fb4d0cc83057a3cff762c77cbf34}\label{class_fasta_related_a8108fb4d0cc83057a3cff762c77cbf34} 
+\index{FastaRelated@{FastaRelated}!legalMonoHeaderChar@{legalMonoHeaderChar}}
+\index{legalMonoHeaderChar@{legalMonoHeaderChar}!FastaRelated@{FastaRelated}}
+\doxysubsubsection{\texorpdfstring{legalMonoHeaderChar}{legalMonoHeaderChar}}
+{\footnotesize\ttfamily std\+::set$<$ char $>$ Fasta\+Related\+::legal\+Mono\+Header\+Char\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{charliteral}{'>'},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{class_fasta_related_ac771453d1873d1545b9d1ca21c246dce}\label{class_fasta_related_ac771453d1873d1545b9d1ca21c246dce} 
+\index{FastaRelated@{FastaRelated}!legalMultiHeaderChar@{legalMultiHeaderChar}}
+\index{legalMultiHeaderChar@{legalMultiHeaderChar}!FastaRelated@{FastaRelated}}
+\doxysubsubsection{\texorpdfstring{legalMultiHeaderChar}{legalMultiHeaderChar}}
+{\footnotesize\ttfamily std\+::set$<$ char $>$ Fasta\+Related\+::legal\+Multi\+Header\+Char\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{charliteral}{';'},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

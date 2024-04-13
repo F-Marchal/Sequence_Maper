@@ -1,0 +1,10 @@
+<map id="BitVector::lastPos" name="BitVector::lastPos">
+<area shape="rect" id="Node000001" title="Last postion of the vector." alt="" coords="5,29,141,55"/>
+<area shape="rect" id="Node000002" href="$class_bit_vector.html#a115789c8a9812eabb52f8843cd4e9965" title="Give the a coord object that represent the size of 1 element inside BitVector::_data." alt="" coords="189,29,364,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,39,176,39,176,45,141,45"/>
+<area shape="rect" id="Node000003" href="$class_bit_vector.html#aebe159444eb9d619959b7325ac5dac2d" title="Return the value of the bit at the position coord." alt="" coords="412,29,523,55"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="364,39,398,39,398,45,364,45"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="438,31,432,21,436,11,448,5,467,3,491,6,501,15,498,19,489,11,467,8,449,10,440,15,438,20,443,28"/>
+<area shape="rect" id="Node000004" href="$class_bit_vector_1_1_coords.html#a2892f7f46c4af93f9733e312229d8ec1" title="Get Coords::octet ." alt="" coords="571,22,713,62"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="523,39,557,39,557,45,523,45"/>
+</map>

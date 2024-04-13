@@ -1,11 +1,9 @@
 #include "BitVector.hpp"
 #include "Utilities.hpp"
-#include <map>
 #include <string>
-#include <vector>
-#include <cstring>
-#include <cstdarg>
-// TODO: Proteger les taleaux des copies
+#include <cstring> // memset
+#include <cstdarg> // Variadics
+
 
 // --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- Coords --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 // --- --- Constructor --- ---
@@ -237,7 +235,6 @@ BitVector::Iterator::~Iterator() {
 }
 void BitVector::Iterator::loadValue() {
     this->_nullifyElement();
-    std::cout << "   " << this->_parent.indexCoordinate(*this) << std::endl;
     this->_element = this->_parent[this->_parent.indexCoordinate(*this)];
 }
 
@@ -295,6 +292,7 @@ void BitVector::_killInternalData() {
         return ;
     }
     this->_data_size = 0;
+    this->_element_number = 0;
     delete [] _data;
 
 }
@@ -345,7 +343,7 @@ std::tuple<size_t, size_t, size_t> BitVector::indexCoordinateUntreated(const Coo
     size_t element = this->getSize_tUnit();
     size_t octet_number = coord.toSize_t();
     
-    // Use the power of division to retrieve how much element can be stuffed intoo octet_number
+    // Use the power of division to retrieve how much element can be stuffed into octet_number
     size_t number_of_elements = octet_number / element;
     size_t really_used_octet = number_of_elements * element;
     size_t unused_octet = octet_number - really_used_octet;
@@ -395,10 +393,15 @@ BitVector::Coords BitVector::lastPos() const  {
 BitVector::Coords BitVector::firstPos() const {
     return Coords(0, 0);
 }
+
+BitVector::operator bool() const {
+    return (this->_element_number != 0);
+}
 // --- --- Utilities --- --- 
+
 void BitVector::doubleSize() {
     if (this->maxSizeIsReached()) {
-        displayLengthError(raise, "Maximal size reached, unable to upsize.", __FILE__, __func__);
+        displayLengthError(raise, "Maximal size reached, can not extend data size.", __FILE__, __func__);
         return ;
     }
     size_t element_capacity = this->currentElementCapacity();
@@ -437,11 +440,15 @@ void BitVector::resize(size_t element_capacity) {
         }
     }
     
+    size_t element_number;
     if (this->_data_size > new_data_size) {
-        this->_element_number = (new_data_size * 1000 + (1000 / 8)) / this->getSize_tUnit();
+        element_number = (new_data_size * 1000 + (7 * 1000 / 8)) / this->getSize_tUnit();
+    } else {
+        element_number = this->_element_number;
     }
 
     this->_killInternalData ();
+    this->_element_number = element_number;
     this->_data_size = new_data_size;
     this->_data = new_tab;
 
@@ -451,7 +458,7 @@ void BitVector::resize(size_t element_capacity) {
 
 void BitVector::shrink() {
     // Extract number of octet needed and resize data.
-    this->resize(this->_element_number * this->getSize_tUnit() / 1000) ;
+    this->resize(this->_element_number * this->getSize_tUnit() / 1000 + 1) ;
 }
 
 void BitVector::clear() {
@@ -490,7 +497,7 @@ size_t BitVector::maximumElementNumber() {
     return __SIZE_MAX__ - 1;
 }
 
-
+// --- Access and modifications ---
 void BitVector::copyBits(const char * pattern, char * final_list, const BitVector::Coords element,  BitVector::Coords pattern_coord, BitVector::Coords final_coord, 
                          bool final_end_is_right, bool pattern_end_is_right) {
 
@@ -506,6 +513,8 @@ void BitVector::copyBits(const char * pattern, char * final_list, const BitVecto
 
     while (final_coord != final_end_coord) {
         step_left --;
+
+        // Right or Left
         if (final_end_is_right && final_coord.getOctet() == final_end_coord.getOctet()) {
             final_list_bit_value = step_left.getBit();
         } else {
@@ -518,9 +527,11 @@ void BitVector::copyBits(const char * pattern, char * final_list, const BitVecto
             pattern_bit_value = 7 - pattern_coord.getBit();
         }
         
+        // Mask
         pattern_bit = 1 << pattern_bit_value;
         final_mask = 1 << final_list_bit_value;
 
+        // Apply the mask
         if (pattern[pattern_coord.getOctet()] & pattern_bit) {
             final_list[final_coord.getOctet()] |= final_mask;
 
@@ -548,6 +559,7 @@ void BitVector::_makeRoomForElement(size_t element_position, size_t room_require
     size_t last_true_element = this->_element_number;
 
     // Add space required by \p room_required
+ 
     for (size_t pos = 0 ; pos < room_required; pos++) {
         this->append(empty_element);
     }
@@ -568,6 +580,7 @@ void BitVector::_makeRoomForElement(size_t element_position, size_t room_require
   
     delete [] empty_element;
 }
+
 
 
 
@@ -660,10 +673,12 @@ void BitVector::insert(size_t position, size_t number_of_elements, char c...) {
     va_start(args, c);
     
     // Move items
+ 
     this->_makeRoomForElement(position, number_of_elements);
 
     // Set items
     for (size_t i = 0; i < number_of_elements; i++) {
+        
         this->set(position + i, c) ;
         c = va_arg(args, int);
     }
@@ -680,6 +695,7 @@ void BitVector::insert(size_t position, size_t number_of_elements, char * tab...
 
     // Set items
     for (size_t i = 0; i < number_of_elements; i++) {
+        
         tab = va_arg(args, char *);
         this->set(position + i, tab) ;
         

@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['getbit_0',['getBit',['../class_bit_vector_1_1_coords.html#a393207c752f8f9121aca38c938914154',1,'BitVector::Coords']]],
-  ['getoctet_1',['getOctet',['../class_bit_vector_1_1_coords.html#a2892f7f46c4af93f9733e312229d8ec1',1,'BitVector::Coords']]],
-  ['getseq_2',['getSeq',['../class_sequence.html#a977ed0641af71694936687af9e5f2e5e',1,'Sequence']]],
-  ['gettype_3',['getType',['../class_sequence.html#a7561cc8bf09fa8056b3ddf14eaa4b0bb',1,'Sequence']]]
+  ['decrement_0',['decrement',['../class_bit_vector_1_1_coords.html#afd7e1ac7d32a10fa0529e87a023769e4',1,'BitVector::Coords::decrement()'],['../class_bit_vector_1_1_iterator.html#a8d173205167f88b0a94830e9fb705519',1,'BitVector::Iterator::decrement()']]]
 ];

@@ -105,10 +105,11 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_sequence.html">   19</a></span><span class="keyword">class </span><a class="code hl_class" href="class_sequence.html">Sequence</a> {</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    std::array&lt;bool, 5&gt; type;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    std::string seq;</div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_sequence.html#a641179d0270e380c13be25106c5071b2">   22</a></span>    std::string seq;</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">// --- --- Private attributes --- ---</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">static</span> std::map&lt;char, char&gt; legalDNA;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">static</span> std::map&lt;char, char&gt; <a class="code hl_variable" href="class_sequence.html#a641179d0270e380c13be25106c5071b2">legalDNA</a>;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">static</span> std::map&lt;char, char&gt; legalRNA;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">static</span> std::map&lt;char, char&gt; bridgeDNA_RNA;</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">static</span> std::set&lt;char&gt; legalAmino;</div>
@@ -122,6 +123,7 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_function" href="class_sequence.html#a532b7e8df6ff6b2f990c14ae97859ca2">Sequence</a>(std::string sequence, <span class="keywordtype">char</span> type, errorMods error_mod, <span class="keywordtype">bool</span> finalis_type = <span class="keyword">true</span>);</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    </div>
+</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_sequence.html#a532b7e8df6ff6b2f990c14ae97859ca2">   51</a></span>    <a class="code hl_function" href="class_sequence.html#a532b7e8df6ff6b2f990c14ae97859ca2">Sequence</a>()                                           : <a class="code hl_class" href="class_sequence.html">Sequence</a>(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&#39;U&#39;</span>, display, true) {};</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_function" href="class_sequence.html#a532b7e8df6ff6b2f990c14ae97859ca2">Sequence</a>(std::string sequence, <span class="keywordtype">char</span> type)            : <a class="code hl_class" href="class_sequence.html">Sequence</a>(sequence, type, display) {};</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_function" href="class_sequence.html#a532b7e8df6ff6b2f990c14ae97859ca2">Sequence</a>(std::string sequence, errorMods error_mod)  : <a class="code hl_class" href="class_sequence.html">Sequence</a>(sequence, <span class="stringliteral">&#39;U&#39;</span>, error_mod) {};</div>
@@ -215,6 +217,7 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclass_sequence_html"><div class="ttname"><a href="class_sequence.html">Sequence</a></div><div class="ttdef"><b>Definition</b> Sequence.hpp:19</div></div>
 <div class="ttc" id="aclass_sequence_html_a532b7e8df6ff6b2f990c14ae97859ca2"><div class="ttname"><a href="class_sequence.html#a532b7e8df6ff6b2f990c14ae97859ca2">Sequence::Sequence</a></div><div class="ttdeci">Sequence()</div><div class="ttdoc">Default Constructor. Construct a new Sequence object. Equivalent to.</div><div class="ttdef"><b>Definition</b> Sequence.hpp:51</div></div>
+<div class="ttc" id="aclass_sequence_html_a641179d0270e380c13be25106c5071b2"><div class="ttname"><a href="class_sequence.html#a641179d0270e380c13be25106c5071b2">Sequence::legalDNA</a></div><div class="ttdeci">static std::map&lt; char, char &gt; legalDNA</div><div class="ttdef"><b>Definition</b> Sequence.hpp:22</div></div>
 <div class="ttc" id="aclass_sequence_html_a7561cc8bf09fa8056b3ddf14eaa4b0bb"><div class="ttname"><a href="class_sequence.html#a7561cc8bf09fa8056b3ddf14eaa4b0bb">Sequence::getType</a></div><div class="ttdeci">char getType() const</div><div class="ttdoc">Get a char that represent sequence type.</div><div class="ttdef"><b>Definition</b> Sequence.cpp:219</div></div>
 <div class="ttc" id="aclass_sequence_html_a977ed0641af71694936687af9e5f2e5e"><div class="ttname"><a href="class_sequence.html#a977ed0641af71694936687af9e5f2e5e">Sequence::getSeq</a></div><div class="ttdeci">const std::string &amp; getSeq() const</div><div class="ttdoc">Get the sequence contain in this object.</div><div class="ttdef"><b>Definition</b> Sequence.cpp:215</div></div>
 </div><!-- fragment --></div><!-- contents -->

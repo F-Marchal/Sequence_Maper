@@ -1,0 +1,8 @@
+<map id="BitVector::getCoordUnit" name="BitVector::getCoordUnit">
+<area shape="rect" id="Node000001" title="Give the a coord object that represent the size of 1 element inside BitVector::_data." alt="" coords="5,29,180,55"/>
+<area shape="rect" id="Node000002" href="$class_bit_vector.html#aebe159444eb9d619959b7325ac5dac2d" title="Return the value of the bit at the position coord." alt="" coords="228,29,339,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,39,214,39,214,45,180,45"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="254,31,248,21,252,11,264,5,283,3,307,6,317,15,314,19,305,11,283,8,265,10,256,15,254,20,259,28"/>
+<area shape="rect" id="Node000003" href="$class_bit_vector_1_1_coords.html#a2892f7f46c4af93f9733e312229d8ec1" title="Get Coords::octet ." alt="" coords="387,22,529,62"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="339,39,373,39,373,45,339,45"/>
+</map>

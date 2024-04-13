@@ -1,7 +1,10 @@
 var searchData=
 [
-  ['sequence_0',['Sequence',['../class_sequence.html',1,'Sequence'],['../class_sequence.html#a364a3d2b8639ef56dae02014c057faca',1,'Sequence::Sequence(std::string sequence, char type, errorMods error_mod, bool finalis_type=true)'],['../class_sequence.html#a532b7e8df6ff6b2f990c14ae97859ca2',1,'Sequence::Sequence()'],['../class_fasta_sequence.html#a364a3d2b8639ef56dae02014c057faca',1,'FastaSequence::Sequence(std::string sequence, char type, errorMods error_mod, bool finalis_type=true)'],['../class_fasta_sequence.html#a532b7e8df6ff6b2f990c14ae97859ca2',1,'FastaSequence::Sequence()']]],
-  ['setbit_1',['setBit',['../class_bit_vector_1_1_coords.html#a2368da9407016aec60da11f41d59a96b',1,'BitVector::Coords']]],
-  ['setoctet_2',['setOctet',['../class_bit_vector_1_1_coords.html#a19516be1a614f2078b9fa96d42724e2e',1,'BitVector::Coords']]],
-  ['setsize_5ft_3',['setSize_t',['../class_bit_vector_1_1_coords.html#a20e302b03f7971717dc68ecd352f90b5',1,'BitVector::Coords::setSize_t(size_t value)'],['../class_bit_vector_1_1_coords.html#af73d998e959c0225be25334fec589e35',1,'BitVector::Coords::setSize_t(const Coords &amp;coord)']]]
+  ['increment_0',['increment',['../class_bit_vector_1_1_coords.html#a9862c87ea93b2ab42ff2aa7b78868861',1,'BitVector::Coords::increment()'],['../class_bit_vector_1_1_iterator.html#a90a09a280880002d5664d7ad8519ad3d',1,'BitVector::Iterator::increment()']]],
+  ['indexcoordinate_1',['indexCoordinate',['../class_bit_vector.html#a5af3c70f593aac387de23c7e6e5ae57e',1,'BitVector']]],
+  ['indexcoordinateuntreated_2',['indexCoordinateUntreated',['../class_bit_vector.html#a354c83853bc3622efa5d45efcae97286',1,'BitVector']]],
+  ['indexelement_3',['indexElement',['../class_bit_vector.html#a93ab8bc2ec39bf299ae28ffcad504b41',1,'BitVector']]],
+  ['indexelementuntreated_4',['indexElementUntreated',['../class_bit_vector.html#a04e6d0b67ee9b42ccec437b0176067fe',1,'BitVector']]],
+  ['insert_5',['insert',['../class_bit_vector.html#a9f86c96c013632abd9d18feafe78d72e',1,'BitVector::insert(size_t pos, size_t number_of_elements, char *tab ...)'],['../class_bit_vector.html#a915743b3f94c75c22317d160bfa741ff',1,'BitVector::insert(size_t pos, size_t number_of_elements, char c ...)']]],
+  ['iterator_6',['Iterator',['../class_bit_vector_1_1_iterator.html',1,'BitVector::Iterator'],['../class_bit_vector_1_1_iterator.html#abb51289825789b5c93bde82aca059d60',1,'BitVector::Iterator::Iterator(const BitVector &amp;parent, size_t octet, unsigned short int bit)'],['../class_bit_vector_1_1_iterator.html#a63d74f126c82e4b25b135a43ceb722ec',1,'BitVector::Iterator::Iterator(const BitVector &amp;parent, size_t value)'],['../class_bit_vector_1_1_iterator.html#a564a2bf767c2a13c8e1dc9da646fdc3a',1,'BitVector::Iterator::Iterator(const BitVector &amp;parent, const Coords &amp;coord)'],['../class_bit_vector_1_1_iterator.html#aa1090a102049f118ae9823c3b57d602c',1,'BitVector::Iterator::Iterator(const BitVector &amp;parent)']]]
 ];

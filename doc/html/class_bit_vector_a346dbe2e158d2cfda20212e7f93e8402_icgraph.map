@@ -1,0 +1,5 @@
+<map id="BitVector::maxElementSizeIsReached" name="BitVector::maxElementSizeIsReached">
+<area shape="rect" id="Node000001" title="Do maximum BitVector::_element_number is reached (With no possibility to push it further)" alt="" coords="265,5,464,45"/>
+<area shape="rect" id="Node000002" href="$class_bit_vector.html#a87e099aba27ebb0f67c07dd8314828e7" title="Do maximum capacity is reached (With no possibility to push it further)" alt="" coords="5,13,217,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="251,28,217,28,217,23,251,23"/>
+</map>
