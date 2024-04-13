@@ -8,12 +8,6 @@
 #include <array>
 #include "Utilities.hpp"
 
-/**
- * Tester le constructeur
- * Finit la class...
- * 
- */
-
 
 
 
@@ -220,10 +214,12 @@ char Sequence::getType() const {
     return this->readTypeArray(this->getTypeArray(), true);
 }
 
-std::array<bool, 5> Sequence::getTypeArray() const {
+const std::array<bool, 5> & Sequence::getTypeArray() const {
     return this->type;
 }
-
+IUPACMod Sequence::getIupac() const {
+    return this->iupac;
+}
 size_t Sequence::size() const {
     return this->seq.size();
 }

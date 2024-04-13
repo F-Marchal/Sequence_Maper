@@ -119,9 +119,9 @@
 
 
 int main() {
-    
-    
-    }
+  
+    std::cout << Sequence("aaaaaa", 'P') << std::endl;
+}
 
     // BitVector vec(2);
     // void reserveCapacity(size_t element_number);

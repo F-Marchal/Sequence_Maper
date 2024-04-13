@@ -18,8 +18,16 @@
 
 class Sequence {
 private:
+    enum IUPACMod {
+    without     = 0,
+    most        = 1, 
+    all         = 2,
+    };
+
     std::array<bool, 5> type;
     std::string seq;
+    
+    IUPACMod iupac;
 
     // --- --- Private attributes --- ---
     static std::map<char, char> legalDNA;
@@ -69,7 +77,8 @@ public:
      * @return char 'D'=DNA, 'R'=RNA, 'P'=Protein, 'N'=DNA and / or RNA 'U'=Unspecified, 'Z'=Invalid type.
      */
     char getType() const;
-    std::array<bool, 5>  getTypeArray() const;
+    IUPACMod getIupac() const;
+    const std::array<bool, 5> & getTypeArray() const;
 
     size_t size() const;
     std::string toString() const;
