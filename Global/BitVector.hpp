@@ -704,7 +704,7 @@ public:
      * @return size_t BitVector::_element_number. Number of element contained
      */
     size_t getElementNumber() const;
-        size_t getDataSize() const;
+
     /**
      * @brief Get BitVector::_element_size.
      * | Complexity | |
