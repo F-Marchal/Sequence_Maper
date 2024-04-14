@@ -126,8 +126,10 @@ std::set<char> Sequence::validType = {
 // --- --- Protected Methods --- ---
 // --- Parsers ---  
 char Sequence::parseChar(char symbol, errorMods error_mod) {
+
     symbol = std::toupper(symbol);
     std::array<bool, 5> char_type = identifySymbolType(symbol);
+
     bool char_is_dna_specific = char_type[0];
     bool char_is_rna_specific = char_type[1];
     bool char_is_amino_specific = char_type[2];
@@ -138,19 +140,21 @@ char Sequence::parseChar(char symbol, errorMods error_mod) {
         displayDomainError(error_mod, "Illegal character found : '" + std::string(1, symbol) + "'", __FILE__, __func__);
         return '\0';
     }
-
+    char symbol_type = readTypeArray(char_type);
     if (!char_is_dna_specific && !char_is_rna_specific && !char_is_amino_specific && !char_is_nucleic_specific) {
         // Not specific
-        return symbol;
+        return getSequenceSymbol(symbol, symbol_type).get(this->_iupac);
     }
-
+    
     bool sequence_is_dna_specific = this->type[0];
     bool sequence_is_rna_specific = this->type[1];
     bool sequence_is_amino_specific = this->type[2];
     bool sequence_is_nucleic_specific = this->type[3];
     bool sequence_research_his_type = this->type[4];
+    
 
-    char symbol_type = readTypeArray(char_type);
+   
+        
     if (sequence_research_his_type) {
 
         this->type[0] = (char_is_dna_specific || sequence_is_dna_specific);
@@ -189,26 +193,34 @@ char Sequence::parseChar(char symbol, errorMods error_mod) {
             } 
         }
 
-        if (sequence_is_amino_specific && !canBeAmino(symbol)) {
+        if (sequence_is_amino_specific && !canBeAmino(symbol_type)) {
             displayDomainError(error_mod, "Only Amino are accepted by this sequence. Got : '" + std::string(1, symbol) + "'", __FILE__, __func__);
            return '\0';
         }
 
-        if (sequence_is_nucleic_specific && !canBeNucleic(symbol)) {
+        if (sequence_is_nucleic_specific && !canBeNucleic(symbol_type)) {
             displayDomainError(error_mod, "Only Nucleic Acid are accepted by this sequence. Got : " + std::string(1, symbol) + "'", __FILE__, __func__);
            return '\0';
         }
     }
-
+    
     // This symbol can be used with defined type.
     return getSequenceSymbol(symbol, symbol_type).get(this->_iupac);
 }
 
 // --- --- Constructors --- ---
 
-Sequence::Sequence(std::string sequence, char type, Sequence::IUPACMod iupac, errorMods error_mod, bool finalis_type) {
+
+Sequence::Sequence(const std::string & sequence, char type, Sequence::IUPACMod iupac, errorMods error_mod, bool finalis_type) : 
+                   seq(Sequence::elementMaxSize(type, iupac), sequence.size()) {
+       
     type = (char)toupper(type);
+    if (type == 'U' && iupac < Sequence::most) {
+        displayInvalidArgument(raise, "When type is 'U', iupac mod should be most (or higher) (current=" + std::to_string(iupac) + ") due to Conflict in symbol replacement.", __FILE__, __func__);
+    }
+  
     this->type = this->readTypeChar(type);
+    this->_encoding_type = type;
     this->_iupac = iupac;
 
     this->insertFront(sequence, error_mod);
@@ -221,14 +233,12 @@ Sequence::Sequence(std::string sequence, char type, Sequence::IUPACMod iupac, er
 // --- --- Utilities --- ---
 // --- Getters and equivalents ---
 
-const std::string & Sequence::getSeq() const {
-    return this->seq;
-}
-
 char Sequence::getType() const {
     return this->readTypeArray(this->getTypeArray(), true);
 }
-
+char Sequence::getEncodingType() const {
+    return this->_encoding_type;
+}
 const std::array<bool, 5> & Sequence::getTypeArray() const {
     return this->type;
 }
@@ -240,13 +250,11 @@ size_t Sequence::size() const {
     return this->seq.size();
 }
 
-std::string Sequence::toString() const {
-    return this->getSeq();
-}
     
 
 
 Sequence::SequenceSymbol Sequence::getSequenceSymbol(char symbol, char type) {
+ 
     if (canBeDna(type) && isDNA(symbol)) {
         return legalDNA.at(symbol);
 
@@ -255,29 +263,11 @@ Sequence::SequenceSymbol Sequence::getSequenceSymbol(char symbol, char type) {
 
     } else if (canBeAmino(type) && isAmino(symbol)) {
         return legalAmino.at(symbol);
-    }
+    } 
 
     displayLogicError(raise, "Can not determine Sequence::SequenceSymbol attached with " + std::to_string(symbol) + " (" + std::to_string(type) + ").",
                       __FILE__, __func__);
     return Sequence::SequenceSymbol('\0', "\0", Sequence::basic);
-    /*
-    
-    bool Sequence::canBeRna(char type) {
-    return (type == 'R'  || type == 'N' || type == 'U');
- }
- 
-bool Sequence::canBeDna(char type) {
-    return (type == 'D'  || type == 'N' || type == 'U');
- }  
-
-bool Sequence::canBeNucleic(char type) {
-    return (canBeRna(type) || canBeDna(type));
- }  
-
-bool Sequence::canBeAmino(char type) {
-    return (type == 'P'  || type == 'U');
- }  
-    */
 }
 
 // --- Modify sequence ---
@@ -289,21 +279,38 @@ void Sequence::endTypeResearch() {
 }
 
 void Sequence::insert(const std::string & sequence, size_t position, errorMods error_mod) {
-    std::string final_seq = "";
+          
+    this->seq.makeRoomForElement(position, sequence.size());
 
-    for (char symbol : sequence) {
-        symbol = parseChar(symbol, error_mod);
+    const std::map<char, char> & translation_tab = translationTab(this->_encoding_type, this->_iupac);
+ 
+    size_t initial_position = position;
+    // Catch error
 
-        if (symbol != '\0') {
-            final_seq += symbol;
+
+    try {
+        for (char symbol : sequence) {
+            symbol = parseChar(symbol, error_mod);
+             
+            if (symbol != '\0') {
+                std::cout << "----" << symbol << std::endl;
+                this->seq.set(position, translation_tab.at(symbol)) ;
+                std::cout << "--  --" << std::endl;
+                position +=1 ;
+            }
         }
+
+    } catch (const std::exception& e) {
+        // The process failed, let remove unused position
+        this->seq.remove(position, sequence.size() - (position - initial_position));
+        throw ;
     }
 
-    this->seq.insert(position, final_seq);
-}
-
-void Sequence::insert(const Sequence & sequence, size_t position, errorMods errorMod) {
-    this->insert(sequence.getSeq(), position, errorMod);
+    if (position - initial_position != sequence.size()) {
+        // The process failed, let remove unused position
+        this->seq.remove(position, sequence.size() - (position - initial_position));
+    }
+        
 }
 
 void Sequence::insert(const char & symbol, size_t position, errorMods errorMod) {
@@ -312,22 +319,13 @@ void Sequence::insert(const char & symbol, size_t position, errorMods errorMod) 
 
 
 void Sequence::insertFront(const std::string & sequence, errorMods errorMod)  {
+
     this->insert(sequence, this->size(), errorMod);
 }
 
 void Sequence::insertBack(const std::string & sequence, errorMods errorMod) {
      this->insert(sequence, 0, errorMod);
 }
-
-
-void Sequence::insertFront(const Sequence & sequence, errorMods errorMod) {
-      this->insertFront(sequence.getSeq(), errorMod);
-}
-
-void Sequence::insertBack(const Sequence & sequence, errorMods errorMod) {
-     this->insertBack(sequence.getSeq(), errorMod);
-}
-
 
 void Sequence::insertFront(const char & symbol, errorMods errorMod) {
     this->insertFront(std::string(1, symbol), errorMod);
@@ -342,7 +340,7 @@ void Sequence::erase(size_t start, size_t length) {
         return ;
     }
 
-    this->seq.erase(start, length);
+    this->seq.remove(start, length);
     
 }
 
@@ -402,13 +400,13 @@ char Sequence::readTypeArray(std::array<bool, 5> type, bool ignore_illegal) {
     bool rna_specific = type[1];
     bool amino_specific = type[2];
     bool nucleic_specific = type[3];
-    bool is_illegal = type[4];
+    bool legal = type[4];
 
     if (nucleic_specific && amino_specific) {
         return 'Z';
     }
 
-    if (is_illegal && !ignore_illegal) {
+    if (!legal && !ignore_illegal) {
         return 'Z';
     }
 
@@ -467,6 +465,7 @@ std::array<bool, 5> Sequence::identifySymbolType(char symbol) {
     bool legal = true;
 
     if (!isLegalSymbol(symbol)) {
+        
         legal = false;
 
     } else {
@@ -486,7 +485,7 @@ std::array<bool, 5> Sequence::identifySymbolType(char symbol) {
             nucleic_specific = true;
         }
     }
-
+ 
     return   std::array<bool, 5> {dna_specific, rna_specific, amino_specific, nucleic_specific, legal};
 }
 

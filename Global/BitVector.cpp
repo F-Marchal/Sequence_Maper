@@ -547,7 +547,7 @@ void BitVector::copyBits(const char * pattern, char * final_list, const BitVecto
     }
 }
 
-void BitVector::_makeRoomForElement(size_t element_position, size_t room_required, bool erase) {
+void BitVector::makeRoomForElement(size_t element_position, size_t room_required, bool erase) {
     if (room_required == 0) {
         // nothing to do.
         return ;
@@ -569,8 +569,10 @@ void BitVector::_makeRoomForElement(size_t element_position, size_t room_require
 
     // Displace all element between \p element_position and vector's end by n (=room_required) places.
     char * current_element = NULL;
+    bool continue_ = true;
+    size_t pos = last_true_element;
     
-    for (size_t pos = last_true_element ; pos >= element_position ; pos--) {
+    while (continue_ && pos >= element_position) {
         current_element = this->get(pos);
         this->set(pos + room_required, current_element, true, false); // Push the element
 
@@ -579,6 +581,9 @@ void BitVector::_makeRoomForElement(size_t element_position, size_t room_require
         if (erase) {
             this->set(pos, empty_element);
         }
+
+        continue_ = (pos != 0);
+        pos--;
     }
   
     delete [] empty_element;
@@ -677,7 +682,7 @@ void BitVector::insert(size_t position, size_t number_of_elements, char c...) {
     
     // Move items
  
-    this->_makeRoomForElement(position, number_of_elements);
+    this->makeRoomForElement(position, number_of_elements);
 
     // Set items
     for (size_t i = 0; i < number_of_elements; i++) {
@@ -694,7 +699,7 @@ void BitVector::insert(size_t position, size_t number_of_elements, char * tab...
     va_start(args, tab);
     
     // Move items
-    this->_makeRoomForElement(position, number_of_elements);
+    this->makeRoomForElement(position, number_of_elements);
 
     // Set items
     for (size_t i = 0; i < number_of_elements; i++) {

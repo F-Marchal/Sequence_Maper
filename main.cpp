@@ -124,7 +124,9 @@ int main() {
 
     // std::cout << (mySet.find('A') != mySet.end()) << std::endl;
     // std::cout << (mySet.find(Sequence::SequenceSymbol('Z', "A", Sequence::all)) != mySet.end()) << std::endl;
-    std::cout << Sequence("aaaaaa", 'P') << std::endl;
+    for (char c : Sequence("ABBBBBBGA", 'N', Sequence::most)) {
+        std::cout << c << std::endl;
+    }
 
 }
 

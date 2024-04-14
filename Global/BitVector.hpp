@@ -1,3 +1,6 @@
+#ifndef BITVECTOR_HPP
+#define BITVECTOR_HPP
+
 #include <iostream>
 #include <tuple>
 #include "Utilities.hpp"
@@ -38,22 +41,7 @@ protected:
      * n = BitVector::_data_size
      */
     void _killInternalData(); // In destructor section
-    /**
-     * @brief Insert a number of blank position inside BitVector::_data
-     * | Complexity | Without BitVector::_data_size modification | With BitVector::_data_size modification|
-     * |-------|------|------|
-     * | Time  | O(n) | O(d) |
-     * | Space | O(m) | O(2d)|
-     * n = BitVector::_element_number - \p  element_position, + \p room_required ;
-     * m = BitVector::_element_size ;
-     * d = BitVector::_data_size + m;
-     * 2d = BitVector::_data_size * 2 + m ;
-     * @param element_position Where should we make space ? 
-     * @param room_required How many spaces must be inserted ?
-     * @param erase Do spaces are reset to 0 ? (if false, old value is kept (like it was a duplication)) 
-     * 
-     */
-    void _makeRoomForElement(size_t element_position, size_t room_required, bool erase=true); // In access and modifications
+
     
 public:
 
@@ -1097,6 +1085,23 @@ public:
      */
     void set(Coords coord, bool value, bool restrictions = true);
 
+        /**
+     * @brief Insert a number of blank position inside BitVector::_data
+     * | Complexity | Without BitVector::_data_size modification | With BitVector::_data_size modification|
+     * |-------|------|------|
+     * | Time  | O(n) | O(d) |
+     * | Space | O(m) | O(2d)|
+     * n = BitVector::_element_number - \p  element_position, + \p room_required ;
+     * m = BitVector::_element_size ;
+     * d = BitVector::_data_size + m;
+     * 2d = BitVector::_data_size * 2 + m ;
+     * @param element_position Where should we make space ? 
+     * @param room_required How many spaces must be inserted ?
+     * @param erase Do spaces are reset to 0 ? (if false, old value is kept (like it was a duplication)) 
+     * 
+     */
+    void makeRoomForElement(size_t element_position, size_t room_required, bool erase=true); // In access and modifications
+    
     /**
      * @brief Add an element at the end of the vector.
      * | Complexity | Without BitVector::_data_size modification | With BitVector::_data_size modification|
@@ -1170,7 +1175,7 @@ public:
 
 };
 
-
+#endif
 /* ------------------------------------------------------- Small test ------------------------------------------------------------------
 int main () {
     BitVector bv(2, 1);
