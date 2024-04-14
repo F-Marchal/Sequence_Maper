@@ -4,7 +4,7 @@ all: main
 
 # Compil files
 main: main.cpp ./Global/*.cpp 
-	clear
+	
 	$(CXX) -Wall -Wextra -Werror -ansi -pedantic -std=c++14 -o main $^
 # -ansi -pedantic
 

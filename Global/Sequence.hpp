@@ -14,32 +14,94 @@
 #include <map>
 #include <tuple>
 #include <array>
+#include <random> 
 #include "Utilities.hpp"
 
 class Sequence {
-private:
+public:
     enum IUPACMod {
-    without     = 0,
+    basic       = 0,
     most        = 1, 
     all         = 2,
+    ignore      = 3,
     };
+
+    class SequenceSymbol {
+    private:
+        std::string _replacement;
+        char _symbol;
+        Sequence::IUPACMod _iupac;
+
+    public:
+        SequenceSymbol(char symbol, std::string replacement, Sequence::IUPACMod iupac) {
+            this->_symbol = (char) std::toupper(symbol);
+            this->_replacement = replacement;
+            this->_iupac = iupac;
+        }
+
+        bool isUsableIn(IUPACMod iupac) const {
+            return (iupac >= this->_iupac);
+        }
+
+        char getReplacementSymbol() const {
+            return randChar(this->_replacement);
+        }
+
+        char getValue() const {
+            return this->_symbol;
+        }
+
+        char get(Sequence::IUPACMod iupac) const {
+            if (this->isUsableIn(iupac)) {
+                return this->_symbol ; 
+            } else {
+                return this->getReplacementSymbol();
+            }
+        }
+
+        operator char() const {
+            return this->_symbol;
+        }
+
+
+        operator std::string() const {
+            return std::string(1, this->_symbol);
+        }
+
+        std::string toString() const {
+            return std::to_string(this->_symbol);
+        }
+
+        friend std::ostream& operator<<(std::ostream& os, const Sequence::SequenceSymbol& symbol) {
+            os << symbol.toString();
+            return os;
+        }
+
+
+    };
+    
+private:
+
 
     std::array<bool, 5> type;
     std::string seq;
     
-    IUPACMod iupac;
+    Sequence::IUPACMod _iupac;
 
     // --- --- Private attributes --- ---
-    static std::map<char, char> legalDNA;
-    static std::map<char, char> legalRNA;
-    static std::map<char, char> bridgeDNA_RNA;
-    static std::set<char> legalAmino;
+    static const std::map<char, Sequence::SequenceSymbol> legalDNA;
+    static const std::map<char, Sequence::SequenceSymbol> legalRNA;
+    static const std::map<char, Sequence::SequenceSymbol> legalAmino;
     static std::set<char> validType;
 
 protected:
-    bool parseChar(char symbol, errorMods error_mod=display);
+    char parseChar(char symbol, errorMods error_mod=display);
 
 public:
+    
+    
+
+
     // --- --- Constructors --- ---
 
     /**
@@ -48,19 +110,18 @@ public:
      * @param sequence          A string that represent a sequence of DNA / RNA / AMINO.
      * @param type              Specify type of this sequence. 'D'=DNA, 'R'=RNA, 'P'=Protein, 'N'=DNA and / or RNA 'U'=Unknown (Sequence will analyze chars in order to determine its type)
      * @param error_mod         See values inside Utilities::errorMods
+     * @param iupac             
      * @param finalis_type      Do this sequence will continue analyze chars in order to determine its type.
      */
-    Sequence(std::string sequence, char type, errorMods error_mod, bool finalis_type = true);
+    Sequence(std::string sequence, char type,           IUPACMod iupac=most, errorMods error_mod=raise, bool finalis_type=true);
     
     /**
      * @brief Default Constructor. Construct a new Sequence object. Equivalent to 
      * 
      */
-    Sequence()                                           : Sequence("", 'U', display, true) {};
-    Sequence(std::string sequence, char type)            : Sequence(sequence, type, display) {};
-    Sequence(std::string sequence, errorMods error_mod)  : Sequence(sequence, 'U', error_mod) {};
-    Sequence(std::string sequence)                       : Sequence(sequence, 'U', display) {};
-
+    Sequence(                                           IUPACMod iupac=most, errorMods error_mod=raise, bool finalis_type=false) : Sequence("", 'U', iupac, error_mod, finalis_type) {};
+    Sequence(std::string sequence,                      IUPACMod iupac=most, errorMods error_mod=raise, bool finalis_type=true)  : Sequence(sequence, 'U', iupac, error_mod, finalis_type) {};
+    
     // --- --- Utilities --- ---
     // --- Getters and equivalents ---
 
@@ -77,12 +138,14 @@ public:
      * @return char 'D'=DNA, 'R'=RNA, 'P'=Protein, 'N'=DNA and / or RNA 'U'=Unspecified, 'Z'=Invalid type.
      */
     char getType() const;
-    IUPACMod getIupac() const;
+    Sequence::IUPACMod getIupac() const;
     const std::array<bool, 5> & getTypeArray() const;
 
     size_t size() const;
     std::string toString() const;
     
+    static Sequence::SequenceSymbol getSequenceSymbol(char symbol, char type);
+
     // --- Modify sequence ---
     void activeTypeResearch();
     void endTypeResearch();
@@ -116,6 +179,113 @@ public:
     static bool isAminoSpecific(char symbol);
     static bool isNucleicSpecific(char symbol);
     static bool isValidType(char symbol);
+
+    static const std::map<char, char> & translationTab (char type, Sequence::IUPACMod iupac, bool reverse=false) {
+        static std::map<Sequence::IUPACMod, std::map<char, char>> U_encoding;
+        static std::map<Sequence::IUPACMod, std::map<char, char>> N_encoding;
+        static std::map<Sequence::IUPACMod, std::map<char, char>> R_encoding;
+        static std::map<Sequence::IUPACMod, std::map<char, char>> D_encoding;
+        static std::map<Sequence::IUPACMod, std::map<char, char>> P_encoding;
+        static std::map<Sequence::IUPACMod, std::map<char, char>> U_rev_encoding;
+        static std::map<Sequence::IUPACMod, std::map<char, char>> N_rev_encoding;
+        static std::map<Sequence::IUPACMod, std::map<char, char>> R_rev_encoding;
+        static std::map<Sequence::IUPACMod, std::map<char, char>> D_rev_encoding;
+        static std::map<Sequence::IUPACMod, std::map<char, char>> P_rev_encoding;
+
+        if (type == 'U') {
+            if (U_encoding.find(iupac) == U_encoding.end()) {
+                fillCodeMap(U_encoding, U_rev_encoding, legalDNA, iupac);
+                fillCodeMap(U_encoding, U_rev_encoding, legalRNA, iupac);
+                fillCodeMap(U_encoding, U_rev_encoding, legalAmino, iupac);
+            }
+
+            if (!reverse) {
+                return U_encoding[iupac];
+            }
+            return U_rev_encoding[iupac];
+
+        } else if (type == 'N') {
+            if (N_encoding.find(iupac) == N_encoding.end()) {
+                fillCodeMap(N_encoding, N_rev_encoding, legalDNA, iupac);
+                fillCodeMap(N_encoding, N_rev_encoding, legalRNA, iupac);
+            }
+
+            if (!reverse) {
+                return N_encoding[iupac];
+            }
+            return N_rev_encoding[iupac];
+
+        } else if (type == 'D') {
+            if (D_encoding.find(iupac) == D_encoding.end()) {
+                fillCodeMap(D_encoding, D_rev_encoding, legalDNA, iupac);
+            }
+
+            if (!reverse) {
+                return D_encoding[iupac];
+            }
+            return D_rev_encoding[iupac];
+
+        } else if (type == 'R') {
+            if (R_encoding.find(iupac) == R_encoding.end()) {
+                fillCodeMap(R_encoding, R_rev_encoding, legalRNA, iupac);
+            }
+
+            if (!reverse) {
+                return R_encoding[iupac];
+            }
+            return R_rev_encoding[iupac];
+
+        } else if (type == 'P') {
+            if (P_encoding.find(iupac) == P_encoding.end()) {
+                fillCodeMap(P_encoding, P_rev_encoding, legalAmino, iupac);
+            }
+
+            if (!reverse) {
+                return P_encoding[iupac];
+            }
+            return P_rev_encoding[iupac];
+        } else {
+            displayLogicError(raise, "Unable to determine map type", __FILE__, __func__);
+        }
+
+        return U_encoding[iupac];
+    }
+
+    
+    
+    static void fillCodeMap(std::map<Sequence::IUPACMod, std::map<char, char>> & normal_encoding, std::map<Sequence::IUPACMod, std::map<char, char>> & reverse_encoding, 
+                            const std::map<char, Sequence::SequenceSymbol> & element_to_add, Sequence::IUPACMod iupac) {
+        
+        // Add this iupac to the dict
+        if (normal_encoding.find(iupac) == normal_encoding.end()) {
+            normal_encoding[iupac] = std::map<char, char> {};
+            reverse_encoding[iupac] = std::map<char, char> {};
+        }
+        std::cout << "   " << element_to_add.size() << std::endl;
+        char encoded_symbol;
+        char current_symbol;
+        for (const auto & key_symbol : element_to_add) {
+           
+            // Verify that this symbol can be used with this iupac setting ?
+            Sequence::SequenceSymbol sym_obj = key_symbol.second;
+            current_symbol = key_symbol.first;
+           
+ 
+            if (!sym_obj.isUsableIn(iupac)) {
+                continue;
+            }
+
+            if (normal_encoding[iupac].find(current_symbol) != normal_encoding[iupac].end()) {
+                continue;
+            }
+
+            encoded_symbol = (char) normal_encoding[iupac].size();
+
+            normal_encoding[iupac][current_symbol] = encoded_symbol;
+            reverse_encoding[iupac][encoded_symbol] = current_symbol;
+           
+        }
+    }
 
     // --- Type ---
     static char readTypeArray(std::array<bool, 5> type, bool ignore_illegal=false);

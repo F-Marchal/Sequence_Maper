@@ -29,6 +29,9 @@ size_t BitVector::Coords::toSize_t() const {
 std::string BitVector::Coords::toString() const {
     return "(O=" + std::to_string(this->octet) + " ; B=" + std::to_string(this->bit) + ")";
 }
+BitVector::Coords::operator std::string() const {
+    return this->toString();
+}
 
 // --- --- Getters and setters --- ---
 unsigned short int BitVector::Coords::getBit() const {

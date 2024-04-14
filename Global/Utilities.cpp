@@ -99,3 +99,17 @@ void displayBits(char bits, bool endl) {
         std::cout << std::endl;
     }
 }
+
+size_t randSizeT(size_t start, size_t end) {
+    static std::mt19937 gen(std::random_device{}());
+    std::uniform_int_distribution<int> dis(start, end);
+    return dis(gen);
+}
+
+char randChar(const std::string & word) {
+    if (word.size() == 0) {
+        return '\0';
+    }
+    size_t pos = randSizeT(0, word.size() - 1);
+    return word[pos];
+}

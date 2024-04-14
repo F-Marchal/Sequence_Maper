@@ -118,9 +118,14 @@
 
 
 
+
 int main() {
-  
+   
+
+    // std::cout << (mySet.find('A') != mySet.end()) << std::endl;
+    // std::cout << (mySet.find(Sequence::SequenceSymbol('Z', "A", Sequence::all)) != mySet.end()) << std::endl;
     std::cout << Sequence("aaaaaa", 'P') << std::endl;
+
 }
 
     // BitVector vec(2);

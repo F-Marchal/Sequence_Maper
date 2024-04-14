@@ -6,6 +6,7 @@
 #include <set>
 #include <map>
 #include <array>
+#include <random>
 #include "Utilities.hpp"
 
 
@@ -13,95 +14,105 @@
 
 
 // --- --- Private attributes --- ---
-std::map<char, char> Sequence::legalDNA = {
-    {'A', 'T'}, {'a', 't'}, //A → Adenine 
-    {'B', 'V'}, {'b', 'v'}, //not A (i.e. C, G, T) → B comes after A
-    {'C', 'G'}, {'c', 'g'}, //C → Cytosine
-    {'D', 'H'}, {'d', 'h'}, //not C (i.e. A, G, T) → D comes after C
+const std::map<char, Sequence::SequenceSymbol> Sequence::legalDNA = {
+    // 2 bits
+    {'A', Sequence::SequenceSymbol('A', "A", Sequence::basic)}, //A → Adenine 
+    {'T', Sequence::SequenceSymbol('T', "T", Sequence::basic)}, //T → Thymine
+    {'C', Sequence::SequenceSymbol('C', "C", Sequence::basic)}, //C → Cytosine
+    {'G', Sequence::SequenceSymbol('G', "G", Sequence::basic)}, //G → Guanine
+    
+    // 4 bits (+ 1 free space)
+    {'B', Sequence::SequenceSymbol('B', "CGT", Sequence::most)}, //not A (i.e. C, G, T) → B comes after A
+    {'D', Sequence::SequenceSymbol('D', "AGT", Sequence::most)}, //not C (i.e. A, G, T) → D comes after C
 
-    {'G', 'C'}, {'g', 'c'}, //G → Guanine
-    {'H', 'D'}, {'h', 'd'}, //not G (i.e., A, C, T) → H comes after G
-    {'I', 'I'}, {'i', 'i'}, //i → inosine (non-standard)
-    {'K', 'M'}, {'k', 'm'}, //G, T → bases which are Ketones
+    {'H', Sequence::SequenceSymbol('H', "ACT", Sequence::most)}, //not G (i.e., A, C, T) → H comes after G
 
-    {'M', 'K'}, {'m', 'k'}, //A or C → bases with aMino groups
-    {'N', 'N'}, {'n', 'n'}, //A C G T → Nucleic acid
+    {'K', Sequence::SequenceSymbol('K', "GT", Sequence::most)}, //G, T → bases which are Ketones
 
-    {'R', 'Y'}, {'r', 'y'}, //A or G (I) → puRine
-    {'S', 'S'}, {'s', 's'}, //C or G → Strong interaction
+    {'M', Sequence::SequenceSymbol('M', "AC", Sequence::most)}, //A or C → bases with aMino groups
+    {'N', Sequence::SequenceSymbol('N', "ACGT", Sequence::most)}, //A C G T → Nucleic acid
 
-    {'T', 'A'}, {'t', 'a'}, //T → Thymine
+    {'R', Sequence::SequenceSymbol('R', "AG", Sequence::most)}, //A or G (I) → puRine
+    {'S', Sequence::SequenceSymbol('S', "CG", Sequence::most)}, //C or G → Strong interaction
 
-    {'V', 'B'}, {'v', 'b'}, //Not T  (i.e. A, C or G) → V comes after U
-    {'W', 'W'}, {'w', 'w'}, //A, T → Weak interaction
+    {'V', Sequence::SequenceSymbol('R', "ACG", Sequence::most)}, //Not T  (i.e. A, C or G) → V comes after U
+    {'W', Sequence::SequenceSymbol('W', "AT", Sequence::most)}, //A, T → Weak interaction
   
-    {'Y', 'R'}, {'y', 'r'}, //C, T → pYrimidines
-
-    {'-', '-'} //gap of indeterminate length 	
+    {'Y', Sequence::SequenceSymbol('Y', "CT", Sequence::most)}, //C, T → pYrimidines
+    
+    {'I', Sequence::SequenceSymbol('I', "\0", Sequence::all)}, //i → inosine (non-standard)
+    {'-', Sequence::SequenceSymbol('.', "\0", Sequence::all)}, //gap of indeterminate length 	
 };
 
-std::map<char, char> Sequence::legalRNA = {
-    {'A', 'U'}, {'a', 'u'}, //A → Adenine 
-    {'B', 'V'}, {'b', 'v'}, //not A (i.e. C, G or U) → B comes after A
-    {'C', 'G'}, {'c', 'g'}, //C → Cytosine
-    {'D', 'H'}, {'d', 'h'}, //not C (i.e. A, G or U) → D comes after C
+const std::map<char, Sequence::SequenceSymbol> Sequence::legalRNA = {
+    // 2 bits
+    {'A', Sequence::SequenceSymbol('A', "A", Sequence::basic)}, //A → Adenine 
+    {'U', Sequence::SequenceSymbol('U', "U", Sequence::basic)}, //U → Uracil
+    {'C', Sequence::SequenceSymbol('C', "C", Sequence::basic)}, //C → Cytosine
+    {'G', Sequence::SequenceSymbol('G', "G", Sequence::basic)}, //G → Guanine
+    
+    // 4 bits (+ 1 free space)
+    {'B', Sequence::SequenceSymbol('B', "CGU", Sequence::most)}, //not A (i.e. C, G, U) → B comes after A
+    {'D', Sequence::SequenceSymbol('D', "AGU", Sequence::most)}, //not C (i.e. A, G, U) → D comes after C
 
-    {'G', 'C'}, {'g', 'c'}, //G → Guanine
-    {'H', 'D'}, {'h', 'd'}, //not G (i.e., A, C or U) → H comes after G
-    {'I', 'I'}, {'i', 'i'}, //i → inosine (non-standard)
-    {'K', 'M'}, {'k', 'm'}, //G or U → bases which are Ketones
+    {'H', Sequence::SequenceSymbol('H', "ACU", Sequence::most)}, //not G (i.e., A, C, U) → H comes after G
 
-    {'M', 'K'}, {'m', 'k'}, //A or C → bases with aMino groups
-    {'N', 'N'}, {'n', 'n'}, //A C G U → Nucleic acid
+    {'K', Sequence::SequenceSymbol('K', "GU", Sequence::most)}, //G, U → bases which are Ketones
 
-    {'R', 'Y'}, {'r', 'y'}, //A or G (I) → puRine
-    {'S', 'S'}, {'s', 's'}, //C or G → Strong interaction
+    {'M', Sequence::SequenceSymbol('M', "AC", Sequence::most)}, //A or C → bases with aMino groups
+    {'N', Sequence::SequenceSymbol('N', "ACGU", Sequence::most)}, //A C G U → Nucleic acid
 
-    {'U', 'A'}, {'u', 'a'}, //U → Uracil
+    {'R', Sequence::SequenceSymbol('R', "AG", Sequence::most)}, //A or G (I) → puRine
+    {'S', Sequence::SequenceSymbol('S', "CG", Sequence::most)}, //C or G → Strong interaction
 
-    {'V', 'B'}, {'v', 'b'}, //not U (i.e. A, C or G) → V comes after U
-    {'W', 'W'}, {'w', 'w'}, //A or U → Weak interaction
-
-    {'Y', 'R'}, {'y', 'r'}, //C or U → pYrimidines
-
-    {'-', '-'} //gap of indeterminate length 	
+    {'V', Sequence::SequenceSymbol('R', "ACG", Sequence::most)}, //Not U  (i.e. A, C or G) → V comes after U
+    {'W', Sequence::SequenceSymbol('W', "AU", Sequence::most)}, //A, U → Weak interaction
+  
+    {'Y', Sequence::SequenceSymbol('Y', "CU", Sequence::most)}, //C, U → pYrimidines
+    
+    {'I', Sequence::SequenceSymbol('I', "\0", Sequence::all)}, //i → inosine (non-standard)
+    {'-', Sequence::SequenceSymbol('.', "\0", Sequence::all)}, //gap of indeterminate length 	
 };
 
-std::set<char> Sequence::legalAmino = {
-    'A', 'a', //Alanine
-    'B', 'b', //Aspartic acid (D) or Asparagine (N)
-    'C', 'c', //Cysteine
-    'D', 'd', //Aspartic acid
-    'E', 'e', //Glutamic acid
-    'F', 'f', //Phenylalanine
-    'G', 'g', //Glycine
-    'H', 'h', //Histidine
-    'I', 'i', //Isoleucine
-    'J', 'j', //Leucine (L) or Isoleucine (I)
-    'K', 'k', //Lysine
-    'L', 'l', //Leucine
-    'M', 'm', //Methionine/Start codon
-    'N', 'n', //Asparagine
-    'O', 'o', //Pyrrolysine (rare)
-    'P', 'p', //Proline
-    'Q', 'q', //Glutamine
-    'R', 'r', //Arginine
-    'S', 's', //Serine
-    'T', 't', //Threonine
-    'U', 'u', //Selenocysteine (rare)
-    'V', 'v', //Valine
-    'W', 'w', //Tryptophan
-    'Y', 'y', //Tyrosine
-    'X', 'x', //any
-    'Z', 'z', //Glutamic acid (E) or Glutamine (Q)
-    '-', //gap of indeterminate length 
-    '*', //translation stop
+const std::map<char, Sequence::SequenceSymbol> Sequence::legalAmino = {
+    {'A', Sequence::SequenceSymbol('A', "A", Sequence::basic)}, //Alanine
+   
+    {'C', Sequence::SequenceSymbol('C', "C", Sequence::basic)}, //Cysteine
+    {'D', Sequence::SequenceSymbol('D', "D", Sequence::basic)}, //Aspartic acid
+    {'E', Sequence::SequenceSymbol('E', "E", Sequence::basic)}, //Glutamic acid
+    {'F', Sequence::SequenceSymbol('F', "F", Sequence::basic)}, //Phenylalanine
+    {'G', Sequence::SequenceSymbol('G', "G", Sequence::basic)}, //Glycine
+    {'H', Sequence::SequenceSymbol('H', "H", Sequence::basic)}, //Histidine
+    {'I', Sequence::SequenceSymbol('I', "I", Sequence::basic)}, //Isoleucine
+
+    {'K', Sequence::SequenceSymbol('K', "K", Sequence::basic)}, //Lysine
+    {'L', Sequence::SequenceSymbol('L', "L", Sequence::basic)}, //Leucine
+    {'M', Sequence::SequenceSymbol('M', "M", Sequence::basic)}, //Methionine/Start codon
+    {'N', Sequence::SequenceSymbol('N', "N", Sequence::basic)}, //Asparagine
+
+    {'P', Sequence::SequenceSymbol('P', "P", Sequence::basic)}, //Proline
+    {'Q', Sequence::SequenceSymbol('Q', "Q", Sequence::basic)}, //Glutamine
+    {'R', Sequence::SequenceSymbol('R', "R", Sequence::basic)}, //Arginine
+    {'S', Sequence::SequenceSymbol('S', "S", Sequence::basic)}, //Serine
+    {'T', Sequence::SequenceSymbol('T', "T", Sequence::basic)}, //Threonine
+
+    {'V', Sequence::SequenceSymbol('V', "V", Sequence::basic)}, //Valine
+    {'W', Sequence::SequenceSymbol('W', "W", Sequence::basic)}, //Tryptophan
+    {'Y', Sequence::SequenceSymbol('Y', "Y", Sequence::basic)}, //Tyrosine
+    {'X', Sequence::SequenceSymbol('X', "X", Sequence::basic)}, //any
+
+    {'O', Sequence::SequenceSymbol('O', "O", Sequence::basic)}, //Pyrrolysine (rare)
+    {'U', Sequence::SequenceSymbol('U', "U", Sequence::basic)}, //Selenocysteine (rare)
+
+    {'B', Sequence::SequenceSymbol('B', "DN", Sequence::most)}, //Aspartic acid (D) or Asparagine (N)
+    {'J', Sequence::SequenceSymbol('J', "LI", Sequence::most)}, //Leucine (L) or Isoleucine (I)
+    {'Z', Sequence::SequenceSymbol('Z', "EQ", Sequence::most)}, //Glutamic acid (E) or Glutamine (Q)
+
+    {'-', Sequence::SequenceSymbol('-', "\0", Sequence::all)}, //gap of indeterminate length 
+    {'*', Sequence::SequenceSymbol('*', "\0", Sequence::all)} //translation stop
 };
 
-std::map<char, char> Sequence::bridgeDNA_RNA{
-    {'t', 'u'}, {'T', 'U'},
-    {'u', 't'}, {'U', 'T'}
-};
+
 
 std::set<char> Sequence::validType = {
     'P', // Protein
@@ -114,7 +125,8 @@ std::set<char> Sequence::validType = {
 
 // --- --- Protected Methods --- ---
 // --- Parsers ---  
-bool Sequence::parseChar(char symbol, errorMods error_mod) {
+char Sequence::parseChar(char symbol, errorMods error_mod) {
+    symbol = std::toupper(symbol);
     std::array<bool, 5> char_type = identifySymbolType(symbol);
     bool char_is_dna_specific = char_type[0];
     bool char_is_rna_specific = char_type[1];
@@ -124,12 +136,12 @@ bool Sequence::parseChar(char symbol, errorMods error_mod) {
 
     if (!char_is_legal) {
         displayDomainError(error_mod, "Illegal character found : '" + std::string(1, symbol) + "'", __FILE__, __func__);
-        return false;
+        return '\0';
     }
 
     if (!char_is_dna_specific && !char_is_rna_specific && !char_is_amino_specific && !char_is_nucleic_specific) {
         // Not specific
-        return true;
+        return symbol;
     }
 
     bool sequence_is_dna_specific = this->type[0];
@@ -137,65 +149,68 @@ bool Sequence::parseChar(char symbol, errorMods error_mod) {
     bool sequence_is_amino_specific = this->type[2];
     bool sequence_is_nucleic_specific = this->type[3];
     bool sequence_research_his_type = this->type[4];
- 
+
+    char symbol_type = readTypeArray(char_type);
     if (sequence_research_his_type) {
 
         this->type[0] = (char_is_dna_specific || sequence_is_dna_specific);
         this->type[1] = (char_is_rna_specific || sequence_is_rna_specific);
         
         if (char_is_amino_specific && sequence_is_nucleic_specific) {
-            return false;
+           return '\0';
         }
 
         if (char_is_nucleic_specific && sequence_is_amino_specific) {
-            return false;
+           return '\0';
         }
 
         this->type[2] = (char_is_amino_specific || sequence_is_amino_specific);
         this->type[3] = (char_is_nucleic_specific || sequence_is_nucleic_specific);
 
     } else {  
-        char symbol_type = readTypeArray(char_type);
+       
 
         if (sequence_is_dna_specific && sequence_is_rna_specific) {
             if (!canBeDna(symbol_type) && !canBeRna(symbol_type)) {
                 displayDomainError(error_mod, "Only Nucleic Acid are accepted by this sequence. Got : '" + std::string(1, symbol) + "'", __FILE__, __func__);
-                return false;
+               return '\0';
             }
 
 
         } else {
             if (sequence_is_dna_specific && !canBeDna(symbol_type)) {
                 displayDomainError(error_mod, "Only DNA is accepted by this sequence. Got : '" + std::string(1, symbol) + "'", __FILE__, __func__);
-                return false;
+               return '\0';
             }
 
             if (sequence_is_rna_specific && !canBeRna(symbol_type)) {
                 displayDomainError(error_mod, "Only RNA is accepted by this sequence. Got : '" + std::string(1, symbol) + "'", __FILE__, __func__);
-                return false;
+               return '\0';
             } 
         }
 
         if (sequence_is_amino_specific && !canBeAmino(symbol)) {
             displayDomainError(error_mod, "Only Amino are accepted by this sequence. Got : '" + std::string(1, symbol) + "'", __FILE__, __func__);
-            return false;
+           return '\0';
         }
 
         if (sequence_is_nucleic_specific && !canBeNucleic(symbol)) {
             displayDomainError(error_mod, "Only Nucleic Acid are accepted by this sequence. Got : " + std::string(1, symbol) + "'", __FILE__, __func__);
-            return false;
+           return '\0';
         }
     }
 
-    return true;
+    // This symbol can be used with defined type.
+    return getSequenceSymbol(symbol, symbol_type).get(this->_iupac);
 }
 
 // --- --- Constructors --- ---
 
-Sequence::Sequence(std::string sequence, char type, errorMods error_mod, bool finalis_type) {
+Sequence::Sequence(std::string sequence, char type, Sequence::IUPACMod iupac, errorMods error_mod, bool finalis_type) {
     type = (char)toupper(type);
     this->type = this->readTypeChar(type);
-    
+    this->_iupac = iupac;
+
     this->insertFront(sequence, error_mod);
 
     if (finalis_type) {
@@ -217,9 +232,10 @@ char Sequence::getType() const {
 const std::array<bool, 5> & Sequence::getTypeArray() const {
     return this->type;
 }
-IUPACMod Sequence::getIupac() const {
-    return this->iupac;
+Sequence::IUPACMod Sequence::getIupac() const {
+    return this->_iupac;
 }
+
 size_t Sequence::size() const {
     return this->seq.size();
 }
@@ -228,6 +244,42 @@ std::string Sequence::toString() const {
     return this->getSeq();
 }
     
+
+
+Sequence::SequenceSymbol Sequence::getSequenceSymbol(char symbol, char type) {
+    if (canBeDna(type) && isDNA(symbol)) {
+        return legalDNA.at(symbol);
+
+    } else if (canBeRna(type) && isRNA(symbol)) {
+        return legalRNA.at(symbol);
+
+    } else if (canBeAmino(type) && isAmino(symbol)) {
+        return legalAmino.at(symbol);
+    }
+
+    displayLogicError(raise, "Can not determine Sequence::SequenceSymbol attached with " + std::to_string(symbol) + " (" + std::to_string(type) + ").",
+                      __FILE__, __func__);
+    return Sequence::SequenceSymbol('\0', "\0", Sequence::basic);
+    /*
+    
+    bool Sequence::canBeRna(char type) {
+    return (type == 'R'  || type == 'N' || type == 'U');
+ }
+ 
+bool Sequence::canBeDna(char type) {
+    return (type == 'D'  || type == 'N' || type == 'U');
+ }  
+
+bool Sequence::canBeNucleic(char type) {
+    return (canBeRna(type) || canBeDna(type));
+ }  
+
+bool Sequence::canBeAmino(char type) {
+    return (type == 'P'  || type == 'U');
+ }  
+    */
+}
+
 // --- Modify sequence ---
 void Sequence::activeTypeResearch() {
     this->type[4] = true;
@@ -238,12 +290,11 @@ void Sequence::endTypeResearch() {
 
 void Sequence::insert(const std::string & sequence, size_t position, errorMods error_mod) {
     std::string final_seq = "";
-    bool is_usable_char;
 
     for (char symbol : sequence) {
-        is_usable_char = parseChar(symbol, error_mod);
+        symbol = parseChar(symbol, error_mod);
 
-        if (is_usable_char) {
+        if (symbol != '\0') {
             final_seq += symbol;
         }
     }

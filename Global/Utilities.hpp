@@ -4,6 +4,7 @@
 #include <string>
 #include <stdexcept>
 #include <iostream>
+#include <random>
 #include "Utilities.hpp"
 
 /**
@@ -74,6 +75,7 @@ void displayLogicError(errorMods error_mod, std::string message, std::string fil
  */
 void displayDomainError(errorMods error_mod, std::string message, std::string file_name, std::string function_name) ;
 
+
 /**
  * @brief Throw / show / ignore an std::length_error using an errorMods as a switch.
  * | Complexity | |
@@ -88,19 +90,6 @@ void displayDomainError(errorMods error_mod, std::string message, std::string fi
  */
 void displayLengthError(errorMods error_mod, std::string message, std::string file_name, std::string function_name);
 
-/**
- * @brief Throw / show / ignore an std::out_of_range using an errorMods as a switch.
- * | Complexity | |
- * |-------|------|
- * | Time  | O(n) |
- * | Space | O(n^2)| 
- * n = message.size() + file_name.size() + function_name.size()
- * @param error_mod ignore=hide the error ; display=cout the message ; raise=throw the error;
- * @param message The text displayed inside the message.
- * @param file_name Name of the file that contain the function that use the message. (__FILE__)
- * @param function_name  Name of the function that use the message. (__func__) 
- */
-void displayOutOfRangeError(errorMods error_mod, std::string message, std::string file_name, std::string function_name);
 
 /**
  * @brief Display (or not) a message using an errorMods as a switch.
@@ -151,4 +140,28 @@ size_t safe_multiply(size_t a, size_t b, size_t maximal_value);
  */
 void displayBits(char bits, bool endl=true);
 
+/**
+ * @brief Return a random integer from the interval [ \p start ; \p end ]
+ * | Complexity | |
+ * |-------|------|
+ * | Time  | O(n) |
+ * | Space | O(n) | 
+ * n = end - start
+ * @param start minimal value
+ * @param end maximal value
+ * @return size_t A random number
+ */
+size_t randSizeT(size_t start, size_t end) ;
+
+/**
+ * @brief Return a char contained in \p word at random.
+ * | Complexity | |
+ * |-------|------|
+ * | Time  | O(n) |
+ * | Space | O(n) | 
+ * n = word.size()
+ * @param word A string
+ * @return char A random car from the string. If the string is empty '\0' is returned
+ */
+char randChar(const std::string & word) ;
 #endif

@@ -140,6 +140,16 @@ public:
          */
         std::string toString() const;
 
+        /**
+         * @brief Turn Coordinates inside a string.
+         * | Complexity | |
+         * |-------|------|
+         * | Time  | O(1) |
+         * | Space | O(1) |
+         * @return std::string "(O=X, B=N)"
+         */
+        operator std::string() const ;
+
         // --- --- Getters and setters --- ---
 
         /**
