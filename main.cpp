@@ -121,7 +121,7 @@
 
 
 int main() {
-    FastaHeader(" Un entête sans séquence          ; et sur plusieurs lignes           ; qui ne commence pas en première ligne...");
+    // FastaHeader(" Un entête sans séquence          ; et sur plusieurs lignes           ; qui ne commence pas en première ligne...");
 
     // std::cout << (mySet.find('A') != mySet.end()) << std::endl;
     // std::cout << (mySet.find(Sequence::SequenceSymbol('Z', "A", Sequence::all)) != mySet.end()) << std::endl;

@@ -1,12 +1,15 @@
-// #include "FastaSequence.hpp"
-// #include "Fasta.hpp"
-// #include "FastaHeader.hpp"
-// #include <string>
-// #include <iostream> // pour cout/endl/...
-// #include <fstream>  // pour ifstream
-// #include <map>
-// #include <tuple>
-// #include <vector>
+#include "FastaSequence.hpp"
+#include "Fasta.hpp"
+#include "FastaHeader.hpp"
+#include <string>
+#include <iostream> // pour cout/endl/...
+#include <fstream>  // pour ifstream
+#include <map>
+#include <tuple>
+#include <vector>
+
+
+
 
 // std::tuple<std::string, std::string, std::map<size_t, std::string>>
 // Fasta::parseFasta(std::ifstream& file_flux, unsigned int& current_line, bool verbose) {

@@ -1,15 +1,77 @@
-// #ifndef FASTA_HPP
-// #define FASTA_HPP
-// #include "FastaRelated.hpp"
-// #include "FastaHeader.hpp"
-// #include "FastaSequence.hpp"
-// #include <fstream>
-// #include <string>
-// #include <iostream>
-// #include <stdexcept>
-// #include <set>
-// #include <vector>
+#ifndef FASTA_HPP
+#define FASTA_HPP
+#include "FastaRelated.hpp"
+#include "FastaHeader.hpp"
+#include "FastaSequence.hpp"
+#include <fstream>
+#include <string>
+#include <iostream>
+#include <stdexcept>
+#include <set>
+#include <vector>
+/**
+ * @brief Class that should represent a Fasta File. 
+ * @warning Not implemented
+ */
+class Fasta : FastaRelated{
 
+private:
+    /**
+     * @brief File header
+     */
+    FastaHeader _header;
+
+    /**
+     * @brief File Sequence
+     */
+    FastaSequence _Sequence;
+
+public:
+    /**
+     * @brief Construct Fasta oject
+     * @warning NotImplemented
+     */
+    Fasta(const FastaHeader & header, const FastaSequence & sequence) {
+         displayLogicError(raise, "Unimplemented class. This class is not implemented yet.", __FILE__, __func__);
+         // Do something with header and sequence in order to compile
+         sequence.getType();
+         header.getComment();
+    }
+
+    /**
+     * @brief Construct Fasta oject using a path or a file_content
+     * @warning NotImplemented
+     */
+    Fasta(std::string path) {
+         displayLogicError(raise, "Unimplemented class. This class is not implemented yet : " + path, __FILE__, __func__);
+    }
+
+    /**
+     * @brief Load a fasta using it's path
+     * @warning NotImplemented
+     */
+    void loadFile(std::string path);
+    /**
+     * @brief Load a fasta using it's content
+     * @warning NotImplemented
+     */
+    void loadText(const std::string & file_content);
+    
+    /**
+     * @brief Get the Fasta Header object
+     * @warning NotImplemented
+     * @return const FastaHeader& 
+     */
+    const FastaHeader & getFastaHeader();
+    /**
+     * @brief Get the Fasta Sequence object
+     * @warning NotImplemented
+     * @return const FastaSequence& 
+     */
+    const FastaSequence & getFastaSequence();
+};
+
+#endif
 // class Fasta : public FastaRelated{
 // private:
 //     FastaSequence sequence;

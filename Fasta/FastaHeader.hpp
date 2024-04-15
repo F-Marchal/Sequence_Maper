@@ -29,9 +29,16 @@ public:
     /**
      * @brief Construct a new Fasta Header object
      * @warning NOT IMPLEMENTED YET
-     * @param raw_header 
+     * @param raw_header Header from a text
      */
+
     FastaHeader(std::string raw_header);
+
+    /**
+     * @brief Construct a new Fasta Header object
+     * @warning NOT IMPLEMENTED YET 
+     */
+     FastaHeader();
 
     /**
      * @brief Construct a new Fasta Header object

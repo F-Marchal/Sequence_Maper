@@ -187,7 +187,7 @@ public:
     void activeTypeResearch();
     void endTypeResearch();
 
-    void insert(const std::string & sequence, size_t position, errorMods errorMod=display);
+    virtual void insert(const std::string & sequence, size_t position, errorMods errorMod=display);
     void insert(const char & symbol, size_t position, errorMods errorMod=display);
 
     void insertFront(const std::string & sequence, errorMods errorMod=display);
@@ -196,7 +196,7 @@ public:
     void insertFront(const char & sequence, errorMods errorMod=display);
     void insertBack(const char & sequence, errorMods errorMod=display);
 
-    void erase(size_t start, size_t length);
+    virtual void erase(size_t start, size_t length) ;
     
     // --- --- Static Utilities --- ---
     // --- Symbols ---

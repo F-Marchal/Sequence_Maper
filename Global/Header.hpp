@@ -29,7 +29,7 @@ public:
      * @return std::string 
      * 
      */
-    const std::string & getComment ();
+    const std::string & getComment () const;
 
     /**
      * @brief Change the comments related to this header;
@@ -49,7 +49,7 @@ public:
      * | Space | O(1) |
      * @return std::string A string
      */
-    const std::string & getAccession ();
+    const std::string & getAccession () const;
     
     /**
      * @brief Set the accession number / key contained inside this header;
