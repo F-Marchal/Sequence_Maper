@@ -285,17 +285,14 @@ void Sequence::insert(const std::string & sequence, size_t position, errorMods e
     const std::map<char, char> & translation_tab = translationTab(this->_encoding_type, this->_iupac);
  
     size_t initial_position = position;
-    // Catch error
-
+    
 
     try {
         for (char symbol : sequence) {
             symbol = parseChar(symbol, error_mod);
              
             if (symbol != '\0') {
-                std::cout << "----" << symbol << std::endl;
                 this->seq.set(position, translation_tab.at(symbol)) ;
-                std::cout << "--  --" << std::endl;
                 position +=1 ;
             }
         }
@@ -307,7 +304,7 @@ void Sequence::insert(const std::string & sequence, size_t position, errorMods e
     }
 
     if (position - initial_position != sequence.size()) {
-        // The process failed, let remove unused position
+        // The process is incomplete, let remove unused position
         this->seq.remove(position, sequence.size() - (position - initial_position));
     }
         
