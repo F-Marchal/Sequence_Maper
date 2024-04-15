@@ -1,8 +1,0 @@
-<map id="BitVector::maximumElementNumber" name="BitVector::maximumElementNumber">
-<area shape="rect" id="Node000001" title="How many element can be contained in this kind of object." alt="" coords="5,22,216,62"/>
-<area shape="rect" id="Node000002" href="$class_bit_vector.html#aebe159444eb9d619959b7325ac5dac2d" title="Return the value of the bit at the position coord." alt="" coords="264,29,375,55"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="216,39,250,39,250,45,216,45"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="290,31,284,21,288,11,300,5,319,3,343,6,353,15,350,19,341,11,319,8,301,10,292,15,290,20,295,28"/>
-<area shape="rect" id="Node000003" href="$class_bit_vector_1_1_coords.html#a2892f7f46c4af93f9733e312229d8ec1" title="Get Coords::octet ." alt="" coords="423,22,565,62"/>
-<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="375,39,409,39,409,45,375,45"/>
-</map>

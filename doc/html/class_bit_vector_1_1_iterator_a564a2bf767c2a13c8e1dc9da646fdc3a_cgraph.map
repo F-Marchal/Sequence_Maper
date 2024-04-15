@@ -1,5 +1,0 @@
-<map id="BitVector::Iterator::Iterator" name="BitVector::Iterator::Iterator">
-<area shape="rect" id="Node000001" title="Construct a new Iterator object." alt="" coords="5,5,143,45"/>
-<area shape="rect" id="Node000002" href="$class_bit_vector_1_1_iterator.html#a2b5641dc90d9360f9b48393dbc359eeb" title="Copy the element that correspond to the iterator position inside BitVector::Iterator::_parent." alt="" coords="191,5,328,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,23,177,23,177,28,143,28"/>
-</map>

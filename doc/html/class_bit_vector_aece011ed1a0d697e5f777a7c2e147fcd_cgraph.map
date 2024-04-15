@@ -1,8 +1,0 @@
-<map id="BitVector::_killInternalData" name="BitVector::_killInternalData">
-<area shape="rect" id="Node000001" title="Free memory used by BitVector::_data." alt="" coords="5,29,203,55"/>
-<area shape="rect" id="Node000002" href="$class_bit_vector.html#aebe159444eb9d619959b7325ac5dac2d" title="Return the value of the bit at the position coord." alt="" coords="251,29,361,55"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,39,237,39,237,45,203,45"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="277,31,271,21,274,11,286,5,306,3,330,6,340,15,336,19,328,11,306,8,288,10,278,15,276,20,282,28"/>
-<area shape="rect" id="Node000003" href="$class_bit_vector_1_1_coords.html#a2892f7f46c4af93f9733e312229d8ec1" title="Get Coords::octet ." alt="" coords="409,22,552,62"/>
-<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="362,39,395,39,395,45,362,45"/>
-</map>

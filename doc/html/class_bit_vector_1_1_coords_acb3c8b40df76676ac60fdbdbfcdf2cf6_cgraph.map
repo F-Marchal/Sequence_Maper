@@ -1,8 +1,0 @@
-<map id="BitVector::Coords::operator&gt;" name="BitVector::Coords::operator&gt;">
-<area shape="rect" id="Node000001" title="Say if this object is bigger than another Coords." alt="" coords="5,22,148,62"/>
-<area shape="rect" id="Node000002" href="$class_bit_vector.html#aebe159444eb9d619959b7325ac5dac2d" title="Return the value of the bit at the position coord." alt="" coords="196,29,307,55"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,39,182,39,182,45,148,45"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="222,31,216,21,220,11,232,5,251,3,275,6,285,15,282,19,273,11,251,8,233,10,224,15,222,20,227,28"/>
-<area shape="rect" id="Node000003" href="$class_bit_vector_1_1_coords.html#a2892f7f46c4af93f9733e312229d8ec1" title="Get Coords::octet ." alt="" coords="355,22,497,62"/>
-<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="307,39,341,39,341,45,307,45"/>
-</map>

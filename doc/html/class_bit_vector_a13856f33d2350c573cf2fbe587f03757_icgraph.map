@@ -1,9 +1,0 @@
-<map id="BitVector::resize" name="BitVector::resize">
-<area shape="rect" id="Node000001" title="Modify the length of BitVector::_data." alt="" coords="201,55,329,80"/>
-<area shape="rect" id="Node000002" href="$class_bit_vector.html#a23c1685317944b2a5c6f149a5fccc6bd" title="Construct a new Bit Vector object." alt="" coords="5,5,153,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,54,128,33,129,28,204,49"/>
-<area shape="rect" id="Node000003" href="$class_bit_vector.html#a673b530bb6e520f7f7fa90070e0034db" title="Free memory used by BitVector::_data." alt="" coords="19,55,140,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="187,70,140,70,140,65,187,65"/>
-<area shape="rect" id="Node000004" href="$class_bit_vector.html#a80a4aa212535129b881b4fb2623ce222" title="Reduce the size of BitVector::_data to fit BitVector::_element_number." alt="" coords="15,104,144,129"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="204,86,129,106,128,101,203,81"/>
-</map>

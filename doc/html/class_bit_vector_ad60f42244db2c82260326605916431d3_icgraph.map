@@ -1,5 +1,0 @@
-<map id="BitVector::setElementNumber" name="BitVector::setElementNumber">
-<area shape="rect" id="Node000001" title="Modify the number of known element in this object." alt="" coords="192,5,407,31"/>
-<area shape="rect" id="Node000002" href="$class_bit_vector.html#a87f84edf5dd56606b26e8741ba6ced02" title="Remove a number of element from the vector." alt="" coords="5,5,144,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,21,144,21,144,15,178,15"/>
-</map>

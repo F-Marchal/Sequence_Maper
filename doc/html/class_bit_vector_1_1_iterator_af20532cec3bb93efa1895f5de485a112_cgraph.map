@@ -1,8 +1,0 @@
-<map id="BitVector::Iterator::_nullifyElement" name="BitVector::Iterator::_nullifyElement">
-<area shape="rect" id="Node000001" title="Free memory occupied by BitVector::Iterator::_element." alt="" coords="5,22,143,62"/>
-<area shape="rect" id="Node000002" href="$class_bit_vector.html#aebe159444eb9d619959b7325ac5dac2d" title="Return the value of the bit at the position coord." alt="" coords="191,29,301,55"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,39,177,39,177,45,143,45"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="217,31,211,21,215,11,227,5,246,3,269,6,279,15,276,19,267,11,246,8,228,10,219,15,217,20,222,28"/>
-<area shape="rect" id="Node000003" href="$class_bit_vector_1_1_coords.html#a2892f7f46c4af93f9733e312229d8ec1" title="Get Coords::octet ." alt="" coords="349,22,492,62"/>
-<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="302,39,335,39,335,45,302,45"/>
-</map>
