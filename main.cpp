@@ -9,19 +9,20 @@
  * 
  */
 
-#include "Global/Sequence.hpp"
-#include "Global/BitVector.hpp"
-#include "Fasta/Fasta.hpp"
+
 
 #include <time.h>
 #include <string>
-#include "Global/Utilities.hpp"
 #include <iostream> // pour cout/endl/...
 #include <fstream>  // pour ifstream
-
-
 #include <vector>
 #include <map>
+
+#include "Global/Sequence.hpp"
+#include "Global/BitVector.hpp"
+#include "Global/Utilities.hpp"
+#include "Fasta/FastaRelated.hpp"
+#include "Fasta/FastaHeader.hpp"
 /* Methodes abstracts :
  * Les fonctions sans corps sont abstraites ET DOIVENT être implementés dans les class filles
  *
@@ -120,7 +121,7 @@
 
 
 int main() {
-   
+    FastaHeader(" Un entête sans séquence          ; et sur plusieurs lignes           ; qui ne commence pas en première ligne...");
 
     // std::cout << (mySet.find('A') != mySet.end()) << std::endl;
     // std::cout << (mySet.find(Sequence::SequenceSymbol('Z', "A", Sequence::all)) != mySet.end()) << std::endl;

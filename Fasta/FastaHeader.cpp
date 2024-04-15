@@ -1,4 +1,5 @@
 #include "FastaHeader.hpp"
+#include "../Global/Utilities.hpp"
 #include <string>
 #include <iostream>
 #include <stdexcept>
@@ -8,11 +9,27 @@
 
 
 FastaHeader::FastaHeader(std::string raw_header) {
-    for (std::string items: this->cutRawHeader(raw_header)) {
-        std::cout  << items << std::endl;
-    }
+    displayLogicError(raise, "Unimplemented class. This class is not implemented yet.", __FILE__, __func__);
+    // SEE parseRawHeader
+    this->load(raw_header);
+}   
+
+void FastaHeader::load(std::string raw_header) {
+    std::map<std::string, std::string> map_to_load= parseRawHeader(raw_header);
+    this->identifier.clear();
+    this->identifier.insert(map_to_load.begin(), map_to_load.end());
+    this->setComment(map_to_load["Comments"]);
+    this->setAccession(map_to_load["accession"]);
+    this->identifier_format = map_to_load["Format"];
 }
 
+const std::map<std::string, std::string> & FastaHeader::getIdentifiers() {
+    return this->identifier;
+}
+
+std::string FastaHeader::getFormat() {
+    return this->identifier_format;
+}
 
 // ---------------------------------------------------------------------------------------------
 void FastaHeader::clearRawHeader(std::string& raw_header) {
@@ -61,8 +78,22 @@ std::vector<std::string> FastaHeader::cutRawHeader(std::string raw_header) {
 
 
 std::map<std::string, std::string> FastaHeader::parseRawHeader(std::vector<std::string> cut_raw_header) {
+    std::map<std::string, std::string> final_map;
+
     std::string format;
     format = cut_raw_header[0];
+    if (format.size() == 1) {
+        std::string firstWord = format;
+        final_map["Complete"] = firstWord + " ";
+        final_map["Format"] = "?";
+        final_map["Comments"] = cut_raw_header[0].substr(firstWord.size());
+        final_map["accession"] = firstWord;
+
+    } else  {
+        //TODO: Determine sequence type (gb...)
+        //TODO: Call the right function (make{identifier}Header) ()
+    }
+    return final_map;
 };
 
 std::map<std::string, std::string> FastaHeader::parseRawHeader(std::string raw_header) {return parseRawHeader(cutRawHeader(raw_header));}
@@ -83,7 +114,7 @@ std::tuple<std::string, std::string> FastaHeader::intermediateMakeFormatFromVect
     }
 
     size_t split_point = findFirstWord(text_header[expected_size - 1]);
-    return std::tuple{text_header[-1].substr(0, split_point), text_header[expected_size - 1].substr(split_point)};
+    return std::tuple<std::string, std::string> {text_header[-1].substr(0, split_point), text_header[expected_size - 1].substr(split_point)};
 }
 
 

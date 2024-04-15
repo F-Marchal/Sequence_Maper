@@ -7,14 +7,50 @@
 #include <map>
 #include <tuple>
 #include <functional>
+#include <vector>
+/**
+ * @brief A header function that is supposed to be hubble to parse Header from Fasta file.
+ * @warning THIS CLASS DO NOT FUNCTION YET.
+ */
 
 class FastaHeader : public FastaRelated, public Header {
 private:
+    /**
+     * @brief Indicate the format of this Header ex : gb
+     */
     std::string identifier_format;
+
+    /**
+     * @brief Contain information related to intermediateMakeFormatFromVector
+     */
     std::map<std::string, std::string> identifier;
 
 public:
+    /**
+     * @brief Construct a new Fasta Header object
+     * @warning NOT IMPLEMENTED YET
+     * @param raw_header 
+     */
     FastaHeader(std::string raw_header);
+
+    /**
+     * @brief Construct a new Fasta Header object
+     * @warning NOT IMPLEMENTED YET
+     * @param raw_header 
+     */
+    void load(std::string raw_header);
+    
+    /**
+     * @brief Give a map that contain all informations related to this header
+     * @return const std::map<std::string, std::string>& 
+     */
+    const std::map<std::string, std::string> & getIdentifiers();
+
+    /**
+     * @brief Five the header format (ex: gb)
+     * @return std::string 
+     */
+    std::string getFormat();
 
     //
     static size_t findFirstWord(std::string text);     
