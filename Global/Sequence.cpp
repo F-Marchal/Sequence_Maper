@@ -99,10 +99,10 @@ const std::map<char, Sequence::SequenceSymbol> Sequence::legalAmino = {
     {'V', Sequence::SequenceSymbol('V', "V", Sequence::basic)}, //Valine
     {'W', Sequence::SequenceSymbol('W', "W", Sequence::basic)}, //Tryptophan
     {'Y', Sequence::SequenceSymbol('Y', "Y", Sequence::basic)}, //Tyrosine
-    {'X', Sequence::SequenceSymbol('X', "X", Sequence::basic)}, //any
+    {'X', Sequence::SequenceSymbol('X', "\0", Sequence::most)}, //any
 
-    {'O', Sequence::SequenceSymbol('O', "O", Sequence::basic)}, //Pyrrolysine (rare)
-    {'U', Sequence::SequenceSymbol('U', "U", Sequence::basic)}, //Selenocysteine (rare)
+    {'O', Sequence::SequenceSymbol('O', "\0", Sequence::most)}, //Pyrrolysine (rare)
+    {'U', Sequence::SequenceSymbol('U', "\0", Sequence::most)}, //Selenocysteine (rare)
 
     {'B', Sequence::SequenceSymbol('B', "DN", Sequence::most)}, //Aspartic acid (D) or Asparagine (N)
     {'J', Sequence::SequenceSymbol('J', "LI", Sequence::most)}, //Leucine (L) or Isoleucine (I)
