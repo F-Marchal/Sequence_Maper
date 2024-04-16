@@ -250,7 +250,14 @@ size_t Sequence::size() const {
     return this->seq.size();
 }
 
-    
+
+Header & Sequence::getHeader() {
+    return this->_header;
+}
+
+void Sequence::setHeader(Header header) {
+    this->_header = header;
+}
 
 
 Sequence::SequenceSymbol Sequence::getSequenceSymbol(char symbol, char type) {

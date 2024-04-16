@@ -17,6 +17,7 @@
 #include <random> 
 #include "Utilities.hpp"
 #include "BitVector.hpp"
+#include "Header.hpp"
 class Sequence {
 public:
     enum IUPACMod {
@@ -36,6 +37,21 @@ public:
             this->_symbol = (char) std::toupper(symbol);
             this->_replacement = replacement;
             this->_iupac = iupac;
+        }
+
+        bool correspondTo(char symbol, bool use_replacement=true) const {
+            if (symbol == this->_symbol) {
+                return true;
+            }
+
+            if (use_replacement) {
+                for (char r_symbol : this->_replacement) {
+                    if (symbol == r_symbol) {
+                        return true;
+                    }
+                }        
+            }
+            return false;
         }
 
         bool isUsableIn(IUPACMod iupac) const {
@@ -86,6 +102,7 @@ private:
     BitVector seq;
     char _encoding_type;
     
+    Header _header;
     Sequence::IUPACMod _iupac;
 
     // --- --- Private attributes --- ---
@@ -93,6 +110,8 @@ private:
     static const std::map<char, Sequence::SequenceSymbol> legalRNA;
     static const std::map<char, Sequence::SequenceSymbol> legalAmino;
     static std::set<char> validType;
+
+
 
 protected:
     char parseChar(char symbol, errorMods error_mod=display);
@@ -179,6 +198,8 @@ public:
     Sequence::IUPACMod getIupac() const;
     const std::array<bool, 5> & getTypeArray() const;
 
+    Header & getHeader() ;
+    void setHeader(Header header) ;
     size_t size() const;
     
     static Sequence::SequenceSymbol getSequenceSymbol(char symbol, char type);
@@ -200,6 +221,9 @@ public:
     
     // --- --- Static Utilities --- ---
     // --- Symbols ---
+    static const Sequence::SequenceSymbol & getSymbolDNA(char symbol){
+        return legalDNA.at(symbol);
+    }
     static bool isLegalNucleic(char symbol);
     static bool isLegalAmino(char symbol);
     static bool isLegalSymbol(char symbol);

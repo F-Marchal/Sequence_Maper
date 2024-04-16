@@ -225,6 +225,7 @@ bool BitVector::Coords::canMultiplyBy(size_t value) {
     return (this->toSize_t() <= this->maximumSize_t() / value);
 }
 
+
 // --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- Iterator --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 void BitVector::Iterator::_nullifyElement () {
     if ( this->_element != NULL) {
