@@ -1,0 +1,79 @@
+<map id="Sequence::erase" name="Sequence::erase">
+<area shape="rect" id="Node000001" title="Remove a portion of the sequence." alt="" coords="5,894,135,919"/>
+<area shape="rect" id="Node000002" href="$class_sequence.html#ad40777fd2f7ad3ae247fab02459e6759" title="Retrieve the symbol at the position in the sequence." alt="" coords="195,894,309,919"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,904,181,904,181,909,135,909"/>
+<area shape="rect" id="Node000008" href="$class_sequence.html#acf21040958590f98163b3d11f19ea93e" title="Give the number of element contained in this sequence." alt="" coords="932,969,1051,994"/>
+<area shape="poly" id="edge49_Node000001_Node000008" title=" " alt="" coords="111,917,226,949,297,966,370,977,522,990,675,993,811,990,918,984,919,989,812,995,675,998,522,995,369,983,296,971,225,955,110,922"/>
+<area shape="rect" id="Node000011" href="$class_bit_vector.html#a87f84edf5dd56606b26e8741ba6ced02" title="Remove a number of element from the vector." alt="" coords="183,717,321,742"/>
+<area shape="poly" id="edge14_Node000001_Node000011" title=" " alt="" coords="82,892,226,750,230,754,86,896"/>
+<area shape="poly" id="edge5_Node000002_Node000002" title=" " alt="" coords="222,895,216,886,219,876,231,870,252,867,277,871,287,880,284,884,275,876,252,873,233,875,223,879,221,885,226,892"/>
+<area shape="rect" id="Node000003" href="$class_bit_vector.html#aebe159444eb9d619959b7325ac5dac2d" title="Return the value of the bit at the position coord." alt="" coords="1964,399,2075,425"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="277,892,319,872,369,855,467,828,545,812,624,805,725,803,1537,803,1597,806,1650,815,1741,833,1783,836,1825,832,1868,815,1914,785,1933,761,1951,724,1980,625,2000,519,2012,438,2017,439,2006,520,1985,626,1956,725,1938,764,1918,789,1870,820,1826,837,1783,842,1740,838,1649,820,1596,812,1537,808,725,808,624,810,546,818,468,834,370,860,321,877,279,896"/>
+<area shape="rect" id="Node000005" href="$class_sequence.html#a8181f024304b3fb5f55c7118f648cc61" title="Return a char (same format as Sequence::getType()) that indicate which alphabet is used in the during..." alt="" coords="375,894,578,919"/>
+<area shape="poly" id="edge6_Node000002_Node000005" title=" " alt="" coords="309,904,361,904,361,909,309,909"/>
+<area shape="rect" id="Node000006" href="$class_sequence.html#a49a9126010c0332493c803ddca005394" title="Give a map that compress / decompress char used by Sequence." alt="" coords="384,943,569,969"/>
+<area shape="poly" id="edge7_Node000002_Node000006" title=" " alt="" coords="283,917,371,939,370,944,282,922"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="1990,401,1984,391,1988,381,2000,375,2019,373,2043,376,2053,385,2050,389,2041,381,2019,378,2001,380,1992,385,1990,390,1995,398"/>
+<area shape="rect" id="Node000004" href="$class_bit_vector_1_1_coords.html#a2892f7f46c4af93f9733e312229d8ec1" title="Get Coords::octet ." alt="" coords="2123,392,2265,432"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="2075,409,2109,409,2109,415,2075,415"/>
+<area shape="poly" id="edge13_Node000006_Node000002" title=" " alt="" coords="446,946,322,916,323,911,447,941"/>
+<area shape="rect" id="Node000007" href="$class_sequence.html#a555c6e58957c4d07028eb5c67b1732ac" title="Function used by Sequence::translationTab to create their compression map." alt="" coords="641,943,812,969"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="569,953,628,953,628,959,569,959"/>
+<area shape="poly" id="edge9_Node000007_Node000002" title=" " alt="" coords="706,945,653,912,619,896,583,884,512,874,439,874,371,882,314,893,313,888,370,877,439,869,512,868,585,879,621,891,656,908,709,941"/>
+<area shape="poly" id="edge10_Node000007_Node000008" title=" " alt="" coords="813,962,919,972,918,977,812,967"/>
+<area shape="rect" id="Node000009" href="$class_bit_vector.html#ab30ea2b408107e4e6bc8095b5a64a1dd" title="Number of element inside this object." alt="" coords="1207,969,1321,994"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="1051,979,1193,979,1193,984,1051,984"/>
+<area shape="rect" id="Node000010" href="$class_bit_vector.html#a5339660cfb315ab5de7f78bdf5af4ce1" title="Get BitVector::_element_number." alt="" coords="1428,969,1644,994"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="1322,979,1414,979,1414,984,1322,984"/>
+<area shape="poly" id="edge15_Node000011_Node000003" title=" " alt="" coords="322,733,504,745,725,752,1537,752,1597,755,1649,763,1740,780,1782,783,1824,778,1867,762,1914,731,1945,701,1969,664,1987,624,2000,582,2013,501,2016,438,2021,439,2019,501,2005,583,1992,626,1974,667,1949,704,1918,735,1870,766,1825,783,1782,788,1740,785,1648,768,1596,761,1537,757,725,757,504,750,321,738"/>
+<area shape="rect" id="Node000012" href="$class_bit_vector.html#aca24053f655c825de0f06ec86fff1cec" title="Replace an element by another element. Can add an element to the list if index = BitVector::_element_..." alt="" coords="422,438,531,463"/>
+<area shape="poly" id="edge16_Node000011_Node000012" title=" " alt="" coords="261,715,455,472,459,476,266,718"/>
+<area shape="rect" id="Node000025" href="$class_bit_vector.html#ad60f42244db2c82260326605916431d3" title="Modify the number of known element in this object." alt="" coords="369,691,584,717"/>
+<area shape="poly" id="edge39_Node000011_Node000025" title=" " alt="" coords="321,719,355,715,356,720,322,724"/>
+<area shape="poly" id="edge20_Node000012_Node000003" title=" " alt="" coords="486,436,552,363,605,313,668,261,739,212,818,170,860,154,902,141,946,133,990,131,1537,131,1596,128,1649,123,1739,115,1781,116,1824,125,1869,144,1918,175,1942,197,1962,223,1991,281,2009,339,2018,385,2012,386,2004,340,1986,283,1957,226,1938,201,1914,179,1866,149,1822,130,1781,122,1739,120,1649,129,1597,134,1537,136,990,136,946,139,904,147,861,159,820,175,742,216,671,265,608,317,556,367,490,440"/>
+<area shape="rect" id="Node000013" href="$class_bit_vector.html#a8c3c1f0faa0bbf35638c7217a841cbd8" title=" " alt="" coords="654,70,799,95"/>
+<area shape="poly" id="edge17_Node000012_Node000013" title=" " alt="" coords="478,437,490,379,518,292,538,244,563,197,594,152,630,113,651,99,654,103,634,117,598,155,568,199,543,247,523,294,495,381,483,438"/>
+<area shape="rect" id="Node000015" href="$class_bit_vector.html#a115789c8a9812eabb52f8843cd4e9965" title="Give the a coord object that represent the size of 1 element inside BitVector::_data." alt="" coords="1723,431,1898,457"/>
+<area shape="poly" id="edge21_Node000012_Node000015" title=" " alt="" coords="532,457,733,483,861,494,990,499,1265,499,1390,494,1514,484,1722,456,1723,461,1515,489,1390,500,1265,504,990,504,860,499,732,489,531,462"/>
+<area shape="rect" id="Node000016" href="$class_bit_vector.html#a93ab8bc2ec39bf299ae28ffcad504b41" title="Give the coords of the first bit of an element." alt="" coords="637,323,816,349"/>
+<area shape="poly" id="edge23_Node000012_Node000016" title=" " alt="" coords="504,436,684,352,686,357,507,440"/>
+<area shape="rect" id="Node000023" href="$class_bit_vector.html#ab4d98ce4b8d36ed6af1aa46e67810972" title="Give the last coordinates thar can be contained inside BitVector::_data with the current BitVector::_..." alt="" coords="926,567,1057,593"/>
+<area shape="poly" id="edge36_Node000012_Node000023" title=" " alt="" coords="502,461,561,490,633,517,706,537,780,551,912,570,911,575,779,557,704,542,631,523,559,495,500,466"/>
+<area shape="rect" id="Node000024" href="$class_bit_vector.html#ab92cdd9780b949d9d762f58e1ee4a0ae" title="Last postion of the vector." alt="" coords="1196,438,1332,463"/>
+<area shape="poly" id="edge37_Node000012_Node000024" title=" " alt="" coords="532,448,1182,448,1182,453,532,453"/>
+<area shape="poly" id="edge18_Node000013_Node000003" title=" " alt="" coords="799,80,1263,80,1537,80,1596,77,1649,70,1740,57,1782,56,1825,63,1870,81,1918,113,1947,141,1970,176,1988,213,2001,252,2016,327,2021,385,2015,386,2011,328,1996,254,1983,215,1966,178,1943,145,1914,117,1867,86,1824,68,1782,62,1740,62,1649,76,1597,82,1537,85,1263,85,799,85"/>
+<area shape="rect" id="Node000014" href="$class_bit_vector_1_1_coords.html#a393207c752f8f9121aca38c938914154" title="Get Coords::bit ." alt="" coords="920,5,1063,45"/>
+<area shape="poly" id="edge19_Node000013_Node000014" title=" " alt="" coords="786,67,906,41,907,46,787,73"/>
+<area shape="poly" id="edge22_Node000015_Node000003" title=" " alt="" coords="1894,429,1950,420,1951,425,1894,434"/>
+<area shape="poly" id="edge24_Node000016_Node000003" title=" " alt="" coords="752,321,835,284,959,237,1031,216,1108,198,1185,186,1263,181,1537,181,1596,179,1648,174,1737,165,1779,166,1822,174,1867,192,1918,220,1938,237,1956,257,1984,302,2003,347,2015,385,2010,387,1998,349,1979,304,1952,260,1934,241,1914,225,1865,196,1821,180,1779,172,1737,171,1648,179,1597,184,1537,187,1263,187,1186,191,1109,203,1033,221,961,242,837,289,755,326"/>
+<area shape="rect" id="Node000017" href="$class_bit_vector.html#a04e6d0b67ee9b42ccec437b0176067fe" title="Give A size_t that represent the coords of the first bit of an element." alt="" coords="869,323,1113,349"/>
+<area shape="poly" id="edge25_Node000016_Node000017" title=" " alt="" coords="816,333,856,333,856,339,816,339"/>
+<area shape="poly" id="edge26_Node000017_Node000003" title=" " alt="" coords="1022,321,1083,298,1169,270,1275,241,1396,217,1527,202,1594,200,1661,203,1727,210,1793,224,1856,243,1917,270,1950,293,1976,324,1997,357,2011,385,2006,388,1992,359,1972,327,1946,297,1915,274,1854,248,1791,229,1726,216,1660,208,1594,206,1527,208,1397,222,1276,246,1170,275,1084,303,1024,326"/>
+<area shape="rect" id="Node000018" href="$class_bit_vector.html#af68cda7444ec4459393bbfa423f0a7dd" title="Get the Size_t value if a BitVector::CoordUnit." alt="" coords="1467,373,1605,413"/>
+<area shape="poly" id="edge27_Node000017_Node000018" title=" " alt="" coords="1076,346,1162,357,1454,385,1453,390,1161,363,1075,351"/>
+<area shape="rect" id="Node000020" href="$class_bit_vector.html#ad36e7d0b4b1417ca434414fa40c72eb8" title="How many element can be contained in this object knowing BitVector::_element_size." alt="" coords="1161,323,1367,349"/>
+<area shape="poly" id="edge30_Node000017_Node000020" title=" " alt="" coords="1113,333,1147,333,1147,339,1113,339"/>
+<area shape="poly" id="edge28_Node000018_Node000015" title=" " alt="" coords="1605,403,1728,426,1727,431,1604,409"/>
+<area shape="rect" id="Node000019" href="$class_bit_vector_1_1_coords.html#a3a4fac9de925974af9c8a66a1d0179e6" title="Translate octet and bit value inside a size_t. Allow easier mathematic computations." alt="" coords="1739,500,1882,540"/>
+<area shape="poly" id="edge29_Node000018_Node000019" title=" " alt="" coords="1582,411,1755,492,1752,496,1579,416"/>
+<area shape="poly" id="edge31_Node000020_Node000018" title=" " alt="" coords="1326,346,1454,374,1453,379,1325,351"/>
+<area shape="rect" id="Node000021" href="$class_bit_vector.html#a68b14af0886039ddcf55c82a250deb4c" title="How many element can be contained in this kind of object." alt="" coords="1705,284,1916,324"/>
+<area shape="poly" id="edge32_Node000020_Node000021" title=" " alt="" coords="1327,321,1414,308,1559,300,1692,299,1692,304,1559,305,1415,313,1328,326"/>
+<area shape="rect" id="Node000022" href="$class_bit_vector.html#aa3228d2bacb1bb0f6072d73d43a49456" title="How many octet can be contained in this kind of object." alt="" coords="1415,323,1657,349"/>
+<area shape="poly" id="edge34_Node000020_Node000022" title=" " alt="" coords="1367,333,1401,333,1401,339,1367,339"/>
+<area shape="poly" id="edge33_Node000021_Node000003" title=" " alt="" coords="1852,322,1983,390,1980,395,1849,326"/>
+<area shape="poly" id="edge35_Node000022_Node000003" title=" " alt="" coords="1618,346,1951,399,1950,404,1617,351"/>
+<area shape="poly" id="edge38_Node000024_Node000015" title=" " alt="" coords="1332,447,1710,443,1710,448,1332,453"/>
+<area shape="poly" id="edge48_Node000025_Node000003" title=" " alt="" coords="584,701,990,701,1537,701,1597,704,1649,711,1739,724,1781,725,1823,718,1867,701,1914,671,1940,647,1961,619,1978,587,1991,554,2007,490,2014,438,2019,439,2012,491,1996,556,1983,589,1966,622,1944,651,1918,675,1869,706,1824,723,1781,730,1739,729,1648,716,1596,709,1537,707,990,707,584,707"/>
+<area shape="rect" id="Node000026" href="$class_bit_vector.html#ad64e921d07b9528a532477f282af135c" title="How many element can fit in this vector without having to resize the vector ?" alt="" coords="632,616,821,656"/>
+<area shape="poly" id="edge40_Node000025_Node000026" title=" " alt="" coords="524,689,638,657,640,662,525,694"/>
+<area shape="poly" id="edge47_Node000026_Node000023" title=" " alt="" coords="821,613,917,593,918,598,822,619"/>
+<area shape="rect" id="Node000027" href="$class_bit_vector.html#a5af3c70f593aac387de23c7e6e5ae57e" title="Find the element that correspond to coord ." alt="" coords="893,623,1089,649"/>
+<area shape="poly" id="edge41_Node000026_Node000027" title=" " alt="" coords="821,633,879,633,879,639,821,639"/>
+<area shape="poly" id="edge42_Node000027_Node000003" title=" " alt="" coords="1090,644,1288,661,1531,671,1650,669,1759,661,1850,644,1886,632,1915,618,1936,600,1955,579,1983,530,2001,480,2011,438,2017,439,2007,481,1988,532,1959,582,1940,604,1917,622,1888,637,1851,649,1760,666,1651,675,1531,676,1288,666,1089,649"/>
+<area shape="rect" id="Node000028" href="$class_bit_vector.html#a354c83853bc3622efa5d45efcae97286" title="Give more detailed on BiteVector::indexCoordinate." alt="" coords="1166,557,1362,597"/>
+<area shape="poly" id="edge43_Node000027_Node000028" title=" " alt="" coords="1051,621,1157,598,1158,603,1052,626"/>
+<area shape="poly" id="edge44_Node000028_Node000003" title=" " alt="" coords="1355,595,1473,612,1543,617,1617,618,1694,613,1771,601,1845,581,1915,550,1946,526,1971,496,1991,465,2005,436,2010,439,1996,467,1976,499,1950,530,1917,554,1847,586,1772,606,1694,618,1617,623,1543,622,1472,617,1354,600"/>
+<area shape="poly" id="edge45_Node000028_Node000018" title=" " alt="" coords="1293,555,1493,419,1496,423,1296,559"/>
+<area shape="poly" id="edge46_Node000028_Node000019" title=" " alt="" coords="1362,564,1726,526,1726,531,1363,570"/>
+</map>

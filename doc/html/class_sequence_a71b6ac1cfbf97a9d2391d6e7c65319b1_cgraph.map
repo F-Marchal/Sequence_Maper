@@ -1,0 +1,7 @@
+<map id="Sequence::canBeNucleic" name="Sequence::canBeNucleic">
+<area shape="rect" id="Node000001" title="Say if a symbol can represent an nucleic acid." alt="" coords="5,31,187,56"/>
+<area shape="rect" id="Node000002" href="$class_sequence.html#a276e60abf2a497596ceb563687922342" title="Say if a symbol can represent DNA." alt="" coords="235,5,393,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,30,221,26,222,31,187,35"/>
+<area shape="rect" id="Node000003" href="$class_sequence.html#a0e01b31e21a06c7a2fd17d6c050c739a" title="Say if a symbol can represent RNA." alt="" coords="235,55,393,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="187,51,221,54,221,60,186,56"/>
+</map>

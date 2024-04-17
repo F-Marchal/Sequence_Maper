@@ -2,6 +2,15 @@
 \hypertarget{class_sequence_1_1_sequence_symbol}{}\label{class_sequence_1_1_sequence_symbol}\index{Sequence::SequenceSymbol@{Sequence::SequenceSymbol}}
 
 
+Represent a symbol that can be used inside \doxylink{class_sequence}{Sequence}.  
+
+
+
+
+{\ttfamily \#include $<$Sequence.\+hpp$>$}
+
+
+
 Collaboration diagram for Sequence\+::Sequence\+Symbol\+:
 \nopagebreak
 \begin{figure}[H]
@@ -13,53 +22,253 @@ Collaboration diagram for Sequence\+::Sequence\+Symbol\+:
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_sequence_1_1_sequence_symbol_a56237c115052ba379fdba7fb1506371c}\label{class_sequence_1_1_sequence_symbol_a56237c115052ba379fdba7fb1506371c} 
-{\bfseries Sequence\+Symbol} (char symbol, std\+::string replacement, Sequence\+::\+IUPACMod iupac)
-\item 
-\Hypertarget{class_sequence_1_1_sequence_symbol_a7b9b6cc6b5b342c75cd6024a1377736f}\label{class_sequence_1_1_sequence_symbol_a7b9b6cc6b5b342c75cd6024a1377736f} 
-bool {\bfseries correspond\+To} (char symbol, bool use\+\_\+replacement=true) const
-\item 
-\Hypertarget{class_sequence_1_1_sequence_symbol_ae0bffc993fb3e3e43e3a0da52679ee9e}\label{class_sequence_1_1_sequence_symbol_ae0bffc993fb3e3e43e3a0da52679ee9e} 
-bool {\bfseries is\+Usable\+In} (IUPACMod iupac) const
-\item 
-\Hypertarget{class_sequence_1_1_sequence_symbol_a0a3030bc525a38364b1c0b0497dc4fef}\label{class_sequence_1_1_sequence_symbol_a0a3030bc525a38364b1c0b0497dc4fef} 
-char {\bfseries get\+Replacement\+Symbol} () const
-\item 
-\Hypertarget{class_sequence_1_1_sequence_symbol_a0503fbc44a785db66e0d8ee73e5a7fee}\label{class_sequence_1_1_sequence_symbol_a0503fbc44a785db66e0d8ee73e5a7fee} 
-char {\bfseries get\+Value} () const
-\item 
-\Hypertarget{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}\label{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a} 
-char {\bfseries get} (Sequence\+::\+IUPACMod iupac) const
-\item 
-\Hypertarget{class_sequence_1_1_sequence_symbol_af481ba32bd9b2db6daf0f0f7da6870ad}\label{class_sequence_1_1_sequence_symbol_af481ba32bd9b2db6daf0f0f7da6870ad} 
-{\bfseries operator char} () const
-\item 
-\Hypertarget{class_sequence_1_1_sequence_symbol_a256caae0e57652dd45c630e5968bc6b7}\label{class_sequence_1_1_sequence_symbol_a256caae0e57652dd45c630e5968bc6b7} 
-{\bfseries operator std\+::string} () const
-\item 
-\Hypertarget{class_sequence_1_1_sequence_symbol_aaf125a9b4fea0b918ebddf4f5cff11d7}\label{class_sequence_1_1_sequence_symbol_aaf125a9b4fea0b918ebddf4f5cff11d7} 
-std\+::string {\bfseries to\+String} () const
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a56237c115052ba379fdba7fb1506371c}{Sequence\+Symbol}} (\mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{char}} \mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{symbol}}, std\+::string \mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{replacement}}, \mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{Sequence\+::\+IUPACMod}} \mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{iupac}})
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_sequence}{Sequence} Symbol object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{bool}} \mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a7b9b6cc6b5b342c75cd6024a1377736f}{correspond\+To}} (\mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{char}} \mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{symbol}}, \mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{bool}} \mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{use\+\_\+replacement}}=\mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{true}}) \mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{const}}
+\begin{DoxyCompactList}\small\item\em Do this object correspond to another char ? \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{bool}} \mbox{\hyperlink{class_sequence_1_1_sequence_symbol_ae0bffc993fb3e3e43e3a0da52679ee9e}{is\+Usable\+In}} (\mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{IUPACMod}} \mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{iupac}}) \mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{const}}
+\begin{DoxyCompactList}\small\item\em Do this symbol can be used with this {\ttfamily iupac} setting ? \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{char}} \mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a0a3030bc525a38364b1c0b0497dc4fef}{get\+Replacement\+Symbol}} () \mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{const}}
+\begin{DoxyCompactList}\small\item\em Get the Replacement Symbol. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{char}} \mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a0503fbc44a785db66e0d8ee73e5a7fee}{get\+Value}} () \mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{const}}
+\begin{DoxyCompactList}\small\item\em Get the symbol contained into this object. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{get}} (\mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{Sequence\+::\+IUPACMod}} iupac) const
+\begin{DoxyCompactList}\small\item\em Get the value of this \doxylink{class_sequence_1_1_sequence_symbol}{Sequence\+Symbol} in a precise iupac alphabet. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_1_1_sequence_symbol_af481ba32bd9b2db6daf0f0f7da6870ad}{operator char}} () \mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{const}}
+\begin{DoxyCompactList}\small\item\em Turn \doxylink{class_sequence_1_1_sequence_symbol}{Sequence\+Symbol} to a char. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a256caae0e57652dd45c630e5968bc6b7}{operator std\+::string}} () \mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{const}}
+\begin{DoxyCompactList}\small\item\em Turn \doxylink{class_sequence_1_1_sequence_symbol}{Sequence\+Symbol} to a std\+::string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_sequence_1_1_sequence_symbol_aaf125a9b4fea0b918ebddf4f5cff11d7}{to\+String}} () \mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{const}}
+\begin{DoxyCompactList}\small\item\em Turn \doxylink{class_sequence_1_1_sequence_symbol}{Sequence\+Symbol} to a std\+::string. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_sequence_1_1_sequence_symbol_a188753058533a29c46da9a63a7093d20}\label{class_sequence_1_1_sequence_symbol_a188753058533a29c46da9a63a7093d20} 
 std\+::string {\bfseries \+\_\+replacement}
-\item 
+\begin{DoxyCompactList}\small\item\em When this symbol can not be used with the current IUPAC alphabet, what chars can be used ? \end{DoxyCompactList}\item 
 \Hypertarget{class_sequence_1_1_sequence_symbol_a08eb4026b2602e0c330fd11bd88311c9}\label{class_sequence_1_1_sequence_symbol_a08eb4026b2602e0c330fd11bd88311c9} 
-char {\bfseries \+\_\+symbol}
-\item 
+\mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{char}} {\bfseries \+\_\+symbol}
+\begin{DoxyCompactList}\small\item\em Symbol represented. \end{DoxyCompactList}\item 
 \Hypertarget{class_sequence_1_1_sequence_symbol_a2528b29b615d2fd0778db86fcd981584}\label{class_sequence_1_1_sequence_symbol_a2528b29b615d2fd0778db86fcd981584} 
-Sequence\+::\+IUPACMod {\bfseries \+\_\+iupac}
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{Sequence\+::\+IUPACMod}} {\bfseries \+\_\+iupac}
+\begin{DoxyCompactList}\small\item\em In which alphabet thus symbol exist ? \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
+std\+::ostream \& \mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a3ec3ff6fa70a545a4b5805079cd22180}{operator$<$$<$}} (std\+::ostream \&\mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{os}}, \mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{const}} \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}} \&\mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{symbol}})
+\begin{DoxyCompactList}\small\item\em Allow \doxylink{class_sequence_1_1_sequence_symbol}{Sequence\+Symbol} to be cout. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represent a symbol that can be used inside \doxylink{class_sequence}{Sequence}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_sequence_1_1_sequence_symbol_a56237c115052ba379fdba7fb1506371c}\label{class_sequence_1_1_sequence_symbol_a56237c115052ba379fdba7fb1506371c} 
+\index{Sequence::SequenceSymbol@{Sequence::SequenceSymbol}!SequenceSymbol@{SequenceSymbol}}
+\index{SequenceSymbol@{SequenceSymbol}!Sequence::SequenceSymbol@{Sequence::SequenceSymbol}}
+\doxysubsubsection{\texorpdfstring{SequenceSymbol()}{SequenceSymbol()}}
+{\footnotesize\ttfamily Sequence\+::\+Sequence\+Symbol\+::\+Sequence\+Symbol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{char}}}]{symbol,  }\item[{std\+::string}]{replacement,  }\item[{\mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{Sequence\+::\+IUPACMod}}}]{iupac }\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{class_sequence}{Sequence} Symbol object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & A, T, C, G, B .... \\
+\hline
+{\em replacement} & When this symbol can not be used with the current IUPAC alphabet, what chars can be used ? (Ex \+: B --\} "{}\+CGT"{}). You can use \textquotesingle{}\textbackslash{}0\textquotesingle{} if this symbol should be ignored. \\
+\hline
+{\em iupac} & What is the lowest Iupac setting acceptable for this class ? \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_1_1_sequence_symbol_a56237c115052ba379fdba7fb1506371c_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_sequence_1_1_sequence_symbol_a7b9b6cc6b5b342c75cd6024a1377736f}\label{class_sequence_1_1_sequence_symbol_a7b9b6cc6b5b342c75cd6024a1377736f} 
+\index{Sequence::SequenceSymbol@{Sequence::SequenceSymbol}!correspondTo@{correspondTo}}
+\index{correspondTo@{correspondTo}!Sequence::SequenceSymbol@{Sequence::SequenceSymbol}}
+\doxysubsubsection{\texorpdfstring{correspondTo()}{correspondTo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{bool}} Sequence\+::\+Sequence\+Symbol\+::correspond\+To (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{char}}}]{symbol,  }\item[{\mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{bool}}}]{use\+\_\+replacement = {\ttfamily \mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{true}}} }\end{DoxyParamCaption}) const}
+
+
+
+Do this object correspond to another char ? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & A symbol to test. \\
+\hline
+{\em use\+\_\+replacement} & Do {\ttfamily symbol} is also compared to replacement symbol \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true yes 
+
+false no 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_1_1_sequence_symbol_a7b9b6cc6b5b342c75cd6024a1377736f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}\label{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a} 
+\index{Sequence::SequenceSymbol@{Sequence::SequenceSymbol}!get@{get}}
+\index{get@{get}!Sequence::SequenceSymbol@{Sequence::SequenceSymbol}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily char Sequence\+::\+Sequence\+Symbol\+::get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{Sequence\+::\+IUPACMod}}}]{iupac }\end{DoxyParamCaption}) const}
+
+
+
+Get the value of this \doxylink{class_sequence_1_1_sequence_symbol}{Sequence\+Symbol} in a precise iupac alphabet. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iupac} & A iupac setting \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char \doxylink{class_sequence_1_1_sequence_symbol_a08eb4026b2602e0c330fd11bd88311c9}{Sequence\+::\+Sequence\+Symbol\+::\+\_\+symbol} or \doxylink{class_sequence_1_1_sequence_symbol_a0a3030bc525a38364b1c0b0497dc4fef}{Sequence\+::\+Sequence\+Symbol\+::get\+Replacement\+Symbol()}. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_1_1_sequence_symbol_a0a3030bc525a38364b1c0b0497dc4fef}\label{class_sequence_1_1_sequence_symbol_a0a3030bc525a38364b1c0b0497dc4fef} 
+\index{Sequence::SequenceSymbol@{Sequence::SequenceSymbol}!getReplacementSymbol@{getReplacementSymbol}}
+\index{getReplacementSymbol@{getReplacementSymbol}!Sequence::SequenceSymbol@{Sequence::SequenceSymbol}}
+\doxysubsubsection{\texorpdfstring{getReplacementSymbol()}{getReplacementSymbol()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{char}} Sequence\+::\+Sequence\+Symbol\+::get\+Replacement\+Symbol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Replacement Symbol. 
+
+\begin{DoxyReturn}{Returns}
+char A random char from \doxylink{class_sequence_1_1_sequence_symbol_a188753058533a29c46da9a63a7093d20}{Sequence\+::\+Sequence\+Symbol\+::\+\_\+replacement} 
+\end{DoxyReturn}
+\Hypertarget{class_sequence_1_1_sequence_symbol_a0503fbc44a785db66e0d8ee73e5a7fee}\label{class_sequence_1_1_sequence_symbol_a0503fbc44a785db66e0d8ee73e5a7fee} 
+\index{Sequence::SequenceSymbol@{Sequence::SequenceSymbol}!getValue@{getValue}}
+\index{getValue@{getValue}!Sequence::SequenceSymbol@{Sequence::SequenceSymbol}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{char}} Sequence\+::\+Sequence\+Symbol\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the symbol contained into this object. 
+
+\begin{DoxyReturn}{Returns}
+char \doxylink{class_sequence_1_1_sequence_symbol_a08eb4026b2602e0c330fd11bd88311c9}{Sequence\+::\+Sequence\+Symbol\+::\+\_\+symbol} 
+\end{DoxyReturn}
+\Hypertarget{class_sequence_1_1_sequence_symbol_ae0bffc993fb3e3e43e3a0da52679ee9e}\label{class_sequence_1_1_sequence_symbol_ae0bffc993fb3e3e43e3a0da52679ee9e} 
+\index{Sequence::SequenceSymbol@{Sequence::SequenceSymbol}!isUsableIn@{isUsableIn}}
+\index{isUsableIn@{isUsableIn}!Sequence::SequenceSymbol@{Sequence::SequenceSymbol}}
+\doxysubsubsection{\texorpdfstring{isUsableIn()}{isUsableIn()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{bool}} Sequence\+::\+Sequence\+Symbol\+::is\+Usable\+In (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{IUPACMod}}}]{iupac }\end{DoxyParamCaption}) const}
+
+
+
+Do this symbol can be used with this {\ttfamily iupac} setting ? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iupac} & A iupac setting \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Yes 
+
+false No 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_1_1_sequence_symbol_ae0bffc993fb3e3e43e3a0da52679ee9e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_1_1_sequence_symbol_af481ba32bd9b2db6daf0f0f7da6870ad}\label{class_sequence_1_1_sequence_symbol_af481ba32bd9b2db6daf0f0f7da6870ad} 
+\index{Sequence::SequenceSymbol@{Sequence::SequenceSymbol}!operator char@{operator char}}
+\index{operator char@{operator char}!Sequence::SequenceSymbol@{Sequence::SequenceSymbol}}
+\doxysubsubsection{\texorpdfstring{operator char()}{operator char()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{Sequence\+::\+Sequence\+Symbol\+::operator}} \mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{char}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Turn \doxylink{class_sequence_1_1_sequence_symbol}{Sequence\+Symbol} to a char. 
+
+\begin{DoxyReturn}{Returns}
+char \doxylink{class_sequence_1_1_sequence_symbol_a08eb4026b2602e0c330fd11bd88311c9}{Sequence\+::\+Sequence\+Symbol\+::\+\_\+symbol} 
+\end{DoxyReturn}
+\Hypertarget{class_sequence_1_1_sequence_symbol_a256caae0e57652dd45c630e5968bc6b7}\label{class_sequence_1_1_sequence_symbol_a256caae0e57652dd45c630e5968bc6b7} 
+\index{Sequence::SequenceSymbol@{Sequence::SequenceSymbol}!operator std::string@{operator std::string}}
+\index{operator std::string@{operator std::string}!Sequence::SequenceSymbol@{Sequence::SequenceSymbol}}
+\doxysubsubsection{\texorpdfstring{operator std::string()}{operator std::string()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{Sequence\+::\+Sequence\+Symbol\+::operator}} std\+::string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Turn \doxylink{class_sequence_1_1_sequence_symbol}{Sequence\+Symbol} to a std\+::string. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string \doxylink{class_sequence_1_1_sequence_symbol_a08eb4026b2602e0c330fd11bd88311c9}{Sequence\+::\+Sequence\+Symbol\+::\+\_\+symbol} 
+\end{DoxyReturn}
+\Hypertarget{class_sequence_1_1_sequence_symbol_aaf125a9b4fea0b918ebddf4f5cff11d7}\label{class_sequence_1_1_sequence_symbol_aaf125a9b4fea0b918ebddf4f5cff11d7} 
+\index{Sequence::SequenceSymbol@{Sequence::SequenceSymbol}!toString@{toString}}
+\index{toString@{toString}!Sequence::SequenceSymbol@{Sequence::SequenceSymbol}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily std\+::string Sequence\+::\+Sequence\+Symbol\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Turn \doxylink{class_sequence_1_1_sequence_symbol}{Sequence\+Symbol} to a std\+::string. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string \doxylink{class_sequence_1_1_sequence_symbol_a08eb4026b2602e0c330fd11bd88311c9}{Sequence\+::\+Sequence\+Symbol\+::\+\_\+symbol} 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
 \Hypertarget{class_sequence_1_1_sequence_symbol_a3ec3ff6fa70a545a4b5805079cd22180}\label{class_sequence_1_1_sequence_symbol_a3ec3ff6fa70a545a4b5805079cd22180} 
-std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, const \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}} \&symbol)
-\end{DoxyCompactItemize}
+\index{Sequence::SequenceSymbol@{Sequence::SequenceSymbol}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Sequence::SequenceSymbol@{Sequence::SequenceSymbol}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream \& \mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{operator}}$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{\mbox{\hyperlink{class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a}{const}} \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}} \&}]{symbol }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+
+Allow \doxylink{class_sequence_1_1_sequence_symbol}{Sequence\+Symbol} to be cout. 
+
+\begin{DoxyReturn}{Returns}
+std\+::ostream 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Sequence.\+hpp\end{DoxyCompactItemize}
+Sequence.\+hpp\item 
+Sequence.\+cpp\end{DoxyCompactItemize}

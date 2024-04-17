@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['fastaheader_0',['FastaHeader',['../class_fasta_header.html',1,'FastaHeader'],['../class_fasta_header.html#a3c8ae1370cb8045162803a2ed790d987',1,'FastaHeader::FastaHeader(std::string raw_header)'],['../class_fasta_header.html#a31a57b6c5c53e85310a6400cb39e2a7f',1,'FastaHeader::FastaHeader()']]],
-  ['fastamanager_1',['FastaManager',['../class_fasta_manager.html',1,'']]],
-  ['fastarelated_2',['FastaRelated',['../class_fasta_related.html',1,'']]],
-  ['fastasequence_3',['FastaSequence',['../class_fasta_sequence.html',1,'']]],
-  ['fastq_4',['FastQ',['../class_fast_q.html',1,'']]],
-  ['firstpos_5',['firstPos',['../class_bit_vector.html#a11bb603fac37a9b0a5fd8f6f14c15c9b',1,'BitVector']]]
+  ['elementmaxsize_0',['elementMaxSize',['../class_sequence.html#a80034bb32edc061317480f5b759c4170',1,'Sequence']]],
+  ['end_1',['end',['../class_bit_vector.html#a0608b1bfe67ad7972903a602eb42e404',1,'BitVector::end()'],['../class_sequence.html#a27a1f93dc61e2cb49bbc853d30c6e488',1,'Sequence::end() const']]],
+  ['endtyperesearch_2',['endTypeResearch',['../class_sequence.html#ac303ef02f197df4fb973b5de8ad1dce6',1,'Sequence']]],
+  ['erase_3',['erase',['../class_sequence.html#a20eb6bdd6f5cba62a251eff4387a525d',1,'Sequence']]]
 ];

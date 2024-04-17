@@ -353,6 +353,10 @@ void Sequence::erase(size_t start, size_t length) {
 }
 
 // --- Symbols ---
+const Sequence::SequenceSymbol & Sequence::getSymbolDNA(char symbol){
+    return legalDNA.at(symbol);
+}
+
 bool Sequence::isLegalNucleic(char symbol) {
     return (isDNA(symbol) || isRNA(symbol));
 }
@@ -399,6 +403,119 @@ bool Sequence::isNucleicSpecific(char symbol) {
 }
 bool Sequence::isValidType(char symbol) {
        return (validType.find(symbol) != validType.end());
+}
+size_t Sequence::elementMaxSize(char encoding_type, Sequence::IUPACMod iupac) {
+    return translationTab(encoding_type, iupac, false, ignore).size();
+}
+
+const std::map<char, char> & Sequence::translationTab (char encoding_type, Sequence::IUPACMod iupac, bool reverse, errorMods error_mod) {
+    if (encoding_type == 'Z') {
+        encoding_type = 'U';
+    }
+    static std::map<Sequence::IUPACMod, std::map<char, char>> U_encoding;
+    static std::map<Sequence::IUPACMod, std::map<char, char>> N_encoding;
+    static std::map<Sequence::IUPACMod, std::map<char, char>> R_encoding;
+    static std::map<Sequence::IUPACMod, std::map<char, char>> D_encoding;
+    static std::map<Sequence::IUPACMod, std::map<char, char>> P_encoding;
+    static std::map<Sequence::IUPACMod, std::map<char, char>> U_rev_encoding;
+    static std::map<Sequence::IUPACMod, std::map<char, char>> N_rev_encoding;
+    static std::map<Sequence::IUPACMod, std::map<char, char>> R_rev_encoding;
+    static std::map<Sequence::IUPACMod, std::map<char, char>> D_rev_encoding;
+    static std::map<Sequence::IUPACMod, std::map<char, char>> P_rev_encoding;
+
+    if (encoding_type == 'U') {
+        if (U_encoding.find(iupac) == U_encoding.end()) {
+            fillCodeMap(U_encoding, U_rev_encoding, legalDNA, iupac);
+            fillCodeMap(U_encoding, U_rev_encoding, legalRNA, iupac);
+            fillCodeMap(U_encoding, U_rev_encoding, legalAmino, iupac);
+        }
+
+        if (!reverse) {
+            return U_encoding[iupac];
+        }
+        return U_rev_encoding[iupac];
+
+    } else if (encoding_type == 'N') {
+        if (N_encoding.find(iupac) == N_encoding.end()) {
+            fillCodeMap(N_encoding, N_rev_encoding, legalDNA, iupac);
+            fillCodeMap(N_encoding, N_rev_encoding, legalRNA, iupac);
+        }
+
+        if (!reverse) {
+            return N_encoding[iupac];
+        }
+        return N_rev_encoding[iupac];
+
+    } else if (encoding_type == 'D') {
+        if (D_encoding.find(iupac) == D_encoding.end()) {
+            fillCodeMap(D_encoding, D_rev_encoding, legalDNA, iupac);
+        }
+
+        if (!reverse) {
+            return D_encoding[iupac];
+        }
+        return D_rev_encoding[iupac];
+
+    } else if (encoding_type == 'R') {
+        if (R_encoding.find(iupac) == R_encoding.end()) {
+            fillCodeMap(R_encoding, R_rev_encoding, legalRNA, iupac);
+        }
+
+        if (!reverse) {
+            return R_encoding[iupac];
+        }
+        return R_rev_encoding[iupac];
+
+    } else if (encoding_type == 'P') {
+        if (P_encoding.find(iupac) == P_encoding.end()) {
+            fillCodeMap(P_encoding, P_rev_encoding, legalAmino, iupac);
+        }
+
+        if (!reverse) {
+            return P_encoding[iupac];
+        }
+        return P_rev_encoding[iupac];
+    } else {
+        displayLogicError(error_mod, "Unable to determine map encoding_type", __FILE__, __func__);
+    }
+
+    return U_encoding[iupac];
+}
+
+
+
+void Sequence::fillCodeMap(std::map<Sequence::IUPACMod, std::map<char, char>> & normal_encoding, std::map<Sequence::IUPACMod, std::map<char, char>> & reverse_encoding, 
+                        const std::map<char, Sequence::SequenceSymbol> & element_to_add, Sequence::IUPACMod iupac) {
+    
+    // Add this iupac to the dict
+    if (normal_encoding.find(iupac) == normal_encoding.end()) {
+        normal_encoding[iupac] = std::map<char, char> {};
+        reverse_encoding[iupac] = std::map<char, char> {};
+    }
+
+    char encoded_symbol;
+    char current_symbol;
+    for (const auto & key_symbol : element_to_add) {
+        
+        // Verify that this symbol can be used with this iupac setting ?
+        Sequence::SequenceSymbol sym_obj = key_symbol.second;
+        current_symbol = key_symbol.first;
+        
+
+        if (!sym_obj.isUsableIn(iupac)) {
+            continue;
+        }
+
+        if (normal_encoding[iupac].find(current_symbol) != normal_encoding[iupac].end()) {
+            continue;
+        }
+
+        encoded_symbol = (char) normal_encoding[iupac].size();
+
+        normal_encoding[iupac][current_symbol] = encoded_symbol;
+        reverse_encoding[iupac][encoded_symbol] = current_symbol;
+        
+    }
 }
 
 
@@ -602,4 +719,35 @@ Sequence::SequenceIterator Sequence::begin() const {
 
 Sequence::SequenceIterator Sequence::end() const {
     return Sequence::SequenceIterator(*this, this->size());
+}
+
+//
+bool Sequence::operator>(const Sequence& other) const {
+    return this->size() > other.size();
+}
+bool Sequence::operator>=(const Sequence& other) const {
+    return this->size() >= other.size();
+}
+bool Sequence::operator<(const Sequence& other) const {
+    return this->size() < other.size();
+}
+bool Sequence::operator<=(const Sequence& other) const {
+    return this->size() <= other.size();
+}
+
+Sequence::operator bool() const {
+    bool search_mod = this->type[3];
+    return (!search_mod);
+}
+
+char Sequence::get(size_t position) const {
+    char * tab =  this->seq.get(position);
+    char char_to_translate = tab[0];
+    delete [] tab;
+    
+    return translationTab(this->getEncodingType(), this->_iupac, true).at(char_to_translate);
+}
+
+char Sequence::operator[](size_t position) const {
+    return this->get(position);
 }

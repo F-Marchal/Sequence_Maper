@@ -1,0 +1,5 @@
+<map id="Sequence::readTypeArray" name="Sequence::readTypeArray">
+<area shape="rect" id="Node000001" title="Convert a bool array that represent type into a char." alt="" coords="197,5,384,31"/>
+<area shape="rect" id="Node000002" href="$class_sequence.html#a7561cc8bf09fa8056b3ddf14eaa4b0bb" title="Get a char that represent sequence type." alt="" coords="5,5,149,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,21,149,21,149,15,183,15"/>
+</map>

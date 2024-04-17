@@ -13,35 +13,141 @@ Collaboration diagram for Sequence\+::Sequence\+Iterator\+:
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_sequence_1_1_sequence_iterator_adb70d23f6e75a45c0909ce4be637a637}\label{class_sequence_1_1_sequence_iterator_adb70d23f6e75a45c0909ce4be637a637} 
-{\bfseries Sequence\+Iterator} (const \mbox{\hyperlink{class_sequence}{Sequence}} \&seq, size\+\_\+t index)
-\item 
-\Hypertarget{class_sequence_1_1_sequence_iterator_a73552f11348aeb855dfe537eacb713b5}\label{class_sequence_1_1_sequence_iterator_a73552f11348aeb855dfe537eacb713b5} 
-int {\bfseries operator\texorpdfstring{$\ast$}{*}} () const
-\item 
-\Hypertarget{class_sequence_1_1_sequence_iterator_a33fd61e456b9e04a6eb3a105ce11d05e}\label{class_sequence_1_1_sequence_iterator_a33fd61e456b9e04a6eb3a105ce11d05e} 
-\mbox{\hyperlink{class_sequence_1_1_sequence_iterator}{Sequence\+Iterator}} \& {\bfseries operator++} ()
-\item 
-\Hypertarget{class_sequence_1_1_sequence_iterator_a6b2f711543746013a5636458a84cb19c}\label{class_sequence_1_1_sequence_iterator_a6b2f711543746013a5636458a84cb19c} 
-bool {\bfseries operator!=} (const \mbox{\hyperlink{class_sequence_1_1_sequence_iterator}{Sequence\+Iterator}} \&other) const
-\item 
-\Hypertarget{class_sequence_1_1_sequence_iterator_ac0922cfff07893c81fab18bf033b60d5}\label{class_sequence_1_1_sequence_iterator_ac0922cfff07893c81fab18bf033b60d5} 
-size\+\_\+t {\bfseries get\+Index} () const
-\item 
-\Hypertarget{class_sequence_1_1_sequence_iterator_a7ac64104ad7ad23c28773dab29ff6e96}\label{class_sequence_1_1_sequence_iterator_a7ac64104ad7ad23c28773dab29ff6e96} 
-const \mbox{\hyperlink{class_sequence}{Sequence}} \& {\bfseries Get\+Sequence} () const
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_sequence_1_1_sequence_iterator_adb70d23f6e75a45c0909ce4be637a637}{Sequence\+Iterator}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence}{Sequence}} \&seq, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}} index)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_sequence}{Sequence} Iterator object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{int}} \mbox{\hyperlink{class_sequence_1_1_sequence_iterator_a73552f11348aeb855dfe537eacb713b5}{operator\texorpdfstring{$\ast$}{*}}} () \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
+\begin{DoxyCompactList}\small\item\em Give the current value of the element at the position \doxylink{class_sequence_1_1_sequence_iterator_abf36349731561ca85784b66f00dbafa5}{Sequence\+::\+Sequence\+Iterator\+::\+\_\+index}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_1_1_sequence_iterator}{Sequence\+Iterator}} \& \mbox{\hyperlink{class_sequence_1_1_sequence_iterator_adbb64464c197615b70f297bad8057868}{operator++}} ()
+\begin{DoxyCompactList}\small\item\em Increment the \doxylink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{Sequence\+::\+Sequence\+Iterator\+:}\+\_\+index by 1. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_1_1_sequence_iterator_a6b2f711543746013a5636458a84cb19c}{operator!=}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence_1_1_sequence_iterator}{Sequence\+Iterator}} \&\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{other}}) \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
+\begin{DoxyCompactList}\small\item\em Compare two \doxylink{class_sequence_1_1_sequence_iterator}{Sequence\+::\+Sequence\+Iterator}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}} \mbox{\hyperlink{class_sequence_1_1_sequence_iterator_ac0922cfff07893c81fab18bf033b60d5}{get\+Index}} () \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
+\begin{DoxyCompactList}\small\item\em Get \doxylink{class_sequence_1_1_sequence_iterator_abf36349731561ca85784b66f00dbafa5}{Sequence\+::\+Sequence\+Iterator\+::\+\_\+index}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence}{Sequence}} \& \mbox{\hyperlink{class_sequence_1_1_sequence_iterator_a7ac64104ad7ad23c28773dab29ff6e96}{Get\+Sequence}} () \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
+\begin{DoxyCompactList}\small\item\em Get Sequence\+::\+Sequence\+Iterator\+::\+\_\+seq. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_sequence_1_1_sequence_iterator_aa3358a6c4a02ac742bd13da0dae3b330}\label{class_sequence_1_1_sequence_iterator_aa3358a6c4a02ac742bd13da0dae3b330} 
-const \mbox{\hyperlink{class_sequence}{Sequence}} \& {\bfseries \+\_\+sequence}
-\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence}{Sequence}} \& {\bfseries \+\_\+sequence}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_sequence}{Sequence} in which \doxylink{class_sequence_1_1_sequence_iterator}{Sequence\+Iterator} iter. \end{DoxyCompactList}\item 
 \Hypertarget{class_sequence_1_1_sequence_iterator_abf36349731561ca85784b66f00dbafa5}\label{class_sequence_1_1_sequence_iterator_abf36349731561ca85784b66f00dbafa5} 
-size\+\_\+t {\bfseries \+\_\+index}
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}} {\bfseries \+\_\+index}
+\begin{DoxyCompactList}\small\item\em Current position in \doxylink{class_sequence_1_1_sequence_iterator_aa3358a6c4a02ac742bd13da0dae3b330}{Sequence\+::\+Sequence\+Iterator\+::\+\_\+sequence}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_sequence_1_1_sequence_iterator_adb70d23f6e75a45c0909ce4be637a637}\label{class_sequence_1_1_sequence_iterator_adb70d23f6e75a45c0909ce4be637a637} 
+\index{Sequence::SequenceIterator@{Sequence::SequenceIterator}!SequenceIterator@{SequenceIterator}}
+\index{SequenceIterator@{SequenceIterator}!Sequence::SequenceIterator@{Sequence::SequenceIterator}}
+\doxysubsubsection{\texorpdfstring{SequenceIterator()}{SequenceIterator()}}
+{\footnotesize\ttfamily Sequence\+::\+Sequence\+Iterator\+::\+Sequence\+Iterator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence}{Sequence}} \&}]{seq,  }\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}}}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{class_sequence}{Sequence} Iterator object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seq} & \doxylink{class_sequence}{Sequence} in which \doxylink{class_sequence_1_1_sequence_iterator}{Sequence\+Iterator} iter \\
+\hline
+{\em index} & An index of a char inside the sequence. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_sequence_1_1_sequence_iterator_ac0922cfff07893c81fab18bf033b60d5}\label{class_sequence_1_1_sequence_iterator_ac0922cfff07893c81fab18bf033b60d5} 
+\index{Sequence::SequenceIterator@{Sequence::SequenceIterator}!getIndex@{getIndex}}
+\index{getIndex@{getIndex}!Sequence::SequenceIterator@{Sequence::SequenceIterator}}
+\doxysubsubsection{\texorpdfstring{getIndex()}{getIndex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}} Sequence\+::\+Sequence\+Iterator\+::get\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get \doxylink{class_sequence_1_1_sequence_iterator_abf36349731561ca85784b66f00dbafa5}{Sequence\+::\+Sequence\+Iterator\+::\+\_\+index}. 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t \doxylink{class_sequence_1_1_sequence_iterator_abf36349731561ca85784b66f00dbafa5}{Sequence\+::\+Sequence\+Iterator\+::\+\_\+index} 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_1_1_sequence_iterator_ac0922cfff07893c81fab18bf033b60d5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_1_1_sequence_iterator_a7ac64104ad7ad23c28773dab29ff6e96}\label{class_sequence_1_1_sequence_iterator_a7ac64104ad7ad23c28773dab29ff6e96} 
+\index{Sequence::SequenceIterator@{Sequence::SequenceIterator}!GetSequence@{GetSequence}}
+\index{GetSequence@{GetSequence}!Sequence::SequenceIterator@{Sequence::SequenceIterator}}
+\doxysubsubsection{\texorpdfstring{GetSequence()}{GetSequence()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence}{Sequence}} \& Sequence\+::\+Sequence\+Iterator\+::\+Get\+Sequence (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get Sequence\+::\+Sequence\+Iterator\+::\+\_\+seq. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_sequence}{Sequence} Sequence\+::\+Sequence\+Iterator\+::\+\_\+seq 
+\end{DoxyReturn}
+\Hypertarget{class_sequence_1_1_sequence_iterator_a6b2f711543746013a5636458a84cb19c}\label{class_sequence_1_1_sequence_iterator_a6b2f711543746013a5636458a84cb19c} 
+\index{Sequence::SequenceIterator@{Sequence::SequenceIterator}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Sequence::SequenceIterator@{Sequence::SequenceIterator}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} Sequence\+::\+Sequence\+Iterator\+::operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence_1_1_sequence_iterator}{Sequence\+Iterator}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Compare two \doxylink{class_sequence_1_1_sequence_iterator}{Sequence\+::\+Sequence\+Iterator}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Another \doxylink{class_sequence_1_1_sequence_iterator}{Sequence\+::\+Sequence\+Iterator} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true The two \doxylink{class_sequence_1_1_sequence_iterator}{Sequence\+::\+Sequence\+Iterator} have not the same index 
+
+false The two \doxylink{class_sequence_1_1_sequence_iterator}{Sequence\+::\+Sequence\+Iterator} have the same index 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_1_1_sequence_iterator_a6b2f711543746013a5636458a84cb19c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_1_1_sequence_iterator_a73552f11348aeb855dfe537eacb713b5}\label{class_sequence_1_1_sequence_iterator_a73552f11348aeb855dfe537eacb713b5} 
+\index{Sequence::SequenceIterator@{Sequence::SequenceIterator}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!Sequence::SequenceIterator@{Sequence::SequenceIterator}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{int}} Sequence\+::\+Sequence\+Iterator\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Give the current value of the element at the position \doxylink{class_sequence_1_1_sequence_iterator_abf36349731561ca85784b66f00dbafa5}{Sequence\+::\+Sequence\+Iterator\+::\+\_\+index}. 
+
+\begin{DoxyReturn}{Returns}
+int \doxylink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{Sequence\+::\+Sequence\+Iterator\+:}\+\_\+sequence\mbox{[}\doxylink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{Sequence\+::\+Sequence\+Iterator\+:}\+\_\+index\mbox{]} 
+\end{DoxyReturn}
+\Hypertarget{class_sequence_1_1_sequence_iterator_adbb64464c197615b70f297bad8057868}\label{class_sequence_1_1_sequence_iterator_adbb64464c197615b70f297bad8057868} 
+\index{Sequence::SequenceIterator@{Sequence::SequenceIterator}!operator++@{operator++}}
+\index{operator++@{operator++}!Sequence::SequenceIterator@{Sequence::SequenceIterator}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_1_1_sequence_iterator}{Sequence\+::\+Sequence\+Iterator}} \& Sequence\+::\+Sequence\+Iterator\+::operator++ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Increment the \doxylink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{Sequence\+::\+Sequence\+Iterator\+:}\+\_\+index by 1. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_sequence_1_1_sequence_iterator}{Sequence\+Iterator}\& 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Sequence.\+hpp\end{DoxyCompactItemize}
+Sequence.\+hpp\item 
+Sequence.\+cpp\end{DoxyCompactItemize}

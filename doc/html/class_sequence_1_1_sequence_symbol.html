@@ -83,6 +83,11 @@ $(function() {
   <div class="headertitle"><div class="title">Sequence::SequenceSymbol Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Represent a symbol that can be used inside <a class="el" href="class_sequence.html">Sequence</a>.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_sequence_8hpp_source.html">Sequence.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for Sequence::SequenceSymbol:</div>
 <div class="dyncontent">
@@ -91,54 +96,343 @@ Collaboration diagram for Sequence::SequenceSymbol:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a56237c115052ba379fdba7fb1506371c" id="r_a56237c115052ba379fdba7fb1506371c"><td class="memItemLeft" align="right" valign="top"><a id="a56237c115052ba379fdba7fb1506371c" name="a56237c115052ba379fdba7fb1506371c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>SequenceSymbol</b> (char symbol, std::string replacement, Sequence::IUPACMod iupac)</td></tr>
+<tr class="memitem:a56237c115052ba379fdba7fb1506371c" id="r_a56237c115052ba379fdba7fb1506371c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56237c115052ba379fdba7fb1506371c">SequenceSymbol</a> (<a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">char</a> <a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">symbol</a>, std::string <a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">replacement</a>, <a class="el" href="class_sequence.html#a164f748d9c5ecd278ab55b37381d2700">Sequence::IUPACMod</a> <a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">iupac</a>)</td></tr>
+<tr class="memdesc:a56237c115052ba379fdba7fb1506371c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_sequence.html">Sequence</a> Symbol object.  <br /></td></tr>
 <tr class="separator:a56237c115052ba379fdba7fb1506371c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b9b6cc6b5b342c75cd6024a1377736f" id="r_a7b9b6cc6b5b342c75cd6024a1377736f"><td class="memItemLeft" align="right" valign="top"><a id="a7b9b6cc6b5b342c75cd6024a1377736f" name="a7b9b6cc6b5b342c75cd6024a1377736f"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>correspondTo</b> (char symbol, bool use_replacement=true) const</td></tr>
+<tr class="memitem:a7b9b6cc6b5b342c75cd6024a1377736f" id="r_a7b9b6cc6b5b342c75cd6024a1377736f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b9b6cc6b5b342c75cd6024a1377736f">correspondTo</a> (<a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">char</a> <a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">symbol</a>, <a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">bool</a> <a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">use_replacement</a>=<a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">true</a>) <a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">const</a></td></tr>
+<tr class="memdesc:a7b9b6cc6b5b342c75cd6024a1377736f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do this object correspond to another char ?  <br /></td></tr>
 <tr class="separator:a7b9b6cc6b5b342c75cd6024a1377736f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0bffc993fb3e3e43e3a0da52679ee9e" id="r_ae0bffc993fb3e3e43e3a0da52679ee9e"><td class="memItemLeft" align="right" valign="top"><a id="ae0bffc993fb3e3e43e3a0da52679ee9e" name="ae0bffc993fb3e3e43e3a0da52679ee9e"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isUsableIn</b> (IUPACMod iupac) const</td></tr>
+<tr class="memitem:ae0bffc993fb3e3e43e3a0da52679ee9e" id="r_ae0bffc993fb3e3e43e3a0da52679ee9e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0bffc993fb3e3e43e3a0da52679ee9e">isUsableIn</a> (<a class="el" href="class_sequence.html#a164f748d9c5ecd278ab55b37381d2700">IUPACMod</a> <a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">iupac</a>) <a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">const</a></td></tr>
+<tr class="memdesc:ae0bffc993fb3e3e43e3a0da52679ee9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do this symbol can be used with this <code>iupac</code> setting ?  <br /></td></tr>
 <tr class="separator:ae0bffc993fb3e3e43e3a0da52679ee9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a3030bc525a38364b1c0b0497dc4fef" id="r_a0a3030bc525a38364b1c0b0497dc4fef"><td class="memItemLeft" align="right" valign="top"><a id="a0a3030bc525a38364b1c0b0497dc4fef" name="a0a3030bc525a38364b1c0b0497dc4fef"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>getReplacementSymbol</b> () const</td></tr>
+<tr class="memitem:a0a3030bc525a38364b1c0b0497dc4fef" id="r_a0a3030bc525a38364b1c0b0497dc4fef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">char</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a3030bc525a38364b1c0b0497dc4fef">getReplacementSymbol</a> () <a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">const</a></td></tr>
+<tr class="memdesc:a0a3030bc525a38364b1c0b0497dc4fef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Replacement Symbol.  <br /></td></tr>
 <tr class="separator:a0a3030bc525a38364b1c0b0497dc4fef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0503fbc44a785db66e0d8ee73e5a7fee" id="r_a0503fbc44a785db66e0d8ee73e5a7fee"><td class="memItemLeft" align="right" valign="top"><a id="a0503fbc44a785db66e0d8ee73e5a7fee" name="a0503fbc44a785db66e0d8ee73e5a7fee"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>getValue</b> () const</td></tr>
+<tr class="memitem:a0503fbc44a785db66e0d8ee73e5a7fee" id="r_a0503fbc44a785db66e0d8ee73e5a7fee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">char</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0503fbc44a785db66e0d8ee73e5a7fee">getValue</a> () <a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">const</a></td></tr>
+<tr class="memdesc:a0503fbc44a785db66e0d8ee73e5a7fee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the symbol contained into this object.  <br /></td></tr>
 <tr class="separator:a0503fbc44a785db66e0d8ee73e5a7fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ce75fca5a3983dadece17f1812d618a" id="r_a6ce75fca5a3983dadece17f1812d618a"><td class="memItemLeft" align="right" valign="top"><a id="a6ce75fca5a3983dadece17f1812d618a" name="a6ce75fca5a3983dadece17f1812d618a"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>get</b> (Sequence::IUPACMod iupac) const</td></tr>
+<tr class="memitem:a6ce75fca5a3983dadece17f1812d618a" id="r_a6ce75fca5a3983dadece17f1812d618a"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">get</a> (<a class="el" href="class_sequence.html#a164f748d9c5ecd278ab55b37381d2700">Sequence::IUPACMod</a> iupac) const</td></tr>
+<tr class="memdesc:a6ce75fca5a3983dadece17f1812d618a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of this <a class="el" href="class_sequence_1_1_sequence_symbol.html" title="Represent a symbol that can be used inside Sequence.">SequenceSymbol</a> in a precise iupac alphabet.  <br /></td></tr>
 <tr class="separator:a6ce75fca5a3983dadece17f1812d618a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af481ba32bd9b2db6daf0f0f7da6870ad" id="r_af481ba32bd9b2db6daf0f0f7da6870ad"><td class="memItemLeft" align="right" valign="top"><a id="af481ba32bd9b2db6daf0f0f7da6870ad" name="af481ba32bd9b2db6daf0f0f7da6870ad"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>operator char</b> () const</td></tr>
+<tr class="memitem:af481ba32bd9b2db6daf0f0f7da6870ad" id="r_af481ba32bd9b2db6daf0f0f7da6870ad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af481ba32bd9b2db6daf0f0f7da6870ad">operator char</a> () <a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">const</a></td></tr>
+<tr class="memdesc:af481ba32bd9b2db6daf0f0f7da6870ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn <a class="el" href="class_sequence_1_1_sequence_symbol.html" title="Represent a symbol that can be used inside Sequence.">SequenceSymbol</a> to a char.  <br /></td></tr>
 <tr class="separator:af481ba32bd9b2db6daf0f0f7da6870ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a256caae0e57652dd45c630e5968bc6b7" id="r_a256caae0e57652dd45c630e5968bc6b7"><td class="memItemLeft" align="right" valign="top"><a id="a256caae0e57652dd45c630e5968bc6b7" name="a256caae0e57652dd45c630e5968bc6b7"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>operator std::string</b> () const</td></tr>
+<tr class="memitem:a256caae0e57652dd45c630e5968bc6b7" id="r_a256caae0e57652dd45c630e5968bc6b7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a256caae0e57652dd45c630e5968bc6b7">operator std::string</a> () <a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">const</a></td></tr>
+<tr class="memdesc:a256caae0e57652dd45c630e5968bc6b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn <a class="el" href="class_sequence_1_1_sequence_symbol.html" title="Represent a symbol that can be used inside Sequence.">SequenceSymbol</a> to a std::string.  <br /></td></tr>
 <tr class="separator:a256caae0e57652dd45c630e5968bc6b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf125a9b4fea0b918ebddf4f5cff11d7" id="r_aaf125a9b4fea0b918ebddf4f5cff11d7"><td class="memItemLeft" align="right" valign="top"><a id="aaf125a9b4fea0b918ebddf4f5cff11d7" name="aaf125a9b4fea0b918ebddf4f5cff11d7"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>toString</b> () const</td></tr>
+<tr class="memitem:aaf125a9b4fea0b918ebddf4f5cff11d7" id="r_aaf125a9b4fea0b918ebddf4f5cff11d7"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf125a9b4fea0b918ebddf4f5cff11d7">toString</a> () <a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">const</a></td></tr>
+<tr class="memdesc:aaf125a9b4fea0b918ebddf4f5cff11d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn <a class="el" href="class_sequence_1_1_sequence_symbol.html" title="Represent a symbol that can be used inside Sequence.">SequenceSymbol</a> to a std::string.  <br /></td></tr>
 <tr class="separator:aaf125a9b4fea0b918ebddf4f5cff11d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a188753058533a29c46da9a63a7093d20" id="r_a188753058533a29c46da9a63a7093d20"><td class="memItemLeft" align="right" valign="top"><a id="a188753058533a29c46da9a63a7093d20" name="a188753058533a29c46da9a63a7093d20"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_replacement</b></td></tr>
+<tr class="memdesc:a188753058533a29c46da9a63a7093d20"><td class="mdescLeft">&#160;</td><td class="mdescRight">When this symbol can not be used with the current IUPAC alphabet, what chars can be used ? <br /></td></tr>
 <tr class="separator:a188753058533a29c46da9a63a7093d20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08eb4026b2602e0c330fd11bd88311c9" id="r_a08eb4026b2602e0c330fd11bd88311c9"><td class="memItemLeft" align="right" valign="top"><a id="a08eb4026b2602e0c330fd11bd88311c9" name="a08eb4026b2602e0c330fd11bd88311c9"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>_symbol</b></td></tr>
+<a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">char</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_symbol</b></td></tr>
+<tr class="memdesc:a08eb4026b2602e0c330fd11bd88311c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Symbol represented. <br /></td></tr>
 <tr class="separator:a08eb4026b2602e0c330fd11bd88311c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2528b29b615d2fd0778db86fcd981584" id="r_a2528b29b615d2fd0778db86fcd981584"><td class="memItemLeft" align="right" valign="top"><a id="a2528b29b615d2fd0778db86fcd981584" name="a2528b29b615d2fd0778db86fcd981584"></a>
-Sequence::IUPACMod&#160;</td><td class="memItemRight" valign="bottom"><b>_iupac</b></td></tr>
+<a class="el" href="class_sequence.html#a164f748d9c5ecd278ab55b37381d2700">Sequence::IUPACMod</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_iupac</b></td></tr>
+<tr class="memdesc:a2528b29b615d2fd0778db86fcd981584"><td class="mdescLeft">&#160;</td><td class="mdescRight">In which alphabet thus symbol exist ? <br /></td></tr>
 <tr class="separator:a2528b29b615d2fd0778db86fcd981584"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:a3ec3ff6fa70a545a4b5805079cd22180" id="r_a3ec3ff6fa70a545a4b5805079cd22180"><td class="memItemLeft" align="right" valign="top"><a id="a3ec3ff6fa70a545a4b5805079cd22180" name="a3ec3ff6fa70a545a4b5805079cd22180"></a>
-std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="class_sequence_1_1_sequence_symbol.html">Sequence::SequenceSymbol</a> &amp;symbol)</td></tr>
+<tr class="memitem:a3ec3ff6fa70a545a4b5805079cd22180" id="r_a3ec3ff6fa70a545a4b5805079cd22180"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ec3ff6fa70a545a4b5805079cd22180">operator&lt;&lt;</a> (std::ostream &amp;<a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">os</a>, <a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">const</a> <a class="el" href="class_sequence_1_1_sequence_symbol.html">Sequence::SequenceSymbol</a> &amp;<a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">symbol</a>)</td></tr>
+<tr class="memdesc:a3ec3ff6fa70a545a4b5805079cd22180"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allow <a class="el" href="class_sequence_1_1_sequence_symbol.html" title="Represent a symbol that can be used inside Sequence.">SequenceSymbol</a> to be cout.  <br /></td></tr>
 <tr class="separator:a3ec3ff6fa70a545a4b5805079cd22180"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represent a symbol that can be used inside <a class="el" href="class_sequence.html">Sequence</a>. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a56237c115052ba379fdba7fb1506371c" name="a56237c115052ba379fdba7fb1506371c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56237c115052ba379fdba7fb1506371c">&#9670;&#160;</a></span>SequenceSymbol()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Sequence::SequenceSymbol::SequenceSymbol </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">char</a></td>          <td class="paramname"><span class="paramname"><em>symbol</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>replacement</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_sequence.html#a164f748d9c5ecd278ab55b37381d2700">Sequence::IUPACMod</a></td>          <td class="paramname"><span class="paramname"><em>iupac</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="class_sequence.html">Sequence</a> Symbol object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">symbol</td><td>A, T, C, G, B .... </td></tr>
+    <tr><td class="paramname">replacement</td><td>When this symbol can not be used with the current IUPAC alphabet, what chars can be used ? (Ex : B &ndash;} "CGT"). You can use '\0' if this symbol should be ignored. </td></tr>
+    <tr><td class="paramname">iupac</td><td>What is the lowest Iupac setting acceptable for this class ? </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_sequence_1_1_sequence_symbol_a56237c115052ba379fdba7fb1506371c_cgraph.svg" width="100%" height="438"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7b9b6cc6b5b342c75cd6024a1377736f" name="a7b9b6cc6b5b342c75cd6024a1377736f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b9b6cc6b5b342c75cd6024a1377736f">&#9670;&#160;</a></span>correspondTo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">bool</a> Sequence::SequenceSymbol::correspondTo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">char</a></td>          <td class="paramname"><span class="paramname"><em>symbol</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">bool</a></td>          <td class="paramname"><span class="paramname"><em>use_replacement</em><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">true</a></span></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Do this object correspond to another char ? </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">symbol</td><td>A symbol to test. </td></tr>
+    <tr><td class="paramname">use_replacement</td><td>Do <code>symbol</code> is also compared to replacement symbol </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true yes </dd>
+<dd>
+false no </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_sequence_1_1_sequence_symbol_a7b9b6cc6b5b342c75cd6024a1377736f_cgraph.svg" width="100%" height="438"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a6ce75fca5a3983dadece17f1812d618a" name="a6ce75fca5a3983dadece17f1812d618a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ce75fca5a3983dadece17f1812d618a">&#9670;&#160;</a></span>get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char Sequence::SequenceSymbol::get </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_sequence.html#a164f748d9c5ecd278ab55b37381d2700">Sequence::IUPACMod</a></td>          <td class="paramname"><span class="paramname"><em>iupac</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the value of this <a class="el" href="class_sequence_1_1_sequence_symbol.html" title="Represent a symbol that can be used inside Sequence.">SequenceSymbol</a> in a precise iupac alphabet. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iupac</td><td>A iupac setting </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>char <a class="el" href="#a08eb4026b2602e0c330fd11bd88311c9" title="Symbol represented.">Sequence::SequenceSymbol::_symbol</a> or <a class="el" href="#a0a3030bc525a38364b1c0b0497dc4fef" title="Get the Replacement Symbol.">Sequence::SequenceSymbol::getReplacementSymbol()</a>. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a_cgraph.svg" width="100%" height="438"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_sequence_1_1_sequence_symbol_a6ce75fca5a3983dadece17f1812d618a_icgraph.svg" width="499" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a0a3030bc525a38364b1c0b0497dc4fef" name="a0a3030bc525a38364b1c0b0497dc4fef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a3030bc525a38364b1c0b0497dc4fef">&#9670;&#160;</a></span>getReplacementSymbol()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">char</a> Sequence::SequenceSymbol::getReplacementSymbol </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Replacement Symbol. </p>
+<dl class="section return"><dt>Returns</dt><dd>char A random char from <a class="el" href="#a188753058533a29c46da9a63a7093d20" title="When this symbol can not be used with the current IUPAC alphabet, what chars can be used ?">Sequence::SequenceSymbol::_replacement</a> </dd></dl>
+
+</div>
+</div>
+<a id="a0503fbc44a785db66e0d8ee73e5a7fee" name="a0503fbc44a785db66e0d8ee73e5a7fee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0503fbc44a785db66e0d8ee73e5a7fee">&#9670;&#160;</a></span>getValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">char</a> Sequence::SequenceSymbol::getValue </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the symbol contained into this object. </p>
+<dl class="section return"><dt>Returns</dt><dd>char <a class="el" href="#a08eb4026b2602e0c330fd11bd88311c9" title="Symbol represented.">Sequence::SequenceSymbol::_symbol</a> </dd></dl>
+
+</div>
+</div>
+<a id="ae0bffc993fb3e3e43e3a0da52679ee9e" name="ae0bffc993fb3e3e43e3a0da52679ee9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0bffc993fb3e3e43e3a0da52679ee9e">&#9670;&#160;</a></span>isUsableIn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">bool</a> Sequence::SequenceSymbol::isUsableIn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_sequence.html#a164f748d9c5ecd278ab55b37381d2700">IUPACMod</a></td>          <td class="paramname"><span class="paramname"><em>iupac</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Do this symbol can be used with this <code>iupac</code> setting ? </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iupac</td><td>A iupac setting </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true Yes </dd>
+<dd>
+false No </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_sequence_1_1_sequence_symbol_ae0bffc993fb3e3e43e3a0da52679ee9e_cgraph.svg" width="100%" height="438"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="af481ba32bd9b2db6daf0f0f7da6870ad" name="af481ba32bd9b2db6daf0f0f7da6870ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af481ba32bd9b2db6daf0f0f7da6870ad">&#9670;&#160;</a></span>operator char()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">Sequence::SequenceSymbol::operator</a> <a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">char</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Turn <a class="el" href="class_sequence_1_1_sequence_symbol.html" title="Represent a symbol that can be used inside Sequence.">SequenceSymbol</a> to a char. </p>
+<dl class="section return"><dt>Returns</dt><dd>char <a class="el" href="#a08eb4026b2602e0c330fd11bd88311c9" title="Symbol represented.">Sequence::SequenceSymbol::_symbol</a> </dd></dl>
+
+</div>
+</div>
+<a id="a256caae0e57652dd45c630e5968bc6b7" name="a256caae0e57652dd45c630e5968bc6b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a256caae0e57652dd45c630e5968bc6b7">&#9670;&#160;</a></span>operator std::string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">Sequence::SequenceSymbol::operator</a> std::string </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Turn <a class="el" href="class_sequence_1_1_sequence_symbol.html" title="Represent a symbol that can be used inside Sequence.">SequenceSymbol</a> to a std::string. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::string <a class="el" href="#a08eb4026b2602e0c330fd11bd88311c9" title="Symbol represented.">Sequence::SequenceSymbol::_symbol</a> </dd></dl>
+
+</div>
+</div>
+<a id="aaf125a9b4fea0b918ebddf4f5cff11d7" name="aaf125a9b4fea0b918ebddf4f5cff11d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf125a9b4fea0b918ebddf4f5cff11d7">&#9670;&#160;</a></span>toString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Sequence::SequenceSymbol::toString </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Turn <a class="el" href="class_sequence_1_1_sequence_symbol.html" title="Represent a symbol that can be used inside Sequence.">SequenceSymbol</a> to a std::string. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::string <a class="el" href="#a08eb4026b2602e0c330fd11bd88311c9" title="Symbol represented.">Sequence::SequenceSymbol::_symbol</a> </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Symbol Documentation</h2>
+<a id="a3ec3ff6fa70a545a4b5805079cd22180" name="a3ec3ff6fa70a545a4b5805079cd22180"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ec3ff6fa70a545a4b5805079cd22180">&#9670;&#160;</a></span>operator&lt;&lt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; <a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">operator</a>&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a6ce75fca5a3983dadece17f1812d618a">const</a> <a class="el" href="class_sequence_1_1_sequence_symbol.html">Sequence::SequenceSymbol</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>symbol</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Allow <a class="el" href="class_sequence_1_1_sequence_symbol.html" title="Represent a symbol that can be used inside Sequence.">SequenceSymbol</a> to be cout. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::ostream </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_sequence_8hpp_source.html">Sequence.hpp</a></li>
+<li><b>Sequence.cpp</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

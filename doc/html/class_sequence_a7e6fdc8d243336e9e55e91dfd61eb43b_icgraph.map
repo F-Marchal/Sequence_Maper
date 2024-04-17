@@ -1,0 +1,5 @@
+<map id="Sequence::isLegalSymbol" name="Sequence::isLegalSymbol">
+<area shape="rect" id="Node000001" title="Say if a symbol can be used in the a sequence." alt="" coords="275,5,463,31"/>
+<area shape="rect" id="Node000002" href="$class_sequence.html#a2163e89ff5b606d82ad4993c7e5eab4b" title="Turn a symbol to a bool array." alt="" coords="5,5,227,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="261,21,227,21,227,15,261,15"/>
+</map>

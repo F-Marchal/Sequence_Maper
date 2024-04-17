@@ -1,0 +1,17 @@
+<map id="Sequence::isLegalAmino" name="Sequence::isLegalAmino">
+<area shape="rect" id="Node000001" title="Say if a symbol can be an amino acid." alt="" coords="785,105,967,131"/>
+<area shape="rect" id="Node000002" href="$class_sequence.html#a31e8f630c8d214e79ac9ef7d128e3c24" title="Say if a symbol can be an amino acid." alt="" coords="570,80,717,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="771,109,717,103,717,98,772,104"/>
+<area shape="rect" id="Node000007" href="$class_sequence.html#a7e6fdc8d243336e9e55e91dfd61eb43b" title="Say if a symbol can be used in the a sequence." alt="" coords="549,129,737,155"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="772,131,738,135,737,130,771,126"/>
+<area shape="rect" id="Node000003" href="$class_sequence.html#af4dfd329689bebc4131b422d7974ca4e" title="Get the Sequence::SequenceSymbol object attached to a symbol." alt="" coords="275,5,501,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="597,78,501,45,455,33,457,28,502,39,599,73"/>
+<area shape="rect" id="Node000004" href="$class_sequence.html#a14ee59cb34cf4d2087d1eabd3e4c6d4c" title="Say if a symbol can only be found in acid nucleic related to amino acid." alt="" coords="290,55,486,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="556,87,486,80,486,74,556,81"/>
+<area shape="rect" id="Node000006" href="$class_sequence.html#a7fb536cb5ce9b5de78634aa314623835" title="Say if a symbol can only be found in acid nucleic related to nucleic acid." alt="" coords="287,104,489,129"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="556,103,490,110,490,104,556,98"/>
+<area shape="rect" id="Node000005" href="$class_sequence.html#a2163e89ff5b606d82ad4993c7e5eab4b" title="Turn a symbol to a bool array." alt="" coords="5,104,227,129"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="304,85,187,107,186,101,303,80"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="273,119,227,119,227,114,273,114"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="536,149,410,150,274,145,181,132,182,127,275,139,411,145,536,144"/>
+</map>

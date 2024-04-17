@@ -1,0 +1,25 @@
+<map id="Sequence::isDNA" name="Sequence::isDNA">
+<area shape="rect" id="Node000001" title="Say if a symbol can be an acid nucleic related to DNA." alt="" coords="871,107,1004,132"/>
+<area shape="rect" id="Node000002" href="$class_sequence.html#af4dfd329689bebc4131b422d7974ca4e" title="Get the Sequence::SequenceSymbol object attached to a symbol." alt="" coords="585,5,811,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="906,101,867,76,822,52,762,33,764,28,824,48,870,71,909,96"/>
+<area shape="rect" id="Node000003" href="$class_sequence.html#a375a7807541e86995fc0eb92258f1414" title="Say if a symbol can only be found in acid nucleic related to DNA." alt="" coords="275,56,525,81"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="873,106,822,97,668,81,525,74,526,68,669,76,823,91,874,101"/>
+<area shape="rect" id="Node000005" href="$class_sequence.html#a2f4c93c744fc524b81c91843c81d31be" title="Say if a symbol can be an acid nucleic." alt="" coords="605,107,791,132"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="857,122,791,122,791,117,857,117"/>
+<area shape="rect" id="Node000007" href="$class_sequence.html#ab351491ae27a3b4daa4d6af021ae0af2" title="Say if a symbol can be an acid nucleic." alt="" coords="622,156,774,181"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="863,138,823,146,762,159,761,153,822,141,862,132"/>
+<area shape="rect" id="Node000010" href="$class_sequence.html#a43936ff8f097e07421ae7a2389bd9cc0" title="Say if a symbol can only be found in acid nucleic related to RNA." alt="" coords="573,229,823,255"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="909,142,824,195,738,232,736,227,821,190,906,138"/>
+<area shape="rect" id="Node000004" href="$class_sequence.html#a2163e89ff5b606d82ad4993c7e5eab4b" title="Turn a symbol to a bool array." alt="" coords="5,155,227,180"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="305,87,276,95,201,126,141,157,138,152,198,121,274,90,303,82"/>
+<area shape="rect" id="Node000006" href="$class_sequence.html#a7e6fdc8d243336e9e55e91dfd61eb43b" title="Say if a symbol can be used in the a sequence." alt="" coords="306,105,494,131"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="591,122,494,121,494,116,591,116"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="313,136,190,157,190,152,312,130"/>
+<area shape="rect" id="Node000008" href="$class_sequence.html#a14ee59cb34cf4d2087d1eabd3e4c6d4c" title="Say if a symbol can only be found in acid nucleic related to amino acid." alt="" coords="302,155,498,180"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="608,171,498,170,499,165,608,166"/>
+<area shape="rect" id="Node000009" href="$class_sequence.html#a7fb536cb5ce9b5de78634aa314623835" title="Say if a symbol can only be found in acid nucleic related to nucleic acid." alt="" coords="299,204,501,229"/>
+<area shape="poly" id="edge10_Node000007_Node000009" title=" " alt="" coords="609,186,480,207,479,201,608,180"/>
+<area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="288,170,227,170,227,165,288,165"/>
+<area shape="poly" id="edge11_Node000009_Node000004" title=" " alt="" coords="312,204,190,183,190,177,313,199"/>
+<area shape="poly" id="edge13_Node000010_Node000004" title=" " alt="" coords="578,258,509,262,432,263,352,257,274,245,234,232,195,216,135,182,138,178,198,211,236,227,275,239,353,252,432,257,509,257,578,253"/>
+</map>

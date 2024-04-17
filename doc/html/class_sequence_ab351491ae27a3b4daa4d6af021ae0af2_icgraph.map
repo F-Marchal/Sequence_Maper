@@ -1,0 +1,10 @@
+<map id="Sequence::isNucleic" name="Sequence::isNucleic">
+<area shape="rect" id="Node000001" title="Say if a symbol can be an acid nucleic." alt="" coords="525,31,677,56"/>
+<area shape="rect" id="Node000002" href="$class_sequence.html#a14ee59cb34cf4d2087d1eabd3e4c6d4c" title="Say if a symbol can only be found in acid nucleic related to amino acid." alt="" coords="278,5,474,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="512,36,474,32,474,26,512,31"/>
+<area shape="rect" id="Node000004" href="$class_sequence.html#a7fb536cb5ce9b5de78634aa314623835" title="Say if a symbol can only be found in acid nucleic related to nucleic acid." alt="" coords="275,55,477,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="512,55,478,59,477,54,511,50"/>
+<area shape="rect" id="Node000003" href="$class_sequence.html#a2163e89ff5b606d82ad4993c7e5eab4b" title="Turn a symbol to a bool array." alt="" coords="5,31,227,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="265,32,227,35,226,30,264,26"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="261,59,227,56,227,51,261,54"/>
+</map>

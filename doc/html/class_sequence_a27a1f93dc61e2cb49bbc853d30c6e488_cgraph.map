@@ -1,0 +1,9 @@
+<map id="Sequence::end" name="Sequence::end">
+<area shape="rect" id="Node000001" title="Give an iterator to end an iteration." alt="" coords="5,5,123,31"/>
+<area shape="rect" id="Node000002" href="$class_sequence.html#acf21040958590f98163b3d11f19ea93e" title="Give the number of element contained in this sequence." alt="" coords="171,5,289,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,15,157,15,157,21,123,21"/>
+<area shape="rect" id="Node000003" href="$class_bit_vector.html#ab30ea2b408107e4e6bc8095b5a64a1dd" title="Number of element inside this object." alt="" coords="337,5,452,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="289,15,323,15,323,21,289,21"/>
+<area shape="rect" id="Node000004" href="$class_bit_vector.html#a5339660cfb315ab5de7f78bdf5af4ce1" title="Get BitVector::_element_number." alt="" coords="500,5,716,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="452,15,486,15,486,21,452,21"/>
+</map>

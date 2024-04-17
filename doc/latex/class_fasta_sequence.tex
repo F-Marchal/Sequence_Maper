@@ -32,100 +32,100 @@ Collaboration diagram for Fasta\+Sequence\+:
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-const std\+::map$<$ size\+\_\+t, std\+::string $>$ \& \mbox{\hyperlink{class_fasta_sequence_a9954e47b2348077289a3fd1121c40017}{get\+All\+Comment}} () const
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} std\+::map$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}}, std\+::string $>$ \& \mbox{\hyperlink{class_fasta_sequence_a9954e47b2348077289a3fd1121c40017}{get\+All\+Comment}} () \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
 \begin{DoxyCompactList}\small\item\em Return comments contained inside this sequence. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_fasta_sequence_a078238dfce23f02af8307ddc560e2a20}{insert}} (const std\+::string \&sequence, size\+\_\+t position, error\+Mods error\+\_\+mod)
-\begin{DoxyCompactList}\small\item\em Same as Sequence\+::insert but should move comments when position is not at the end. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} \mbox{\hyperlink{class_fasta_sequence_a078238dfce23f02af8307ddc560e2a20}{insert}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} std\+::string \&\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{sequence}}, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{position}}, error\+Mods \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{error\+\_\+mod}})
+\begin{DoxyCompactList}\small\item\em Same as \doxylink{class_sequence_aa48778c592160ac60319f780817f491c}{Sequence\+::insert} but should move comments when position is not at the end. \end{DoxyCompactList}\item 
 \Hypertarget{class_fasta_sequence_ab86ba063d06e3fef41cd4098a16c8d9a}\label{class_fasta_sequence_ab86ba063d06e3fef41cd4098a16c8d9a} 
-void {\bfseries erase\+Seq} (size\+\_\+t index, size\+\_\+t length)
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} {\bfseries erase\+Seq} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}} index, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{length}})
 \item 
-void \mbox{\hyperlink{class_fasta_sequence_aef714753277c2a10876429e3c579ef95}{add\+Comment}} (size\+\_\+t position, std\+::string comment)
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} \mbox{\hyperlink{class_fasta_sequence_aef714753277c2a10876429e3c579ef95}{add\+Comment}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{position}}, std\+::string \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{comment}})
 \begin{DoxyCompactList}\small\item\em Add a comment to a position. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_fasta_sequence_acd6551e5176ac2bdaa4d228fa9b5f14f}{load\+Comments}} (std\+::map$<$ size\+\_\+t, std\+::string $>$ \&comment\+\_\+map)
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} \mbox{\hyperlink{class_fasta_sequence_acd6551e5176ac2bdaa4d228fa9b5f14f}{load\+Comments}} (std\+::map$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}}, std\+::string $>$ \&\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{comment\+\_\+map}})
 \begin{DoxyCompactList}\small\item\em Load a number of comment from a map. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_fasta_sequence_a792b9d3fd8ace887fd7db583576c1116}{remove\+Comment}} (size\+\_\+t position)
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} \mbox{\hyperlink{class_fasta_sequence_a792b9d3fd8ace887fd7db583576c1116}{remove\+Comment}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{position}})
 \begin{DoxyCompactList}\small\item\em Remove a comment. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_fasta_sequence_a758811b3ddc850c6cde26f4e5568eaa5}{displace\+Comment}} (size\+\_\+t current\+\_\+position, size\+\_\+t new\+\_\+position)
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} \mbox{\hyperlink{class_fasta_sequence_a758811b3ddc850c6cde26f4e5568eaa5}{displace\+Comment}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{current\+\_\+position}}, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{new\+\_\+position}})
 \begin{DoxyCompactList}\small\item\em Change the position of a comment. If a comment is present at {\ttfamily new\+\_\+position} , The two comments are merged. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{class_fasta_sequence_a2ce25dcf6751310494e59be402017036}{is\+Commented\+Pos}} (size\+\_\+t position) const
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_fasta_sequence_a2ce25dcf6751310494e59be402017036}{is\+Commented\+Pos}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{position}}) \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
 \begin{DoxyCompactList}\small\item\em Do this position is commented. \end{DoxyCompactList}\item 
-std\+::string \mbox{\hyperlink{class_fasta_sequence_a519c4b4ec5de7e8c1a92de1409a7cf02}{get\+Comment}} (size\+\_\+t position) const
+std\+::string \mbox{\hyperlink{class_fasta_sequence_a519c4b4ec5de7e8c1a92de1409a7cf02}{get\+Comment}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{position}}) \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
 \begin{DoxyCompactList}\small\item\em Retrieve the comment at the position {\ttfamily position}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_sequence}{Sequence}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_sequence_1_1_sequence_iterator}{Sequence\+Iterator}} {\bfseries begin} () const
-\item 
-\mbox{\hyperlink{class_sequence_1_1_sequence_iterator}{Sequence\+Iterator}} {\bfseries end} () const
-\item 
-\mbox{\hyperlink{class_sequence_ae293cd5124445b604bbcba3a5f01a48a}{Sequence}} (const std\+::string \&sequence, char type, IUPACMod iupac=most, error\+Mods error\+\_\+mod=raise, bool finalis\+\_\+type=true)
+\mbox{\hyperlink{class_sequence_1_1_sequence_iterator}{Sequence\+Iterator}} \mbox{\hyperlink{class_sequence_ab6689d9abe96b21c879527d56c423e02}{begin}} () \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
+\begin{DoxyCompactList}\small\item\em Give an iterator to begin an iteration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_1_1_sequence_iterator}{Sequence\+Iterator}} \mbox{\hyperlink{class_sequence_a27a1f93dc61e2cb49bbc853d30c6e488}{end}} () \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
+\begin{DoxyCompactList}\small\item\em Give an iterator to end an iteration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ae293cd5124445b604bbcba3a5f01a48a}{Sequence}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} std\+::string \&\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{sequence}}, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} type, \mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{IUPACMod}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{iupac}}=most, error\+Mods \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{error\+\_\+mod}}=raise, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{finalis\+\_\+type}}=\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{true}})
 \begin{DoxyCompactList}\small\item\em Main Constructor. Construct a new \doxylink{class_sequence}{Sequence} object. \end{DoxyCompactList}\item 
-{\bfseries Sequence} (IUPACMod iupac=most, error\+Mods error\+\_\+mod=raise, bool finalis\+\_\+type=false)
-\begin{DoxyCompactList}\small\item\em Default Constructor. Construct a new \doxylink{class_sequence}{Sequence} object. Equivalent to. \end{DoxyCompactList}\item 
-{\bfseries Sequence} (std\+::string sequence, IUPACMod iupac=most, error\+Mods error\+\_\+mod=raise, bool finalis\+\_\+type=true)
-\item 
-const std\+::string \& \mbox{\hyperlink{class_sequence_a977ed0641af71694936687af9e5f2e5e}{get\+Seq}} () const
+\mbox{\hyperlink{class_sequence_ad5114ced34e064d37b73678e7332d30f}{Sequence}} (\mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{IUPACMod}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{iupac}}=most, error\+Mods \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{error\+\_\+mod}}=raise, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{finalis\+\_\+type}}=\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{false}})
+\begin{DoxyCompactList}\small\item\em Main Constructor. Construct a new \doxylink{class_sequence}{Sequence} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ace28d0905ff1a8e0a2018632fb68a537}{Sequence}} (std\+::string \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{sequence}}, \mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{IUPACMod}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{iupac}}=most, error\+Mods \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{error\+\_\+mod}}=raise, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{finalis\+\_\+type}}=\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{true}})
+\begin{DoxyCompactList}\small\item\em Main Constructor. Construct a new \doxylink{class_sequence}{Sequence} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_bit_vector}{Bit\+Vector}} \& \mbox{\hyperlink{class_sequence_a649baedd9a01f0474f368b5cfd170484}{get\+Seq}} () \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
 \begin{DoxyCompactList}\small\item\em Get the sequence contain in this object. \end{DoxyCompactList}\item 
-char \mbox{\hyperlink{class_sequence_a7561cc8bf09fa8056b3ddf14eaa4b0bb}{get\+Type}} () const
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_a7561cc8bf09fa8056b3ddf14eaa4b0bb}{get\+Type}} () \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
 \begin{DoxyCompactList}\small\item\em Get a char that represent sequence type. \end{DoxyCompactList}\item 
-char {\bfseries get\+Encoding\+Type} () const
-\item 
-Sequence\+::\+IUPACMod {\bfseries get\+Iupac} () const
-\item 
-const std\+::array$<$ bool, 5 $>$ \& {\bfseries get\+Type\+Array} () const
-\item 
-\mbox{\hyperlink{class_header}{Header}} \& {\bfseries get\+Header} ()
-\item 
-void {\bfseries set\+Header} (\mbox{\hyperlink{class_header}{Header}} header)
-\item 
-size\+\_\+t {\bfseries size} () const
-\item 
-void {\bfseries active\+Type\+Research} ()
-\item 
-void {\bfseries end\+Type\+Research} ()
-\item 
-void {\bfseries insert} (const char \&symbol, size\+\_\+t position, error\+Mods error\+Mod=display)
-\item 
-void {\bfseries insert\+Front} (const std\+::string \&sequence, error\+Mods error\+Mod=display)
-\item 
-void {\bfseries insert\+Back} (const std\+::string \&sequence, error\+Mods error\+Mod=display)
-\item 
-void {\bfseries insert\+Front} (const char \&sequence, error\+Mods error\+Mod=display)
-\item 
-void {\bfseries insert\+Back} (const char \&sequence, error\+Mods error\+Mod=display)
-\item 
-virtual void {\bfseries erase} (size\+\_\+t start, size\+\_\+t length)
-\item 
-bool {\bfseries operator$>$} (const \mbox{\hyperlink{class_sequence}{Sequence}} \&other) const
-\item 
-bool {\bfseries operator$>$=} (const \mbox{\hyperlink{class_sequence}{Sequence}} \&other) const
-\item 
-bool {\bfseries operator$<$} (const \mbox{\hyperlink{class_sequence}{Sequence}} \&other) const
-\item 
-bool {\bfseries operator$<$=} (const \mbox{\hyperlink{class_sequence}{Sequence}} \&other) const
-\item 
-{\bfseries operator bool} () const
-\item 
-char {\bfseries get} (size\+\_\+t position) const
-\item 
-char {\bfseries operator\mbox{[}$\,$\mbox{]}} (size\+\_\+t position) const
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_a8181f024304b3fb5f55c7118f648cc61}{get\+Encoding\+Type}} () \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
+\begin{DoxyCompactList}\small\item\em Return a char (same format as \doxylink{class_sequence_a7561cc8bf09fa8056b3ddf14eaa4b0bb}{Sequence\+::get\+Type()}) that indicate which alphabet is used in the during encoding. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{Sequence\+::\+IUPACMod}} \mbox{\hyperlink{class_sequence_aa8d48f12fba0a9329bd37a288cf5db3d}{get\+Iupac}} () \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
+\begin{DoxyCompactList}\small\item\em Say which iupac setting is used. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} std\+::array$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}}, 5 $>$ \& \mbox{\hyperlink{class_sequence_a45d6ea76048e61012cbfcdb3a623fd65}{get\+Type\+Array}} () \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
+\begin{DoxyCompactList}\small\item\em Get the Type Array object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_header}{Header}} \& \mbox{\hyperlink{class_sequence_a393d9e2d9d7066ce52b2552413a54a47}{get\+Header}} ()
+\begin{DoxyCompactList}\small\item\em Give the header attached to this \doxylink{class_sequence}{Sequence}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} \mbox{\hyperlink{class_sequence_a80f6b40eca1c920554baf4d06683ca3b}{set\+Header}} (\mbox{\hyperlink{class_header}{Header}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{header}})
+\begin{DoxyCompactList}\small\item\em Set the \doxylink{class_header}{Header} attribute. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}} \mbox{\hyperlink{class_sequence_acf21040958590f98163b3d11f19ea93e}{size}} () \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
+\begin{DoxyCompactList}\small\item\em Give the number of element contained in this sequence. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} {\bfseries active\+Type\+Research} ()
+\begin{DoxyCompactList}\small\item\em When the sequence append a new cars, the \doxylink{class_sequence}{Sequence} will search to update is Sequence\+::type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} {\bfseries end\+Type\+Research} ()
+\begin{DoxyCompactList}\small\item\em When the sequence append a new cars, the \doxylink{class_sequence}{Sequence} will no longer search to update is Sequence\+::type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} \mbox{\hyperlink{class_sequence_a3cf6cf5e54782f4d1a2ee07ec519523c}{insert}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \&\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{symbol}}, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{position}}, error\+Mods \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{error\+Mod}}=display)
+\begin{DoxyCompactList}\small\item\em Insert a char at the position {\ttfamily position} . \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} \mbox{\hyperlink{class_sequence_a092f380b654de9aaa8a770ec0948c454}{insert\+Front}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} std\+::string \&\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{sequence}}, error\+Mods \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{error\+Mod}}=display)
+\begin{DoxyCompactList}\small\item\em Insert a number of chars at the the front of the sequence {\ttfamily position} . \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} \mbox{\hyperlink{class_sequence_aa57fd5a7fdd173374e56006ce1c47bdc}{insert\+Back}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} std\+::string \&\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{sequence}}, error\+Mods \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{error\+Mod}}=display)
+\begin{DoxyCompactList}\small\item\em Insert a number of chars at the the back of the sequence {\ttfamily position} . \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} \mbox{\hyperlink{class_sequence_a1fa6868ce587e1f3d779bb226cfda548}{insert\+Front}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \&\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{sequence}}, error\+Mods \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{error\+Mod}}=display)
+\begin{DoxyCompactList}\small\item\em Insert a char at the the front of the sequence {\ttfamily position} . \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} \mbox{\hyperlink{class_sequence_a16e70626e330194c1507ed339c9c629c}{insert\+Back}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \&\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{sequence}}, error\+Mods \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{error\+Mod}}=display)
+\begin{DoxyCompactList}\small\item\em Insert a char at the the back of the sequence {\ttfamily position} . \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{virtual}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} \mbox{\hyperlink{class_sequence_a20eb6bdd6f5cba62a251eff4387a525d}{erase}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{start}}, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{length}})
+\begin{DoxyCompactList}\small\item\em Remove a portion of the sequence. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a6e6d1aa2ed36476e6eafa24610027d1e}{operator$>$}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence}{Sequence}} \&\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{other}}) \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
+\begin{DoxyCompactList}\small\item\em Is this sequence longer than another sequence ? \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a338b511f3ce95444f938947c51745621}{operator$>$=}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence}{Sequence}} \&\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{other}}) \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
+\begin{DoxyCompactList}\small\item\em Is this sequence longer or equal to another sequence ? \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a5762b9626a824dfd5c65b3687a8c8750}{operator$<$}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence}{Sequence}} \&\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{other}}) \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
+\begin{DoxyCompactList}\small\item\em Is this sequence smaller than another sequence ? \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a47d2eefc354aea335072eb23c6ceb3d6}{operator$<$=}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence}{Sequence}} \&\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{other}}) \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
+\begin{DoxyCompactList}\small\item\em Is this sequence smaller or equal to another sequence ? \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_a91198d1ab4547263058d33200e914559}{operator bool}} () \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
+\begin{DoxyCompactList}\small\item\em Do this sequence contain at least one symbol ? \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{get}} (size\+\_\+t position) const
+\begin{DoxyCompactList}\small\item\em Retrieve the symbol at the {\ttfamily position} in the sequence. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_a911b67fca9020a49ca845b6a5f226479}{operator\mbox{[}$\,$\mbox{]}}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{position}}) \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
+\begin{DoxyCompactList}\small\item\em Retrieve the symbol at the {\ttfamily position} in the sequence. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_fasta_sequence_a0f773a3b8df4b1e83f0183c5da21f9ee}\label{class_fasta_sequence_a0f773a3b8df4b1e83f0183c5da21f9ee} 
-std\+::map$<$ size\+\_\+t, std\+::string $>$ {\bfseries comments}
+std\+::map$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}}, std\+::string $>$ {\bfseries comments}
 \begin{DoxyCompactList}\small\item\em Map that hold comments. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_sequence}{Sequence}}}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_sequence_a164f748d9c5ecd278ab55b37381d2700}\label{class_sequence_a164f748d9c5ecd278ab55b37381d2700} 
-enum {\bfseries IUPACMod} \{ {\bfseries basic} = 0
+enum \mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{IUPACMod}} \{ {\bfseries basic} = 0
 , {\bfseries most} = 1
 , {\bfseries all} = 2
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Allow IUPAC alphabet selection. basic \+: A, T / U, C, G \texorpdfstring{$\vert$}{|} 20 Amino acids most \+: All iupac symbol less gap and rare / non standard symbols all \+: All iupac symbol. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_fasta_related}{Fasta\+Related}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -142,58 +142,58 @@ static bool \mbox{\hyperlink{class_fasta_related_afa8fa72df1990eb2ee40593fe64c3e
 \doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_sequence}{Sequence}}}
 \begin{DoxyCompactItemize}
 \item 
-static \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}} {\bfseries get\+Sequence\+Symbol} (char symbol, char type)
-\item 
-static const \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}} \& {\bfseries get\+Symbol\+DNA} (char symbol)
-\item 
-static bool {\bfseries is\+Legal\+Nucleic} (char symbol)
-\item 
-static bool {\bfseries is\+Legal\+Amino} (char symbol)
-\item 
-static bool {\bfseries is\+Legal\+Symbol} (char symbol)
-\item 
-static bool {\bfseries is\+DNA} (char symbol)
-\item 
-static bool {\bfseries is\+RNA} (char symbol)
-\item 
-static bool {\bfseries is\+Amino} (char symbol)
-\item 
-static bool {\bfseries is\+Nucleic} (char symbol)
-\item 
-static bool {\bfseries is\+Dna\+Specific\+Nucleotide} (char nucleic)
-\item 
-static bool {\bfseries is\+Rna\+Specific\+Nucleotide} (char nucleic)
-\item 
-static bool {\bfseries is\+Amino\+Specific} (char symbol)
-\item 
-static bool {\bfseries is\+Nucleic\+Specific} (char symbol)
-\item 
-static bool {\bfseries is\+Valid\+Type} (char symbol)
-\item 
-static size\+\_\+t {\bfseries element\+Max\+Size} (char encoding\+\_\+type, Sequence\+::\+IUPACMod iupac)
-\item 
-static const std\+::map$<$ char, char $>$ \& {\bfseries translation\+Tab} (char encoding\+\_\+type, Sequence\+::\+IUPACMod iupac, bool reverse=false, error\+Mods error\+\_\+mod=raise)
-\item 
-static void {\bfseries fill\+Code\+Map} (std\+::map$<$ Sequence\+::\+IUPACMod, std\+::map$<$ char, char $>$ $>$ \&normal\+\_\+encoding, std\+::map$<$ Sequence\+::\+IUPACMod, std\+::map$<$ char, char $>$ $>$ \&reverse\+\_\+encoding, const std\+::map$<$ char, \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}} $>$ \&element\+\_\+to\+\_\+add, Sequence\+::\+IUPACMod iupac)
-\item 
-static char {\bfseries read\+Type\+Array} (std\+::array$<$ bool, 5 $>$ type, bool ignore\+\_\+illegal=false)
-\item 
-static std\+::array$<$ bool, 5 $>$ {\bfseries read\+Type\+Char} (char type)
-\item 
-static std\+::array$<$ bool, 5 $>$ {\bfseries identify\+Symbol\+Type} (char symbol)
-\item 
-static bool {\bfseries can\+Be\+Rna} (char type)
-\item 
-static bool {\bfseries can\+Be\+Dna} (char type)
-\item 
-static bool {\bfseries can\+Be\+Amino} (char type)
-\item 
-static bool {\bfseries can\+Be\+Nucleic} (char type)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}} \mbox{\hyperlink{class_sequence_af4dfd329689bebc4131b422d7974ca4e}{get\+Sequence\+Symbol}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{symbol}}, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} type)
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol} object attached to a symbol. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}} \& \mbox{\hyperlink{class_sequence_a6a2475bed7d5eabeb96c141a9f5e0f38}{get\+Symbol\+DNA}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{symbol}})
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol} from the DNA alphabet that match with {\ttfamily symbol}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a2f4c93c744fc524b81c91843c81d31be}{is\+Legal\+Nucleic}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{symbol}})
+\begin{DoxyCompactList}\small\item\em Say if a {\ttfamily symbol} can be an acid nucleic. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a1c338fe40d1251531461f2a737f235cd}{is\+Legal\+Amino}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{symbol}})
+\begin{DoxyCompactList}\small\item\em Say if a {\ttfamily symbol} can be an amino acid. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a7e6fdc8d243336e9e55e91dfd61eb43b}{is\+Legal\+Symbol}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{symbol}})
+\begin{DoxyCompactList}\small\item\em Say if a {\ttfamily symbol} can be used in the a sequence. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a14cf335c6053ca586d4e1694898575cf}{is\+DNA}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{symbol}})
+\begin{DoxyCompactList}\small\item\em Say if a {\ttfamily symbol} can be an acid nucleic related to DNA. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_ad04d994668bcc5d29c6813fcbc28dfb6}{is\+RNA}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{symbol}})
+\begin{DoxyCompactList}\small\item\em Say if a {\ttfamily symbol} can be an acid nucleic related to RNA. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a31e8f630c8d214e79ac9ef7d128e3c24}{is\+Amino}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{symbol}})
+\begin{DoxyCompactList}\small\item\em Say if a {\ttfamily symbol} can be an amino acid. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_ab351491ae27a3b4daa4d6af021ae0af2}{is\+Nucleic}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{symbol}})
+\begin{DoxyCompactList}\small\item\em Say if a {\ttfamily symbol} can be an acid nucleic. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a375a7807541e86995fc0eb92258f1414}{is\+Dna\+Specific\+Nucleotide}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{nucleic}})
+\begin{DoxyCompactList}\small\item\em Say if a {\ttfamily symbol} can only be found in acid nucleic related to DNA. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a43936ff8f097e07421ae7a2389bd9cc0}{is\+Rna\+Specific\+Nucleotide}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{nucleic}})
+\begin{DoxyCompactList}\small\item\em Say if a {\ttfamily symbol} can only be found in acid nucleic related to RNA. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a14ee59cb34cf4d2087d1eabd3e4c6d4c}{is\+Amino\+Specific}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{symbol}})
+\begin{DoxyCompactList}\small\item\em Say if a {\ttfamily symbol} can only be found in acid nucleic related to amino acid. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a7fb536cb5ce9b5de78634aa314623835}{is\+Nucleic\+Specific}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{symbol}})
+\begin{DoxyCompactList}\small\item\em Say if a {\ttfamily symbol} can only be found in acid nucleic related to nucleic acid. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a7f5d10ca63cfa4f1247692cf5f073555}{is\+Valid\+Type}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{symbol}})
+\begin{DoxyCompactList}\small\item\em Say if a {\ttfamily symbol} can be used as type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}} \mbox{\hyperlink{class_sequence_a80034bb32edc061317480f5b759c4170}{element\+Max\+Size}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{encoding\+\_\+type}}, \mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{Sequence\+::\+IUPACMod}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{iupac}})
+\begin{DoxyCompactList}\small\item\em Give the number of bit used by a combination of a type {\ttfamily encoding\+\_\+type} and an alphabet {\ttfamily iupac}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} std\+::map$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} $>$ \& \mbox{\hyperlink{class_sequence_a49a9126010c0332493c803ddca005394}{translation\+Tab}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{encoding\+\_\+type}}, \mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{Sequence\+::\+IUPACMod}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{iupac}}, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{reverse}}=\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{false}}, error\+Mods \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{error\+\_\+mod}}=raise)
+\begin{DoxyCompactList}\small\item\em Give a map that compress / decompress char used by \doxylink{class_sequence}{Sequence}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} \mbox{\hyperlink{class_sequence_a555c6e58957c4d07028eb5c67b1732ac}{fill\+Code\+Map}} (std\+::map$<$ \mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{Sequence\+::\+IUPACMod}}, std\+::map$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} $>$ $>$ \&\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{normal\+\_\+encoding}}, std\+::map$<$ \mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{Sequence\+::\+IUPACMod}}, std\+::map$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} $>$ $>$ \&\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{reverse\+\_\+encoding}}, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} std\+::map$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}, \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}} $>$ \&\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{element\+\_\+to\+\_\+add}}, \mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{Sequence\+::\+IUPACMod}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{iupac}})
+\begin{DoxyCompactList}\small\item\em Function used by \doxylink{class_sequence_a49a9126010c0332493c803ddca005394}{Sequence\+::translation\+Tab} to create their compression map. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_a1cb6372d1b0784cbf6531b5be803cb79}{read\+Type\+Array}} (std\+::array$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}}, 5 $>$ type, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{ignore\+\_\+illegal}}=\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{false}})
+\begin{DoxyCompactList}\small\item\em Convert a bool array that represent type into a char. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} std\+::array$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}}, 5 $>$ \mbox{\hyperlink{class_sequence_ae568828bc1d65c8334c0a0336c9fd341}{read\+Type\+Char}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} type)
+\begin{DoxyCompactList}\small\item\em Turn a symbol to a bool array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} std\+::array$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}}, 5 $>$ \mbox{\hyperlink{class_sequence_a2163e89ff5b606d82ad4993c7e5eab4b}{identify\+Symbol\+Type}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{symbol}})
+\begin{DoxyCompactList}\small\item\em Turn a symbol to a bool array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a0e01b31e21a06c7a2fd17d6c050c739a}{can\+Be\+Rna}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} type)
+\begin{DoxyCompactList}\small\item\em Say if a symbol can represent RNA. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a276e60abf2a497596ceb563687922342}{can\+Be\+Dna}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} type)
+\begin{DoxyCompactList}\small\item\em Say if a symbol can represent DNA. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_aed78263d09b41984aed4eb4a3a570591}{can\+Be\+Amino}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} type)
+\begin{DoxyCompactList}\small\item\em Say if a symbol can represent amino acids. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a71b6ac1cfbf97a9d2391d6e7c65319b1}{can\+Be\+Nucleic}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} type)
+\begin{DoxyCompactList}\small\item\em Say if a symbol can represent an nucleic acid. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_sequence}{Sequence}}}
 \begin{DoxyCompactItemize}
 \item 
-char {\bfseries parse\+Char} (char symbol, error\+Mods error\+\_\+mod=display)
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} {\bfseries parse\+Char} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{symbol}}, error\+Mods \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{error\+\_\+mod}}=display)
 \end{DoxyCompactItemize}
 
 
@@ -210,7 +210,7 @@ Not\+Implemented
 \index{FastaSequence@{FastaSequence}!addComment@{addComment}}
 \index{addComment@{addComment}!FastaSequence@{FastaSequence}}
 \doxysubsubsection{\texorpdfstring{addComment()}{addComment()}}
-{\footnotesize\ttfamily void Fasta\+Sequence\+::add\+Comment (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{position,  }\item[{std\+::string}]{comment }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} Fasta\+Sequence\+::add\+Comment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}}}]{position,  }\item[{std\+::string}]{comment }\end{DoxyParamCaption})}
 
 
 
@@ -243,7 +243,7 @@ Here is the caller graph for this function\+:
 \index{FastaSequence@{FastaSequence}!displaceComment@{displaceComment}}
 \index{displaceComment@{displaceComment}!FastaSequence@{FastaSequence}}
 \doxysubsubsection{\texorpdfstring{displaceComment()}{displaceComment()}}
-{\footnotesize\ttfamily void Fasta\+Sequence\+::displace\+Comment (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{current\+\_\+position,  }\item[{size\+\_\+t}]{new\+\_\+position }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} Fasta\+Sequence\+::displace\+Comment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}}}]{current\+\_\+position,  }\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}}}]{new\+\_\+position }\end{DoxyParamCaption})}
 
 
 
@@ -268,7 +268,7 @@ Here is the call graph for this function\+:
 \index{FastaSequence@{FastaSequence}!getAllComment@{getAllComment}}
 \index{getAllComment@{getAllComment}!FastaSequence@{FastaSequence}}
 \doxysubsubsection{\texorpdfstring{getAllComment()}{getAllComment()}}
-{\footnotesize\ttfamily const std\+::map$<$ size\+\_\+t, std\+::string $>$ \& Fasta\+Sequence\+::get\+All\+Comment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} std\+::map$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}}, std\+::string $>$ \& Fasta\+Sequence\+::get\+All\+Comment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -281,7 +281,7 @@ const std\+::map$<$size\+\_\+t, std\+::string$>$\& Position \+: comment
 \index{FastaSequence@{FastaSequence}!getComment@{getComment}}
 \index{getComment@{getComment}!FastaSequence@{FastaSequence}}
 \doxysubsubsection{\texorpdfstring{getComment()}{getComment()}}
-{\footnotesize\ttfamily std\+::string Fasta\+Sequence\+::get\+Comment (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{position }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily std\+::string Fasta\+Sequence\+::get\+Comment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}}}]{position }\end{DoxyParamCaption}) const}
 
 
 
@@ -315,11 +315,11 @@ Here is the caller graph for this function\+:
 \index{FastaSequence@{FastaSequence}!insert@{insert}}
 \index{insert@{insert}!FastaSequence@{FastaSequence}}
 \doxysubsubsection{\texorpdfstring{insert()}{insert()}}
-{\footnotesize\ttfamily void Fasta\+Sequence\+::insert (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{sequence,  }\item[{size\+\_\+t}]{position,  }\item[{error\+Mods}]{error\+\_\+mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} Fasta\+Sequence\+::insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} std\+::string \&}]{sequence,  }\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}}}]{position,  }\item[{error\+Mods}]{error\+\_\+mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
-Same as Sequence\+::insert but should move comments when position is not at the end. 
+Same as \doxylink{class_sequence_aa48778c592160ac60319f780817f491c}{Sequence\+::insert} but should move comments when position is not at the end. 
 
 \begin{DoxyWarning}{Warning}
 not implemented 
@@ -335,13 +335,13 @@ not implemented
 \end{DoxyParams}
 
 
-Reimplemented from \mbox{\hyperlink{class_sequence}{Sequence}}.
+Reimplemented from \mbox{\hyperlink{class_sequence_aa48778c592160ac60319f780817f491c}{Sequence}}.
 
 \Hypertarget{class_fasta_sequence_a2ce25dcf6751310494e59be402017036}\label{class_fasta_sequence_a2ce25dcf6751310494e59be402017036} 
 \index{FastaSequence@{FastaSequence}!isCommentedPos@{isCommentedPos}}
 \index{isCommentedPos@{isCommentedPos}!FastaSequence@{FastaSequence}}
 \doxysubsubsection{\texorpdfstring{isCommentedPos()}{isCommentedPos()}}
-{\footnotesize\ttfamily bool Fasta\+Sequence\+::is\+Commented\+Pos (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{position }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} Fasta\+Sequence\+::is\+Commented\+Pos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}}}]{position }\end{DoxyParamCaption}) const}
 
 
 
@@ -369,7 +369,7 @@ Here is the caller graph for this function\+:
 \index{FastaSequence@{FastaSequence}!loadComments@{loadComments}}
 \index{loadComments@{loadComments}!FastaSequence@{FastaSequence}}
 \doxysubsubsection{\texorpdfstring{loadComments()}{loadComments()}}
-{\footnotesize\ttfamily void Fasta\+Sequence\+::load\+Comments (\begin{DoxyParamCaption}\item[{std\+::map$<$ size\+\_\+t, std\+::string $>$ \&}]{comment\+\_\+map }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} Fasta\+Sequence\+::load\+Comments (\begin{DoxyParamCaption}\item[{std\+::map$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}}, std\+::string $>$ \&}]{comment\+\_\+map }\end{DoxyParamCaption})}
 
 
 
@@ -392,7 +392,7 @@ Here is the call graph for this function\+:
 \index{FastaSequence@{FastaSequence}!removeComment@{removeComment}}
 \index{removeComment@{removeComment}!FastaSequence@{FastaSequence}}
 \doxysubsubsection{\texorpdfstring{removeComment()}{removeComment()}}
-{\footnotesize\ttfamily void Fasta\+Sequence\+::remove\+Comment (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{position }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} Fasta\+Sequence\+::remove\+Comment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}}}]{position }\end{DoxyParamCaption})}
 
 
 

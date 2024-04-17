@@ -1,12 +1,7 @@
 var searchData=
 [
-  ['canbeaddedby_0',['canBeAddedBy',['../class_bit_vector_1_1_coords.html#a4890717747110e1d72e428798352b343',1,'BitVector::Coords']]],
-  ['canbesubtractedby_1',['canBeSubtractedBy',['../class_bit_vector_1_1_coords.html#a7c928afd26dcbe5a4bf67cf3edb8bd68',1,'BitVector::Coords']]],
-  ['canmultiplyby_2',['canMultiplyBy',['../class_bit_vector_1_1_coords.html#a3ec84115811da3e842bf35aa8be95083',1,'BitVector::Coords']]],
-  ['clear_3',['clear',['../class_bit_vector.html#a673b530bb6e520f7f7fa90070e0034db',1,'BitVector']]],
-  ['comments_4',['comments',['../class_fasta_sequence.html#a0f773a3b8df4b1e83f0183c5da21f9ee',1,'FastaSequence']]],
-  ['coords_5',['Coords',['../class_bit_vector_1_1_coords.html',1,'BitVector::Coords'],['../class_bit_vector_1_1_coords.html#a4597c3633519643ceddf0f098317cf33',1,'BitVector::Coords::Coords()'],['../class_bit_vector_1_1_coords.html#a078d52dc255973924f7fd73f3df78b8b',1,'BitVector::Coords::Coords(size_t octet, unsigned short int bit)'],['../class_bit_vector_1_1_coords.html#a1c3ee8ff0f43952b79c4a257234d590c',1,'BitVector::Coords::Coords(size_t value)'],['../class_bit_vector_1_1_coords.html#a6eab388bb38b2dc872b16473fd2080b4',1,'BitVector::Coords::Coords(const Coords &amp;other)']]],
-  ['copybits_6',['copyBits',['../class_bit_vector.html#a8c3c1f0faa0bbf35638c7217a841cbd8',1,'BitVector']]],
-  ['currentcapacity_7',['currentCapacity',['../class_bit_vector.html#aed5c03f3a6a9a2e5f3c58fb14768b0b4',1,'BitVector']]],
-  ['currentelementcapacity_8',['currentElementCapacity',['../class_bit_vector.html#ad64e921d07b9528a532477f282af135c',1,'BitVector']]]
+  ['begin_0',['begin',['../class_bit_vector.html#a8f077fd00fdb5063895111bbf6a2f299',1,'BitVector::begin()'],['../class_sequence.html#ab6689d9abe96b21c879527d56c423e02',1,'Sequence::begin()']]],
+  ['bit_1',['bit',['../class_bit_vector_1_1_coords.html#a3b983d8d44381fb966b402cfad14ee90',1,'BitVector::Coords']]],
+  ['bitvector_2',['BitVector',['../class_bit_vector.html',1,'BitVector'],['../class_bit_vector.html#a23c1685317944b2a5c6f149a5fccc6bd',1,'BitVector::BitVector(short unsigned int block_size, size_t alloc)'],['../class_bit_vector.html#a3a10dc26ed8d3adc29372d8e82b4e9f5',1,'BitVector::BitVector(short unsigned int block_size)'],['../class_bit_vector.html#a5547d55a697d61de026d0a94e743624b',1,'BitVector::BitVector(const BitVector &amp;bit_vector)']]],
+  ['blankchar_3',['blankChar',['../class_fasta_related.html#a13a42fa0a2c2011055681fa6023f3837',1,'FastaRelated']]]
 ];

@@ -1,0 +1,5 @@
+<map id="Sequence::canBeAmino" name="Sequence::canBeAmino">
+<area shape="rect" id="Node000001" title="Say if a symbol can represent amino acids." alt="" coords="280,5,455,31"/>
+<area shape="rect" id="Node000002" href="$class_sequence.html#af4dfd329689bebc4131b422d7974ca4e" title="Get the Sequence::SequenceSymbol object attached to a symbol." alt="" coords="5,5,232,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="266,21,232,21,232,15,266,15"/>
+</map>

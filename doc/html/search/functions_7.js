@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['get_0',['get',['../class_bit_vector.html#aebe159444eb9d619959b7325ac5dac2d',1,'BitVector::get(Coords coord) const'],['../class_bit_vector.html#a2d0fe43b80b63edbd64dc887fd87d915',1,'BitVector::get(size_t index) const']]],
+  ['get_0',['get',['../class_bit_vector.html#aebe159444eb9d619959b7325ac5dac2d',1,'BitVector::get(Coords coord) const'],['../class_bit_vector.html#a2d0fe43b80b63edbd64dc887fd87d915',1,'BitVector::get(size_t index) const'],['../class_sequence_1_1_sequence_symbol.html#a6ce75fca5a3983dadece17f1812d618a',1,'Sequence::SequenceSymbol::get()'],['../class_sequence.html#ad40777fd2f7ad3ae247fab02459e6759',1,'Sequence::get()']]],
   ['getaccession_1',['getAccession',['../class_header.html#a2a8a4c51db33c71988bd13c135182ada',1,'Header']]],
   ['getallcomment_2',['getAllComment',['../class_fasta_sequence.html#a9954e47b2348077289a3fd1121c40017',1,'FastaSequence']]],
   ['getbit_3',['getBit',['../class_bit_vector_1_1_coords.html#a393207c752f8f9121aca38c938914154',1,'BitVector::Coords']]],
@@ -9,10 +9,20 @@ var searchData=
   ['getdatasize_6',['getDataSize',['../class_bit_vector.html#a49233caeb2137deab3cd9de111e2a5fe',1,'BitVector']]],
   ['getelementnumber_7',['getElementNumber',['../class_bit_vector.html#a5339660cfb315ab5de7f78bdf5af4ce1',1,'BitVector']]],
   ['getelementsize_8',['getElementSize',['../class_bit_vector.html#a4e9f0c58d94ed9bfc87866268c10ae1d',1,'BitVector']]],
-  ['getformat_9',['getFormat',['../class_fasta_header.html#aca7a71ac226053e7ac30ca77fa543d8d',1,'FastaHeader']]],
-  ['getidentifiers_10',['getIdentifiers',['../class_fasta_header.html#aaf65345779708fe7cc505bfbd08b8da7',1,'FastaHeader']]],
-  ['getoctet_11',['getOctet',['../class_bit_vector_1_1_coords.html#a2892f7f46c4af93f9733e312229d8ec1',1,'BitVector::Coords']]],
-  ['getseq_12',['getSeq',['../class_sequence.html#a977ed0641af71694936687af9e5f2e5e',1,'Sequence']]],
-  ['getsize_5ftunit_13',['getSize_tUnit',['../class_bit_vector.html#af68cda7444ec4459393bbfa423f0a7dd',1,'BitVector']]],
-  ['gettype_14',['getType',['../class_sequence.html#a7561cc8bf09fa8056b3ddf14eaa4b0bb',1,'Sequence']]]
+  ['getencodingtype_9',['getEncodingType',['../class_sequence.html#a8181f024304b3fb5f55c7118f648cc61',1,'Sequence']]],
+  ['getformat_10',['getFormat',['../class_fasta_header.html#aca7a71ac226053e7ac30ca77fa543d8d',1,'FastaHeader']]],
+  ['getheader_11',['getHeader',['../class_sequence.html#a393d9e2d9d7066ce52b2552413a54a47',1,'Sequence']]],
+  ['getidentifiers_12',['getIdentifiers',['../class_fasta_header.html#aaf65345779708fe7cc505bfbd08b8da7',1,'FastaHeader']]],
+  ['getindex_13',['getIndex',['../class_sequence_1_1_sequence_iterator.html#ac0922cfff07893c81fab18bf033b60d5',1,'Sequence::SequenceIterator']]],
+  ['getiupac_14',['getIupac',['../class_sequence.html#aa8d48f12fba0a9329bd37a288cf5db3d',1,'Sequence']]],
+  ['getoctet_15',['getOctet',['../class_bit_vector_1_1_coords.html#a2892f7f46c4af93f9733e312229d8ec1',1,'BitVector::Coords']]],
+  ['getreplacementsymbol_16',['getReplacementSymbol',['../class_sequence_1_1_sequence_symbol.html#a0a3030bc525a38364b1c0b0497dc4fef',1,'Sequence::SequenceSymbol']]],
+  ['getseq_17',['getSeq',['../class_sequence.html#a649baedd9a01f0474f368b5cfd170484',1,'Sequence']]],
+  ['getsequence_18',['GetSequence',['../class_sequence_1_1_sequence_iterator.html#a7ac64104ad7ad23c28773dab29ff6e96',1,'Sequence::SequenceIterator']]],
+  ['getsequencesymbol_19',['getSequenceSymbol',['../class_sequence.html#af4dfd329689bebc4131b422d7974ca4e',1,'Sequence']]],
+  ['getsize_5ftunit_20',['getSize_tUnit',['../class_bit_vector.html#af68cda7444ec4459393bbfa423f0a7dd',1,'BitVector']]],
+  ['getsymboldna_21',['getSymbolDNA',['../class_sequence.html#a6a2475bed7d5eabeb96c141a9f5e0f38',1,'Sequence']]],
+  ['gettype_22',['getType',['../class_sequence.html#a7561cc8bf09fa8056b3ddf14eaa4b0bb',1,'Sequence']]],
+  ['gettypearray_23',['getTypeArray',['../class_sequence.html#a45d6ea76048e61012cbfcdb3a623fd65',1,'Sequence']]],
+  ['getvalue_24',['getValue',['../class_sequence_1_1_sequence_symbol.html#a0503fbc44a785db66e0d8ee73e5a7fee',1,'Sequence::SequenceSymbol']]]
 ];

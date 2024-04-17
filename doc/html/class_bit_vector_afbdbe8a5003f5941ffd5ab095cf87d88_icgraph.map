@@ -1,11 +1,25 @@
 <map id="BitVector::append" name="BitVector::append">
-<area shape="rect" id="Node000001" title="Add an element at the end of the vector." alt="" coords="465,31,603,56"/>
-<area shape="rect" id="Node000002" href="$class_bit_vector.html#a5547d55a697d61de026d0a94e743624b" title="Construct a new Bit Vector object." alt="" coords="225,5,373,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="451,37,373,29,373,23,452,32"/>
-<area shape="rect" id="Node000003" href="$class_bit_vector.html#a686af396e4dff1536b7588213726c4cc" title="Insert a number of blank position inside BitVector::_data." alt="" coords="180,55,417,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="451,54,418,58,417,53,451,49"/>
-<area shape="rect" id="Node000004" href="$class_bit_vector.html#a9f86c96c013632abd9d18feafe78d72e" title="Insert a number_of_elements inside the vector at the index pos ." alt="" coords="5,29,132,55"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="169,56,132,52,133,46,170,50"/>
-<area shape="rect" id="Node000005" href="$class_bit_vector.html#a915743b3f94c75c22317d160bfa741ff" title="Insert a number_of_elements inside the vector at the index pos ." alt="" coords="5,79,132,104"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="167,84,133,87,132,82,166,79"/>
+<area shape="rect" id="Node000001" title="Add an element at the end of the vector." alt="" coords="891,80,1028,105"/>
+<area shape="rect" id="Node000002" href="$class_bit_vector.html#a5547d55a697d61de026d0a94e743624b" title="Construct a new Bit Vector object." alt="" coords="650,55,798,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="876,86,798,78,799,73,877,81"/>
+<area shape="rect" id="Node000003" href="$class_bit_vector.html#a686af396e4dff1536b7588213726c4cc" title="Insert a number of blank position inside BitVector::_data." alt="" coords="605,104,843,129"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="877,104,843,107,843,102,876,98"/>
+<area shape="rect" id="Node000004" href="$class_sequence.html#aa48778c592160ac60319f780817f491c" title="Insert a number of chars at the position position ." alt="" coords="427,55,557,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="650,104,552,83,553,77,651,99"/>
+<area shape="rect" id="Node000011" href="$class_bit_vector.html#a9f86c96c013632abd9d18feafe78d72e" title="Insert a number_of_elements inside the vector at the index pos ." alt="" coords="429,104,555,129"/>
+<area shape="poly" id="edge10_Node000003_Node000011" title=" " alt="" coords="592,119,556,119,556,114,592,114"/>
+<area shape="rect" id="Node000012" href="$class_bit_vector.html#a915743b3f94c75c22317d160bfa741ff" title="Insert a number_of_elements inside the vector at the index pos ." alt="" coords="429,153,555,179"/>
+<area shape="poly" id="edge11_Node000003_Node000012" title=" " alt="" coords="651,135,553,156,552,151,650,130"/>
+<area shape="rect" id="Node000005" href="$class_sequence.html#a3cf6cf5e54782f4d1a2ee07ec519523c" title="Insert a char at the position position ." alt="" coords="232,5,363,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="427,54,348,33,349,28,429,49"/>
+<area shape="rect" id="Node000006" href="$class_sequence.html#aa57fd5a7fdd173374e56006ce1c47bdc" title="Insert a number of chars at the the back of the sequence position ." alt="" coords="216,55,379,80"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="413,70,379,70,379,65,413,65"/>
+<area shape="rect" id="Node000007" href="$class_sequence.html#a092f380b654de9aaa8a770ec0948c454" title="Insert a number of chars at the the front of the sequence position ." alt="" coords="216,104,379,129"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="429,86,349,106,348,101,427,81"/>
+<area shape="rect" id="Node000008" href="$class_sequence.html#a16e70626e330194c1507ed339c9c629c" title="Insert a char at the the back of the sequence position ." alt="" coords="5,55,168,80"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="229,103,141,83,142,77,230,98"/>
+<area shape="rect" id="Node000009" href="$class_sequence.html#a1fa6868ce587e1f3d779bb226cfda548" title="Insert a char at the the front of the sequence position ." alt="" coords="5,104,168,129"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="202,119,168,119,168,114,202,114"/>
+<area shape="rect" id="Node000010" href="$class_sequence.html#ae293cd5124445b604bbcba3a5f01a48a" title="Main Constructor. Construct a new Sequence object." alt="" coords="9,153,165,179"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="230,135,142,156,141,151,229,130"/>
 </map>

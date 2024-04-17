@@ -26,227 +26,179 @@ Collaboration diagram for Sequence\+:
 class \mbox{\hyperlink{class_sequence_1_1_sequence_iterator}{Sequence\+Iterator}}
 \item 
 class \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+Symbol}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Represent a symbol that can be used inside \doxylink{class_sequence}{Sequence}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_sequence_a164f748d9c5ecd278ab55b37381d2700}\label{class_sequence_a164f748d9c5ecd278ab55b37381d2700} 
-enum {\bfseries IUPACMod} \{ {\bfseries basic} = 0
+enum \mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{IUPACMod}} \{ {\bfseries basic} = 0
 , {\bfseries most} = 1
 , {\bfseries all} = 2
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Allow IUPAC alphabet selection. basic \+: A, T / U, C, G \texorpdfstring{$\vert$}{|} 20 Amino acids most \+: All iupac symbol less gap and rare / non standard symbols all \+: All iupac symbol. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_sequence_a01a20184d3b0d2821baa0ac8a626317e}\label{class_sequence_a01a20184d3b0d2821baa0ac8a626317e} 
-\mbox{\hyperlink{class_sequence_1_1_sequence_iterator}{Sequence\+Iterator}} {\bfseries begin} () const
-\item 
-\Hypertarget{class_sequence_aadee9a9e8ebb990f60796fe8e8eb85ad}\label{class_sequence_aadee9a9e8ebb990f60796fe8e8eb85ad} 
-\mbox{\hyperlink{class_sequence_1_1_sequence_iterator}{Sequence\+Iterator}} {\bfseries end} () const
-\item 
-\mbox{\hyperlink{class_sequence_ae293cd5124445b604bbcba3a5f01a48a}{Sequence}} (const std\+::string \&sequence, char type, IUPACMod iupac=most, error\+Mods error\+\_\+mod=raise, bool finalis\+\_\+type=true)
+\mbox{\hyperlink{class_sequence_1_1_sequence_iterator}{Sequence\+Iterator}} \mbox{\hyperlink{class_sequence_ab6689d9abe96b21c879527d56c423e02}{begin}} () \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
+\begin{DoxyCompactList}\small\item\em Give an iterator to begin an iteration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_1_1_sequence_iterator}{Sequence\+Iterator}} \mbox{\hyperlink{class_sequence_a27a1f93dc61e2cb49bbc853d30c6e488}{end}} () \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
+\begin{DoxyCompactList}\small\item\em Give an iterator to end an iteration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ae293cd5124445b604bbcba3a5f01a48a}{Sequence}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} std\+::string \&\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{sequence}}, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} type, \mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{IUPACMod}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{iupac}}=most, error\+Mods \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{error\+\_\+mod}}=raise, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{finalis\+\_\+type}}=\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{true}})
 \begin{DoxyCompactList}\small\item\em Main Constructor. Construct a new \doxylink{class_sequence}{Sequence} object. \end{DoxyCompactList}\item 
-\Hypertarget{class_sequence_ad5114ced34e064d37b73678e7332d30f}\label{class_sequence_ad5114ced34e064d37b73678e7332d30f} 
-{\bfseries Sequence} (IUPACMod iupac=most, error\+Mods error\+\_\+mod=raise, bool finalis\+\_\+type=false)
-\begin{DoxyCompactList}\small\item\em Default Constructor. Construct a new \doxylink{class_sequence}{Sequence} object. Equivalent to. \end{DoxyCompactList}\item 
-\Hypertarget{class_sequence_ace28d0905ff1a8e0a2018632fb68a537}\label{class_sequence_ace28d0905ff1a8e0a2018632fb68a537} 
-{\bfseries Sequence} (std\+::string sequence, IUPACMod iupac=most, error\+Mods error\+\_\+mod=raise, bool finalis\+\_\+type=true)
-\item 
-const std\+::string \& \mbox{\hyperlink{class_sequence_a977ed0641af71694936687af9e5f2e5e}{get\+Seq}} () const
+\mbox{\hyperlink{class_sequence_ad5114ced34e064d37b73678e7332d30f}{Sequence}} (\mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{IUPACMod}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{iupac}}=most, error\+Mods \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{error\+\_\+mod}}=raise, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{finalis\+\_\+type}}=\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{false}})
+\begin{DoxyCompactList}\small\item\em Main Constructor. Construct a new \doxylink{class_sequence}{Sequence} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ace28d0905ff1a8e0a2018632fb68a537}{Sequence}} (std\+::string \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{sequence}}, \mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{IUPACMod}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{iupac}}=most, error\+Mods \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{error\+\_\+mod}}=raise, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{finalis\+\_\+type}}=\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{true}})
+\begin{DoxyCompactList}\small\item\em Main Constructor. Construct a new \doxylink{class_sequence}{Sequence} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_bit_vector}{Bit\+Vector}} \& \mbox{\hyperlink{class_sequence_a649baedd9a01f0474f368b5cfd170484}{get\+Seq}} () \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
 \begin{DoxyCompactList}\small\item\em Get the sequence contain in this object. \end{DoxyCompactList}\item 
-char \mbox{\hyperlink{class_sequence_a7561cc8bf09fa8056b3ddf14eaa4b0bb}{get\+Type}} () const
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_a7561cc8bf09fa8056b3ddf14eaa4b0bb}{get\+Type}} () \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
 \begin{DoxyCompactList}\small\item\em Get a char that represent sequence type. \end{DoxyCompactList}\item 
-\Hypertarget{class_sequence_a8181f024304b3fb5f55c7118f648cc61}\label{class_sequence_a8181f024304b3fb5f55c7118f648cc61} 
-char {\bfseries get\+Encoding\+Type} () const
-\item 
-\Hypertarget{class_sequence_aa8d48f12fba0a9329bd37a288cf5db3d}\label{class_sequence_aa8d48f12fba0a9329bd37a288cf5db3d} 
-Sequence\+::\+IUPACMod {\bfseries get\+Iupac} () const
-\item 
-\Hypertarget{class_sequence_a45d6ea76048e61012cbfcdb3a623fd65}\label{class_sequence_a45d6ea76048e61012cbfcdb3a623fd65} 
-const std\+::array$<$ bool, 5 $>$ \& {\bfseries get\+Type\+Array} () const
-\item 
-\Hypertarget{class_sequence_a393d9e2d9d7066ce52b2552413a54a47}\label{class_sequence_a393d9e2d9d7066ce52b2552413a54a47} 
-\mbox{\hyperlink{class_header}{Header}} \& {\bfseries get\+Header} ()
-\item 
-\Hypertarget{class_sequence_a80f6b40eca1c920554baf4d06683ca3b}\label{class_sequence_a80f6b40eca1c920554baf4d06683ca3b} 
-void {\bfseries set\+Header} (\mbox{\hyperlink{class_header}{Header}} header)
-\item 
-\Hypertarget{class_sequence_acf21040958590f98163b3d11f19ea93e}\label{class_sequence_acf21040958590f98163b3d11f19ea93e} 
-size\+\_\+t {\bfseries size} () const
-\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_a8181f024304b3fb5f55c7118f648cc61}{get\+Encoding\+Type}} () \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
+\begin{DoxyCompactList}\small\item\em Return a char (same format as \doxylink{class_sequence_a7561cc8bf09fa8056b3ddf14eaa4b0bb}{Sequence\+::get\+Type()}) that indicate which alphabet is used in the during encoding. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{Sequence\+::\+IUPACMod}} \mbox{\hyperlink{class_sequence_aa8d48f12fba0a9329bd37a288cf5db3d}{get\+Iupac}} () \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
+\begin{DoxyCompactList}\small\item\em Say which iupac setting is used. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} std\+::array$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}}, 5 $>$ \& \mbox{\hyperlink{class_sequence_a45d6ea76048e61012cbfcdb3a623fd65}{get\+Type\+Array}} () \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
+\begin{DoxyCompactList}\small\item\em Get the Type Array object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_header}{Header}} \& \mbox{\hyperlink{class_sequence_a393d9e2d9d7066ce52b2552413a54a47}{get\+Header}} ()
+\begin{DoxyCompactList}\small\item\em Give the header attached to this \doxylink{class_sequence}{Sequence}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} \mbox{\hyperlink{class_sequence_a80f6b40eca1c920554baf4d06683ca3b}{set\+Header}} (\mbox{\hyperlink{class_header}{Header}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{header}})
+\begin{DoxyCompactList}\small\item\em Set the \doxylink{class_header}{Header} attribute. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}} \mbox{\hyperlink{class_sequence_acf21040958590f98163b3d11f19ea93e}{size}} () \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
+\begin{DoxyCompactList}\small\item\em Give the number of element contained in this sequence. \end{DoxyCompactList}\item 
 \Hypertarget{class_sequence_a6982db91fe866f2517593ab34af865a6}\label{class_sequence_a6982db91fe866f2517593ab34af865a6} 
-void {\bfseries active\+Type\+Research} ()
-\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} {\bfseries active\+Type\+Research} ()
+\begin{DoxyCompactList}\small\item\em When the sequence append a new cars, the \doxylink{class_sequence}{Sequence} will search to update is Sequence\+::type. \end{DoxyCompactList}\item 
 \Hypertarget{class_sequence_ac303ef02f197df4fb973b5de8ad1dce6}\label{class_sequence_ac303ef02f197df4fb973b5de8ad1dce6} 
-void {\bfseries end\+Type\+Research} ()
-\item 
-virtual void \mbox{\hyperlink{class_sequence_aa48778c592160ac60319f780817f491c}{insert}} (const std\+::string \&sequence, size\+\_\+t position, error\+Mods error\+Mod=display)
-\item 
-\Hypertarget{class_sequence_a3cf6cf5e54782f4d1a2ee07ec519523c}\label{class_sequence_a3cf6cf5e54782f4d1a2ee07ec519523c} 
-void {\bfseries insert} (const char \&symbol, size\+\_\+t position, error\+Mods error\+Mod=display)
-\item 
-\Hypertarget{class_sequence_a092f380b654de9aaa8a770ec0948c454}\label{class_sequence_a092f380b654de9aaa8a770ec0948c454} 
-void {\bfseries insert\+Front} (const std\+::string \&sequence, error\+Mods error\+Mod=display)
-\item 
-\Hypertarget{class_sequence_aa57fd5a7fdd173374e56006ce1c47bdc}\label{class_sequence_aa57fd5a7fdd173374e56006ce1c47bdc} 
-void {\bfseries insert\+Back} (const std\+::string \&sequence, error\+Mods error\+Mod=display)
-\item 
-\Hypertarget{class_sequence_a1fa6868ce587e1f3d779bb226cfda548}\label{class_sequence_a1fa6868ce587e1f3d779bb226cfda548} 
-void {\bfseries insert\+Front} (const char \&sequence, error\+Mods error\+Mod=display)
-\item 
-\Hypertarget{class_sequence_a16e70626e330194c1507ed339c9c629c}\label{class_sequence_a16e70626e330194c1507ed339c9c629c} 
-void {\bfseries insert\+Back} (const char \&sequence, error\+Mods error\+Mod=display)
-\item 
-\Hypertarget{class_sequence_a20eb6bdd6f5cba62a251eff4387a525d}\label{class_sequence_a20eb6bdd6f5cba62a251eff4387a525d} 
-virtual void {\bfseries erase} (size\+\_\+t start, size\+\_\+t length)
-\item 
-\Hypertarget{class_sequence_a6e6d1aa2ed36476e6eafa24610027d1e}\label{class_sequence_a6e6d1aa2ed36476e6eafa24610027d1e} 
-bool {\bfseries operator$>$} (const \mbox{\hyperlink{class_sequence}{Sequence}} \&other) const
-\item 
-\Hypertarget{class_sequence_a338b511f3ce95444f938947c51745621}\label{class_sequence_a338b511f3ce95444f938947c51745621} 
-bool {\bfseries operator$>$=} (const \mbox{\hyperlink{class_sequence}{Sequence}} \&other) const
-\item 
-\Hypertarget{class_sequence_a5762b9626a824dfd5c65b3687a8c8750}\label{class_sequence_a5762b9626a824dfd5c65b3687a8c8750} 
-bool {\bfseries operator$<$} (const \mbox{\hyperlink{class_sequence}{Sequence}} \&other) const
-\item 
-\Hypertarget{class_sequence_a47d2eefc354aea335072eb23c6ceb3d6}\label{class_sequence_a47d2eefc354aea335072eb23c6ceb3d6} 
-bool {\bfseries operator$<$=} (const \mbox{\hyperlink{class_sequence}{Sequence}} \&other) const
-\item 
-\Hypertarget{class_sequence_a91198d1ab4547263058d33200e914559}\label{class_sequence_a91198d1ab4547263058d33200e914559} 
-{\bfseries operator bool} () const
-\item 
-\Hypertarget{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}\label{class_sequence_ad40777fd2f7ad3ae247fab02459e6759} 
-char {\bfseries get} (size\+\_\+t position) const
-\item 
-\Hypertarget{class_sequence_a911b67fca9020a49ca845b6a5f226479}\label{class_sequence_a911b67fca9020a49ca845b6a5f226479} 
-char {\bfseries operator\mbox{[}$\,$\mbox{]}} (size\+\_\+t position) const
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} {\bfseries end\+Type\+Research} ()
+\begin{DoxyCompactList}\small\item\em When the sequence append a new cars, the \doxylink{class_sequence}{Sequence} will no longer search to update is Sequence\+::type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{virtual}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} \mbox{\hyperlink{class_sequence_aa48778c592160ac60319f780817f491c}{insert}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} std\+::string \&\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{sequence}}, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{position}}, error\+Mods \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{error\+Mod}}=display)
+\begin{DoxyCompactList}\small\item\em Insert a number of chars at the position {\ttfamily position} . \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} \mbox{\hyperlink{class_sequence_a3cf6cf5e54782f4d1a2ee07ec519523c}{insert}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \&\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{symbol}}, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{position}}, error\+Mods \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{error\+Mod}}=display)
+\begin{DoxyCompactList}\small\item\em Insert a char at the position {\ttfamily position} . \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} \mbox{\hyperlink{class_sequence_a092f380b654de9aaa8a770ec0948c454}{insert\+Front}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} std\+::string \&\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{sequence}}, error\+Mods \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{error\+Mod}}=display)
+\begin{DoxyCompactList}\small\item\em Insert a number of chars at the the front of the sequence {\ttfamily position} . \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} \mbox{\hyperlink{class_sequence_aa57fd5a7fdd173374e56006ce1c47bdc}{insert\+Back}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} std\+::string \&\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{sequence}}, error\+Mods \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{error\+Mod}}=display)
+\begin{DoxyCompactList}\small\item\em Insert a number of chars at the the back of the sequence {\ttfamily position} . \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} \mbox{\hyperlink{class_sequence_a1fa6868ce587e1f3d779bb226cfda548}{insert\+Front}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \&\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{sequence}}, error\+Mods \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{error\+Mod}}=display)
+\begin{DoxyCompactList}\small\item\em Insert a char at the the front of the sequence {\ttfamily position} . \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} \mbox{\hyperlink{class_sequence_a16e70626e330194c1507ed339c9c629c}{insert\+Back}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \&\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{sequence}}, error\+Mods \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{error\+Mod}}=display)
+\begin{DoxyCompactList}\small\item\em Insert a char at the the back of the sequence {\ttfamily position} . \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{virtual}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} \mbox{\hyperlink{class_sequence_a20eb6bdd6f5cba62a251eff4387a525d}{erase}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{start}}, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{length}})
+\begin{DoxyCompactList}\small\item\em Remove a portion of the sequence. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a6e6d1aa2ed36476e6eafa24610027d1e}{operator$>$}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence}{Sequence}} \&\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{other}}) \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
+\begin{DoxyCompactList}\small\item\em Is this sequence longer than another sequence ? \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a338b511f3ce95444f938947c51745621}{operator$>$=}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence}{Sequence}} \&\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{other}}) \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
+\begin{DoxyCompactList}\small\item\em Is this sequence longer or equal to another sequence ? \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a5762b9626a824dfd5c65b3687a8c8750}{operator$<$}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence}{Sequence}} \&\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{other}}) \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
+\begin{DoxyCompactList}\small\item\em Is this sequence smaller than another sequence ? \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a47d2eefc354aea335072eb23c6ceb3d6}{operator$<$=}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence}{Sequence}} \&\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{other}}) \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
+\begin{DoxyCompactList}\small\item\em Is this sequence smaller or equal to another sequence ? \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_a91198d1ab4547263058d33200e914559}{operator bool}} () \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
+\begin{DoxyCompactList}\small\item\em Do this sequence contain at least one symbol ? \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{get}} (size\+\_\+t position) const
+\begin{DoxyCompactList}\small\item\em Retrieve the symbol at the {\ttfamily position} in the sequence. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_a911b67fca9020a49ca845b6a5f226479}{operator\mbox{[}$\,$\mbox{]}}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{position}}) \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}}
+\begin{DoxyCompactList}\small\item\em Retrieve the symbol at the {\ttfamily position} in the sequence. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_sequence_af4dfd329689bebc4131b422d7974ca4e}\label{class_sequence_af4dfd329689bebc4131b422d7974ca4e} 
-static \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}} {\bfseries get\+Sequence\+Symbol} (char symbol, char type)
-\item 
-\Hypertarget{class_sequence_a7c2023283bd2bb94053b90e345f382d6}\label{class_sequence_a7c2023283bd2bb94053b90e345f382d6} 
-static const \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}} \& {\bfseries get\+Symbol\+DNA} (char symbol)
-\item 
-\Hypertarget{class_sequence_a2f4c93c744fc524b81c91843c81d31be}\label{class_sequence_a2f4c93c744fc524b81c91843c81d31be} 
-static bool {\bfseries is\+Legal\+Nucleic} (char symbol)
-\item 
-\Hypertarget{class_sequence_a1c338fe40d1251531461f2a737f235cd}\label{class_sequence_a1c338fe40d1251531461f2a737f235cd} 
-static bool {\bfseries is\+Legal\+Amino} (char symbol)
-\item 
-\Hypertarget{class_sequence_a7e6fdc8d243336e9e55e91dfd61eb43b}\label{class_sequence_a7e6fdc8d243336e9e55e91dfd61eb43b} 
-static bool {\bfseries is\+Legal\+Symbol} (char symbol)
-\item 
-\Hypertarget{class_sequence_a14cf335c6053ca586d4e1694898575cf}\label{class_sequence_a14cf335c6053ca586d4e1694898575cf} 
-static bool {\bfseries is\+DNA} (char symbol)
-\item 
-\Hypertarget{class_sequence_ad04d994668bcc5d29c6813fcbc28dfb6}\label{class_sequence_ad04d994668bcc5d29c6813fcbc28dfb6} 
-static bool {\bfseries is\+RNA} (char symbol)
-\item 
-\Hypertarget{class_sequence_a31e8f630c8d214e79ac9ef7d128e3c24}\label{class_sequence_a31e8f630c8d214e79ac9ef7d128e3c24} 
-static bool {\bfseries is\+Amino} (char symbol)
-\item 
-\Hypertarget{class_sequence_ab351491ae27a3b4daa4d6af021ae0af2}\label{class_sequence_ab351491ae27a3b4daa4d6af021ae0af2} 
-static bool {\bfseries is\+Nucleic} (char symbol)
-\item 
-\Hypertarget{class_sequence_a375a7807541e86995fc0eb92258f1414}\label{class_sequence_a375a7807541e86995fc0eb92258f1414} 
-static bool {\bfseries is\+Dna\+Specific\+Nucleotide} (char nucleic)
-\item 
-\Hypertarget{class_sequence_a43936ff8f097e07421ae7a2389bd9cc0}\label{class_sequence_a43936ff8f097e07421ae7a2389bd9cc0} 
-static bool {\bfseries is\+Rna\+Specific\+Nucleotide} (char nucleic)
-\item 
-\Hypertarget{class_sequence_a14ee59cb34cf4d2087d1eabd3e4c6d4c}\label{class_sequence_a14ee59cb34cf4d2087d1eabd3e4c6d4c} 
-static bool {\bfseries is\+Amino\+Specific} (char symbol)
-\item 
-\Hypertarget{class_sequence_a7fb536cb5ce9b5de78634aa314623835}\label{class_sequence_a7fb536cb5ce9b5de78634aa314623835} 
-static bool {\bfseries is\+Nucleic\+Specific} (char symbol)
-\item 
-\Hypertarget{class_sequence_a7f5d10ca63cfa4f1247692cf5f073555}\label{class_sequence_a7f5d10ca63cfa4f1247692cf5f073555} 
-static bool {\bfseries is\+Valid\+Type} (char symbol)
-\item 
-\Hypertarget{class_sequence_a4d6810f0ae85ce85d561a8df52beac8e}\label{class_sequence_a4d6810f0ae85ce85d561a8df52beac8e} 
-static size\+\_\+t {\bfseries element\+Max\+Size} (char encoding\+\_\+type, Sequence\+::\+IUPACMod iupac)
-\item 
-\Hypertarget{class_sequence_a57cfb827e5113a42614d9dac7bf0486a}\label{class_sequence_a57cfb827e5113a42614d9dac7bf0486a} 
-static const std\+::map$<$ char, char $>$ \& {\bfseries translation\+Tab} (char encoding\+\_\+type, Sequence\+::\+IUPACMod iupac, bool reverse=false, error\+Mods error\+\_\+mod=raise)
-\item 
-\Hypertarget{class_sequence_ac67dc4df0a1b84e00f29b5c209ac31c4}\label{class_sequence_ac67dc4df0a1b84e00f29b5c209ac31c4} 
-static void {\bfseries fill\+Code\+Map} (std\+::map$<$ Sequence\+::\+IUPACMod, std\+::map$<$ char, char $>$ $>$ \&normal\+\_\+encoding, std\+::map$<$ Sequence\+::\+IUPACMod, std\+::map$<$ char, char $>$ $>$ \&reverse\+\_\+encoding, const std\+::map$<$ char, \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}} $>$ \&element\+\_\+to\+\_\+add, Sequence\+::\+IUPACMod iupac)
-\item 
-\Hypertarget{class_sequence_a1cb6372d1b0784cbf6531b5be803cb79}\label{class_sequence_a1cb6372d1b0784cbf6531b5be803cb79} 
-static char {\bfseries read\+Type\+Array} (std\+::array$<$ bool, 5 $>$ type, bool ignore\+\_\+illegal=false)
-\item 
-\Hypertarget{class_sequence_ae568828bc1d65c8334c0a0336c9fd341}\label{class_sequence_ae568828bc1d65c8334c0a0336c9fd341} 
-static std\+::array$<$ bool, 5 $>$ {\bfseries read\+Type\+Char} (char type)
-\item 
-\Hypertarget{class_sequence_a2163e89ff5b606d82ad4993c7e5eab4b}\label{class_sequence_a2163e89ff5b606d82ad4993c7e5eab4b} 
-static std\+::array$<$ bool, 5 $>$ {\bfseries identify\+Symbol\+Type} (char symbol)
-\item 
-\Hypertarget{class_sequence_a0e01b31e21a06c7a2fd17d6c050c739a}\label{class_sequence_a0e01b31e21a06c7a2fd17d6c050c739a} 
-static bool {\bfseries can\+Be\+Rna} (char type)
-\item 
-\Hypertarget{class_sequence_a276e60abf2a497596ceb563687922342}\label{class_sequence_a276e60abf2a497596ceb563687922342} 
-static bool {\bfseries can\+Be\+Dna} (char type)
-\item 
-\Hypertarget{class_sequence_aed78263d09b41984aed4eb4a3a570591}\label{class_sequence_aed78263d09b41984aed4eb4a3a570591} 
-static bool {\bfseries can\+Be\+Amino} (char type)
-\item 
-\Hypertarget{class_sequence_a71b6ac1cfbf97a9d2391d6e7c65319b1}\label{class_sequence_a71b6ac1cfbf97a9d2391d6e7c65319b1} 
-static bool {\bfseries can\+Be\+Nucleic} (char type)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}} \mbox{\hyperlink{class_sequence_af4dfd329689bebc4131b422d7974ca4e}{get\+Sequence\+Symbol}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{symbol}}, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} type)
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol} object attached to a symbol. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}} \& \mbox{\hyperlink{class_sequence_a6a2475bed7d5eabeb96c141a9f5e0f38}{get\+Symbol\+DNA}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{symbol}})
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol} from the DNA alphabet that match with {\ttfamily symbol}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a2f4c93c744fc524b81c91843c81d31be}{is\+Legal\+Nucleic}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{symbol}})
+\begin{DoxyCompactList}\small\item\em Say if a {\ttfamily symbol} can be an acid nucleic. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a1c338fe40d1251531461f2a737f235cd}{is\+Legal\+Amino}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{symbol}})
+\begin{DoxyCompactList}\small\item\em Say if a {\ttfamily symbol} can be an amino acid. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a7e6fdc8d243336e9e55e91dfd61eb43b}{is\+Legal\+Symbol}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{symbol}})
+\begin{DoxyCompactList}\small\item\em Say if a {\ttfamily symbol} can be used in the a sequence. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a14cf335c6053ca586d4e1694898575cf}{is\+DNA}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{symbol}})
+\begin{DoxyCompactList}\small\item\em Say if a {\ttfamily symbol} can be an acid nucleic related to DNA. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_ad04d994668bcc5d29c6813fcbc28dfb6}{is\+RNA}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{symbol}})
+\begin{DoxyCompactList}\small\item\em Say if a {\ttfamily symbol} can be an acid nucleic related to RNA. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a31e8f630c8d214e79ac9ef7d128e3c24}{is\+Amino}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{symbol}})
+\begin{DoxyCompactList}\small\item\em Say if a {\ttfamily symbol} can be an amino acid. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_ab351491ae27a3b4daa4d6af021ae0af2}{is\+Nucleic}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{symbol}})
+\begin{DoxyCompactList}\small\item\em Say if a {\ttfamily symbol} can be an acid nucleic. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a375a7807541e86995fc0eb92258f1414}{is\+Dna\+Specific\+Nucleotide}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{nucleic}})
+\begin{DoxyCompactList}\small\item\em Say if a {\ttfamily symbol} can only be found in acid nucleic related to DNA. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a43936ff8f097e07421ae7a2389bd9cc0}{is\+Rna\+Specific\+Nucleotide}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{nucleic}})
+\begin{DoxyCompactList}\small\item\em Say if a {\ttfamily symbol} can only be found in acid nucleic related to RNA. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a14ee59cb34cf4d2087d1eabd3e4c6d4c}{is\+Amino\+Specific}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{symbol}})
+\begin{DoxyCompactList}\small\item\em Say if a {\ttfamily symbol} can only be found in acid nucleic related to amino acid. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a7fb536cb5ce9b5de78634aa314623835}{is\+Nucleic\+Specific}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{symbol}})
+\begin{DoxyCompactList}\small\item\em Say if a {\ttfamily symbol} can only be found in acid nucleic related to nucleic acid. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a7f5d10ca63cfa4f1247692cf5f073555}{is\+Valid\+Type}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{symbol}})
+\begin{DoxyCompactList}\small\item\em Say if a {\ttfamily symbol} can be used as type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}} \mbox{\hyperlink{class_sequence_a80034bb32edc061317480f5b759c4170}{element\+Max\+Size}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{encoding\+\_\+type}}, \mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{Sequence\+::\+IUPACMod}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{iupac}})
+\begin{DoxyCompactList}\small\item\em Give the number of bit used by a combination of a type {\ttfamily encoding\+\_\+type} and an alphabet {\ttfamily iupac}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} std\+::map$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} $>$ \& \mbox{\hyperlink{class_sequence_a49a9126010c0332493c803ddca005394}{translation\+Tab}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{encoding\+\_\+type}}, \mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{Sequence\+::\+IUPACMod}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{iupac}}, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{reverse}}=\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{false}}, error\+Mods \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{error\+\_\+mod}}=raise)
+\begin{DoxyCompactList}\small\item\em Give a map that compress / decompress char used by \doxylink{class_sequence}{Sequence}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} \mbox{\hyperlink{class_sequence_a555c6e58957c4d07028eb5c67b1732ac}{fill\+Code\+Map}} (std\+::map$<$ \mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{Sequence\+::\+IUPACMod}}, std\+::map$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} $>$ $>$ \&\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{normal\+\_\+encoding}}, std\+::map$<$ \mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{Sequence\+::\+IUPACMod}}, std\+::map$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} $>$ $>$ \&\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{reverse\+\_\+encoding}}, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} std\+::map$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}, \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}} $>$ \&\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{element\+\_\+to\+\_\+add}}, \mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{Sequence\+::\+IUPACMod}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{iupac}})
+\begin{DoxyCompactList}\small\item\em Function used by \doxylink{class_sequence_a49a9126010c0332493c803ddca005394}{Sequence\+::translation\+Tab} to create their compression map. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_a1cb6372d1b0784cbf6531b5be803cb79}{read\+Type\+Array}} (std\+::array$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}}, 5 $>$ type, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{ignore\+\_\+illegal}}=\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{false}})
+\begin{DoxyCompactList}\small\item\em Convert a bool array that represent type into a char. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} std\+::array$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}}, 5 $>$ \mbox{\hyperlink{class_sequence_ae568828bc1d65c8334c0a0336c9fd341}{read\+Type\+Char}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} type)
+\begin{DoxyCompactList}\small\item\em Turn a symbol to a bool array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} std\+::array$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}}, 5 $>$ \mbox{\hyperlink{class_sequence_a2163e89ff5b606d82ad4993c7e5eab4b}{identify\+Symbol\+Type}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{symbol}})
+\begin{DoxyCompactList}\small\item\em Turn a symbol to a bool array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a0e01b31e21a06c7a2fd17d6c050c739a}{can\+Be\+Rna}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} type)
+\begin{DoxyCompactList}\small\item\em Say if a symbol can represent RNA. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a276e60abf2a497596ceb563687922342}{can\+Be\+Dna}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} type)
+\begin{DoxyCompactList}\small\item\em Say if a symbol can represent DNA. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_aed78263d09b41984aed4eb4a3a570591}{can\+Be\+Amino}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} type)
+\begin{DoxyCompactList}\small\item\em Say if a symbol can represent amino acids. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_a71b6ac1cfbf97a9d2391d6e7c65319b1}{can\+Be\+Nucleic}} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} type)
+\begin{DoxyCompactList}\small\item\em Say if a symbol can represent an nucleic acid. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_sequence_a40c3abda4069fa07261173a53cf91e1e}\label{class_sequence_a40c3abda4069fa07261173a53cf91e1e} 
-char {\bfseries parse\+Char} (char symbol, error\+Mods error\+\_\+mod=display)
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} {\bfseries parse\+Char} (\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{symbol}}, error\+Mods \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{error\+\_\+mod}}=display)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_sequence_a3889a45917edb9ccf8d7c3ecc3aff41c}\label{class_sequence_a3889a45917edb9ccf8d7c3ecc3aff41c} 
-std\+::array$<$ bool, 5 $>$ {\bfseries type}
+std\+::array$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}}, 5 $>$ {\bfseries type}
 \item 
 \Hypertarget{class_sequence_a414b26304d3a81ff060e65c3afff56e6}\label{class_sequence_a414b26304d3a81ff060e65c3afff56e6} 
 \mbox{\hyperlink{class_bit_vector}{Bit\+Vector}} {\bfseries seq}
 \item 
 \Hypertarget{class_sequence_ab6b6da54b804a8b40c9e83826fd99ed0}\label{class_sequence_ab6b6da54b804a8b40c9e83826fd99ed0} 
-char {\bfseries \+\_\+encoding\+\_\+type}
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} {\bfseries \+\_\+encoding\+\_\+type}
 \item 
 \Hypertarget{class_sequence_afd0430631705628cf9daa13a907f27cb}\label{class_sequence_afd0430631705628cf9daa13a907f27cb} 
 \mbox{\hyperlink{class_header}{Header}} {\bfseries \+\_\+header}
 \item 
 \Hypertarget{class_sequence_aba0fe77c8a3e020a418a091b1e0d9903}\label{class_sequence_aba0fe77c8a3e020a418a091b1e0d9903} 
-Sequence\+::\+IUPACMod {\bfseries \+\_\+iupac}
+\mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{Sequence\+::\+IUPACMod}} {\bfseries \+\_\+iupac}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static const std\+::map$<$ char, \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}} $>$ \mbox{\hyperlink{class_sequence_a31085e8d415ad4bf22657ce5a6531912}{legal\+DNA}}
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} std\+::map$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}, \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}} $>$ \mbox{\hyperlink{class_sequence_a31085e8d415ad4bf22657ce5a6531912}{legal\+DNA}}
 \item 
-static const std\+::map$<$ char, \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}} $>$ \mbox{\hyperlink{class_sequence_a0987c05862e181bfd46640cc35edf31b}{legal\+RNA}}
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} std\+::map$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}, \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}} $>$ \mbox{\hyperlink{class_sequence_a0987c05862e181bfd46640cc35edf31b}{legal\+RNA}}
 \item 
 \Hypertarget{class_sequence_aaafdb3b56dad7b6c6dc0a2fb10d1a24e}\label{class_sequence_aaafdb3b56dad7b6c6dc0a2fb10d1a24e} 
-static const std\+::map$<$ char, \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}} $>$ {\bfseries legal\+Amino}
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} std\+::map$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}, \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}} $>$ {\bfseries legal\+Amino}
 \item 
-static std\+::set$<$ char $>$ \mbox{\hyperlink{class_sequence_a076023b652704648a25f92914f06d3a6}{valid\+Type}}
+\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{static}} std\+::set$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} $>$ \mbox{\hyperlink{class_sequence_a076023b652704648a25f92914f06d3a6}{valid\+Type}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_sequence_ac1debb53b92ac457ac44b2b138651cd7}\label{class_sequence_ac1debb53b92ac457ac44b2b138651cd7} 
-std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, const \mbox{\hyperlink{class_sequence}{Sequence}} \&seq)
-\end{DoxyCompactItemize}
+std\+::ostream \& \mbox{\hyperlink{class_sequence_ac1debb53b92ac457ac44b2b138651cd7}{operator$<$$<$}} (std\+::ostream \&\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{os}}, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence}{Sequence}} \&seq)
+\begin{DoxyCompactList}\small\item\em Allow the sequence to be cout. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_sequence_ae293cd5124445b604bbcba3a5f01a48a}\label{class_sequence_ae293cd5124445b604bbcba3a5f01a48a} 
 \index{Sequence@{Sequence}!Sequence@{Sequence}}
 \index{Sequence@{Sequence}!Sequence@{Sequence}}
-\doxysubsubsection{\texorpdfstring{Sequence()}{Sequence()}}
-{\footnotesize\ttfamily Sequence\+::\+Sequence (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{sequence,  }\item[{char}]{type,  }\item[{Sequence\+::\+IUPACMod}]{iupac = {\ttfamily most},  }\item[{error\+Mods}]{error\+\_\+mod = {\ttfamily raise},  }\item[{bool}]{finalis\+\_\+type = {\ttfamily true} }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{Sequence()}{Sequence()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Sequence\+::\+Sequence (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} std\+::string \&}]{sequence,  }\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}}]{type,  }\item[{\mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{Sequence\+::\+IUPACMod}}}]{iupac = {\ttfamily most},  }\item[{error\+Mods}]{error\+\_\+mod = {\ttfamily raise},  }\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}}}]{finalis\+\_\+type = {\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{true}}} }\end{DoxyParamCaption})}
 
 
 
@@ -260,20 +212,393 @@ Main Constructor. Construct a new \doxylink{class_sequence}{Sequence} object.
 \hline
 {\em error\+\_\+mod} & See values inside Utilities\+::error\+Mods \\
 \hline
-{\em iupac} & ~\newline
- \\
+{\em iupac} & Set the authorized alphabet for this \doxylink{class_sequence}{Sequence}. Modify how values will be encoded. \\
 \hline
 {\em finalis\+\_\+type} & Do this sequence will continue analyze chars in order to determine its type. \\
 \hline
 \end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+{\ttfamily type} == \textquotesingle{}U\textquotesingle{}, {\ttfamily iupac} should be at least Sequence\+::most. 
+\end{DoxyWarning}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_ae293cd5124445b604bbcba3a5f01a48a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_ad5114ced34e064d37b73678e7332d30f}\label{class_sequence_ad5114ced34e064d37b73678e7332d30f} 
+\index{Sequence@{Sequence}!Sequence@{Sequence}}
+\index{Sequence@{Sequence}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{Sequence()}{Sequence()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Sequence\+::\+Sequence (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{IUPACMod}}}]{iupac = {\ttfamily most},  }\item[{error\+Mods}]{error\+\_\+mod = {\ttfamily raise},  }\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}}}]{finalis\+\_\+type = {\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{false}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Main Constructor. Construct a new \doxylink{class_sequence}{Sequence} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error\+\_\+mod} & See values inside Utilities\+::error\+Mods \\
+\hline
+{\em iupac} & Set the authorized alphabet for this \doxylink{class_sequence}{Sequence}. Modify how values will be encoded. \\
+\hline
+{\em finalis\+\_\+type} & Do this sequence will continue analyze chars in order to determine its type. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+{\ttfamily iupac} should be at least Sequence\+::most. 
+\end{DoxyWarning}
+\Hypertarget{class_sequence_ace28d0905ff1a8e0a2018632fb68a537}\label{class_sequence_ace28d0905ff1a8e0a2018632fb68a537} 
+\index{Sequence@{Sequence}!Sequence@{Sequence}}
+\index{Sequence@{Sequence}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{Sequence()}{Sequence()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Sequence\+::\+Sequence (\begin{DoxyParamCaption}\item[{std\+::string}]{sequence,  }\item[{\mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{IUPACMod}}}]{iupac = {\ttfamily most},  }\item[{error\+Mods}]{error\+\_\+mod = {\ttfamily raise},  }\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}}}]{finalis\+\_\+type = {\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{true}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Main Constructor. Construct a new \doxylink{class_sequence}{Sequence} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sequence} & A string that represent a sequence of DNA / RNA / AMINO. \\
+\hline
+{\em error\+\_\+mod} & See values inside Utilities\+::error\+Mods \\
+\hline
+{\em iupac} & Set the authorized alphabet for this \doxylink{class_sequence}{Sequence}. Modify how values will be encoded. \\
+\hline
+{\em finalis\+\_\+type} & Do this sequence will continue analyze chars in order to determine its type. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+{\ttfamily iupac} should be at least Sequence\+::most. 
+\end{DoxyWarning}
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_sequence_a977ed0641af71694936687af9e5f2e5e}\label{class_sequence_a977ed0641af71694936687af9e5f2e5e} 
+\Hypertarget{class_sequence_ab6689d9abe96b21c879527d56c423e02}\label{class_sequence_ab6689d9abe96b21c879527d56c423e02} 
+\index{Sequence@{Sequence}!begin@{begin}}
+\index{begin@{begin}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_1_1_sequence_iterator}{Sequence\+::\+Sequence\+Iterator}} Sequence\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Give an iterator to begin an iteration. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_sequence_1_1_sequence_iterator}{Sequence\+Iterator} (index=0) 
+\end{DoxyReturn}
+\Hypertarget{class_sequence_aed78263d09b41984aed4eb4a3a570591}\label{class_sequence_aed78263d09b41984aed4eb4a3a570591} 
+\index{Sequence@{Sequence}!canBeAmino@{canBeAmino}}
+\index{canBeAmino@{canBeAmino}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{canBeAmino()}{canBeAmino()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} Sequence\+::can\+Be\+Amino (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Say if a symbol can represent amino acids. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & U, P, D, R or N \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true yes 
+
+false no 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_aed78263d09b41984aed4eb4a3a570591_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a276e60abf2a497596ceb563687922342}\label{class_sequence_a276e60abf2a497596ceb563687922342} 
+\index{Sequence@{Sequence}!canBeDna@{canBeDna}}
+\index{canBeDna@{canBeDna}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{canBeDna()}{canBeDna()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} Sequence\+::can\+Be\+Dna (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Say if a symbol can represent DNA. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & U, P, D, R or N \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true yes 
+
+false no 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a276e60abf2a497596ceb563687922342_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a71b6ac1cfbf97a9d2391d6e7c65319b1}\label{class_sequence_a71b6ac1cfbf97a9d2391d6e7c65319b1} 
+\index{Sequence@{Sequence}!canBeNucleic@{canBeNucleic}}
+\index{canBeNucleic@{canBeNucleic}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{canBeNucleic()}{canBeNucleic()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} Sequence\+::can\+Be\+Nucleic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Say if a symbol can represent an nucleic acid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & U, P, D, R or N \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true yes 
+
+false no 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a71b6ac1cfbf97a9d2391d6e7c65319b1_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a0e01b31e21a06c7a2fd17d6c050c739a}\label{class_sequence_a0e01b31e21a06c7a2fd17d6c050c739a} 
+\index{Sequence@{Sequence}!canBeRna@{canBeRna}}
+\index{canBeRna@{canBeRna}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{canBeRna()}{canBeRna()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} Sequence\+::can\+Be\+Rna (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Say if a symbol can represent RNA. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & U, P, D, R or N \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true yes 
+
+false no 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a0e01b31e21a06c7a2fd17d6c050c739a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a80034bb32edc061317480f5b759c4170}\label{class_sequence_a80034bb32edc061317480f5b759c4170} 
+\index{Sequence@{Sequence}!elementMaxSize@{elementMaxSize}}
+\index{elementMaxSize@{elementMaxSize}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{elementMaxSize()}{elementMaxSize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}} Sequence\+::element\+Max\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}}]{encoding\+\_\+type,  }\item[{\mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{Sequence\+::\+IUPACMod}}}]{iupac }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Give the number of bit used by a combination of a type {\ttfamily encoding\+\_\+type} and an alphabet {\ttfamily iupac}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em encoding\+\_\+type} & A type (U, P, D, N, R) \\
+\hline
+{\em iupac} & A IUPAC setting \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size\+\_\+t Number of bit used. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a80034bb32edc061317480f5b759c4170_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a27a1f93dc61e2cb49bbc853d30c6e488}\label{class_sequence_a27a1f93dc61e2cb49bbc853d30c6e488} 
+\index{Sequence@{Sequence}!end@{end}}
+\index{end@{end}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_1_1_sequence_iterator}{Sequence\+::\+Sequence\+Iterator}} Sequence\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Give an iterator to end an iteration. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_sequence_1_1_sequence_iterator}{Sequence\+Iterator} 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a27a1f93dc61e2cb49bbc853d30c6e488_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a20eb6bdd6f5cba62a251eff4387a525d}\label{class_sequence_a20eb6bdd6f5cba62a251eff4387a525d} 
+\index{Sequence@{Sequence}!erase@{erase}}
+\index{erase@{erase}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} Sequence\+::erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}}}]{start,  }\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}}}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Remove a portion of the sequence. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & First position \\
+\hline
+{\em length} & Last position \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a20eb6bdd6f5cba62a251eff4387a525d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a555c6e58957c4d07028eb5c67b1732ac}\label{class_sequence_a555c6e58957c4d07028eb5c67b1732ac} 
+\index{Sequence@{Sequence}!fillCodeMap@{fillCodeMap}}
+\index{fillCodeMap@{fillCodeMap}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{fillCodeMap()}{fillCodeMap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} Sequence\+::fill\+Code\+Map (\begin{DoxyParamCaption}\item[{std\+::map$<$ \mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{Sequence\+::\+IUPACMod}}, std\+::map$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} $>$ $>$ \&}]{normal\+\_\+encoding,  }\item[{std\+::map$<$ \mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{Sequence\+::\+IUPACMod}}, std\+::map$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} $>$ $>$ \&}]{reverse\+\_\+encoding,  }\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} std\+::map$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}, \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}} $>$ \&}]{element\+\_\+to\+\_\+add,  }\item[{\mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{Sequence\+::\+IUPACMod}}}]{iupac }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Function used by \doxylink{class_sequence_a49a9126010c0332493c803ddca005394}{Sequence\+::translation\+Tab} to create their compression map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em normal\+\_\+encoding} & Map used for encoding \\
+\hline
+{\em reverse\+\_\+encoding} & Map used for decoding \\
+\hline
+{\em element\+\_\+to\+\_\+add} & List of element that should figure in both map \\
+\hline
+{\em iupac} & iupac restriction for the list of elements \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a555c6e58957c4d07028eb5c67b1732ac_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a555c6e58957c4d07028eb5c67b1732ac_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}\label{class_sequence_ad40777fd2f7ad3ae247fab02459e6759} 
+\index{Sequence@{Sequence}!get@{get}}
+\index{get@{get}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily char Sequence\+::get (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{position }\end{DoxyParamCaption}) const}
+
+
+
+Retrieve the symbol at the {\ttfamily position} in the sequence. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & A position smaller the \doxylink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{Sequence\+::\+Size()} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char The char present at the given position 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_ad40777fd2f7ad3ae247fab02459e6759_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_ad40777fd2f7ad3ae247fab02459e6759_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a8181f024304b3fb5f55c7118f648cc61}\label{class_sequence_a8181f024304b3fb5f55c7118f648cc61} 
+\index{Sequence@{Sequence}!getEncodingType@{getEncodingType}}
+\index{getEncodingType@{getEncodingType}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{getEncodingType()}{getEncodingType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} Sequence\+::get\+Encoding\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return a char (same format as \doxylink{class_sequence_a7561cc8bf09fa8056b3ddf14eaa4b0bb}{Sequence\+::get\+Type()}) that indicate which alphabet is used in the during encoding. 
+
+\begin{DoxyReturn}{Returns}
+char 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a8181f024304b3fb5f55c7118f648cc61_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a393d9e2d9d7066ce52b2552413a54a47}\label{class_sequence_a393d9e2d9d7066ce52b2552413a54a47} 
+\index{Sequence@{Sequence}!getHeader@{getHeader}}
+\index{getHeader@{getHeader}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{getHeader()}{getHeader()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_header}{Header}} \& Sequence\+::get\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Give the header attached to this \doxylink{class_sequence}{Sequence}. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_header}{Header}\& Sequence\+::\+\_\+header 
+\end{DoxyReturn}
+\Hypertarget{class_sequence_aa8d48f12fba0a9329bd37a288cf5db3d}\label{class_sequence_aa8d48f12fba0a9329bd37a288cf5db3d} 
+\index{Sequence@{Sequence}!getIupac@{getIupac}}
+\index{getIupac@{getIupac}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{getIupac()}{getIupac()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{Sequence\+::\+IUPACMod}} Sequence\+::get\+Iupac (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Say which iupac setting is used. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{Sequence\+::\+IUPACMod} Which iupac setting is used 
+\end{DoxyReturn}
+\Hypertarget{class_sequence_a649baedd9a01f0474f368b5cfd170484}\label{class_sequence_a649baedd9a01f0474f368b5cfd170484} 
 \index{Sequence@{Sequence}!getSeq@{getSeq}}
 \index{getSeq@{getSeq}!Sequence@{Sequence}}
 \doxysubsubsection{\texorpdfstring{getSeq()}{getSeq()}}
-{\footnotesize\ttfamily const std\+::string \& Sequence\+::get\+Seq (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_bit_vector}{Bit\+Vector}} \& Sequence\+::get\+Seq (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -282,11 +607,65 @@ Get the sequence contain in this object.
 \begin{DoxyReturn}{Returns}
 const std\+::string\& The sequence contain in this object 
 \end{DoxyReturn}
+\Hypertarget{class_sequence_af4dfd329689bebc4131b422d7974ca4e}\label{class_sequence_af4dfd329689bebc4131b422d7974ca4e} 
+\index{Sequence@{Sequence}!getSequenceSymbol@{getSequenceSymbol}}
+\index{getSequenceSymbol@{getSequenceSymbol}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{getSequenceSymbol()}{getSequenceSymbol()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}} Sequence\+::get\+Sequence\+Symbol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}}]{symbol,  }\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the \doxylink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol} object attached to a symbol. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & A symbol ex \+: A, T, C, G, U, B... \\
+\hline
+{\em type} & Type of alphabet (U, P, D, R, N) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol} 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_af4dfd329689bebc4131b422d7974ca4e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a6a2475bed7d5eabeb96c141a9f5e0f38}\label{class_sequence_a6a2475bed7d5eabeb96c141a9f5e0f38} 
+\index{Sequence@{Sequence}!getSymbolDNA@{getSymbolDNA}}
+\index{getSymbolDNA@{getSymbolDNA}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{getSymbolDNA()}{getSymbolDNA()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}} \& Sequence\+::get\+Symbol\+DNA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}}]{symbol }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the \doxylink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol} from the DNA alphabet that match with {\ttfamily symbol}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & The symbol to get \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const \doxylink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}\& 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a6a2475bed7d5eabeb96c141a9f5e0f38_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_sequence_a7561cc8bf09fa8056b3ddf14eaa4b0bb}\label{class_sequence_a7561cc8bf09fa8056b3ddf14eaa4b0bb} 
 \index{Sequence@{Sequence}!getType@{getType}}
 \index{getType@{getType}!Sequence@{Sequence}}
 \doxysubsubsection{\texorpdfstring{getType()}{getType()}}
-{\footnotesize\ttfamily char Sequence\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} Sequence\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -295,16 +674,1005 @@ Get a char that represent sequence type.
 \begin{DoxyReturn}{Returns}
 char \textquotesingle{}D\textquotesingle{}=DNA, \textquotesingle{}R\textquotesingle{}=RNA, \textquotesingle{}P\textquotesingle{}=Protein, \textquotesingle{}N\textquotesingle{}=DNA and / or RNA \textquotesingle{}U\textquotesingle{}=Unspecified, \textquotesingle{}Z\textquotesingle{}=Invalid type. 
 \end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a7561cc8bf09fa8056b3ddf14eaa4b0bb_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a45d6ea76048e61012cbfcdb3a623fd65}\label{class_sequence_a45d6ea76048e61012cbfcdb3a623fd65} 
+\index{Sequence@{Sequence}!getTypeArray@{getTypeArray}}
+\index{getTypeArray@{getTypeArray}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{getTypeArray()}{getTypeArray()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} std\+::array$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}}, 5 $>$ \& Sequence\+::get\+Type\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Type Array object. 
+
+\begin{DoxyReturn}{Returns}
+const std\+::array$<$bool, 5$>$\& = \{ sequence\+\_\+is\+\_\+dna\+\_\+specific ?, sequence\+\_\+is\+\_\+rna\+\_\+specific ?, sequence\+\_\+is\+\_\+amino\+\_\+specific ?, sequence\+\_\+is\+\_\+nucleic\+\_\+specific ?, sequence\+\_\+research\+\_\+his\+\_\+type ?, \} 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a45d6ea76048e61012cbfcdb3a623fd65_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a2163e89ff5b606d82ad4993c7e5eab4b}\label{class_sequence_a2163e89ff5b606d82ad4993c7e5eab4b} 
+\index{Sequence@{Sequence}!identifySymbolType@{identifySymbolType}}
+\index{identifySymbolType@{identifySymbolType}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{identifySymbolType()}{identifySymbolType()}}
+{\footnotesize\ttfamily std\+::array$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}}, 5 $>$ Sequence\+::identify\+Symbol\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}}]{symbol }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Turn a symbol to a bool array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Symbol from an alphabet \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::array$<$bool, 5$>$ \{ sequence\+\_\+is\+\_\+dna\+\_\+specific ?, sequence\+\_\+is\+\_\+rna\+\_\+specific ?, sequence\+\_\+is\+\_\+amino\+\_\+specific ?, sequence\+\_\+is\+\_\+nucleic\+\_\+specific ?, sequence\+\_\+research\+\_\+his\+\_\+type ?, \} 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a2163e89ff5b606d82ad4993c7e5eab4b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a3cf6cf5e54782f4d1a2ee07ec519523c}\label{class_sequence_a3cf6cf5e54782f4d1a2ee07ec519523c} 
+\index{Sequence@{Sequence}!insert@{insert}}
+\index{insert@{insert}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} Sequence\+::insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \&}]{symbol,  }\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}}}]{position,  }\item[{error\+Mods}]{error\+Mod = {\ttfamily display} }\end{DoxyParamCaption})}
+
+
+
+Insert a char at the position {\ttfamily position} . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sequence} & A char \\
+\hline
+{\em position} & the insertion position \\
+\hline
+{\em error\+Mod} & What should we do with minor errors ? \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a3cf6cf5e54782f4d1a2ee07ec519523c_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_sequence_aa48778c592160ac60319f780817f491c}\label{class_sequence_aa48778c592160ac60319f780817f491c} 
 \index{Sequence@{Sequence}!insert@{insert}}
 \index{insert@{insert}!Sequence@{Sequence}}
-\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
-{\footnotesize\ttfamily void Sequence\+::insert (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{sequence,  }\item[{size\+\_\+t}]{position,  }\item[{error\+Mods}]{error\+Mod = {\ttfamily display} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} Sequence\+::insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} std\+::string \&}]{sequence,  }\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}}}]{position,  }\item[{error\+Mods}]{error\+Mod = {\ttfamily display} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+Insert a number of chars at the position {\ttfamily position} . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sequence} & A tab of chars \\
+\hline
+{\em position} & the insertion position \\
+\hline
+{\em error\+Mod} & What should we do with minor errors ? \\
+\hline
+\end{DoxyParams}
 
 
 Reimplemented in \mbox{\hyperlink{class_fasta_sequence_a078238dfce23f02af8307ddc560e2a20}{Fasta\+Sequence}}.
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_aa48778c592160ac60319f780817f491c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_aa48778c592160ac60319f780817f491c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a16e70626e330194c1507ed339c9c629c}\label{class_sequence_a16e70626e330194c1507ed339c9c629c} 
+\index{Sequence@{Sequence}!insertBack@{insertBack}}
+\index{insertBack@{insertBack}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{insertBack()}{insertBack()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} Sequence\+::insert\+Back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \&}]{sequence,  }\item[{error\+Mods}]{error\+Mod = {\ttfamily display} }\end{DoxyParamCaption})}
+
+
+
+Insert a char at the the back of the sequence {\ttfamily position} . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sequence} & A char \\
+\hline
+{\em error\+Mod} & What should we do with minor errors ? \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a16e70626e330194c1507ed339c9c629c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_aa57fd5a7fdd173374e56006ce1c47bdc}\label{class_sequence_aa57fd5a7fdd173374e56006ce1c47bdc} 
+\index{Sequence@{Sequence}!insertBack@{insertBack}}
+\index{insertBack@{insertBack}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{insertBack()}{insertBack()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} Sequence\+::insert\+Back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} std\+::string \&}]{sequence,  }\item[{error\+Mods}]{error\+Mod = {\ttfamily display} }\end{DoxyParamCaption})}
+
+
+
+Insert a number of chars at the the back of the sequence {\ttfamily position} . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sequence} & A tab of chars \\
+\hline
+{\em error\+Mod} & What should we do with minor errors ? \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_aa57fd5a7fdd173374e56006ce1c47bdc_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a1fa6868ce587e1f3d779bb226cfda548}\label{class_sequence_a1fa6868ce587e1f3d779bb226cfda548} 
+\index{Sequence@{Sequence}!insertFront@{insertFront}}
+\index{insertFront@{insertFront}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{insertFront()}{insertFront()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} Sequence\+::insert\+Front (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \&}]{sequence,  }\item[{error\+Mods}]{error\+Mod = {\ttfamily display} }\end{DoxyParamCaption})}
+
+
+
+Insert a char at the the front of the sequence {\ttfamily position} . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sequence} & A char \\
+\hline
+{\em error\+Mod} & What should we do with minor errors ? \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a1fa6868ce587e1f3d779bb226cfda548_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a092f380b654de9aaa8a770ec0948c454}\label{class_sequence_a092f380b654de9aaa8a770ec0948c454} 
+\index{Sequence@{Sequence}!insertFront@{insertFront}}
+\index{insertFront@{insertFront}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{insertFront()}{insertFront()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} Sequence\+::insert\+Front (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} std\+::string \&}]{sequence,  }\item[{error\+Mods}]{error\+Mod = {\ttfamily display} }\end{DoxyParamCaption})}
+
+
+
+Insert a number of chars at the the front of the sequence {\ttfamily position} . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sequence} & A tab of chars \\
+\hline
+{\em error\+Mod} & What should we do with minor errors ? \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a092f380b654de9aaa8a770ec0948c454_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a092f380b654de9aaa8a770ec0948c454_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a31e8f630c8d214e79ac9ef7d128e3c24}\label{class_sequence_a31e8f630c8d214e79ac9ef7d128e3c24} 
+\index{Sequence@{Sequence}!isAmino@{isAmino}}
+\index{isAmino@{isAmino}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{isAmino()}{isAmino()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} Sequence\+::is\+Amino (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}}]{symbol }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Say if a {\ttfamily symbol} can be an amino acid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & a char \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Yes 
+
+false False 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a31e8f630c8d214e79ac9ef7d128e3c24_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a31e8f630c8d214e79ac9ef7d128e3c24_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a14ee59cb34cf4d2087d1eabd3e4c6d4c}\label{class_sequence_a14ee59cb34cf4d2087d1eabd3e4c6d4c} 
+\index{Sequence@{Sequence}!isAminoSpecific@{isAminoSpecific}}
+\index{isAminoSpecific@{isAminoSpecific}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{isAminoSpecific()}{isAminoSpecific()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} Sequence\+::is\+Amino\+Specific (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}}]{symbol }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Say if a {\ttfamily symbol} can only be found in acid nucleic related to amino acid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & a char \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Yes 
+
+false False 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a14ee59cb34cf4d2087d1eabd3e4c6d4c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a14ee59cb34cf4d2087d1eabd3e4c6d4c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a14cf335c6053ca586d4e1694898575cf}\label{class_sequence_a14cf335c6053ca586d4e1694898575cf} 
+\index{Sequence@{Sequence}!isDNA@{isDNA}}
+\index{isDNA@{isDNA}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{isDNA()}{isDNA()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} Sequence\+::is\+DNA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}}]{symbol }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Say if a {\ttfamily symbol} can be an acid nucleic related to DNA. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & a char \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Yes 
+
+false False 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a14cf335c6053ca586d4e1694898575cf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a14cf335c6053ca586d4e1694898575cf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a375a7807541e86995fc0eb92258f1414}\label{class_sequence_a375a7807541e86995fc0eb92258f1414} 
+\index{Sequence@{Sequence}!isDnaSpecificNucleotide@{isDnaSpecificNucleotide}}
+\index{isDnaSpecificNucleotide@{isDnaSpecificNucleotide}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{isDnaSpecificNucleotide()}{isDnaSpecificNucleotide()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} Sequence\+::is\+Dna\+Specific\+Nucleotide (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}}]{nucleic }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Say if a {\ttfamily symbol} can only be found in acid nucleic related to DNA. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & a char \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Yes 
+
+false False 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a375a7807541e86995fc0eb92258f1414_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a375a7807541e86995fc0eb92258f1414_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a1c338fe40d1251531461f2a737f235cd}\label{class_sequence_a1c338fe40d1251531461f2a737f235cd} 
+\index{Sequence@{Sequence}!isLegalAmino@{isLegalAmino}}
+\index{isLegalAmino@{isLegalAmino}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{isLegalAmino()}{isLegalAmino()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} Sequence\+::is\+Legal\+Amino (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}}]{symbol }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Say if a {\ttfamily symbol} can be an amino acid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & a char \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Yes 
+
+false False 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a1c338fe40d1251531461f2a737f235cd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a1c338fe40d1251531461f2a737f235cd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a2f4c93c744fc524b81c91843c81d31be}\label{class_sequence_a2f4c93c744fc524b81c91843c81d31be} 
+\index{Sequence@{Sequence}!isLegalNucleic@{isLegalNucleic}}
+\index{isLegalNucleic@{isLegalNucleic}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{isLegalNucleic()}{isLegalNucleic()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} Sequence\+::is\+Legal\+Nucleic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}}]{symbol }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Say if a {\ttfamily symbol} can be an acid nucleic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & a char \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Yes 
+
+false False 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a2f4c93c744fc524b81c91843c81d31be_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a2f4c93c744fc524b81c91843c81d31be_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a7e6fdc8d243336e9e55e91dfd61eb43b}\label{class_sequence_a7e6fdc8d243336e9e55e91dfd61eb43b} 
+\index{Sequence@{Sequence}!isLegalSymbol@{isLegalSymbol}}
+\index{isLegalSymbol@{isLegalSymbol}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{isLegalSymbol()}{isLegalSymbol()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} Sequence\+::is\+Legal\+Symbol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}}]{symbol }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Say if a {\ttfamily symbol} can be used in the a sequence. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & a char \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Yes 
+
+false False 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a7e6fdc8d243336e9e55e91dfd61eb43b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a7e6fdc8d243336e9e55e91dfd61eb43b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_ab351491ae27a3b4daa4d6af021ae0af2}\label{class_sequence_ab351491ae27a3b4daa4d6af021ae0af2} 
+\index{Sequence@{Sequence}!isNucleic@{isNucleic}}
+\index{isNucleic@{isNucleic}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{isNucleic()}{isNucleic()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} Sequence\+::is\+Nucleic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}}]{symbol }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Say if a {\ttfamily symbol} can be an acid nucleic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & a char \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Yes 
+
+false False 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_ab351491ae27a3b4daa4d6af021ae0af2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_ab351491ae27a3b4daa4d6af021ae0af2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a7fb536cb5ce9b5de78634aa314623835}\label{class_sequence_a7fb536cb5ce9b5de78634aa314623835} 
+\index{Sequence@{Sequence}!isNucleicSpecific@{isNucleicSpecific}}
+\index{isNucleicSpecific@{isNucleicSpecific}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{isNucleicSpecific()}{isNucleicSpecific()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} Sequence\+::is\+Nucleic\+Specific (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}}]{symbol }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Say if a {\ttfamily symbol} can only be found in acid nucleic related to nucleic acid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & a char \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Yes 
+
+false False 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a7fb536cb5ce9b5de78634aa314623835_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a7fb536cb5ce9b5de78634aa314623835_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_ad04d994668bcc5d29c6813fcbc28dfb6}\label{class_sequence_ad04d994668bcc5d29c6813fcbc28dfb6} 
+\index{Sequence@{Sequence}!isRNA@{isRNA}}
+\index{isRNA@{isRNA}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{isRNA()}{isRNA()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} Sequence\+::is\+RNA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}}]{symbol }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Say if a {\ttfamily symbol} can be an acid nucleic related to RNA. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & a char \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Yes 
+
+false False 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_ad04d994668bcc5d29c6813fcbc28dfb6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_ad04d994668bcc5d29c6813fcbc28dfb6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a43936ff8f097e07421ae7a2389bd9cc0}\label{class_sequence_a43936ff8f097e07421ae7a2389bd9cc0} 
+\index{Sequence@{Sequence}!isRnaSpecificNucleotide@{isRnaSpecificNucleotide}}
+\index{isRnaSpecificNucleotide@{isRnaSpecificNucleotide}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{isRnaSpecificNucleotide()}{isRnaSpecificNucleotide()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} Sequence\+::is\+Rna\+Specific\+Nucleotide (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}}]{nucleic }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Say if a {\ttfamily symbol} can only be found in acid nucleic related to RNA. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & a char \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Yes 
+
+false False 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a43936ff8f097e07421ae7a2389bd9cc0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a43936ff8f097e07421ae7a2389bd9cc0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a7f5d10ca63cfa4f1247692cf5f073555}\label{class_sequence_a7f5d10ca63cfa4f1247692cf5f073555} 
+\index{Sequence@{Sequence}!isValidType@{isValidType}}
+\index{isValidType@{isValidType}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{isValidType()}{isValidType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} Sequence\+::is\+Valid\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}}]{symbol }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Say if a {\ttfamily symbol} can be used as type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & a char \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Yes 
+
+false False 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a7f5d10ca63cfa4f1247692cf5f073555_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a91198d1ab4547263058d33200e914559}\label{class_sequence_a91198d1ab4547263058d33200e914559} 
+\index{Sequence@{Sequence}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{operator bool()}{operator bool()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{Sequence\+::operator}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Do this sequence contain at least one symbol ? 
+
+\begin{DoxyReturn}{Returns}
+true yes 
+
+false no 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a91198d1ab4547263058d33200e914559_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a5762b9626a824dfd5c65b3687a8c8750}\label{class_sequence_a5762b9626a824dfd5c65b3687a8c8750} 
+\index{Sequence@{Sequence}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{Sequence\+::operator}}$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence}{Sequence}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Is this sequence smaller than another sequence ? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Another sequence \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true yes 
+
+false no 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a5762b9626a824dfd5c65b3687a8c8750_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a47d2eefc354aea335072eb23c6ceb3d6}\label{class_sequence_a47d2eefc354aea335072eb23c6ceb3d6} 
+\index{Sequence@{Sequence}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{Sequence\+::operator}}$<$= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence}{Sequence}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Is this sequence smaller or equal to another sequence ? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Another sequence \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true yes 
+
+false no 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a47d2eefc354aea335072eb23c6ceb3d6_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a6e6d1aa2ed36476e6eafa24610027d1e}\label{class_sequence_a6e6d1aa2ed36476e6eafa24610027d1e} 
+\index{Sequence@{Sequence}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{Sequence\+::operator}}$>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence}{Sequence}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Is this sequence longer than another sequence ? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Another sequence \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true yes 
+
+false no 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a6e6d1aa2ed36476e6eafa24610027d1e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a338b511f3ce95444f938947c51745621}\label{class_sequence_a338b511f3ce95444f938947c51745621} 
+\index{Sequence@{Sequence}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{Sequence\+::operator}}$>$= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence}{Sequence}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Is this sequence longer or equal to another sequence ? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Another sequence \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true yes 
+
+false no 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a338b511f3ce95444f938947c51745621_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a911b67fca9020a49ca845b6a5f226479}\label{class_sequence_a911b67fca9020a49ca845b6a5f226479} 
+\index{Sequence@{Sequence}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{Sequence\+::operator}}\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}}}]{position }\end{DoxyParamCaption}) const}
+
+
+
+Retrieve the symbol at the {\ttfamily position} in the sequence. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & A position smaller the \doxylink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{Sequence\+::\+Size()} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char The char present at the given position 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a911b67fca9020a49ca845b6a5f226479_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a1cb6372d1b0784cbf6531b5be803cb79}\label{class_sequence_a1cb6372d1b0784cbf6531b5be803cb79} 
+\index{Sequence@{Sequence}!readTypeArray@{readTypeArray}}
+\index{readTypeArray@{readTypeArray}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{readTypeArray()}{readTypeArray()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} Sequence\+::read\+Type\+Array (\begin{DoxyParamCaption}\item[{std\+::array$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}}, 5 $>$}]{type,  }\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}}}]{ignore\+\_\+illegal = {\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{false}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convert a bool array that represent type into a char. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Bool array that represent type \\
+\hline
+{\em ignore\+\_\+illegal} & Should an error be raised if conflict is found ? \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char U, P, D, R or N 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a1cb6372d1b0784cbf6531b5be803cb79_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a1cb6372d1b0784cbf6531b5be803cb79_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_ae568828bc1d65c8334c0a0336c9fd341}\label{class_sequence_ae568828bc1d65c8334c0a0336c9fd341} 
+\index{Sequence@{Sequence}!readTypeChar@{readTypeChar}}
+\index{readTypeChar@{readTypeChar}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{readTypeChar()}{readTypeChar()}}
+{\footnotesize\ttfamily std\+::array$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}}, 5 $>$ Sequence\+::read\+Type\+Char (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Turn a symbol to a bool array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & U, P, D, R or N \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::array$<$bool, 5$>$ \{ sequence\+\_\+is\+\_\+dna\+\_\+specific ?, sequence\+\_\+is\+\_\+rna\+\_\+specific ?, sequence\+\_\+is\+\_\+amino\+\_\+specific ?, sequence\+\_\+is\+\_\+nucleic\+\_\+specific ?, sequence\+\_\+research\+\_\+his\+\_\+type ?, \} 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_ae568828bc1d65c8334c0a0336c9fd341_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_ae568828bc1d65c8334c0a0336c9fd341_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a80f6b40eca1c920554baf4d06683ca3b}\label{class_sequence_a80f6b40eca1c920554baf4d06683ca3b} 
+\index{Sequence@{Sequence}!setHeader@{setHeader}}
+\index{setHeader@{setHeader}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{setHeader()}{setHeader()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{void}} Sequence\+::set\+Header (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_header}{Header}}}]{header }\end{DoxyParamCaption})}
+
+
+
+Set the \doxylink{class_header}{Header} attribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em header} & A new header. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a80f6b40eca1c920554baf4d06683ca3b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_acf21040958590f98163b3d11f19ea93e}\label{class_sequence_acf21040958590f98163b3d11f19ea93e} 
+\index{Sequence@{Sequence}!size@{size}}
+\index{size@{size}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{size\+\_\+t}} Sequence\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Give the number of element contained in this sequence. 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t Sequence\+::seq.\+size() 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_acf21040958590f98163b3d11f19ea93e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_acf21040958590f98163b3d11f19ea93e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sequence_a49a9126010c0332493c803ddca005394}\label{class_sequence_a49a9126010c0332493c803ddca005394} 
+\index{Sequence@{Sequence}!translationTab@{translationTab}}
+\index{translationTab@{translationTab}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{translationTab()}{translationTab()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} std\+::map$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}, \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} $>$ \& Sequence\+::translation\+Tab (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}}]{encoding\+\_\+type,  }\item[{\mbox{\hyperlink{class_sequence_a164f748d9c5ecd278ab55b37381d2700}{Sequence\+::\+IUPACMod}}}]{iupac,  }\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{bool}}}]{reverse = {\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{false}}},  }\item[{error\+Mods}]{error\+\_\+mod = {\ttfamily raise} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Give a map that compress / decompress char used by \doxylink{class_sequence}{Sequence}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em encoding\+\_\+type} & A type (U, P, D, N, R) \\
+\hline
+{\em iupac} & A IUPAC setting \\
+\hline
+{\em reverse} & Should the map be reversed ? \\
+\hline
+{\em error\+\_\+mod} & Whet should we do with minor errors \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const std\+::map$<$char, char$>$\& A map that can convert A symbol to a value in bit. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a49a9126010c0332493c803ddca005394_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sequence_a49a9126010c0332493c803ddca005394_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_sequence_ac1debb53b92ac457ac44b2b138651cd7}\label{class_sequence_ac1debb53b92ac457ac44b2b138651cd7} 
+\index{Sequence@{Sequence}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Sequence@{Sequence}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream \& \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{operator}}$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{\mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} \mbox{\hyperlink{class_sequence}{Sequence}} \&}]{seq }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Allow the sequence to be cout. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & A std\+::\+Ostream \\
+\hline
+{\em seq} & A sequence \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::ostream\& {\ttfamily os} 
+\end{DoxyReturn}
 
 
 \doxysubsection{Member Data Documentation}
@@ -312,7 +1680,7 @@ Reimplemented in \mbox{\hyperlink{class_fasta_sequence_a078238dfce23f02af8307ddc
 \index{Sequence@{Sequence}!legalDNA@{legalDNA}}
 \index{legalDNA@{legalDNA}!Sequence@{Sequence}}
 \doxysubsubsection{\texorpdfstring{legalDNA}{legalDNA}}
-{\footnotesize\ttfamily const std\+::map$<$ char, \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}} $>$ Sequence\+::legal\+DNA\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} std\+::map$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}, \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}} $>$ Sequence\+::legal\+DNA\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
@@ -351,7 +1719,7 @@ Reimplemented in \mbox{\hyperlink{class_fasta_sequence_a078238dfce23f02af8307ddc
 \index{Sequence@{Sequence}!legalRNA@{legalRNA}}
 \index{legalRNA@{legalRNA}!Sequence@{Sequence}}
 \doxysubsubsection{\texorpdfstring{legalRNA}{legalRNA}}
-{\footnotesize\ttfamily const std\+::map$<$ char, \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}} $>$ Sequence\+::legal\+RNA\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{const}} std\+::map$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}}, \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}} $>$ Sequence\+::legal\+RNA\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
@@ -390,7 +1758,7 @@ Reimplemented in \mbox{\hyperlink{class_fasta_sequence_a078238dfce23f02af8307ddc
 \index{Sequence@{Sequence}!validType@{validType}}
 \index{validType@{validType}!Sequence@{Sequence}}
 \doxysubsubsection{\texorpdfstring{validType}{validType}}
-{\footnotesize\ttfamily std\+::set$<$ char $>$ Sequence\+::valid\+Type\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+{\footnotesize\ttfamily std\+::set$<$ \mbox{\hyperlink{class_sequence_ad40777fd2f7ad3ae247fab02459e6759}{char}} $>$ Sequence\+::valid\+Type\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}

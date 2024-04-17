@@ -1,0 +1,9 @@
+<map id="Sequence::operator&gt;=" name="Sequence::operator&gt;=">
+<area shape="rect" id="Node000001" title="Is this sequence longer or equal to another sequence ?" alt="" coords="5,5,176,31"/>
+<area shape="rect" id="Node000002" href="$class_sequence.html#acf21040958590f98163b3d11f19ea93e" title="Give the number of element contained in this sequence." alt="" coords="224,5,343,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,15,210,15,210,21,176,21"/>
+<area shape="rect" id="Node000003" href="$class_bit_vector.html#ab30ea2b408107e4e6bc8095b5a64a1dd" title="Number of element inside this object." alt="" coords="391,5,505,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="343,15,377,15,377,21,343,21"/>
+<area shape="rect" id="Node000004" href="$class_bit_vector.html#a5339660cfb315ab5de7f78bdf5af4ce1" title="Get BitVector::_element_number." alt="" coords="553,5,769,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="506,15,539,15,539,21,506,21"/>
+</map>

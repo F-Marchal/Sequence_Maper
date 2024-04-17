@@ -393,182 +393,298 @@ public:
     
     // --- --- Static Utilities --- ---
     // --- Symbols ---
-    static const Sequence::SequenceSymbol & getSymbolDNA(char symbol){
-        return legalDNA.at(symbol);
-    }
+    /**
+     * @brief Get the Sequence::SequenceSymbol from the DNA alphabet that match with \p symbol
+     * 
+     * @param symbol The symbol to get
+     * @return const Sequence::SequenceSymbol& 
+     */
+    static const Sequence::SequenceSymbol & getSymbolDNA(char symbol);
+
+    /**
+    * @brief Say if a \p symbol can be an acid nucleic
+    * 
+    * @param symbol a char
+    * @return true Yes
+    * @return false False
+    */
     static bool isLegalNucleic(char symbol);
+
+    /**
+    * @brief Say if a \p symbol can be an amino acid
+    * 
+    * @param symbol a char
+    * @return true Yes
+    * @return false False
+    */
     static bool isLegalAmino(char symbol);
+
+    /**
+    * @brief Say if a \p symbol can be used in the a sequence
+    * 
+    * @param symbol a char
+    * @return true Yes
+    * @return false False
+    */
     static bool isLegalSymbol(char symbol);
+
+
+    /**
+    * @brief Say if a \p symbol can be an acid nucleic related to DNA
+    * 
+    * @param symbol a char
+    * @return true Yes
+    * @return false False
+    */
     static bool isDNA(char symbol);
+
+
+    /**
+    * @brief Say if a \p symbol can be an acid nucleic related to RNA
+    * 
+    * @param symbol a char
+    * @return true Yes
+    * @return false False
+    */
     static bool isRNA(char symbol);
+
+
+    /**
+    * @brief Say if a \p symbol can be an amino acid
+    * 
+    * @param symbol a char
+    * @return true Yes
+    * @return false False
+    */
     static bool isAmino(char symbol);
+
+    /**
+    * @brief Say if a \p symbol can be an acid nucleic
+    * 
+    * @param symbol a char
+    * @return true Yes
+    * @return false False
+    */
     static bool isNucleic(char symbol);
+
+    /**
+    * @brief Say if a \p symbol can only be found in acid nucleic related to DNA
+    * 
+    * @param symbol a char
+    * @return true Yes
+    * @return false False
+    */
     static bool isDnaSpecificNucleotide(char nucleic);
+
+    /**
+    * @brief Say if a \p symbol can only be found in acid nucleic related to RNA
+    * 
+    * @param symbol a char
+    * @return true Yes
+    * @return false False
+    */
     static bool isRnaSpecificNucleotide(char nucleic);
+
+    /**
+    * @brief Say if a \p symbol can only be found in acid nucleic related to amino acid
+    * 
+    * @param symbol a char
+    * @return true Yes
+    * @return false False
+    */
     static bool isAminoSpecific(char symbol);
+
+    /**
+    * @brief Say if a \p symbol can only be found in acid nucleic related to nucleic acid
+    * 
+    * @param symbol a char
+    * @return true Yes
+    * @return false False
+    */
     static bool isNucleicSpecific(char symbol);
+
+    /**
+    * @brief Say if a \p symbol can be used as type
+    * 
+    * @param symbol a char
+    * @return true Yes
+    * @return false False
+    */
     static bool isValidType(char symbol);
 
-    static size_t elementMaxSize(char encoding_type, Sequence::IUPACMod iupac) {
-        return translationTab(encoding_type, iupac, false, ignore).size();
-    }
-
-    static const std::map<char, char> & translationTab (char encoding_type, Sequence::IUPACMod iupac, bool reverse=false, errorMods error_mod=raise) {
-        if (encoding_type == 'Z') {
-            encoding_type = 'U';
-        }
-        static std::map<Sequence::IUPACMod, std::map<char, char>> U_encoding;
-        static std::map<Sequence::IUPACMod, std::map<char, char>> N_encoding;
-        static std::map<Sequence::IUPACMod, std::map<char, char>> R_encoding;
-        static std::map<Sequence::IUPACMod, std::map<char, char>> D_encoding;
-        static std::map<Sequence::IUPACMod, std::map<char, char>> P_encoding;
-        static std::map<Sequence::IUPACMod, std::map<char, char>> U_rev_encoding;
-        static std::map<Sequence::IUPACMod, std::map<char, char>> N_rev_encoding;
-        static std::map<Sequence::IUPACMod, std::map<char, char>> R_rev_encoding;
-        static std::map<Sequence::IUPACMod, std::map<char, char>> D_rev_encoding;
-        static std::map<Sequence::IUPACMod, std::map<char, char>> P_rev_encoding;
-
-        if (encoding_type == 'U') {
-            if (U_encoding.find(iupac) == U_encoding.end()) {
-                fillCodeMap(U_encoding, U_rev_encoding, legalDNA, iupac);
-                fillCodeMap(U_encoding, U_rev_encoding, legalRNA, iupac);
-                fillCodeMap(U_encoding, U_rev_encoding, legalAmino, iupac);
-            }
-
-            if (!reverse) {
-                return U_encoding[iupac];
-            }
-            return U_rev_encoding[iupac];
-
-        } else if (encoding_type == 'N') {
-            if (N_encoding.find(iupac) == N_encoding.end()) {
-                fillCodeMap(N_encoding, N_rev_encoding, legalDNA, iupac);
-                fillCodeMap(N_encoding, N_rev_encoding, legalRNA, iupac);
-            }
-
-            if (!reverse) {
-                return N_encoding[iupac];
-            }
-            return N_rev_encoding[iupac];
-
-        } else if (encoding_type == 'D') {
-            if (D_encoding.find(iupac) == D_encoding.end()) {
-                fillCodeMap(D_encoding, D_rev_encoding, legalDNA, iupac);
-            }
-
-            if (!reverse) {
-                return D_encoding[iupac];
-            }
-            return D_rev_encoding[iupac];
-
-        } else if (encoding_type == 'R') {
-            if (R_encoding.find(iupac) == R_encoding.end()) {
-                fillCodeMap(R_encoding, R_rev_encoding, legalRNA, iupac);
-            }
-
-            if (!reverse) {
-                return R_encoding[iupac];
-            }
-            return R_rev_encoding[iupac];
-
-        } else if (encoding_type == 'P') {
-            if (P_encoding.find(iupac) == P_encoding.end()) {
-                fillCodeMap(P_encoding, P_rev_encoding, legalAmino, iupac);
-            }
-
-            if (!reverse) {
-                return P_encoding[iupac];
-            }
-            return P_rev_encoding[iupac];
-        } else {
-            displayLogicError(error_mod, "Unable to determine map encoding_type", __FILE__, __func__);
-        }
-
-        return U_encoding[iupac];
-    }
-
+    /**
+     * @brief Give the number of bit used by a combination of a type \p encoding_type and an alphabet \p iupac
+     * 
+     * @param encoding_type A type (U, P, D, N, R)
+     * @param iupac A IUPAC setting
+     * @return size_t Number of bit used.
+     */
+    static size_t elementMaxSize(char encoding_type, Sequence::IUPACMod iupac) ;
+   
+    /**
+     * @brief Give a map that compress / decompress char used by Sequence
+     * 
+     * @param encoding_type A type (U, P, D, N, R)
+     * @param iupac  A IUPAC setting
+     * @param reverse Should the map be reversed ?
+     * @param error_mod Whet should we do with minor errors
+     * @return const std::map<char, char>& A map that can convert A symbol to a value in bit.
+     */
+    static const std::map<char, char> & translationTab (char encoding_type, Sequence::IUPACMod iupac, bool reverse=false, errorMods error_mod=raise) ;
     
-    
+    /**
+     * @brief Function used by Sequence::translationTab to create their compression map.
+     * 
+     * @param normal_encoding Map used for encoding
+     * @param reverse_encoding Map used for decoding
+     * @param element_to_add List of element that should figure in both map
+     * @param iupac iupac restriction for the list of elements
+     */
     static void fillCodeMap(std::map<Sequence::IUPACMod, std::map<char, char>> & normal_encoding, std::map<Sequence::IUPACMod, std::map<char, char>> & reverse_encoding, 
-                            const std::map<char, Sequence::SequenceSymbol> & element_to_add, Sequence::IUPACMod iupac) {
-        
-        // Add this iupac to the dict
-        if (normal_encoding.find(iupac) == normal_encoding.end()) {
-            normal_encoding[iupac] = std::map<char, char> {};
-            reverse_encoding[iupac] = std::map<char, char> {};
-        }
-
-        char encoded_symbol;
-        char current_symbol;
-        for (const auto & key_symbol : element_to_add) {
-           
-            // Verify that this symbol can be used with this iupac setting ?
-            Sequence::SequenceSymbol sym_obj = key_symbol.second;
-            current_symbol = key_symbol.first;
-           
- 
-            if (!sym_obj.isUsableIn(iupac)) {
-                continue;
-            }
-
-            if (normal_encoding[iupac].find(current_symbol) != normal_encoding[iupac].end()) {
-                continue;
-            }
-
-            encoded_symbol = (char) normal_encoding[iupac].size();
-
-            normal_encoding[iupac][current_symbol] = encoded_symbol;
-            reverse_encoding[iupac][encoded_symbol] = current_symbol;
-           
-        }
-    }
-
+                            const std::map<char, Sequence::SequenceSymbol> & element_to_add, Sequence::IUPACMod iupac) ;
+    
     // --- Type ---
+    /**
+     * @brief Convert a bool array that represent type into a char
+     * 
+     * @param type Bool array that represent type
+     * @param ignore_illegal Should an error be raised if conflict is found ?
+     * @return char U, P, D, R or N
+     */
     static char readTypeArray(std::array<bool, 5> type, bool ignore_illegal=false);
+
+    /**
+     * @brief Turn a symbol to a bool array 
+     * 
+     * @param type U, P, D, R or N
+     * @return std::array<bool, 5> { 
+     *       sequence_is_dna_specific ?,
+     *       sequence_is_rna_specific ?,
+     *       sequence_is_amino_specific ?,
+     *       sequence_is_nucleic_specific ?,
+     *       sequence_research_his_type ?,
+     *       }
+     */
     static std::array<bool, 5> readTypeChar(char type);
+
+    /**
+     * @brief Turn a symbol to a bool array 
+     * 
+     * @param type Symbol from an alphabet
+     * @return std::array<bool, 5> { 
+     *       sequence_is_dna_specific ?,
+     *       sequence_is_rna_specific ?,
+     *       sequence_is_amino_specific ?,
+     *       sequence_is_nucleic_specific ?,
+     *       sequence_research_his_type ?,
+     *       }
+     */
     static std::array<bool, 5> identifySymbolType(char symbol);
 
+    /**
+     * @brief Say if a symbol can represent RNA
+     * 
+     * @param type U, P, D, R or N
+     * @return true yes 
+     * @return false no
+     */
     static bool canBeRna(char type);
+    
+    /**
+     * @brief Say if a symbol can represent DNA
+     * 
+     * @param type U, P, D, R or N
+     * @return true yes 
+     * @return false no
+     */
     static bool canBeDna(char type);
+
+    /**
+     * @brief Say if a symbol can represent amino acids
+     * 
+     * @param type U, P, D, R or N
+     * @return true yes 
+     * @return false no
+     */
     static bool canBeAmino(char type);
+
+
+    /**
+     * @brief Say if a symbol can represent an nucleic acid
+     * 
+     * @param type U, P, D, R or N
+     * @return true yes 
+     * @return false no
+     */
     static bool canBeNucleic(char type);
 
-    
-    bool operator>(const Sequence& other) const {
-        return this->size() > other.size();
-    }
-    bool operator>=(const Sequence& other) const {
-        return this->size() >= other.size();
-    }
-    bool operator<(const Sequence& other) const {
-        return this->size() < other.size();
-    }
-    bool operator<=(const Sequence& other) const {
-        return this->size() <= other.size();
-    }
+    /**
+     * @brief Is this sequence longer than another sequence ?
+     * 
+     * @param other Another sequence
+     * @return true yes
+     * @return false no
+     */
+    bool operator>(const Sequence& other) const ;
 
-    operator bool() const {
-        bool search_mod = this->type[3];
-        return (!search_mod);
-    }
+    /**
+     * @brief Is this sequence longer or equal to another sequence ?
+     * 
+     * @param other Another sequence
+     * @return true yes
+     * @return false no
+     */
+    bool operator>=(const Sequence& other) const ;
 
-    char get(size_t position) const {
-        char * tab =  this->seq.get(position);
-        char char_to_translate = tab[0];
-        delete [] tab;
-        
-        return translationTab(this->getEncodingType(), this->_iupac, true).at(char_to_translate);
-    }
-    char operator[](size_t position) const {
-        return this->get(position);
-    }
+    /**
+     * @brief Is this sequence smaller than another sequence ?
+     * 
+     * @param other Another sequence
+     * @return true yes
+     * @return false no
+     */
+    bool operator<(const Sequence& other) const ;
 
-    friend std::ostream& operator<<(std::ostream& os, const Sequence& seq) {
-        for (char symbol : seq) {
-            os << symbol;
-        }
-        return os;
-    }
+    /**
+     * @brief Is this sequence smaller or equal to another sequence ?
+     * 
+     * @param other Another sequence
+     * @return true yes
+     * @return false no
+     */
+    bool operator<=(const Sequence& other) const ;
+
+    /**
+     * @brief Do this sequence contain at least one symbol ?
+     * @return true yes
+     * @return false no
+     */
+    operator bool() const ;
+
+    /**
+     * @brief Retrieve the symbol at the \p position in the sequence.
+     * 
+     * @param position A position smaller the Sequence::Size()
+     * @return char The char present at the given position
+     */
+    char get(size_t position) const ;
+
+    /**
+     * @brief Retrieve the symbol at the \p position in the sequence.
+     * 
+     * @param position A position smaller the Sequence::Size()
+     * @return char The char present at the given position
+     */
+    char operator[](size_t position) const ;
+
+    /**
+     * @brief Allow the sequence to be cout
+     * 
+     * @param os A std::Ostream
+     * @param seq A sequence
+     * @return std::ostream& \p os
+     */
+    friend std::ostream& operator<<(std::ostream& os, const Sequence& seq) ;
 
 };
 

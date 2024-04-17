@@ -1,0 +1,9 @@
+<map id="Sequence::insertFront" name="Sequence::insertFront">
+<area shape="rect" id="Node000001" title="Insert a number of chars at the the front of the sequence position ." alt="" coords="216,55,379,80"/>
+<area shape="rect" id="Node000002" href="$class_sequence.html#a16e70626e330194c1507ed339c9c629c" title="Insert a char at the the back of the sequence position ." alt="" coords="5,5,168,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="229,54,141,33,142,28,230,49"/>
+<area shape="rect" id="Node000003" href="$class_sequence.html#a1fa6868ce587e1f3d779bb226cfda548" title="Insert a char at the the front of the sequence position ." alt="" coords="5,55,168,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="202,70,168,70,168,65,202,65"/>
+<area shape="rect" id="Node000004" href="$class_sequence.html#ae293cd5124445b604bbcba3a5f01a48a" title="Main Constructor. Construct a new Sequence object." alt="" coords="9,104,165,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="230,86,142,107,141,101,229,81"/>
+</map>

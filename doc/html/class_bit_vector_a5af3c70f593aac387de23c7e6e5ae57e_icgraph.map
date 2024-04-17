@@ -1,11 +1,27 @@
 <map id="BitVector::indexCoordinate" name="BitVector::indexCoordinate">
-<area shape="rect" id="Node000001" title="Find the element that correspond to coord ." alt="" coords="695,35,891,60"/>
-<area shape="rect" id="Node000002" href="$class_bit_vector.html#aed5c03f3a6a9a2e5f3c58fb14768b0b4" title="Say how many items can be hold inside this object with the current BitVector::_data_size:" alt="" coords="455,5,647,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="681,36,646,32,647,27,681,31"/>
-<area shape="rect" id="Node000003" href="$class_bit_vector.html#ad64e921d07b9528a532477f282af135c" title="How many element can fit in this vector without having to resize the vector ?" alt="" coords="456,55,645,95"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="681,63,646,67,645,62,681,58"/>
-<area shape="rect" id="Node000004" href="$class_bit_vector.html#ad60f42244db2c82260326605916431d3" title="Modify the number of known element in this object." alt="" coords="192,63,407,88"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="442,78,407,78,407,73,442,73"/>
-<area shape="rect" id="Node000005" href="$class_bit_vector.html#a87f84edf5dd56606b26e8741ba6ced02" title="Remove a number of element from the vector." alt="" coords="5,63,144,88"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="178,78,144,78,144,73,178,73"/>
+<area shape="rect" id="Node000001" title="Find the element that correspond to coord ." alt="" coords="1295,35,1491,60"/>
+<area shape="rect" id="Node000002" href="$class_bit_vector.html#aed5c03f3a6a9a2e5f3c58fb14768b0b4" title="Say how many items can be hold inside this object with the current BitVector::_data_size:" alt="" coords="1055,5,1247,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1281,36,1246,32,1247,27,1281,31"/>
+<area shape="rect" id="Node000003" href="$class_bit_vector.html#ad64e921d07b9528a532477f282af135c" title="How many element can fit in this vector without having to resize the vector ?" alt="" coords="1056,55,1245,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1281,63,1246,67,1245,62,1281,58"/>
+<area shape="rect" id="Node000004" href="$class_bit_vector.html#ad60f42244db2c82260326605916431d3" title="Modify the number of known element in this object." alt="" coords="792,63,1007,88"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1042,78,1007,78,1007,73,1042,73"/>
+<area shape="rect" id="Node000005" href="$class_bit_vector.html#a87f84edf5dd56606b26e8741ba6ced02" title="Remove a number of element from the vector." alt="" coords="605,63,744,88"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="778,78,744,78,744,73,778,73"/>
+<area shape="rect" id="Node000006" href="$class_sequence.html#a20eb6bdd6f5cba62a251eff4387a525d" title="Remove a portion of the sequence." alt="" coords="427,37,557,63"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="592,67,556,62,557,56,592,61"/>
+<area shape="rect" id="Node000007" href="$class_sequence.html#aa48778c592160ac60319f780817f491c" title="Insert a number of chars at the position position ." alt="" coords="427,87,557,112"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="592,89,558,93,558,88,592,84"/>
+<area shape="rect" id="Node000008" href="$class_sequence.html#a3cf6cf5e54782f4d1a2ee07ec519523c" title="Insert a char at the position position ." alt="" coords="232,37,363,63"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="427,86,348,65,349,60,429,81"/>
+<area shape="rect" id="Node000009" href="$class_sequence.html#aa57fd5a7fdd173374e56006ce1c47bdc" title="Insert a number of chars at the the back of the sequence position ." alt="" coords="216,87,379,112"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="413,102,379,102,379,97,413,97"/>
+<area shape="rect" id="Node000010" href="$class_sequence.html#a092f380b654de9aaa8a770ec0948c454" title="Insert a number of chars at the the front of the sequence position ." alt="" coords="216,136,379,161"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="429,118,349,138,348,133,427,113"/>
+<area shape="rect" id="Node000011" href="$class_sequence.html#a16e70626e330194c1507ed339c9c629c" title="Insert a char at the the back of the sequence position ." alt="" coords="5,87,168,112"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="229,135,141,115,142,109,230,130"/>
+<area shape="rect" id="Node000012" href="$class_sequence.html#a1fa6868ce587e1f3d779bb226cfda548" title="Insert a char at the the front of the sequence position ." alt="" coords="5,136,168,161"/>
+<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="202,151,168,151,168,146,202,146"/>
+<area shape="rect" id="Node000013" href="$class_sequence.html#ae293cd5124445b604bbcba3a5f01a48a" title="Main Constructor. Construct a new Sequence object." alt="" coords="9,185,165,211"/>
+<area shape="poly" id="edge12_Node000010_Node000013" title=" " alt="" coords="230,167,142,188,141,183,229,162"/>
 </map>

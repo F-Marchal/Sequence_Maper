@@ -1,0 +1,25 @@
+<map id="Sequence::readTypeChar" name="Sequence::readTypeChar">
+<area shape="rect" id="Node000001" title="Turn a symbol to a bool array." alt="" coords="5,128,188,153"/>
+<area shape="rect" id="Node000002" href="$class_sequence.html#ad40777fd2f7ad3ae247fab02459e6759" title="Retrieve the symbol at the position in the sequence." alt="" coords="236,128,351,153"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,138,222,138,222,143,188,143"/>
+<area shape="poly" id="edge5_Node000002_Node000002" title=" " alt="" coords="261,129,254,120,258,110,271,104,293,101,320,105,331,114,328,118,318,110,293,107,273,109,262,113,260,119,265,126"/>
+<area shape="rect" id="Node000003" href="$class_bit_vector.html#aebe159444eb9d619959b7325ac5dac2d" title="Return the value of the bit at the position coord." alt="" coords="445,29,555,55"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="307,125,346,94,398,64,431,52,432,57,400,68,349,99,311,130"/>
+<area shape="rect" id="Node000005" href="$class_sequence.html#a8181f024304b3fb5f55c7118f648cc61" title="Return a char (same format as Sequence::getType()) that indicate which alphabet is used in the during..." alt="" coords="399,79,601,104"/>
+<area shape="poly" id="edge6_Node000002_Node000005" title=" " alt="" coords="346,125,398,113,432,105,433,110,399,118,348,130"/>
+<area shape="rect" id="Node000006" href="$class_sequence.html#a49a9126010c0332493c803ddca005394" title="Give a map that compress / decompress char used by Sequence." alt="" coords="407,128,593,153"/>
+<area shape="poly" id="edge7_Node000002_Node000006" title=" " alt="" coords="351,146,394,147,394,152,351,151"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="466,31,459,21,463,11,477,5,500,3,529,6,540,15,537,20,526,11,500,8,478,10,467,15,464,20,470,28"/>
+<area shape="rect" id="Node000004" href="$class_bit_vector_1_1_coords.html#a2892f7f46c4af93f9733e312229d8ec1" title="Get Coords::octet ." alt="" coords="663,22,806,62"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="556,39,649,39,649,45,556,45"/>
+<area shape="poly" id="edge13_Node000006_Node000002" title=" " alt="" coords="407,134,364,135,364,129,407,129"/>
+<area shape="rect" id="Node000007" href="$class_sequence.html#a555c6e58957c4d07028eb5c67b1732ac" title="Function used by Sequence::translationTab to create their compression map." alt="" coords="649,153,820,179"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="593,148,636,153,635,158,593,153"/>
+<area shape="poly" id="edge9_Node000007_Node000002" title=" " alt="" coords="649,174,530,176,398,169,350,159,351,154,399,163,530,171,649,169"/>
+<area shape="rect" id="Node000008" href="$class_sequence.html#acf21040958590f98163b3d11f19ea93e" title="Give the number of element contained in this sequence." alt="" coords="868,153,987,179"/>
+<area shape="poly" id="edge10_Node000007_Node000008" title=" " alt="" coords="820,163,854,163,854,169,820,169"/>
+<area shape="rect" id="Node000009" href="$class_bit_vector.html#ab30ea2b408107e4e6bc8095b5a64a1dd" title="Number of element inside this object." alt="" coords="1035,153,1149,179"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="987,163,1021,163,1021,169,987,169"/>
+<area shape="rect" id="Node000010" href="$class_bit_vector.html#a5339660cfb315ab5de7f78bdf5af4ce1" title="Get BitVector::_element_number." alt="" coords="1197,153,1413,179"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="1150,163,1183,163,1183,169,1150,169"/>
+</map>

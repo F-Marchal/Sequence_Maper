@@ -1,0 +1,5 @@
+<map id="Sequence::readTypeChar" name="Sequence::readTypeChar">
+<area shape="rect" id="Node000001" title="Turn a symbol to a bool array." alt="" coords="209,5,392,31"/>
+<area shape="rect" id="Node000002" href="$class_sequence.html#ae293cd5124445b604bbcba3a5f01a48a" title="Main Constructor. Construct a new Sequence object." alt="" coords="5,5,161,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,21,161,21,161,15,195,15"/>
+</map>

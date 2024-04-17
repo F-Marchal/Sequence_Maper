@@ -1,0 +1,7 @@
+<map id="Sequence::canBeRna" name="Sequence::canBeRna">
+<area shape="rect" id="Node000001" title="Say if a symbol can represent RNA." alt="" coords="280,31,439,56"/>
+<area shape="rect" id="Node000002" href="$class_sequence.html#a71b6ac1cfbf97a9d2391d6e7c65319b1" title="Say if a symbol can represent an nucleic acid." alt="" coords="28,5,209,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="266,36,209,30,210,25,266,31"/>
+<area shape="rect" id="Node000003" href="$class_sequence.html#af4dfd329689bebc4131b422d7974ca4e" title="Get the Sequence::SequenceSymbol object attached to a symbol." alt="" coords="5,55,232,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="266,55,232,59,232,53,266,50"/>
+</map>

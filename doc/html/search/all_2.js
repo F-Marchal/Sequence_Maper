@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['begin_0',['begin',['../class_bit_vector.html#a8f077fd00fdb5063895111bbf6a2f299',1,'BitVector']]],
-  ['bit_1',['bit',['../class_bit_vector_1_1_coords.html#a3b983d8d44381fb966b402cfad14ee90',1,'BitVector::Coords']]],
-  ['bitvector_2',['BitVector',['../class_bit_vector.html',1,'BitVector'],['../class_bit_vector.html#a23c1685317944b2a5c6f149a5fccc6bd',1,'BitVector::BitVector(short unsigned int block_size, size_t alloc)'],['../class_bit_vector.html#a3a10dc26ed8d3adc29372d8e82b4e9f5',1,'BitVector::BitVector(short unsigned int block_size)'],['../class_bit_vector.html#a5547d55a697d61de026d0a94e743624b',1,'BitVector::BitVector(const BitVector &amp;bit_vector)']]],
-  ['blankchar_3',['blankChar',['../class_fasta_related.html#a13a42fa0a2c2011055681fa6023f3837',1,'FastaRelated']]]
+  ['activetyperesearch_0',['activeTypeResearch',['../class_sequence.html#a6982db91fe866f2517593ab34af865a6',1,'Sequence']]],
+  ['addcomment_1',['addComment',['../class_fasta_sequence.html#aef714753277c2a10876429e3c579ef95',1,'FastaSequence']]],
+  ['append_2',['append',['../class_bit_vector.html#afbdbe8a5003f5941ffd5ab095cf87d88',1,'BitVector::append(char *tab)'],['../class_bit_vector.html#a2af5c1a1a0050e2b52d06c38436280fd',1,'BitVector::append(char value)']]],
+  ['application_20aux_20gros_20volumes_20de_20données_20mapping_20de_20données_20issues_20de_20nouvelles_20générations_20de_20séquenceurs_20ngs_20sur_20un_20génome_20de_20référence_3',['HAU803I Développement opérationnel avancé : application aux gros volumes de données | mapping de données issues de Nouvelles Générations de Séquenceurs (NGS) sur un génome de référence.',['../index.html',1,'']]],
+  ['aux_20gros_20volumes_20de_20données_20mapping_20de_20données_20issues_20de_20nouvelles_20générations_20de_20séquenceurs_20ngs_20sur_20un_20génome_20de_20référence_4',['HAU803I Développement opérationnel avancé : application aux gros volumes de données | mapping de données issues de Nouvelles Générations de Séquenceurs (NGS) sur un génome de référence.',['../index.html',1,'']]],
+  ['avancé_20_3a_20application_20aux_20gros_20volumes_20de_20données_20mapping_20de_20données_20issues_20de_20nouvelles_20générations_20de_20séquenceurs_20ngs_20sur_20un_20génome_20de_20référence_5',['HAU803I Développement opérationnel avancé : application aux gros volumes de données | mapping de données issues de Nouvelles Générations de Séquenceurs (NGS) sur un génome de référence.',['../index.html',1,'']]]
 ];

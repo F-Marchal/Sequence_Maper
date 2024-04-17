@@ -6,7 +6,7 @@ RESULT = ./main
 DOCFOLDER = ./doc
 
 # ====================================== Phony ======================================
-.PHONY: run doxyW cleanDoxy cleanCode clean
+.PHONY: run doxyW cleanDoxy cleanCode clean readDoc doxy
 
 # =================================== Compilation ===================================
 # Covert "main.cpp to main.o"
@@ -47,8 +47,12 @@ doxyW:
 	doxywizard &
 
 doxy: cleanDoxy $(DOCFOLDER)
-	doxygen Doxyfile -output $(DOCFOLDER)
-	firefox ./doc/html/index.html	
+	doxygen Doxyfile -output $(DOCFOLDER)	
+
+$(DOCFOLDER)/html/index.html:  doxy
+
+readDoc: $(DOCFOLDER)/html/index.html
+	firefox $(DOCFOLDER)/html/index.html		
 
 $(DOCFOLDER):
 	mkdir $(DOCFOLDER)
