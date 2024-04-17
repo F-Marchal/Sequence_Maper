@@ -20,79 +20,112 @@
 #include "Header.hpp"
 class Sequence {
 public:
+    /**
+     * @brief Allow IUPAC alphabet selection.
+     * basic : A, T / U, C, G | 20 Amino acids
+     * most : All iupac symbol less gap and rare / non standard symbols
+     * all :  All iupac symbol
+     */
     enum IUPACMod {
     basic       = 0,
     most        = 1, 
     all         = 2,
     };
 
+    /**
+     * @brief Represent a symbol that can be used inside \ref Sequence
+     */
     class SequenceSymbol {
     private:
+        /**
+         * @brief When this symbol can not be used with the current IUPAC alphabet, what chars can be used ?
+         */
         std::string _replacement;
+        /**
+         * @brief Symbol represented
+         */
         char _symbol;
+        /**
+         * @brief In which alphabet thus symbol exist ?
+         */
         Sequence::IUPACMod _iupac;
 
     public:
-        SequenceSymbol(char symbol, std::string replacement, Sequence::IUPACMod iupac) {
-            this->_symbol = (char) std::toupper(symbol);
-            this->_replacement = replacement;
-            this->_iupac = iupac;
-        }
+        /**
+         * @brief Construct a new Sequence Symbol object
+         * 
+         * @param symbol A, T, C, G, B ....
+         * @param replacement When this symbol can not be used with the current IUPAC alphabet, what chars can be used ? (Ex : B --} "CGT").
+         * You can use '\0' if this symbol should be ignored.
+         * @param iupac What is the lowest Iupac setting acceptable for this class ?
+         */
+        SequenceSymbol(char symbol, std::string replacement, Sequence::IUPACMod iupac) ;
 
-        bool correspondTo(char symbol, bool use_replacement=true) const {
-            if (symbol == this->_symbol) {
-                return true;
-            }
+        /**
+         * @brief Do this object correspond to another char ?
+         * 
+         * @param symbol A symbol to test.
+         * @param use_replacement Do \p symbol is also compared to replacement symbol 
+         * @return true yes
+         * @return false no
+         */
+        bool correspondTo(char symbol, bool use_replacement=true) const ;
 
-            if (use_replacement) {
-                for (char r_symbol : this->_replacement) {
-                    if (symbol == r_symbol) {
-                        return true;
-                    }
-                }        
-            }
-            return false;
-        }
+        /**
+         * @brief Do this symbol can be used with this \p iupac setting ?
+         * 
+         * @param iupac A iupac setting
+         * @return true Yes
+         * @return false No
+         */
+        bool isUsableIn(IUPACMod iupac) const ;
 
-        bool isUsableIn(IUPACMod iupac) const {
-            return (iupac >= this->_iupac);
-        }
+        /**
+         * @brief Get the Replacement Symbol
+         * @return char A random char from Sequence::SequenceSymbol::_replacement
+         */
+        char getReplacementSymbol() const ;
 
-        char getReplacementSymbol() const {
-            return randChar(this->_replacement);
-        }
+        /**
+         * @brief Get the symbol contained into this object
+         * @return char  Sequence::SequenceSymbol::_symbol
+         */
+        char getValue() const ;
+        
+        /**
+         * @brief Get the value of this SequenceSymbol in a precise iupac alphabet.
+         * 
+         * @param iupac A iupac setting
+         * @return char Sequence::SequenceSymbol::_symbol or Sequence::SequenceSymbol::getReplacementSymbol().
+         */
+        char get(Sequence::IUPACMod iupac) const ;
 
-        char getValue() const {
-            return this->_symbol;
-        }
+        /**
+         * @brief Turn SequenceSymbol to a char.
+         * @return char  Sequence::SequenceSymbol::_symbol
+         */
+        operator char() const ;
 
-        char get(Sequence::IUPACMod iupac) const {
-            if (this->isUsableIn(iupac)) {
-                return this->_symbol ; 
-            } else {
-                return this->getReplacementSymbol();
-            }
-        }
+        /**
+         * @brief Turn SequenceSymbol to a std::string.
+         * @return std::string Sequence::SequenceSymbol::_symbol
+         */
+        operator std::string() const ;
+        
+        /**
+         * @brief Turn SequenceSymbol to a std::string.
+         * @return std::string Sequence::SequenceSymbol::_symbol
+         */
+        std::string toString() const ;
 
-        operator char() const {
-            return this->_symbol;
-        }
-
-
-        operator std::string() const {
-            return std::string(1, this->_symbol);
-        }
-
-        std::string toString() const {
-            return std::to_string(this->_symbol);
-        }
-
+         /**
+         * @brief Allow SequenceSymbol to be cout.
+         * @return std::ostream 
+         */
         friend std::ostream& operator<<(std::ostream& os, const Sequence::SequenceSymbol& symbol) {
             os << symbol.toString();
             return os;
         }
-
-
     };
     
 private:
@@ -119,44 +152,67 @@ protected:
 public:
     class SequenceIterator {
         private:
+            /**
+             * @brief Sequence in which SequenceIterator iter
+             */
             const Sequence& _sequence;
+            /**
+             * @brief Current position in Sequence::SequenceIterator::_sequence
+             */
             size_t _index;
 
         public:
+            /**
+             * @brief Construct a new Sequence Iterator object
+             * @param seq Sequence in which SequenceIterator iter
+             * @param index An index of a char inside the sequence.
+             */
             SequenceIterator(const Sequence& seq, size_t index) : _sequence(seq), _index(index) {}
 
-            // Overload the dereference operator to access the value
-            int operator*() const {
-                return this->_sequence[this->_index];
-            }
+            /**
+             * @brief Give the current value of the element at the position Sequence::SequenceIterator::_index
+             * @return int Sequence::SequenceIterator:_sequence[Sequence::SequenceIterator:_index]
+             */
+            int operator*() const ;
 
-            // Overload the pre-increment operator to move to the next element
-            SequenceIterator& operator++() {
-                ++this->_index;
-                return *this;
-            }
+            /**
+             * @brief Increment the Sequence::SequenceIterator:_index by 1.
+             * @return SequenceIterator& 
+             */
+            SequenceIterator& operator++() ;
 
-            // Overload the inequality operator
-            bool operator!=(const SequenceIterator& other) const {
-                return this->_index != other.getIndex();
-            }
+            /**
+             * @brief Compare two Sequence::SequenceIterator
+             * @param other Another Sequence::SequenceIterator
+             * @return true The two Sequence::SequenceIterator have not the same index
+             * @return false The two Sequence::SequenceIterator have the same index
+             */
+            bool operator!=(const SequenceIterator& other) const ;
 
-            size_t getIndex() const {
-                return this->_index;
-            }
-            const Sequence & GetSequence() const {
-                return this->_sequence;
-            }
+            /**
+             * @brief Get  Sequence::SequenceIterator::_index
+             * @return size_t  Sequence::SequenceIterator::_index
+             */
+            size_t getIndex() const ;
+
+            /**
+             * @brief Get  Sequence::SequenceIterator::_seq
+             * @return Sequence  Sequence::SequenceIterator::_seq
+             */
+            const Sequence & GetSequence() const ;
     };
 
-    // Begin and end functions to get iterators
-    SequenceIterator begin() const {
-        return SequenceIterator(*this, 0);
-    }
+    /**
+     * @brief Give an iterator to begin an iteration
+     * @return SequenceIterator (index=0)
+     */
+    SequenceIterator begin() const ;
 
-    SequenceIterator end() const {
-        return SequenceIterator(*this, this->size());
-    }
+    /**
+     * @brief Give an iterator to end an iteration
+     * @return SequenceIterator 
+     */
+    SequenceIterator end() const ;
 
     // --- --- Constructors --- ---
 
@@ -166,16 +222,33 @@ public:
      * @param sequence          A string that represent a sequence of DNA / RNA / AMINO.
      * @param type              Specify type of this sequence. 'D'=DNA, 'R'=RNA, 'P'=Protein, 'N'=DNA and / or RNA 'U'=Unknown (Sequence will analyze chars in order to determine its type)
      * @param error_mod         See values inside Utilities::errorMods
-     * @param iupac             
+     * @param iupac             Set the authorized alphabet for this Sequence. Modify how values will be encoded.
      * @param finalis_type      Do this sequence will continue analyze chars in order to determine its type.
+     * @warning \p type == 'U', \p iupac should be at least Sequence::most.
      */
     Sequence(const std::string & sequence, char type,           IUPACMod iupac=most, errorMods error_mod=raise, bool finalis_type=true);
     
+    
     /**
-     * @brief Default Constructor. Construct a new Sequence object. Equivalent to 
+     * @brief Main Constructor. Construct a new Sequence object
      * 
+     * @param error_mod         See values inside Utilities::errorMods
+     * @param iupac             Set the authorized alphabet for this Sequence. Modify how values will be encoded.
+     * @param finalis_type      Do this sequence will continue analyze chars in order to determine its type.
+     * @warning \p iupac should be at least Sequence::most.
      */
     Sequence(                                           IUPACMod iupac=most, errorMods error_mod=raise, bool finalis_type=false) : Sequence("", 'U', iupac, error_mod, finalis_type) {};
+    
+    
+    /**
+     * @brief Main Constructor. Construct a new Sequence object
+     * 
+     * @param sequence          A string that represent a sequence of DNA / RNA / AMINO.
+     * @param error_mod         See values inside Utilities::errorMods
+     * @param iupac             Set the authorized alphabet for this Sequence. Modify how values will be encoded.
+     * @param finalis_type      Do this sequence will continue analyze chars in order to determine its type.
+     * @warning \p iupac should be at least Sequence::most.
+     */
     Sequence(std::string sequence,                      IUPACMod iupac=most, errorMods error_mod=raise, bool finalis_type=true)  : Sequence(sequence, 'U', iupac, error_mod, finalis_type) {};
     
     // --- --- Utilities --- ---
@@ -186,7 +259,7 @@ public:
      * 
      * @return const std::string& The sequence contain in this object
      */
-    const std::string & getSeq() const;
+    const BitVector & getSeq() const;
 
     /**
      * @brief Get a char that represent sequence type.
@@ -194,29 +267,128 @@ public:
      * @return char 'D'=DNA, 'R'=RNA, 'P'=Protein, 'N'=DNA and / or RNA 'U'=Unspecified, 'Z'=Invalid type.
      */
     char getType() const;
+
+    /**
+     * @brief Return a char (same format as Sequence::getType()) that indicate which alphabet is used in the during encoding
+     * @return char 
+     */
     char getEncodingType() const;
+
+    /**
+     * @brief Say which iupac setting is used 
+     * 
+     * @return Sequence::IUPACMod Which iupac setting is used 
+     */
     Sequence::IUPACMod getIupac() const;
+
+    /**
+     * @brief Get the Type Array object
+     * 
+     * @return const std::array<bool, 5>& = { 
+     *       sequence_is_dna_specific ?,
+     *       sequence_is_rna_specific ?,
+     *       sequence_is_amino_specific ?,
+     *       sequence_is_nucleic_specific ?,
+     *       sequence_research_his_type ?,
+     *       }
+     */
     const std::array<bool, 5> & getTypeArray() const;
 
+    /**
+     * @brief Give the header attached to this Sequence
+     * 
+     * @return Header&  Sequence::_header
+     */
     Header & getHeader() ;
+
+    /**
+     * @brief Set the Header attribute
+     * 
+     * @param header A new header.
+     */
     void setHeader(Header header) ;
+
+    /**
+     * @brief Give the number of element contained in this sequence.
+     * 
+     * @return size_t Sequence::seq.size()
+     */
     size_t size() const;
     
+    /**
+     * @brief Get the  Sequence::SequenceSymbol object attached to a symbol
+     * 
+     * @param symbol A symbol ex : A, T, C, G, U, B...
+     * @param type Type of alphabet (U, P, D, R, N)
+     * @return Sequence::SequenceSymbol 
+     */
     static Sequence::SequenceSymbol getSequenceSymbol(char symbol, char type);
 
     // --- Modify sequence ---
+    /**
+     * @brief When the sequence append a new cars, the Sequence will search to update is Sequence::type.
+     */
     void activeTypeResearch();
+    /**
+     * @brief When the sequence append a new cars, the Sequence will no longer search to update is Sequence::type.
+     */
     void endTypeResearch();
 
+    /**
+     * @brief Insert a number of chars at the position \p position .
+     * 
+     * @param sequence A tab of chars
+     * @param position the insertion position
+     * @param errorMod What should we do with minor errors ?
+     */
     virtual void insert(const std::string & sequence, size_t position, errorMods errorMod=display);
+    
+    /**
+     * @brief Insert a char at the position \p position .
+     * 
+     * @param sequence A char
+     * @param position the insertion position
+     * @param errorMod What should we do with minor errors ?
+     */
     void insert(const char & symbol, size_t position, errorMods errorMod=display);
 
+     /**
+     * @brief Insert a number of chars at the the front of the sequence \p position .
+     * 
+     * @param sequence A tab of chars
+     * @param errorMod What should we do with minor errors ?
+     */
     void insertFront(const std::string & sequence, errorMods errorMod=display);
+    /**
+     * @brief Insert a number of chars at the the back of the sequence \p position .
+     * 
+     * @param sequence A tab of chars
+     * @param errorMod What should we do with minor errors ?
+     */
     void insertBack(const std::string & sequence, errorMods errorMod=display);
-
+    
+    /**
+     * @brief Insert a char at the the front of the sequence \p position .
+     * 
+     * @param sequence A char
+     * @param errorMod What should we do with minor errors ?
+     */
     void insertFront(const char & sequence, errorMods errorMod=display);
+    
+    /**
+     * @brief Insert a char at the the back of the sequence \p position .
+     * 
+     * @param sequence A char
+     * @param errorMod What should we do with minor errors ?
+     */
     void insertBack(const char & sequence, errorMods errorMod=display);
 
+    /**
+     * @brief Remove a portion of the sequence.
+     * 
+     * @param start First position
+     * @param length Last position
+     */
     virtual void erase(size_t start, size_t length) ;
     
     // --- --- Static Utilities --- ---

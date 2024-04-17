@@ -233,6 +233,9 @@ Sequence::Sequence(const std::string & sequence, char type, Sequence::IUPACMod i
 
 // --- --- Utilities --- ---
 // --- Getters and equivalents ---
+ const BitVector & Sequence::getSeq() const {
+    return this->seq;
+ }
 
 char Sequence::getType() const {
     return this->readTypeArray(this->getTypeArray(), true);
@@ -510,3 +513,93 @@ bool Sequence::canBeNucleic(char type) {
 bool Sequence::canBeAmino(char type) {
     return (type == 'P'  || type == 'U');
  }  
+
+
+
+ // --- --- SequenceSymbol --- ---
+Sequence::SequenceSymbol::SequenceSymbol(char symbol, std::string replacement, Sequence::IUPACMod iupac)  {
+    this->_symbol = (char) std::toupper(symbol);
+    this->_replacement = replacement;
+    this->_iupac = iupac;
+}
+
+bool Sequence::SequenceSymbol::correspondTo(char symbol, bool use_replacement) const {
+    if (symbol == this->_symbol) {
+        return true;
+    }
+
+    if (use_replacement) {
+        for (char r_symbol : this->_replacement) {
+            if (symbol == r_symbol) {
+                return true;
+            }
+        }        
+    }
+    return false;
+}
+
+bool Sequence::SequenceSymbol::isUsableIn(IUPACMod iupac) const {
+    return (iupac >= this->_iupac);
+}
+
+char Sequence::SequenceSymbol::getReplacementSymbol() const {
+    return randChar(this->_replacement);
+}
+
+char Sequence::SequenceSymbol::getValue() const {
+    return this->_symbol;
+}
+
+char Sequence::SequenceSymbol::get(Sequence::IUPACMod iupac) const {
+    if (this->isUsableIn(iupac)) {
+        return this->_symbol ; 
+    } else {
+        return this->getReplacementSymbol();
+    }
+}
+
+Sequence::SequenceSymbol::operator char() const {
+    return this->_symbol;
+}
+
+
+Sequence::SequenceSymbol::operator std::string() const {
+    return std::string(1, this->_symbol);
+}
+
+std::string Sequence::SequenceSymbol::toString() const {
+    return std::to_string(this->_symbol);
+}
+
+ // --- --- SequenceSymbol --- ---
+
+// Overload the dereference operator to access the value
+int Sequence::SequenceIterator::operator*() const {
+    return this->_sequence[this->_index];
+}
+
+// Overload the pre-increment operator to move to the next element
+ Sequence::SequenceIterator& Sequence::SequenceIterator::operator++() {
+    ++this->_index;
+    return *this;
+}
+
+// Overload the inequality operator
+bool Sequence::SequenceIterator::operator!=(const SequenceIterator& other) const {
+    return this->_index != other.getIndex();
+}
+
+size_t Sequence::SequenceIterator::getIndex() const {
+    return this->_index;
+}
+const Sequence & Sequence::SequenceIterator::GetSequence() const {
+    return this->_sequence;
+}
+
+Sequence::SequenceIterator Sequence::begin() const {
+    return Sequence::SequenceIterator(*this, 0);
+}
+
+Sequence::SequenceIterator Sequence::end() const {
+    return Sequence::SequenceIterator(*this, this->size());
+}
