@@ -684,7 +684,13 @@ public:
      * @param seq A sequence
      * @return std::ostream& \p os
      */
-    friend std::ostream& operator<<(std::ostream& os, const Sequence& seq) ;
+    friend std::ostream& operator<<(std::ostream& os, const Sequence& seq) {
+        for (char symbol : seq) {
+            os << symbol;
+        }
+        return os;
+    }
+
 
 };
 
