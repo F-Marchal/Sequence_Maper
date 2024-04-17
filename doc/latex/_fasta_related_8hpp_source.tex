@@ -1,0 +1,38 @@
+\doxysection{Fasta\+Related.\+hpp}
+\hypertarget{_fasta_related_8hpp_source}{}\label{_fasta_related_8hpp_source}\index{FastaRelated.hpp@{FastaRelated.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FASTACONSTS\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FASTACONSTS\_HPP}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_fasta_related}{FastaRelated}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{static}\ std::set<char>\ \mbox{\hyperlink{class_fasta_related_ac771453d1873d1545b9d1ca21c246dce}{legalMultiHeaderChar}};}
+\DoxyCodeLine{00014\ \ \ \ \ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{static}\ std::set<char>\ \mbox{\hyperlink{class_fasta_related_a8108fb4d0cc83057a3cff762c77cbf34}{legalMonoHeaderChar}};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ std::set<char>\ \mbox{\hyperlink{class_fasta_related_a5639469121637d5ef3acb83a3cd6ecc0}{legalCommentChar}};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{static}\ std::set<char>\ \mbox{\hyperlink{class_fasta_related_a13a42fa0a2c2011055681fa6023f3837}{blankChar}};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_fasta_related_aa6daa81b8495bbdde3978a6ec2fabb5c}{isHeaderChar}}(\textcolor{keywordtype}{char}\ header\_char);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_fasta_related_ac1d4ed8e456a1e8bb31030be1625b17c}{isMonoHeaderChar}}(\textcolor{keywordtype}{char}\ header\_char);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_fasta_related_a3c5652fda809c31b11aa7555169703dc}{isMultiHeaderChar}}(\textcolor{keywordtype}{char}\ header\_char);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_fasta_related_a9b7e6244dfdf9e754d4cf4f8d1b855a4}{isCommentChar}}(\textcolor{keywordtype}{char}\ comment\_char);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_fasta_related_afa8fa72df1990eb2ee40593fe64c3e4e}{isBlankChar}}(\textcolor{keywordtype}{char}\ blank);}
+\DoxyCodeLine{00076\ \};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

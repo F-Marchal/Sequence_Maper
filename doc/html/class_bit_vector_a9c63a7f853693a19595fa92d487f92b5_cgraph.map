@@ -1,0 +1,16 @@
+<map id="BitVector::set" name="BitVector::set">
+<area shape="rect" id="Node000001" title="Modify a bit inside BitVector::_data." alt="" coords="5,81,115,107"/>
+<area shape="rect" id="Node000002" href="$class_bit_vector.html#aebe159444eb9d619959b7325ac5dac2d" title="Return the value of the bit at the position coord." alt="" coords="569,56,680,81"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,89,555,69,556,74,115,94"/>
+<area shape="rect" id="Node000003" href="$class_bit_vector_1_1_coords.html#a2892f7f46c4af93f9733e312229d8ec1" title="Get Coords::octet ." alt="" coords="728,99,871,139"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="81,104,118,125,163,142,237,156,313,163,390,165,465,164,603,151,714,134,715,139,604,157,465,169,390,171,313,169,236,161,162,147,116,130,79,109"/>
+<area shape="rect" id="Node000004" href="$class_bit_vector.html#ab4d98ce4b8d36ed6af1aa46e67810972" title="Give the last coordinates thar can be contained inside BitVector::_data with the current BitVector::_..." alt="" coords="165,107,296,132"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="115,99,152,105,151,110,115,105"/>
+<area shape="rect" id="Node000005" href="$class_bit_vector.html#ab92cdd9780b949d9d762f58e1ee4a0ae" title="Last postion of the vector." alt="" coords="163,5,299,31"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="88,79,188,34,190,39,91,84"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="596,57,590,48,593,38,605,32,625,29,649,33,659,42,655,46,646,38,625,35,606,37,597,41,595,47,600,54"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="670,79,718,93,716,98,669,84"/>
+<area shape="rect" id="Node000006" href="$class_bit_vector.html#a115789c8a9812eabb52f8843cd4e9965" title="Give the a coord object that represent the size of 1 element inside BitVector::_data." alt="" coords="347,5,521,31"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="299,15,333,15,333,21,299,21"/>
+<area shape="poly" id="edge8_Node000006_Node000002" title=" " alt="" coords="483,28,563,50,562,55,482,33"/>
+</map>

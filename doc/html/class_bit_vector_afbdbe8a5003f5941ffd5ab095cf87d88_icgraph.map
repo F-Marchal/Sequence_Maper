@@ -1,0 +1,11 @@
+<map id="BitVector::append" name="BitVector::append">
+<area shape="rect" id="Node000001" title="Add an element at the end of the vector." alt="" coords="465,31,603,56"/>
+<area shape="rect" id="Node000002" href="$class_bit_vector.html#a5547d55a697d61de026d0a94e743624b" title="Construct a new Bit Vector object." alt="" coords="225,5,373,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="451,37,373,29,373,23,452,32"/>
+<area shape="rect" id="Node000003" href="$class_bit_vector.html#a686af396e4dff1536b7588213726c4cc" title="Insert a number of blank position inside BitVector::_data." alt="" coords="180,55,417,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="451,54,418,58,417,53,451,49"/>
+<area shape="rect" id="Node000004" href="$class_bit_vector.html#a9f86c96c013632abd9d18feafe78d72e" title="Insert a number_of_elements inside the vector at the index pos ." alt="" coords="5,29,132,55"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="169,56,132,52,133,46,170,50"/>
+<area shape="rect" id="Node000005" href="$class_bit_vector.html#a915743b3f94c75c22317d160bfa741ff" title="Insert a number_of_elements inside the vector at the index pos ." alt="" coords="5,79,132,104"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="167,84,133,87,132,82,166,79"/>
+</map>

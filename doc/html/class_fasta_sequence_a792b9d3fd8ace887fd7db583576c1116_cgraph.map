@@ -1,0 +1,5 @@
+<map id="FastaSequence::removeComment" name="FastaSequence::removeComment">
+<area shape="rect" id="Node000001" title="Remove a comment." alt="" coords="5,5,247,31"/>
+<area shape="rect" id="Node000002" href="$class_fasta_sequence.html#a2ce25dcf6751310494e59be402017036" title="Do this position is commented." alt="" coords="295,5,536,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="247,15,281,15,281,21,247,21"/>
+</map>

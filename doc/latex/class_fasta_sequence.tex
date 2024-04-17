@@ -1,0 +1,427 @@
+\doxysection{Fasta\+Sequence Class Reference}
+\hypertarget{class_fasta_sequence}{}\label{class_fasta_sequence}\index{FastaSequence@{FastaSequence}}
+
+
+Class that represent \doxylink{class_sequence}{Sequence} inside a fasta File. Can hold comment.  
+
+
+
+
+{\ttfamily \#include $<$Fasta\+Sequence.\+hpp$>$}
+
+
+
+Inheritance diagram for Fasta\+Sequence\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_fasta_sequence__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Fasta\+Sequence\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_fasta_sequence__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::map$<$ size\+\_\+t, std\+::string $>$ \& \mbox{\hyperlink{class_fasta_sequence_a9954e47b2348077289a3fd1121c40017}{get\+All\+Comment}} () const
+\begin{DoxyCompactList}\small\item\em Return comments contained inside this sequence. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_fasta_sequence_a078238dfce23f02af8307ddc560e2a20}{insert}} (const std\+::string \&sequence, size\+\_\+t position, error\+Mods error\+\_\+mod)
+\begin{DoxyCompactList}\small\item\em Same as Sequence\+::insert but should move comments when position is not at the end. \end{DoxyCompactList}\item 
+\Hypertarget{class_fasta_sequence_ab86ba063d06e3fef41cd4098a16c8d9a}\label{class_fasta_sequence_ab86ba063d06e3fef41cd4098a16c8d9a} 
+void {\bfseries erase\+Seq} (size\+\_\+t index, size\+\_\+t length)
+\item 
+void \mbox{\hyperlink{class_fasta_sequence_aef714753277c2a10876429e3c579ef95}{add\+Comment}} (size\+\_\+t position, std\+::string comment)
+\begin{DoxyCompactList}\small\item\em Add a comment to a position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_fasta_sequence_acd6551e5176ac2bdaa4d228fa9b5f14f}{load\+Comments}} (std\+::map$<$ size\+\_\+t, std\+::string $>$ \&comment\+\_\+map)
+\begin{DoxyCompactList}\small\item\em Load a number of comment from a map. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_fasta_sequence_a792b9d3fd8ace887fd7db583576c1116}{remove\+Comment}} (size\+\_\+t position)
+\begin{DoxyCompactList}\small\item\em Remove a comment. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_fasta_sequence_a758811b3ddc850c6cde26f4e5568eaa5}{displace\+Comment}} (size\+\_\+t current\+\_\+position, size\+\_\+t new\+\_\+position)
+\begin{DoxyCompactList}\small\item\em Change the position of a comment. If a comment is present at {\ttfamily new\+\_\+position} , The two comments are merged. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_fasta_sequence_a2ce25dcf6751310494e59be402017036}{is\+Commented\+Pos}} (size\+\_\+t position) const
+\begin{DoxyCompactList}\small\item\em Do this position is commented. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_fasta_sequence_a519c4b4ec5de7e8c1a92de1409a7cf02}{get\+Comment}} (size\+\_\+t position) const
+\begin{DoxyCompactList}\small\item\em Retrieve the comment at the position {\ttfamily position}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_sequence}{Sequence}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sequence_1_1_sequence_iterator}{Sequence\+Iterator}} {\bfseries begin} () const
+\item 
+\mbox{\hyperlink{class_sequence_1_1_sequence_iterator}{Sequence\+Iterator}} {\bfseries end} () const
+\item 
+\mbox{\hyperlink{class_sequence_ae293cd5124445b604bbcba3a5f01a48a}{Sequence}} (const std\+::string \&sequence, char type, IUPACMod iupac=most, error\+Mods error\+\_\+mod=raise, bool finalis\+\_\+type=true)
+\begin{DoxyCompactList}\small\item\em Main Constructor. Construct a new \doxylink{class_sequence}{Sequence} object. \end{DoxyCompactList}\item 
+{\bfseries Sequence} (IUPACMod iupac=most, error\+Mods error\+\_\+mod=raise, bool finalis\+\_\+type=false)
+\begin{DoxyCompactList}\small\item\em Default Constructor. Construct a new \doxylink{class_sequence}{Sequence} object. Equivalent to. \end{DoxyCompactList}\item 
+{\bfseries Sequence} (std\+::string sequence, IUPACMod iupac=most, error\+Mods error\+\_\+mod=raise, bool finalis\+\_\+type=true)
+\item 
+const std\+::string \& \mbox{\hyperlink{class_sequence_a977ed0641af71694936687af9e5f2e5e}{get\+Seq}} () const
+\begin{DoxyCompactList}\small\item\em Get the sequence contain in this object. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{class_sequence_a7561cc8bf09fa8056b3ddf14eaa4b0bb}{get\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Get a char that represent sequence type. \end{DoxyCompactList}\item 
+char {\bfseries get\+Encoding\+Type} () const
+\item 
+Sequence\+::\+IUPACMod {\bfseries get\+Iupac} () const
+\item 
+const std\+::array$<$ bool, 5 $>$ \& {\bfseries get\+Type\+Array} () const
+\item 
+\mbox{\hyperlink{class_header}{Header}} \& {\bfseries get\+Header} ()
+\item 
+void {\bfseries set\+Header} (\mbox{\hyperlink{class_header}{Header}} header)
+\item 
+size\+\_\+t {\bfseries size} () const
+\item 
+void {\bfseries active\+Type\+Research} ()
+\item 
+void {\bfseries end\+Type\+Research} ()
+\item 
+void {\bfseries insert} (const char \&symbol, size\+\_\+t position, error\+Mods error\+Mod=display)
+\item 
+void {\bfseries insert\+Front} (const std\+::string \&sequence, error\+Mods error\+Mod=display)
+\item 
+void {\bfseries insert\+Back} (const std\+::string \&sequence, error\+Mods error\+Mod=display)
+\item 
+void {\bfseries insert\+Front} (const char \&sequence, error\+Mods error\+Mod=display)
+\item 
+void {\bfseries insert\+Back} (const char \&sequence, error\+Mods error\+Mod=display)
+\item 
+virtual void {\bfseries erase} (size\+\_\+t start, size\+\_\+t length)
+\item 
+bool {\bfseries operator$>$} (const \mbox{\hyperlink{class_sequence}{Sequence}} \&other) const
+\item 
+bool {\bfseries operator$>$=} (const \mbox{\hyperlink{class_sequence}{Sequence}} \&other) const
+\item 
+bool {\bfseries operator$<$} (const \mbox{\hyperlink{class_sequence}{Sequence}} \&other) const
+\item 
+bool {\bfseries operator$<$=} (const \mbox{\hyperlink{class_sequence}{Sequence}} \&other) const
+\item 
+{\bfseries operator bool} () const
+\item 
+char {\bfseries get} (size\+\_\+t position) const
+\item 
+char {\bfseries operator\mbox{[}$\,$\mbox{]}} (size\+\_\+t position) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_fasta_sequence_a0f773a3b8df4b1e83f0183c5da21f9ee}\label{class_fasta_sequence_a0f773a3b8df4b1e83f0183c5da21f9ee} 
+std\+::map$<$ size\+\_\+t, std\+::string $>$ {\bfseries comments}
+\begin{DoxyCompactList}\small\item\em Map that hold comments. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_sequence}{Sequence}}}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_sequence_a164f748d9c5ecd278ab55b37381d2700}\label{class_sequence_a164f748d9c5ecd278ab55b37381d2700} 
+enum {\bfseries IUPACMod} \{ {\bfseries basic} = 0
+, {\bfseries most} = 1
+, {\bfseries all} = 2
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_fasta_related}{Fasta\+Related}}}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_fasta_related_aa6daa81b8495bbdde3978a6ec2fabb5c}{is\+Header\+Char}} (char header\+\_\+char)
+\begin{DoxyCompactList}\small\item\em Do this char can mark a header. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_fasta_related_ac1d4ed8e456a1e8bb31030be1625b17c}{is\+Mono\+Header\+Char}} (char header\+\_\+char)
+\begin{DoxyCompactList}\small\item\em Do this char can mark a mono line header. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_fasta_related_a3c5652fda809c31b11aa7555169703dc}{is\+Multi\+Header\+Char}} (char header\+\_\+char)
+\begin{DoxyCompactList}\small\item\em Do this char can mark a multiple line header. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_fasta_related_a9b7e6244dfdf9e754d4cf4f8d1b855a4}{is\+Comment\+Char}} (char comment\+\_\+char)
+\begin{DoxyCompactList}\small\item\em Do this char can mark a comment in a sequence. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_fasta_related_afa8fa72df1990eb2ee40593fe64c3e4e}{is\+Blank\+Char}} (char blank)
+\begin{DoxyCompactList}\small\item\em Do this char can bbe ignored. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_sequence}{Sequence}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}} {\bfseries get\+Sequence\+Symbol} (char symbol, char type)
+\item 
+static const \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}} \& {\bfseries get\+Symbol\+DNA} (char symbol)
+\item 
+static bool {\bfseries is\+Legal\+Nucleic} (char symbol)
+\item 
+static bool {\bfseries is\+Legal\+Amino} (char symbol)
+\item 
+static bool {\bfseries is\+Legal\+Symbol} (char symbol)
+\item 
+static bool {\bfseries is\+DNA} (char symbol)
+\item 
+static bool {\bfseries is\+RNA} (char symbol)
+\item 
+static bool {\bfseries is\+Amino} (char symbol)
+\item 
+static bool {\bfseries is\+Nucleic} (char symbol)
+\item 
+static bool {\bfseries is\+Dna\+Specific\+Nucleotide} (char nucleic)
+\item 
+static bool {\bfseries is\+Rna\+Specific\+Nucleotide} (char nucleic)
+\item 
+static bool {\bfseries is\+Amino\+Specific} (char symbol)
+\item 
+static bool {\bfseries is\+Nucleic\+Specific} (char symbol)
+\item 
+static bool {\bfseries is\+Valid\+Type} (char symbol)
+\item 
+static size\+\_\+t {\bfseries element\+Max\+Size} (char encoding\+\_\+type, Sequence\+::\+IUPACMod iupac)
+\item 
+static const std\+::map$<$ char, char $>$ \& {\bfseries translation\+Tab} (char encoding\+\_\+type, Sequence\+::\+IUPACMod iupac, bool reverse=false, error\+Mods error\+\_\+mod=raise)
+\item 
+static void {\bfseries fill\+Code\+Map} (std\+::map$<$ Sequence\+::\+IUPACMod, std\+::map$<$ char, char $>$ $>$ \&normal\+\_\+encoding, std\+::map$<$ Sequence\+::\+IUPACMod, std\+::map$<$ char, char $>$ $>$ \&reverse\+\_\+encoding, const std\+::map$<$ char, \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence\+::\+Sequence\+Symbol}} $>$ \&element\+\_\+to\+\_\+add, Sequence\+::\+IUPACMod iupac)
+\item 
+static char {\bfseries read\+Type\+Array} (std\+::array$<$ bool, 5 $>$ type, bool ignore\+\_\+illegal=false)
+\item 
+static std\+::array$<$ bool, 5 $>$ {\bfseries read\+Type\+Char} (char type)
+\item 
+static std\+::array$<$ bool, 5 $>$ {\bfseries identify\+Symbol\+Type} (char symbol)
+\item 
+static bool {\bfseries can\+Be\+Rna} (char type)
+\item 
+static bool {\bfseries can\+Be\+Dna} (char type)
+\item 
+static bool {\bfseries can\+Be\+Amino} (char type)
+\item 
+static bool {\bfseries can\+Be\+Nucleic} (char type)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_sequence}{Sequence}}}
+\begin{DoxyCompactItemize}
+\item 
+char {\bfseries parse\+Char} (char symbol, error\+Mods error\+\_\+mod=display)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that represent \doxylink{class_sequence}{Sequence} inside a fasta File. Can hold comment. 
+
+\begin{DoxyWarning}{Warning}
+Not\+Implemented 
+\end{DoxyWarning}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_fasta_sequence_aef714753277c2a10876429e3c579ef95}\label{class_fasta_sequence_aef714753277c2a10876429e3c579ef95} 
+\index{FastaSequence@{FastaSequence}!addComment@{addComment}}
+\index{addComment@{addComment}!FastaSequence@{FastaSequence}}
+\doxysubsubsection{\texorpdfstring{addComment()}{addComment()}}
+{\footnotesize\ttfamily void Fasta\+Sequence\+::add\+Comment (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{position,  }\item[{std\+::string}]{comment }\end{DoxyParamCaption})}
+
+
+
+Add a comment to a position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Where the comment should be placed \\
+\hline
+{\em comment} & A comment \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_fasta_sequence_aef714753277c2a10876429e3c579ef95_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_fasta_sequence_aef714753277c2a10876429e3c579ef95_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_fasta_sequence_a758811b3ddc850c6cde26f4e5568eaa5}\label{class_fasta_sequence_a758811b3ddc850c6cde26f4e5568eaa5} 
+\index{FastaSequence@{FastaSequence}!displaceComment@{displaceComment}}
+\index{displaceComment@{displaceComment}!FastaSequence@{FastaSequence}}
+\doxysubsubsection{\texorpdfstring{displaceComment()}{displaceComment()}}
+{\footnotesize\ttfamily void Fasta\+Sequence\+::displace\+Comment (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{current\+\_\+position,  }\item[{size\+\_\+t}]{new\+\_\+position }\end{DoxyParamCaption})}
+
+
+
+Change the position of a comment. If a comment is present at {\ttfamily new\+\_\+position} , The two comments are merged. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+\_\+position} & Comment to displace \\
+\hline
+{\em new\+\_\+position} & Where the comment should be positioned a the end. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_fasta_sequence_a758811b3ddc850c6cde26f4e5568eaa5_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_fasta_sequence_a9954e47b2348077289a3fd1121c40017}\label{class_fasta_sequence_a9954e47b2348077289a3fd1121c40017} 
+\index{FastaSequence@{FastaSequence}!getAllComment@{getAllComment}}
+\index{getAllComment@{getAllComment}!FastaSequence@{FastaSequence}}
+\doxysubsubsection{\texorpdfstring{getAllComment()}{getAllComment()}}
+{\footnotesize\ttfamily const std\+::map$<$ size\+\_\+t, std\+::string $>$ \& Fasta\+Sequence\+::get\+All\+Comment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return comments contained inside this sequence. 
+
+\begin{DoxyReturn}{Returns}
+const std\+::map$<$size\+\_\+t, std\+::string$>$\& Position \+: comment 
+\end{DoxyReturn}
+\Hypertarget{class_fasta_sequence_a519c4b4ec5de7e8c1a92de1409a7cf02}\label{class_fasta_sequence_a519c4b4ec5de7e8c1a92de1409a7cf02} 
+\index{FastaSequence@{FastaSequence}!getComment@{getComment}}
+\index{getComment@{getComment}!FastaSequence@{FastaSequence}}
+\doxysubsubsection{\texorpdfstring{getComment()}{getComment()}}
+{\footnotesize\ttfamily std\+::string Fasta\+Sequence\+::get\+Comment (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{position }\end{DoxyParamCaption}) const}
+
+
+
+Retrieve the comment at the position {\ttfamily position}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Where \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string The comment 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_fasta_sequence_a519c4b4ec5de7e8c1a92de1409a7cf02_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_fasta_sequence_a519c4b4ec5de7e8c1a92de1409a7cf02_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_fasta_sequence_a078238dfce23f02af8307ddc560e2a20}\label{class_fasta_sequence_a078238dfce23f02af8307ddc560e2a20} 
+\index{FastaSequence@{FastaSequence}!insert@{insert}}
+\index{insert@{insert}!FastaSequence@{FastaSequence}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void Fasta\+Sequence\+::insert (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{sequence,  }\item[{size\+\_\+t}]{position,  }\item[{error\+Mods}]{error\+\_\+mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Same as Sequence\+::insert but should move comments when position is not at the end. 
+
+\begin{DoxyWarning}{Warning}
+not implemented 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em sequence} & The sequence \\
+\hline
+{\em position} & Insertion position \\
+\hline
+{\em error\+\_\+mod} & Should error be raised / displayed / ignored \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_sequence}{Sequence}}.
+
+\Hypertarget{class_fasta_sequence_a2ce25dcf6751310494e59be402017036}\label{class_fasta_sequence_a2ce25dcf6751310494e59be402017036} 
+\index{FastaSequence@{FastaSequence}!isCommentedPos@{isCommentedPos}}
+\index{isCommentedPos@{isCommentedPos}!FastaSequence@{FastaSequence}}
+\doxysubsubsection{\texorpdfstring{isCommentedPos()}{isCommentedPos()}}
+{\footnotesize\ttfamily bool Fasta\+Sequence\+::is\+Commented\+Pos (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{position }\end{DoxyParamCaption}) const}
+
+
+
+Do this position is commented. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position to test \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Yes 
+
+false No 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_fasta_sequence_a2ce25dcf6751310494e59be402017036_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_fasta_sequence_acd6551e5176ac2bdaa4d228fa9b5f14f}\label{class_fasta_sequence_acd6551e5176ac2bdaa4d228fa9b5f14f} 
+\index{FastaSequence@{FastaSequence}!loadComments@{loadComments}}
+\index{loadComments@{loadComments}!FastaSequence@{FastaSequence}}
+\doxysubsubsection{\texorpdfstring{loadComments()}{loadComments()}}
+{\footnotesize\ttfamily void Fasta\+Sequence\+::load\+Comments (\begin{DoxyParamCaption}\item[{std\+::map$<$ size\+\_\+t, std\+::string $>$ \&}]{comment\+\_\+map }\end{DoxyParamCaption})}
+
+
+
+Load a number of comment from a map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em comment\+\_\+map} & A map that contain comments \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_fasta_sequence_acd6551e5176ac2bdaa4d228fa9b5f14f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_fasta_sequence_a792b9d3fd8ace887fd7db583576c1116}\label{class_fasta_sequence_a792b9d3fd8ace887fd7db583576c1116} 
+\index{FastaSequence@{FastaSequence}!removeComment@{removeComment}}
+\index{removeComment@{removeComment}!FastaSequence@{FastaSequence}}
+\doxysubsubsection{\texorpdfstring{removeComment()}{removeComment()}}
+{\footnotesize\ttfamily void Fasta\+Sequence\+::remove\+Comment (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{position }\end{DoxyParamCaption})}
+
+
+
+Remove a comment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Comment position \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_fasta_sequence_a792b9d3fd8ace887fd7db583576c1116_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_fasta_sequence_a792b9d3fd8ace887fd7db583576c1116_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Fasta\+Sequence.\+hpp\item 
+Fasta\+Sequence.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,20 @@
+<map id="BitVector::maxElementLimit" name="BitVector::maxElementLimit">
+<area shape="rect" id="Node000001" title="How many element can be contained in this object knowing BitVector::_element_size." alt="" coords="5,127,211,152"/>
+<area shape="rect" id="Node000002" href="$class_bit_vector.html#af68cda7444ec4459393bbfa423f0a7dd" title="Get the Size_t value if a BitVector::CoordUnit." alt="" coords="311,55,449,95"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,124,297,92,298,97,164,129"/>
+<area shape="rect" id="Node000007" href="$class_bit_vector.html#a68b14af0886039ddcf55c82a250deb4c" title="How many element can be contained in this kind of object." alt="" coords="549,119,760,159"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="211,137,536,137,536,142,211,142"/>
+<area shape="rect" id="Node000008" href="$class_bit_vector.html#aa3228d2bacb1bb0f6072d73d43a49456" title="How many octet can be contained in this kind of object." alt="" coords="259,180,501,205"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="174,149,302,175,301,180,173,155"/>
+<area shape="rect" id="Node000003" href="$class_bit_vector.html#a115789c8a9812eabb52f8843cd4e9965" title="Give the a coord object that represent the size of 1 element inside BitVector::_data." alt="" coords="567,5,742,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="448,58,579,31,580,36,449,64"/>
+<area shape="rect" id="Node000006" href="$class_bit_vector_1_1_coords.html#a3a4fac9de925974af9c8a66a1d0179e6" title="Translate octet and bit value inside a size_t. Allow easier mathematic computations." alt="" coords="583,55,726,95"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="449,73,570,73,570,78,449,78"/>
+<area shape="rect" id="Node000004" href="$class_bit_vector.html#aebe159444eb9d619959b7325ac5dac2d" title="Return the value of the bit at the position coord." alt="" coords="808,127,919,152"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="730,28,761,41,809,76,846,114,842,118,806,80,759,46,728,33"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="834,128,828,118,832,109,844,102,863,100,887,104,897,112,894,116,885,108,863,105,845,107,836,112,834,118,839,125"/>
+<area shape="rect" id="Node000005" href="$class_bit_vector_1_1_coords.html#a2892f7f46c4af93f9733e312229d8ec1" title="Get Coords::octet ." alt="" coords="967,119,1109,159"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="919,137,953,137,953,142,919,142"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="760,137,794,137,794,142,760,142"/>
+<area shape="poly" id="edge10_Node000008_Node000004" title=" " alt="" coords="501,191,627,185,759,169,815,154,817,159,761,174,627,190,502,196"/>
+</map>

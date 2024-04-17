@@ -1,0 +1,9 @@
+<map id="FastaHeader::FastaHeader" name="FastaHeader::FastaHeader">
+<area shape="rect" id="Node000001" title="Construct a new Fasta Header object." alt="" coords="5,31,197,56"/>
+<area shape="rect" id="Node000002" href="$class_fasta_header.html#a5b5ec58e0bfdf768854f4e3377f976da" title="Construct a new Fasta Header object." alt="" coords="245,31,384,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="198,41,231,41,231,46,198,46"/>
+<area shape="rect" id="Node000003" href="$class_header.html#a1734dde9c24c3d18fb6230645b3f0ab0" title="Set the accession number / key contained inside this header;." alt="" coords="432,5,595,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="384,32,418,27,419,33,384,37"/>
+<area shape="rect" id="Node000004" href="$class_header.html#ab7591583b60456a69b27c013b063aa85" title="Change the comments related to this header;." alt="" coords="433,55,594,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="384,49,419,53,419,59,384,54"/>
+</map>

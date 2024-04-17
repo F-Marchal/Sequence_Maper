@@ -1,0 +1,386 @@
+\doxysection{Sequence.\+hpp}
+\hypertarget{_sequence_8hpp_source}{}\label{_sequence_8hpp_source}\index{Sequence.hpp@{Sequence.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ \ \ \ Changements\ mineurs\ :}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ \ \ \ \ \ \ \ TODO:\ Ajouter\ les\ foctions\ de\ 'complement\ inverse',\ 'transcription',\ 'retroTranscription'}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ \ \ \ \ \ \ \ TODO:\ Compresser\ les\ caractéres\ utilisés\ dans\ la\ sequence}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ SEQUENCE\_HPP}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ SEQUENCE\_HPP}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <tuple>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <random>}\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}Utilities.hpp"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}BitVector.hpp"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}Header.hpp"{}}}
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sequence}{Sequence}}\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{enum}\ IUPACMod\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ basic\ \ \ \ \ \ \ =\ 0,}
+\DoxyCodeLine{00025\ \ \ \ \ most\ \ \ \ \ \ \ \ =\ 1,\ }
+\DoxyCodeLine{00026\ \ \ \ \ all\ \ \ \ \ \ \ \ \ =\ 2,}
+\DoxyCodeLine{00027\ \ \ \ \ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{SequenceSymbol}}\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ std::string\ \_replacement;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \_symbol;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ Sequence::IUPACMod\ \_iupac;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{SequenceSymbol}}(\textcolor{keywordtype}{char}\ symbol,\ std::string\ replacement,\ Sequence::IUPACMod\ iupac)\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\_symbol\ =\ (char)\ std::toupper(symbol);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\_replacement\ =\ replacement;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\_iupac\ =\ iupac;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ correspondTo(\textcolor{keywordtype}{char}\ symbol,\ \textcolor{keywordtype}{bool}\ use\_replacement=\textcolor{keyword}{true})\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (symbol\ ==\ this-\/>\_symbol)\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (use\_replacement)\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{char}\ r\_symbol\ :\ this-\/>\_replacement)\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (symbol\ ==\ r\_symbol)\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isUsableIn(IUPACMod\ iupac)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (iupac\ >=\ this-\/>\_iupac);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ getReplacementSymbol()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ randChar(this-\/>\_replacement);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ getValue()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\_symbol;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ get(Sequence::IUPACMod\ iupac)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>isUsableIn(iupac))\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\_symbol\ ;\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>getReplacementSymbol();}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{operator}\ char()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\_symbol;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keyword}{operator}\ std::string()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::string(1,\ this-\/>\_symbol);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ std::string\ toString()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::to\_string(this-\/>\_symbol);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ operator<<(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence::SequenceSymbol}}\&\ symbol)\ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ symbol.toString();}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \};}
+\DoxyCodeLine{00097\ \ \ \ \ }
+\DoxyCodeLine{00098\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ std::array<bool,\ 5>\ type;}
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{class_bit_vector}{BitVector}}\ seq;}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{char}\ \_encoding\_type;}
+\DoxyCodeLine{00104\ \ \ \ \ }
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{class_header}{Header}}\ \_header;}
+\DoxyCodeLine{00106\ \ \ \ \ Sequence::IUPACMod\ \_iupac;}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ -\/-\/-\/\ Private\ attributes\ -\/-\/-\/\ -\/-\/-\/}}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::map<char,\ Sequence::SequenceSymbol>\ legalDNA;}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::map<char,\ Sequence::SequenceSymbol>\ legalRNA;}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::map<char,\ Sequence::SequenceSymbol>\ legalAmino;}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{static}\ std::set<char>\ validType;}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{char}\ parseChar(\textcolor{keywordtype}{char}\ symbol,\ errorMods\ error\_mod=display);}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sequence_1_1_sequence_iterator}{SequenceIterator}}\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_sequence}{Sequence}}\&\ \_sequence;}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \_index;}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sequence_1_1_sequence_iterator}{SequenceIterator}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_sequence}{Sequence}}\&\ seq,\ \textcolor{keywordtype}{size\_t}\ index)\ :\ \_sequence(seq),\ \_index(index)\ \{\}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Overload\ the\ dereference\ operator\ to\ access\ the\ value}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ operator*()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\_sequence[this-\/>\_index];}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Overload\ the\ pre-\/increment\ operator\ to\ move\ to\ the\ next\ element}}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sequence_1_1_sequence_iterator}{SequenceIterator}}\&\ operator++()\ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ++this-\/>\_index;}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Overload\ the\ inequality\ operator}}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ operator!=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_sequence_1_1_sequence_iterator}{SequenceIterator}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\_index\ !=\ other.getIndex();}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ getIndex()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\_index;}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_sequence}{Sequence}}\ \&\ GetSequence()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\_sequence;}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00150\ \ \ \ \ \};}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{comment}{//\ Begin\ and\ end\ functions\ to\ get\ iterators}}
+\DoxyCodeLine{00153\ \ \ \ \ \mbox{\hyperlink{class_sequence_1_1_sequence_iterator}{SequenceIterator}}\ begin()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_sequence_1_1_sequence_iterator}{SequenceIterator}}(*\textcolor{keyword}{this},\ 0);}
+\DoxyCodeLine{00155\ \ \ \ \ \}}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ SequenceIterator\ end()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ SequenceIterator(*\textcolor{keyword}{this},\ this-\/>size());}
+\DoxyCodeLine{00159\ \ \ \ \ \}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ -\/-\/-\/\ Constructors\ -\/-\/-\/\ -\/-\/-\/}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00172\ \ \ \ \ \mbox{\hyperlink{class_sequence_ae293cd5124445b604bbcba3a5f01a48a}{Sequence}}(\textcolor{keyword}{const}\ std::string\ \&\ sequence,\ \textcolor{keywordtype}{char}\ type,\ \ \ \ \ \ \ \ \ \ \ IUPACMod\ iupac=most,\ errorMods\ error\_mod=raise,\ \textcolor{keywordtype}{bool}\ finalis\_type=\textcolor{keyword}{true});}
+\DoxyCodeLine{00173\ \ \ \ \ }
+\DoxyCodeLine{00178\ \ \ \ \ \mbox{\hyperlink{class_sequence_ad5114ced34e064d37b73678e7332d30f}{Sequence}}(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ IUPACMod\ iupac=most,\ errorMods\ error\_mod=raise,\ \textcolor{keywordtype}{bool}\ finalis\_type=\textcolor{keyword}{false})\ :\ \mbox{\hyperlink{class_sequence}{Sequence}}(\textcolor{stringliteral}{"{}"{}},\ \textcolor{stringliteral}{'U'},\ iupac,\ error\_mod,\ finalis\_type)\ \{\};}
+\DoxyCodeLine{00179\ \ \ \ \ \mbox{\hyperlink{class_sequence_ae293cd5124445b604bbcba3a5f01a48a}{Sequence}}(std::string\ sequence,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ IUPACMod\ iupac=most,\ errorMods\ error\_mod=raise,\ \textcolor{keywordtype}{bool}\ finalis\_type=\textcolor{keyword}{true})\ \ :\ \mbox{\hyperlink{class_sequence}{Sequence}}(sequence,\ \textcolor{stringliteral}{'U'},\ iupac,\ error\_mod,\ finalis\_type)\ \{\};}
+\DoxyCodeLine{00180\ \ \ \ \ }
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ -\/-\/-\/\ Utilities\ -\/-\/-\/\ -\/-\/-\/}}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Getters\ and\ equivalents\ -\/-\/-\/}}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ \mbox{\hyperlink{class_sequence_a977ed0641af71694936687af9e5f2e5e}{getSeq}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{class_sequence_a7561cc8bf09fa8056b3ddf14eaa4b0bb}{getType}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordtype}{char}\ getEncodingType()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00198\ \ \ \ \ Sequence::IUPACMod\ getIupac()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keyword}{const}\ std::array<bool,\ 5>\ \&\ getTypeArray()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ \mbox{\hyperlink{class_header}{Header}}\ \&\ getHeader()\ ;}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordtype}{void}\ setHeader(\mbox{\hyperlink{class_header}{Header}}\ header)\ ;}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00204\ \ \ \ \ }
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence::SequenceSymbol}}\ getSequenceSymbol(\textcolor{keywordtype}{char}\ symbol,\ \textcolor{keywordtype}{char}\ type);}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Modify\ sequence\ -\/-\/-\/}}
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordtype}{void}\ activeTypeResearch();}
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keywordtype}{void}\ endTypeResearch();}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ insert(\textcolor{keyword}{const}\ std::string\ \&\ sequence,\ \textcolor{keywordtype}{size\_t}\ position,\ errorMods\ errorMod=display);}
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keywordtype}{void}\ insert(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ \&\ symbol,\ \textcolor{keywordtype}{size\_t}\ position,\ errorMods\ errorMod=display);}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keywordtype}{void}\ insertFront(\textcolor{keyword}{const}\ std::string\ \&\ sequence,\ errorMods\ errorMod=display);}
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keywordtype}{void}\ insertBack(\textcolor{keyword}{const}\ std::string\ \&\ sequence,\ errorMods\ errorMod=display);}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordtype}{void}\ insertFront(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ \&\ sequence,\ errorMods\ errorMod=display);}
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordtype}{void}\ insertBack(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ \&\ sequence,\ errorMods\ errorMod=display);}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ erase(\textcolor{keywordtype}{size\_t}\ start,\ \textcolor{keywordtype}{size\_t}\ length)\ ;}
+\DoxyCodeLine{00221\ \ \ \ \ }
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ -\/-\/-\/\ Static\ Utilities\ -\/-\/-\/\ -\/-\/-\/}}
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Symbols\ -\/-\/-\/}}
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence::SequenceSymbol}}\ \&\ getSymbolDNA(\textcolor{keywordtype}{char}\ symbol)\{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ legalDNA.at(symbol);}
+\DoxyCodeLine{00226\ \ \ \ \ \}}
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ isLegalNucleic(\textcolor{keywordtype}{char}\ symbol);}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ isLegalAmino(\textcolor{keywordtype}{char}\ symbol);}
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ isLegalSymbol(\textcolor{keywordtype}{char}\ symbol);}
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ isDNA(\textcolor{keywordtype}{char}\ symbol);}
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ isRNA(\textcolor{keywordtype}{char}\ symbol);}
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ isAmino(\textcolor{keywordtype}{char}\ symbol);}
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ isNucleic(\textcolor{keywordtype}{char}\ symbol);}
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ isDnaSpecificNucleotide(\textcolor{keywordtype}{char}\ nucleic);}
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ isRnaSpecificNucleotide(\textcolor{keywordtype}{char}\ nucleic);}
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ isAminoSpecific(\textcolor{keywordtype}{char}\ symbol);}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ isNucleicSpecific(\textcolor{keywordtype}{char}\ symbol);}
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ isValidType(\textcolor{keywordtype}{char}\ symbol);}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{size\_t}\ elementMaxSize(\textcolor{keywordtype}{char}\ encoding\_type,\ Sequence::IUPACMod\ iupac)\ \{}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ translationTab(encoding\_type,\ iupac,\ \textcolor{keyword}{false},\ ignore).size();}
+\DoxyCodeLine{00242\ \ \ \ \ \}}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::map<char,\ char>\ \&\ translationTab\ (\textcolor{keywordtype}{char}\ encoding\_type,\ Sequence::IUPACMod\ iupac,\ \textcolor{keywordtype}{bool}\ reverse=\textcolor{keyword}{false},\ errorMods\ error\_mod=raise)\ \{}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (encoding\_type\ ==\ \textcolor{charliteral}{'Z'})\ \{}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ encoding\_type\ =\ \textcolor{charliteral}{'U'};}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::map<Sequence::IUPACMod,\ std::map<char,\ char>>\ U\_encoding;}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::map<Sequence::IUPACMod,\ std::map<char,\ char>>\ N\_encoding;}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::map<Sequence::IUPACMod,\ std::map<char,\ char>>\ R\_encoding;}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::map<Sequence::IUPACMod,\ std::map<char,\ char>>\ D\_encoding;}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::map<Sequence::IUPACMod,\ std::map<char,\ char>>\ P\_encoding;}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::map<Sequence::IUPACMod,\ std::map<char,\ char>>\ U\_rev\_encoding;}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::map<Sequence::IUPACMod,\ std::map<char,\ char>>\ N\_rev\_encoding;}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::map<Sequence::IUPACMod,\ std::map<char,\ char>>\ R\_rev\_encoding;}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::map<Sequence::IUPACMod,\ std::map<char,\ char>>\ D\_rev\_encoding;}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::map<Sequence::IUPACMod,\ std::map<char,\ char>>\ P\_rev\_encoding;}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (encoding\_type\ ==\ \textcolor{charliteral}{'U'})\ \{}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (U\_encoding.find(iupac)\ ==\ U\_encoding.end())\ \{}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fillCodeMap(U\_encoding,\ U\_rev\_encoding,\ legalDNA,\ iupac);}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fillCodeMap(U\_encoding,\ U\_rev\_encoding,\ legalRNA,\ iupac);}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fillCodeMap(U\_encoding,\ U\_rev\_encoding,\ legalAmino,\ iupac);}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!reverse)\ \{}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ U\_encoding[iupac];}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ U\_rev\_encoding[iupac];}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (encoding\_type\ ==\ \textcolor{charliteral}{'N'})\ \{}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (N\_encoding.find(iupac)\ ==\ N\_encoding.end())\ \{}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fillCodeMap(N\_encoding,\ N\_rev\_encoding,\ legalDNA,\ iupac);}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fillCodeMap(N\_encoding,\ N\_rev\_encoding,\ legalRNA,\ iupac);}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!reverse)\ \{}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ N\_encoding[iupac];}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ N\_rev\_encoding[iupac];}
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (encoding\_type\ ==\ \textcolor{charliteral}{'D'})\ \{}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (D\_encoding.find(iupac)\ ==\ D\_encoding.end())\ \{}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fillCodeMap(D\_encoding,\ D\_rev\_encoding,\ legalDNA,\ iupac);}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!reverse)\ \{}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ D\_encoding[iupac];}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ D\_rev\_encoding[iupac];}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (encoding\_type\ ==\ \textcolor{charliteral}{'R'})\ \{}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (R\_encoding.find(iupac)\ ==\ R\_encoding.end())\ \{}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fillCodeMap(R\_encoding,\ R\_rev\_encoding,\ legalRNA,\ iupac);}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!reverse)\ \{}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ R\_encoding[iupac];}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ R\_rev\_encoding[iupac];}
+\DoxyCodeLine{00301\ }
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (encoding\_type\ ==\ \textcolor{charliteral}{'P'})\ \{}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (P\_encoding.find(iupac)\ ==\ P\_encoding.end())\ \{}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fillCodeMap(P\_encoding,\ P\_rev\_encoding,\ legalAmino,\ iupac);}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!reverse)\ \{}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ P\_encoding[iupac];}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ P\_rev\_encoding[iupac];}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ displayLogicError(error\_mod,\ \textcolor{stringliteral}{"{}Unable\ to\ determine\ map\ encoding\_type"{}},\ \_\_FILE\_\_,\ \_\_func\_\_);}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ U\_encoding[iupac];}
+\DoxyCodeLine{00316\ \ \ \ \ \}}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00318\ \ \ \ \ }
+\DoxyCodeLine{00319\ \ \ \ \ }
+\DoxyCodeLine{00320\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ fillCodeMap(std::map<Sequence::IUPACMod,\ std::map<char,\ char>>\ \&\ normal\_encoding,\ std::map<Sequence::IUPACMod,\ std::map<char,\ char>>\ \&\ reverse\_encoding,\ }
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::map<char,\ Sequence::SequenceSymbol>\ \&\ element\_to\_add,\ Sequence::IUPACMod\ iupac)\ \{}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ this\ iupac\ to\ the\ dict}}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (normal\_encoding.find(iupac)\ ==\ normal\_encoding.end())\ \{}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ normal\_encoding[iupac]\ =\ std::map<char,\ char>\ \{\};}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ reverse\_encoding[iupac]\ =\ std::map<char,\ char>\ \{\};}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00328\ }
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ encoded\_symbol;}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ current\_symbol;}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&\ key\_symbol\ :\ element\_to\_add)\ \{}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verify\ that\ this\ symbol\ can\ be\ used\ with\ this\ iupac\ setting\ ?}}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sequence_1_1_sequence_symbol}{Sequence::SequenceSymbol}}\ sym\_obj\ =\ key\_symbol.second;}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ current\_symbol\ =\ key\_symbol.first;}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00337\ \ }
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!sym\_obj.isUsableIn(iupac))\ \{}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00341\ }
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (normal\_encoding[iupac].find(current\_symbol)\ !=\ normal\_encoding[iupac].end())\ \{}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ encoded\_symbol\ =\ (char)\ normal\_encoding[iupac].size();}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ normal\_encoding[iupac][current\_symbol]\ =\ encoded\_symbol;}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ reverse\_encoding[iupac][encoded\_symbol]\ =\ current\_symbol;}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00352\ \ \ \ \ \}}
+\DoxyCodeLine{00353\ }
+\DoxyCodeLine{00354\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Type\ -\/-\/-\/}}
+\DoxyCodeLine{00355\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{char}\ readTypeArray(std::array<bool,\ 5>\ type,\ \textcolor{keywordtype}{bool}\ ignore\_illegal=\textcolor{keyword}{false});}
+\DoxyCodeLine{00356\ \ \ \ \ \textcolor{keyword}{static}\ std::array<bool,\ 5>\ readTypeChar(\textcolor{keywordtype}{char}\ type);}
+\DoxyCodeLine{00357\ \ \ \ \ \textcolor{keyword}{static}\ std::array<bool,\ 5>\ identifySymbolType(\textcolor{keywordtype}{char}\ symbol);}
+\DoxyCodeLine{00358\ }
+\DoxyCodeLine{00359\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ canBeRna(\textcolor{keywordtype}{char}\ type);}
+\DoxyCodeLine{00360\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ canBeDna(\textcolor{keywordtype}{char}\ type);}
+\DoxyCodeLine{00361\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ canBeAmino(\textcolor{keywordtype}{char}\ type);}
+\DoxyCodeLine{00362\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ canBeNucleic(\textcolor{keywordtype}{char}\ type);}
+\DoxyCodeLine{00363\ }
+\DoxyCodeLine{00364\ \ \ \ \ }
+\DoxyCodeLine{00365\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator>(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_sequence}{Sequence}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>size()\ >\ other.size();}
+\DoxyCodeLine{00367\ \ \ \ \ \}}
+\DoxyCodeLine{00368\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator>=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_sequence}{Sequence}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>size()\ >=\ other.size();}
+\DoxyCodeLine{00370\ \ \ \ \ \}}
+\DoxyCodeLine{00371\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator<(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_sequence}{Sequence}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>size()\ <\ other.size();}
+\DoxyCodeLine{00373\ \ \ \ \ \}}
+\DoxyCodeLine{00374\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator<=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_sequence}{Sequence}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>size()\ <=\ other.size();}
+\DoxyCodeLine{00376\ \ \ \ \ \}}
+\DoxyCodeLine{00377\ }
+\DoxyCodeLine{00378\ \ \ \ \ \textcolor{keyword}{operator}\ bool()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ search\_mod\ =\ this-\/>type[3];}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (!search\_mod);}
+\DoxyCodeLine{00381\ \ \ \ \ \}}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00383\ \ \ \ \ \textcolor{keywordtype}{char}\ get(\textcolor{keywordtype}{size\_t}\ position)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ *\ tab\ =\ \ this-\/>seq.\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{get}}(position);}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ char\_to\_translate\ =\ tab[0];}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ []\ tab;}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ translationTab(this-\/>getEncodingType(),\ this-\/>\_iupac,\ \textcolor{keyword}{true}).at(char\_to\_translate);}
+\DoxyCodeLine{00389\ \ \ \ \ \}}
+\DoxyCodeLine{00390\ \ \ \ \ \textcolor{keywordtype}{char}\ operator[](\textcolor{keywordtype}{size\_t}\ position)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>get(position);}
+\DoxyCodeLine{00392\ \ \ \ \ \}}
+\DoxyCodeLine{00393\ }
+\DoxyCodeLine{00394\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ operator<<(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_sequence}{Sequence}}\&\ seq)\ \{}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{char}\ symbol\ :\ seq)\ \{}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ symbol;}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00399\ \ \ \ \ \}}
+\DoxyCodeLine{00400\ }
+\DoxyCodeLine{00401\ \};}
+\DoxyCodeLine{00402\ }
+\DoxyCodeLine{00403\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -44,6 +44,7 @@ const std::map<char, Sequence::SequenceSymbol> Sequence::legalDNA = {
     {'-', Sequence::SequenceSymbol('.', "\0", Sequence::all)}, //gap of indeterminate length 	
 };
 
+
 const std::map<char, Sequence::SequenceSymbol> Sequence::legalRNA = {
     // 2 bits
     {'A', Sequence::SequenceSymbol('A', "A", Sequence::basic)}, //A → Adenine 

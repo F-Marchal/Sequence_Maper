@@ -1,0 +1,67 @@
+\doxysection{Fasta\+Manager.\+hpp}
+\hypertarget{_fasta_manager_8hpp_source}{}\label{_fasta_manager_8hpp_source}\index{FastaManager.hpp@{FastaManager.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FASTAMANAGER\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FASTAMANAGER\_HPP}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}FastaRelated.hpp"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}FastaHeader.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}FastaSequence.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_fasta_manager}{FastaManager}}\ :\ \mbox{\hyperlink{class_fasta_related}{FastaRelated}}\{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_fasta_manager_adda2ecec86a3a17128bfe17ebea928ad}{loadFile}}(std::string\ path);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_fasta_manager_a5df4a58d9ea8e57ea931269d723a20f0}{loadText}}(\textcolor{keyword}{const}\ std::string\ \&\ file\_content);}
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00031\ \textcolor{comment}{//\ class\ Fasta\ :\ public\ FastaRelated\{}}
+\DoxyCodeLine{00032\ \textcolor{comment}{//\ private:}}
+\DoxyCodeLine{00033\ \textcolor{comment}{//\ \ \ \ \ FastaSequence\ sequence;}}
+\DoxyCodeLine{00034\ \textcolor{comment}{//\ \ \ \ \ FastaHeader\ header;}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{//\ \ \ \ \ static\ std::map<std::string,\ std::tuple<char,\ bool>>\ extension\_types;}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{comment}{//\ public:}}
+\DoxyCodeLine{00042\ \textcolor{comment}{//\ \ \ \ \ static\ std::tuple<std::string,\ std::string,\ std::map<size\_t,\ std::string>>}}
+\DoxyCodeLine{00043\ \textcolor{comment}{//\ \ \ \ \ parseFasta(std::ifstream\&\ file\_flux,\ unsigned\ int\&\ current\_line,\ bool\ verbose);}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{comment}{//\ \ \ \ \ static\ std::vector<Fasta>\ loadFastaFromFile(std::string\ path);}}
+\DoxyCodeLine{00046\ \textcolor{comment}{//\ \ \ \ \ static\ std::vector<Fasta>\ loadFastaFromFile(std::string\ path,\ bool\ verbose);}}
+\DoxyCodeLine{00047\ \ \ \ \ }
+\DoxyCodeLine{00048\ \textcolor{comment}{//\ \ \ \ \ std::string\ getCleanSequence(unsigned\ int\ word\_size,\ unsigned\ int\ paragraph\_size)\ \{return\ getCleanSequence(word\_size,\ paragraph\_size,\ false);\};}}
+\DoxyCodeLine{00049\ \textcolor{comment}{//\ \ \ \ \ std::string\ getCleanSequence(unsigned\ int\ word\_size,\ unsigned\ int\ paragraph\_size,\ bool\ comments);}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{comment}{//\ \ \ \ \ FastaHeader\ getHeader()\ \{return\ this-\/>header;\}}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{comment}{//\ \ \ \ \ Fasta(FastaHeader\ header,\ FastaSequence\&\ sequence);}}
+\DoxyCodeLine{00056\ \textcolor{comment}{//\ \ \ \ \ FastaSequence\&\ getSequence()\ \{return\ this-\/>sequence;\}}}
+\DoxyCodeLine{00057\ \ \ \ \ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{comment}{//\ \ \ \ \ //\ TODO:\ Write\ Files}}
+\DoxyCodeLine{00060\ \textcolor{comment}{//\ \ \ \ \ //\ static\ void\ writeFasta(vector<Fasta>)}}
+\DoxyCodeLine{00061\ \textcolor{comment}{//\ \ \ \ \ /*}}
+\DoxyCodeLine{00062\ \textcolor{comment}{//\ \ \ \ \ void\ write(std::string\ path);}}
+\DoxyCodeLine{00063\ \textcolor{comment}{//\ \ \ \ \ void\ write(std::string\ path,\ bool\ append,\ bool\ comments);}}
+\DoxyCodeLine{00064\ \textcolor{comment}{//\ \ \ \ \ void\ write(std::string\ path,\ unsigned\ int\ word\_size,\ unsigned\ int\ paragraph\_size);}}
+\DoxyCodeLine{00065\ \textcolor{comment}{//\ \ \ \ \ void\ write(std::string\ path,\ unsigned\ int\ word\_size,\ unsigned\ int\ paragraph\_size,\ bool\ comments);}}
+\DoxyCodeLine{00066\ \textcolor{comment}{//\ \ \ \ \ */}}
+\DoxyCodeLine{00067\ \textcolor{comment}{//\ \ \ \ \ void\ write(std::string\ path,\ bool\ append,\ unsigned\ int\ word\_size,\ unsigned\ int\ paragraph\_size,\ bool\ comments);}}
+\DoxyCodeLine{00068\ \textcolor{comment}{//\ \ \ \ \ void\ write(std::vector<Fasta>\ fasta\_vector,\ std::string\ path,\ unsigned\ int\ word\_size=10,\ unsigned\ int\ paragraph\_size=6,\ bool\ comments=true);}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ }
+\DoxyCodeLine{00071\ \textcolor{comment}{//\ \};}}
+\DoxyCodeLine{00072\ \textcolor{comment}{//\ //\ TODO:\ Manage\ file\ extension}}
+\DoxyCodeLine{00073\ \textcolor{comment}{//\ \#endif}}
+
+\end{DoxyCode}

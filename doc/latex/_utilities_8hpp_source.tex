@@ -1,0 +1,45 @@
+\doxysection{Utilities.\+hpp}
+\hypertarget{_utilities_8hpp_source}{}\label{_utilities_8hpp_source}\index{Utilities.hpp@{Utilities.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ UTILITIES\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ UTILITIES\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Utilities.hpp"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{enum}\ errorMods\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ ignore\ \ =\ 0,}
+\DoxyCodeLine{00018\ \ \ \ \ display\ =\ 1,\ }
+\DoxyCodeLine{00019\ \ \ \ \ raise\ \ \ =\ 2,}
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00034\ std::string\ makeErrorMessage(std::string\ message,\ std::string\ file\_name,\ std::string\ function\_name)\ ;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00048\ \textcolor{keywordtype}{void}\ displayInvalidArgument(errorMods\ error\_mod,\ std::string\ message,\ std::string\ file\_name,\ std::string\ function\_name)\ ;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00062\ \textcolor{keywordtype}{void}\ displayLogicError(errorMods\ error\_mod,\ std::string\ message,\ std::string\ file\_name,\ std::string\ function\_name)\ ;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00076\ \textcolor{keywordtype}{void}\ displayDomainError(errorMods\ error\_mod,\ std::string\ message,\ std::string\ file\_name,\ std::string\ function\_name)\ ;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00091\ \textcolor{keywordtype}{void}\ displayLengthError(errorMods\ error\_mod,\ std::string\ message,\ std::string\ file\_name,\ std::string\ function\_name);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{void}\ displayMessage(errorMods\ error\_mod,\ std::string\ message);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00117\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ getFirstDigits(\textcolor{keywordtype}{size\_t}\ number,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ digits);}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00130\ \textcolor{keywordtype}{size\_t}\ safe\_multiply(\textcolor{keywordtype}{size\_t}\ a,\ \textcolor{keywordtype}{size\_t}\ b,\ \textcolor{keywordtype}{size\_t}\ maximal\_value);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00141\ \textcolor{keywordtype}{void}\ displayBits(\textcolor{keywordtype}{char}\ bits,\ \textcolor{keywordtype}{bool}\ endl=\textcolor{keyword}{true});}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00154\ \textcolor{keywordtype}{size\_t}\ randSizeT(\textcolor{keywordtype}{size\_t}\ start,\ \textcolor{keywordtype}{size\_t}\ end)\ ;}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00166\ \textcolor{keywordtype}{char}\ randChar(\textcolor{keyword}{const}\ std::string\ \&\ word)\ ;}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

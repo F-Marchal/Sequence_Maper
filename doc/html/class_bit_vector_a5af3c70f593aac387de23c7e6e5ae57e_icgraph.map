@@ -1,0 +1,11 @@
+<map id="BitVector::indexCoordinate" name="BitVector::indexCoordinate">
+<area shape="rect" id="Node000001" title="Find the element that correspond to coord ." alt="" coords="695,35,891,60"/>
+<area shape="rect" id="Node000002" href="$class_bit_vector.html#aed5c03f3a6a9a2e5f3c58fb14768b0b4" title="Say how many items can be hold inside this object with the current BitVector::_data_size:" alt="" coords="455,5,647,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="681,36,646,32,647,27,681,31"/>
+<area shape="rect" id="Node000003" href="$class_bit_vector.html#ad64e921d07b9528a532477f282af135c" title="How many element can fit in this vector without having to resize the vector ?" alt="" coords="456,55,645,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="681,63,646,67,645,62,681,58"/>
+<area shape="rect" id="Node000004" href="$class_bit_vector.html#ad60f42244db2c82260326605916431d3" title="Modify the number of known element in this object." alt="" coords="192,63,407,88"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="442,78,407,78,407,73,442,73"/>
+<area shape="rect" id="Node000005" href="$class_bit_vector.html#a87f84edf5dd56606b26e8741ba6ced02" title="Remove a number of element from the vector." alt="" coords="5,63,144,88"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="178,78,144,78,144,73,178,73"/>
+</map>

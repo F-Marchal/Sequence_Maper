@@ -1,0 +1,5 @@
+<map id="Sequence" name="Sequence">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,201,671"/>
+<area shape="rect" id="Node000002" href="$class_fasta_sequence.html" title="Class that represent Sequence inside a fasta File. Can hold comment." alt="" coords="25,719,182,964"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,684,106,718,101,718,101,684"/>
+</map>

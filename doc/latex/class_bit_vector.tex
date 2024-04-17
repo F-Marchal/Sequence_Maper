@@ -1,0 +1,2066 @@
+\doxysection{Bit\+Vector Class Reference}
+\hypertarget{class_bit_vector}{}\label{class_bit_vector}\index{BitVector@{BitVector}}
+
+
+Class that allow the storage of a number inside a char \texorpdfstring{$\ast$}{*}. All element must be converted to a number of bits.  
+
+
+
+
+{\ttfamily \#include $<$Bit\+Vector.\+hpp$>$}
+
+
+
+Collaboration diagram for Bit\+Vector\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{class_bit_vector__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}
+\begin{DoxyCompactList}\small\item\em Class that represent coordinates inside a \doxylink{class_bit_vector}{Bit\+Vector}. It memorize octet position and bit position n order to facilitate accession to elements. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_bit_vector_1_1_iterator}{Iterator}}
+\begin{DoxyCompactList}\small\item\em Special version of a \doxylink{class_bit_vector_1_1_coords}{Bit\+Vector\+::\+Coords}. Allow user to iter through a \doxylink{class_bit_vector}{Bit\+Vector};. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_bit_vector_a23c1685317944b2a5c6f149a5fccc6bd}{Bit\+Vector}} (\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{short}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{unsigned}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{int}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{block\+\_\+size}}, \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{alloc}})
+\begin{DoxyCompactList}\small\item\em Construct a new Bit Vector object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_a3a10dc26ed8d3adc29372d8e82b4e9f5}{Bit\+Vector}} (\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{short}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{unsigned}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{int}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{block\+\_\+size}})
+\begin{DoxyCompactList}\small\item\em Construct a new Bit Vector object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_a5547d55a697d61de026d0a94e743624b}{Bit\+Vector}} (\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}} \mbox{\hyperlink{class_bit_vector}{Bit\+Vector}} \&\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{bit\+\_\+vector}})
+\begin{DoxyCompactList}\small\item\em Construct a new Bit Vector object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{void}} \mbox{\hyperlink{class_bit_vector_ad60f42244db2c82260326605916431d3}{set\+Element\+Number}} (\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{number}})
+\begin{DoxyCompactList}\small\item\em Modify the number of known element in this object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_a77ca7fce8fc1cf29dd3ffe98f1fed314}{\texorpdfstring{$\sim$}{\string~}\+Bit\+Vector}} ()
+\begin{DoxyCompactList}\small\item\em Free memory used by \doxylink{class_bit_vector_a750fa04b5cbf2b494fd4b4c5c1e06858}{Bit\+Vector\+::\+\_\+data}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} \mbox{\hyperlink{class_bit_vector_a49233caeb2137deab3cd9de111e2a5fe}{get\+Data\+Size}} () \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}}
+\begin{DoxyCompactList}\small\item\em Get \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} \mbox{\hyperlink{class_bit_vector_a5339660cfb315ab5de7f78bdf5af4ce1}{get\+Element\+Number}} () \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}}
+\begin{DoxyCompactList}\small\item\em Get \doxylink{class_bit_vector_a2d149d5a42b3764dbd04c599a10e2ca0}{Bit\+Vector\+::\+\_\+element\+\_\+number}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{unsigned}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{short}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{int}} \mbox{\hyperlink{class_bit_vector_a4e9f0c58d94ed9bfc87866268c10ae1d}{get\+Element\+Size}} () \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}}
+\begin{DoxyCompactList}\small\item\em Get \doxylink{class_bit_vector_a75e44d18c8d46e908a98e52dad81b7e9}{Bit\+Vector\+::\+\_\+element\+\_\+size}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} \mbox{\hyperlink{class_bit_vector_ab30ea2b408107e4e6bc8095b5a64a1dd}{size}} () \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}}
+\begin{DoxyCompactList}\small\item\em Number of element inside this object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} \mbox{\hyperlink{class_bit_vector_ad64e921d07b9528a532477f282af135c}{current\+Element\+Capacity}} () \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}}
+\begin{DoxyCompactList}\small\item\em How many element can fit in this vector without having to resize the vector ? \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}} \mbox{\hyperlink{class_bit_vector_a93ab8bc2ec39bf299ae28ffcad504b41}{index\+Element}} (\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{element\+\_\+position}}) \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}}
+\begin{DoxyCompactList}\small\item\em Give the coords of the first bit of an element. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} \mbox{\hyperlink{class_bit_vector_a04e6d0b67ee9b42ccec437b0176067fe}{index\+Element\+Untreated}} (\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{element\+\_\+position}}) \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}}
+\begin{DoxyCompactList}\small\item\em Give A size\+\_\+t that represent the coords of the first bit of an element. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} \mbox{\hyperlink{class_bit_vector_a5af3c70f593aac387de23c7e6e5ae57e}{index\+Coordinate}} (\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}} \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}} \&\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{coord}}, error\+Mods \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{strictness}}=ignore) \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}}
+\begin{DoxyCompactList}\small\item\em Find the element that correspond to {\ttfamily coord} . \end{DoxyCompactList}\item 
+std\+::tuple$<$ \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}}, \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}}, \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} $>$ \mbox{\hyperlink{class_bit_vector_a354c83853bc3622efa5d45efcae97286}{index\+Coordinate\+Untreated}} (\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}} \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}} \&\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{coord}}) \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}}
+\begin{DoxyCompactList}\small\item\em Give more detailed on Bite\+Vector\+::index\+Coordinate. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_1_1_iterator}{Iterator}} \mbox{\hyperlink{class_bit_vector_a8f077fd00fdb5063895111bbf6a2f299}{begin}} () \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}}
+\begin{DoxyCompactList}\small\item\em Give an iterator to begin an iteration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_1_1_iterator}{Iterator}} \mbox{\hyperlink{class_bit_vector_a0608b1bfe67ad7972903a602eb42e404}{end}} () \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}}
+\begin{DoxyCompactList}\small\item\em Give an iterator to end an iteration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}} \mbox{\hyperlink{class_bit_vector_a11bb603fac37a9b0a5fd8f6f14c15c9b}{first\+Pos}} () \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}}
+\begin{DoxyCompactList}\small\item\em First postion of the vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}} \mbox{\hyperlink{class_bit_vector_ab92cdd9780b949d9d762f58e1ee4a0ae}{last\+Pos}} () \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}}
+\begin{DoxyCompactList}\small\item\em Last postion of the vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_a687989e02777be09358779a5a1cce893}{operator bool}} () \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}}
+\begin{DoxyCompactList}\small\item\em Do this object is not empty. \end{DoxyCompactList}\item 
+\Hypertarget{class_bit_vector_a9f4b8b754c1ca59027f7e0384d0c3577}\label{class_bit_vector_a9f4b8b754c1ca59027f7e0384d0c3577} 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{void}} {\bfseries double\+Size} ()
+\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{void}} \mbox{\hyperlink{class_bit_vector_a13856f33d2350c573cf2fbe587f03757}{resize}} (\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{element\+\_\+capacity}})
+\begin{DoxyCompactList}\small\item\em Modify the length of \doxylink{class_bit_vector_a750fa04b5cbf2b494fd4b4c5c1e06858}{Bit\+Vector\+::\+\_\+data}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{void}} \mbox{\hyperlink{class_bit_vector_a80a4aa212535129b881b4fb2623ce222}{shrink}} ()
+\begin{DoxyCompactList}\small\item\em Reduce the size of \doxylink{class_bit_vector_a750fa04b5cbf2b494fd4b4c5c1e06858}{Bit\+Vector\+::\+\_\+data} to fit \doxylink{class_bit_vector_a2d149d5a42b3764dbd04c599a10e2ca0}{Bit\+Vector\+::\+\_\+element\+\_\+number}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{void}} \mbox{\hyperlink{class_bit_vector_a673b530bb6e520f7f7fa90070e0034db}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Free memory used by \doxylink{class_bit_vector_a750fa04b5cbf2b494fd4b4c5c1e06858}{Bit\+Vector\+::\+\_\+data}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} \mbox{\hyperlink{class_bit_vector_aed5c03f3a6a9a2e5f3c58fb14768b0b4}{current\+Capacity}} () \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}}
+\begin{DoxyCompactList}\small\item\em Say how many items can be hold inside this object with the current \doxylink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{Bit\+Vector\+::\+\_\+data\+\_\+size\+:} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}} \mbox{\hyperlink{class_bit_vector_ab4d98ce4b8d36ed6af1aa46e67810972}{last\+Bit}} () \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}}
+\begin{DoxyCompactList}\small\item\em Give the last coordinates thar can be contained inside \doxylink{class_bit_vector_a750fa04b5cbf2b494fd4b4c5c1e06858}{Bit\+Vector\+::\+\_\+data} with the current \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}} \mbox{\hyperlink{class_bit_vector_a115789c8a9812eabb52f8843cd4e9965}{get\+Coord\+Unit}} () \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}}
+\begin{DoxyCompactList}\small\item\em Give the a coord object that represent the size of 1 element inside \doxylink{class_bit_vector_a750fa04b5cbf2b494fd4b4c5c1e06858}{Bit\+Vector\+::\+\_\+data}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} \mbox{\hyperlink{class_bit_vector_af68cda7444ec4459393bbfa423f0a7dd}{get\+Size\+\_\+t\+Unit}} () \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}}
+\begin{DoxyCompactList}\small\item\em Get the Size\+\_\+t value if a \doxylink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{Bit\+Vector\+::\+Coord\+Unit}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{bool}} \mbox{\hyperlink{class_bit_vector_a87e099aba27ebb0f67c07dd8314828e7}{max\+Size\+Is\+Reached}} () \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}}
+\begin{DoxyCompactList}\small\item\em Do maximum capacity is reached (With no possibility to push it further) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{bool}} \mbox{\hyperlink{class_bit_vector_a00aeec5e60b478d74e1540f34f46e37c}{max\+Data\+Size\+Is\+Reached}} () \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}}
+\begin{DoxyCompactList}\small\item\em Do maximum \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} is reached (With no possibility to push it further) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{bool}} \mbox{\hyperlink{class_bit_vector_a346dbe2e158d2cfda20212e7f93e8402}{max\+Element\+Size\+Is\+Reached}} () \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}}
+\begin{DoxyCompactList}\small\item\em Do maximum \doxylink{class_bit_vector_a2d149d5a42b3764dbd04c599a10e2ca0}{Bit\+Vector\+::\+\_\+element\+\_\+number} is reached (With no possibility to push it further) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} \mbox{\hyperlink{class_bit_vector_acb362f03b29600195996f52c04940439}{max\+Octet\+Limit}} () \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}}
+\begin{DoxyCompactList}\small\item\em How many octet can be contained in this object knowing \doxylink{class_bit_vector_a75e44d18c8d46e908a98e52dad81b7e9}{Bit\+Vector\+::\+\_\+element\+\_\+size}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} \mbox{\hyperlink{class_bit_vector_ad36e7d0b4b1417ca434414fa40c72eb8}{max\+Element\+Limit}} () \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}}
+\begin{DoxyCompactList}\small\item\em How many element can be contained in this object knowing \doxylink{class_bit_vector_a75e44d18c8d46e908a98e52dad81b7e9}{Bit\+Vector\+::\+\_\+element\+\_\+size}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}} \mbox{\hyperlink{class_bit_vector_a214e556dd89acce2427a378c5520adbd}{Maximal\+Coord\+Limit}} () \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}}
+\begin{DoxyCompactList}\small\item\em Last acceptable coordinate knowing \doxylink{class_bit_vector_a75e44d18c8d46e908a98e52dad81b7e9}{Bit\+Vector\+::\+\_\+element\+\_\+size}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{get}} (\mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}} coord) const
+\begin{DoxyCompactList}\small\item\em Return the value of the bit at the position {\ttfamily coord}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{bool}} \mbox{\hyperlink{class_bit_vector_a1fe4772dbd79ee266a2617f842d6d826}{operator\mbox{[}$\,$\mbox{]}}} (\mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{coord}}) \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}}
+\begin{DoxyCompactList}\small\item\em Return the value of the bit at the position {\ttfamily coord}. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_bit_vector_a2d0fe43b80b63edbd64dc887fd87d915}{get}} (size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em Return the element at the position {\ttfamily index}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_bit_vector_adf6f5604931d8bace36496046ed30bf7}{operator\mbox{[}$\,$\mbox{]}}} (\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{index}}) \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}}
+\begin{DoxyCompactList}\small\item\em Return the element at the position {\ttfamily index}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{void}} \mbox{\hyperlink{class_bit_vector_aca24053f655c825de0f06ec86fff1cec}{set}} (\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{index}}, \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{tab}}, \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{bool}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{restrictions}}=\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{true}}, \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{bool}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{push}}=\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{true}})
+\begin{DoxyCompactList}\small\item\em Replace an element by another element. Can add an element to the list if {\ttfamily index} = \doxylink{class_bit_vector_a2d149d5a42b3764dbd04c599a10e2ca0}{Bit\+Vector\+::\+\_\+element\+\_\+number}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{void}} \mbox{\hyperlink{class_bit_vector_a38e8be69974c874857dd7cb6a52429ac}{set}} (\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{index}}, \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{char}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{value}}, \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{bool}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{restrictions}}=\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{true}}, \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{bool}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{push}}=\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{true}})
+\begin{DoxyCompactList}\small\item\em Replace an element by another element. Can add an element to the list if {\ttfamily index} = \doxylink{class_bit_vector_a2d149d5a42b3764dbd04c599a10e2ca0}{Bit\+Vector\+::\+\_\+element\+\_\+number}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{void}} \mbox{\hyperlink{class_bit_vector_a9c63a7f853693a19595fa92d487f92b5}{set}} (\mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{coord}}, \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{bool}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{value}}, \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{bool}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{restrictions}}=\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{true}})
+\begin{DoxyCompactList}\small\item\em Modify a bit inside \doxylink{class_bit_vector_a750fa04b5cbf2b494fd4b4c5c1e06858}{Bit\+Vector\+::\+\_\+data}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{void}} \mbox{\hyperlink{class_bit_vector_a686af396e4dff1536b7588213726c4cc}{make\+Room\+For\+Element}} (\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{element\+\_\+position}}, \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{room\+\_\+required}}, \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{bool}} erase=\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{true}})
+\begin{DoxyCompactList}\small\item\em Insert a number of blank position inside \doxylink{class_bit_vector_a750fa04b5cbf2b494fd4b4c5c1e06858}{Bit\+Vector\+::\+\_\+data}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{void}} \mbox{\hyperlink{class_bit_vector_afbdbe8a5003f5941ffd5ab095cf87d88}{append}} (\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{tab}})
+\begin{DoxyCompactList}\small\item\em Add an element at the end of the vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{void}} \mbox{\hyperlink{class_bit_vector_a2af5c1a1a0050e2b52d06c38436280fd}{append}} (\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{char}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{value}})
+\begin{DoxyCompactList}\small\item\em Add an element at the end of the vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{void}} \mbox{\hyperlink{class_bit_vector_a9f86c96c013632abd9d18feafe78d72e}{insert}} (\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{pos}}, \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{number\+\_\+of\+\_\+elements}}, \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{tab}} ...)
+\begin{DoxyCompactList}\small\item\em Insert a {\ttfamily number\+\_\+of\+\_\+elements} inside the vector at the index {\ttfamily pos} . \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{void}} \mbox{\hyperlink{class_bit_vector_a915743b3f94c75c22317d160bfa741ff}{insert}} (\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{pos}}, \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{number\+\_\+of\+\_\+elements}}, \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{char}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{c}} ...)
+\begin{DoxyCompactList}\small\item\em Insert a {\ttfamily number\+\_\+of\+\_\+elements} inside the vector at the index {\ttfamily pos} . \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{void}} \mbox{\hyperlink{class_bit_vector_a87f84edf5dd56606b26e8741ba6ced02}{remove}} (\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{element\+\_\+position}}, \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{number\+\_\+of\+\_\+element}})
+\begin{DoxyCompactList}\small\item\em Remove a number of element from the vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{static}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} \mbox{\hyperlink{class_bit_vector_aa3228d2bacb1bb0f6072d73d43a49456}{maximum\+Octet\+Number}} ()
+\begin{DoxyCompactList}\small\item\em How many octet can be contained in this kind of object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{static}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} \mbox{\hyperlink{class_bit_vector_a68b14af0886039ddcf55c82a250deb4c}{maximum\+Element\+Number}} ()
+\begin{DoxyCompactList}\small\item\em How many element can be contained in this kind of object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{static}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{void}} \mbox{\hyperlink{class_bit_vector_a8c3c1f0faa0bbf35638c7217a841cbd8}{copy\+Bits}} (\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{pattern}}, \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{final\+\_\+list}}, \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}} \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{element}}, \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{pattern\+\_\+coord}}, \mbox{\hyperlink{class_bit_vector_1_1_coords}{Bit\+Vector\+::\+Coords}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{final\+\_\+coord}}, \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{bool}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{final\+\_\+end\+\_\+is\+\_\+right}}=\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{false}}, \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{bool}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{pattern\+\_\+end\+\_\+is\+\_\+right}}=\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{false}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{void}} \mbox{\hyperlink{class_bit_vector_aece011ed1a0d697e5f777a7c2e147fcd}{\+\_\+kill\+Internal\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Free memory used by \doxylink{class_bit_vector_a750fa04b5cbf2b494fd4b4c5c1e06858}{Bit\+Vector\+::\+\_\+data}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_bit_vector_a750fa04b5cbf2b494fd4b4c5c1e06858}\label{class_bit_vector_a750fa04b5cbf2b494fd4b4c5c1e06858} 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{char}} \texorpdfstring{$\ast$}{*} {\bfseries \+\_\+data} = \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{NULL}}
+\begin{DoxyCompactList}\small\item\em Point toward a char tab that contain all bits. \end{DoxyCompactList}\item 
+\Hypertarget{class_bit_vector_a282da9244afdcef423e33993288e9f49}\label{class_bit_vector_a282da9244afdcef423e33993288e9f49} 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} {\bfseries \+\_\+data\+\_\+size} = 0
+\begin{DoxyCompactList}\small\item\em Size of \doxylink{class_bit_vector_a750fa04b5cbf2b494fd4b4c5c1e06858}{Bit\+Vector\+::\+\_\+data} (number of octet that can be stored) \end{DoxyCompactList}\item 
+\Hypertarget{class_bit_vector_a2d149d5a42b3764dbd04c599a10e2ca0}\label{class_bit_vector_a2d149d5a42b3764dbd04c599a10e2ca0} 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} {\bfseries \+\_\+element\+\_\+number}
+\begin{DoxyCompactList}\small\item\em Number of element stored inside \doxylink{class_bit_vector_a750fa04b5cbf2b494fd4b4c5c1e06858}{Bit\+Vector\+::\+\_\+data}. \end{DoxyCompactList}\item 
+\Hypertarget{class_bit_vector_a75e44d18c8d46e908a98e52dad81b7e9}\label{class_bit_vector_a75e44d18c8d46e908a98e52dad81b7e9} 
+\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{short}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{unsigned}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{int}} {\bfseries \+\_\+element\+\_\+size}
+\begin{DoxyCompactList}\small\item\em Number of bit used by each elements inside \doxylink{class_bit_vector_a750fa04b5cbf2b494fd4b4c5c1e06858}{Bit\+Vector\+::\+\_\+data}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that allow the storage of a number inside a char \texorpdfstring{$\ast$}{*}. All element must be converted to a number of bits. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_bit_vector_a23c1685317944b2a5c6f149a5fccc6bd}\label{class_bit_vector_a23c1685317944b2a5c6f149a5fccc6bd} 
+\index{BitVector@{BitVector}!BitVector@{BitVector}}
+\index{BitVector@{BitVector}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{BitVector()}{BitVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Bit\+Vector\+::\+Bit\+Vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{short}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{unsigned}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{int}}}]{block\+\_\+size,  }\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}}}]{alloc }\end{DoxyParamCaption})}
+
+
+
+Construct a new Bit Vector object. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(n\texorpdfstring{$\ast$}{*}m)    \\\cline{1-2}
+Space   &O(n\texorpdfstring{$\ast$}{*}m)   \\\cline{1-2}
+\end{longtabu}
+n = {\ttfamily block\+\_\+size} m = {\ttfamily alloc} 
+\begin{DoxyParams}{Parameters}
+{\em block\+\_\+size} & item size. \\
+\hline
+{\em alloc} & How many item should be contained inside this object. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a23c1685317944b2a5c6f149a5fccc6bd_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_a3a10dc26ed8d3adc29372d8e82b4e9f5}\label{class_bit_vector_a3a10dc26ed8d3adc29372d8e82b4e9f5} 
+\index{BitVector@{BitVector}!BitVector@{BitVector}}
+\index{BitVector@{BitVector}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{BitVector()}{BitVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Bit\+Vector\+::\+Bit\+Vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{short}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{unsigned}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{int}}}]{block\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new Bit Vector object. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(n)    \\\cline{1-2}
+Space   &O(n)   \\\cline{1-2}
+\end{longtabu}
+n = {\ttfamily block\+\_\+size} \texorpdfstring{$\ast$}{*} 2 
+\begin{DoxyParams}{Parameters}
+{\em block\+\_\+size} & item size. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_bit_vector_a5547d55a697d61de026d0a94e743624b}\label{class_bit_vector_a5547d55a697d61de026d0a94e743624b} 
+\index{BitVector@{BitVector}!BitVector@{BitVector}}
+\index{BitVector@{BitVector}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{BitVector()}{BitVector()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Bit\+Vector\+::\+Bit\+Vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}} \mbox{\hyperlink{class_bit_vector}{Bit\+Vector}} \&}]{bit\+\_\+vector }\end{DoxyParamCaption})}
+
+
+
+Construct a new Bit Vector object. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(n\texorpdfstring{$\ast$}{*}m)    \\\cline{1-2}
+Space   &O(n\texorpdfstring{$\ast$}{*}m)   \\\cline{1-2}
+\end{longtabu}
+n = {\ttfamily bit\+\_\+vector} \textquotesingle{}s size m = {\ttfamily bit\+\_\+vector} element size Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a5547d55a697d61de026d0a94e743624b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_a77ca7fce8fc1cf29dd3ffe98f1fed314}\label{class_bit_vector_a77ca7fce8fc1cf29dd3ffe98f1fed314} 
+\index{BitVector@{BitVector}!````~BitVector@{\texorpdfstring{$\sim$}{\string~}BitVector}}
+\index{````~BitVector@{\texorpdfstring{$\sim$}{\string~}BitVector}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}BitVector()}{\string~BitVector()}}
+{\footnotesize\ttfamily Bit\+Vector\+::\texorpdfstring{$\sim$}{\string~}\+Bit\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Free memory used by \doxylink{class_bit_vector_a750fa04b5cbf2b494fd4b4c5c1e06858}{Bit\+Vector\+::\+\_\+data}. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(n)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+n = \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a77ca7fce8fc1cf29dd3ffe98f1fed314_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_bit_vector_aece011ed1a0d697e5f777a7c2e147fcd}\label{class_bit_vector_aece011ed1a0d697e5f777a7c2e147fcd} 
+\index{BitVector@{BitVector}!\_killInternalData@{\_killInternalData}}
+\index{\_killInternalData@{\_killInternalData}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{\_killInternalData()}{\_killInternalData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{void}} Bit\+Vector\+::\+\_\+kill\+Internal\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Free memory used by \doxylink{class_bit_vector_a750fa04b5cbf2b494fd4b4c5c1e06858}{Bit\+Vector\+::\+\_\+data}. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(n)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+n = \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_aece011ed1a0d697e5f777a7c2e147fcd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_aece011ed1a0d697e5f777a7c2e147fcd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_afbdbe8a5003f5941ffd5ab095cf87d88}\label{class_bit_vector_afbdbe8a5003f5941ffd5ab095cf87d88} 
+\index{BitVector@{BitVector}!append@{append}}
+\index{append@{append}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{void}} Bit\+Vector\+::append (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{char}} \texorpdfstring{$\ast$}{*}}]{tab }\end{DoxyParamCaption})}
+
+
+
+Add an element at the end of the vector. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Without \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} modification   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ With \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} modification    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Without \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} modification   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ With \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} modification    }\\\cline{1-3}
+\endhead
+Time   &O(n)   &O(d)    \\\cline{1-3}
+Space   &O(1)   &O(2d)   \\\cline{1-3}
+\end{longtabu}
+n = \doxylink{class_bit_vector_a75e44d18c8d46e908a98e52dad81b7e9}{Bit\+Vector\+::\+\_\+element\+\_\+size} ; d = \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} + n; 2d = \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} \texorpdfstring{$\ast$}{*} 2 + n ; 
+\begin{DoxyParams}{Parameters}
+{\em tab} & A tab of char \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_afbdbe8a5003f5941ffd5ab095cf87d88_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_afbdbe8a5003f5941ffd5ab095cf87d88_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_a2af5c1a1a0050e2b52d06c38436280fd}\label{class_bit_vector_a2af5c1a1a0050e2b52d06c38436280fd} 
+\index{BitVector@{BitVector}!append@{append}}
+\index{append@{append}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{void}} Bit\+Vector\+::append (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{char}}}]{value }\end{DoxyParamCaption})}
+
+
+
+Add an element at the end of the vector. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Without \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} modification   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ With \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} modification    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Without \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} modification   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ With \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} modification    }\\\cline{1-3}
+\endhead
+Time   &O(n)   &O(d)    \\\cline{1-3}
+Space   &O(1)   &O(2d)   \\\cline{1-3}
+\end{longtabu}
+n = \doxylink{class_bit_vector_a75e44d18c8d46e908a98e52dad81b7e9}{Bit\+Vector\+::\+\_\+element\+\_\+size} ; d = \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} + n; 2d = \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} \texorpdfstring{$\ast$}{*} 2 + n ; 
+\begin{DoxyParams}{Parameters}
+{\em tab} & A char \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a2af5c1a1a0050e2b52d06c38436280fd_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_a8f077fd00fdb5063895111bbf6a2f299}\label{class_bit_vector_a8f077fd00fdb5063895111bbf6a2f299} 
+\index{BitVector@{BitVector}!begin@{begin}}
+\index{begin@{begin}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_1_1_iterator}{Bit\+Vector\+::\+Iterator}} Bit\+Vector\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Give an iterator to begin an iteration. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(n)    \\\cline{1-2}
+Space   &O(n)   \\\cline{1-2}
+\end{longtabu}
+n = size of an element → \doxylink{class_bit_vector_a75e44d18c8d46e908a98e52dad81b7e9}{Bit\+Vector\+::\+\_\+element\+\_\+size} \begin{DoxyReturn}{Returns}
+\doxylink{class_bit_vector_1_1_iterator}{Iterator} initialised to 0,0 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{class_bit_vector_a8f077fd00fdb5063895111bbf6a2f299_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_a673b530bb6e520f7f7fa90070e0034db}\label{class_bit_vector_a673b530bb6e520f7f7fa90070e0034db} 
+\index{BitVector@{BitVector}!clear@{clear}}
+\index{clear@{clear}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{void}} Bit\+Vector\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Free memory used by \doxylink{class_bit_vector_a750fa04b5cbf2b494fd4b4c5c1e06858}{Bit\+Vector\+::\+\_\+data}. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(n)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+n = \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a673b530bb6e520f7f7fa90070e0034db_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_a8c3c1f0faa0bbf35638c7217a841cbd8}\label{class_bit_vector_a8c3c1f0faa0bbf35638c7217a841cbd8} 
+\index{BitVector@{BitVector}!copyBits@{copyBits}}
+\index{copyBits@{copyBits}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{copyBits()}{copyBits()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{void}} Bit\+Vector\+::copy\+Bits (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{char}} \texorpdfstring{$\ast$}{*}}]{pattern,  }\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{char}} \texorpdfstring{$\ast$}{*}}]{final\+\_\+list,  }\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}} \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}}]{element,  }\item[{\mbox{\hyperlink{class_bit_vector_1_1_coords}{Bit\+Vector\+::\+Coords}}}]{pattern\+\_\+coord,  }\item[{\mbox{\hyperlink{class_bit_vector_1_1_coords}{Bit\+Vector\+::\+Coords}}}]{final\+\_\+coord,  }\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{bool}}}]{final\+\_\+end\+\_\+is\+\_\+right = {\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{false}}},  }\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{bool}}}]{pattern\+\_\+end\+\_\+is\+\_\+right = {\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{false}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(n)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+n = size of element → element.\+get\+Octet() \texorpdfstring{$\ast$}{*} 8 + element.\+get\+Bit(). 
+\begin{DoxyParams}{Parameters}
+{\em pattern} & What should be copied in {\ttfamily final\+\_\+list} \\
+\hline
+{\em final\+\_\+list} & A container that will receive the content of {\ttfamily pattern} \\
+\hline
+{\em element} & The size of the element that should be copied form {\ttfamily pattern} to {\ttfamily final\+\_\+list} \\
+\hline
+{\em pattern\+\_\+coord} & Where the element start in {\ttfamily pattern} \\
+\hline
+{\em final\+\_\+coord} & Where the element start in {\ttfamily final\+\_\+list} \\
+\hline
+{\em final\+\_\+end\+\_\+is\+\_\+right} & True \+: the last octet od {\ttfamily final\+\_\+list} will be wrote as xxxppppp (x=unused and p=pattern) False \+: pppppxxx \\
+\hline
+{\em pattern\+\_\+end\+\_\+is\+\_\+right} & True \+: the last octet od {\ttfamily pattern} will be wrote as xxxppppp (x=unused and p=pattern) False \+: pppppxxx \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a8c3c1f0faa0bbf35638c7217a841cbd8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a8c3c1f0faa0bbf35638c7217a841cbd8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_aed5c03f3a6a9a2e5f3c58fb14768b0b4}\label{class_bit_vector_aed5c03f3a6a9a2e5f3c58fb14768b0b4} 
+\index{BitVector@{BitVector}!currentCapacity@{currentCapacity}}
+\index{currentCapacity@{currentCapacity}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{currentCapacity()}{currentCapacity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} Bit\+Vector\+::current\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Say how many items can be hold inside this object with the current \doxylink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{Bit\+Vector\+::\+\_\+data\+\_\+size\+:} 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(1)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyReturn}{Returns}
+size\+\_\+t how many items can be hold inside this object 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_aed5c03f3a6a9a2e5f3c58fb14768b0b4_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_ad64e921d07b9528a532477f282af135c}\label{class_bit_vector_ad64e921d07b9528a532477f282af135c} 
+\index{BitVector@{BitVector}!currentElementCapacity@{currentElementCapacity}}
+\index{currentElementCapacity@{currentElementCapacity}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{currentElementCapacity()}{currentElementCapacity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} Bit\+Vector\+::current\+Element\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+How many element can fit in this vector without having to resize the vector ? 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(1)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyReturn}{Returns}
+size\+\_\+t number of element 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_ad64e921d07b9528a532477f282af135c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_ad64e921d07b9528a532477f282af135c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_a0608b1bfe67ad7972903a602eb42e404}\label{class_bit_vector_a0608b1bfe67ad7972903a602eb42e404} 
+\index{BitVector@{BitVector}!end@{end}}
+\index{end@{end}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_1_1_iterator}{Bit\+Vector\+::\+Iterator}} Bit\+Vector\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Give an iterator to end an iteration. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(n)    \\\cline{1-2}
+Space   &O(n)   \\\cline{1-2}
+\end{longtabu}
+n = size of an element → \doxylink{class_bit_vector_a75e44d18c8d46e908a98e52dad81b7e9}{Bit\+Vector\+::\+\_\+element\+\_\+size} \begin{DoxyReturn}{Returns}
+\doxylink{class_bit_vector_1_1_iterator}{Iterator} initialised to \doxylink{class_bit_vector_ab92cdd9780b949d9d762f58e1ee4a0ae}{Bit\+Vector\+::last\+Pos} 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a0608b1bfe67ad7972903a602eb42e404_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_a11bb603fac37a9b0a5fd8f6f14c15c9b}\label{class_bit_vector_a11bb603fac37a9b0a5fd8f6f14c15c9b} 
+\index{BitVector@{BitVector}!firstPos@{firstPos}}
+\index{firstPos@{firstPos}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{firstPos()}{firstPos()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_1_1_coords}{Bit\+Vector\+::\+Coords}} Bit\+Vector\+::first\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+First postion of the vector. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(1)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_bit_vector_1_1_coords}{Coords} (0, 0) 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{class_bit_vector_a11bb603fac37a9b0a5fd8f6f14c15c9b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}\label{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d} 
+\index{BitVector@{BitVector}!get@{get}}
+\index{get@{get}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Bit\+Vector\+::get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_vector_1_1_coords}{Bit\+Vector\+::\+Coords}}}]{coord }\end{DoxyParamCaption}) const}
+
+
+
+Return the value of the bit at the position {\ttfamily coord}. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(1)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+
+\begin{DoxyParams}{Parameters}
+{\em coord} & Position of a bit \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true bit=1 
+
+false bit=0 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_a2d0fe43b80b63edbd64dc887fd87d915}\label{class_bit_vector_a2d0fe43b80b63edbd64dc887fd87d915} 
+\index{BitVector@{BitVector}!get@{get}}
+\index{get@{get}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} Bit\+Vector\+::get (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Return the element at the position {\ttfamily index}. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(n)    \\\cline{1-2}
+Space   &O(n)   \\\cline{1-2}
+\end{longtabu}
+n = size of an element → \doxylink{class_bit_vector_a75e44d18c8d46e908a98e52dad81b7e9}{Bit\+Vector\+::\+\_\+element\+\_\+size} 
+\begin{DoxyParams}{Parameters}
+{\em index} & the position of the element \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char\texorpdfstring{$\ast$}{*} the element 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a2d0fe43b80b63edbd64dc887fd87d915_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_a115789c8a9812eabb52f8843cd4e9965}\label{class_bit_vector_a115789c8a9812eabb52f8843cd4e9965} 
+\index{BitVector@{BitVector}!getCoordUnit@{getCoordUnit}}
+\index{getCoordUnit@{getCoordUnit}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{getCoordUnit()}{getCoordUnit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_1_1_coords}{Bit\+Vector\+::\+Coords}} Bit\+Vector\+::get\+Coord\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Give the a coord object that represent the size of 1 element inside \doxylink{class_bit_vector_a750fa04b5cbf2b494fd4b4c5c1e06858}{Bit\+Vector\+::\+\_\+data}. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(1)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_bit_vector_1_1_coords}{Coords} A coord object that represent the size of 1 element inside \doxylink{class_bit_vector_a750fa04b5cbf2b494fd4b4c5c1e06858}{Bit\+Vector\+::\+\_\+data}. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a115789c8a9812eabb52f8843cd4e9965_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a115789c8a9812eabb52f8843cd4e9965_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_a49233caeb2137deab3cd9de111e2a5fe}\label{class_bit_vector_a49233caeb2137deab3cd9de111e2a5fe} 
+\index{BitVector@{BitVector}!getDataSize@{getDataSize}}
+\index{getDataSize@{getDataSize}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{getDataSize()}{getDataSize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} Bit\+Vector\+::get\+Data\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size}. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(1)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyReturn}{Returns}
+size\+\_\+t \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size}. Number of octet that can be contained 
+\end{DoxyReturn}
+\Hypertarget{class_bit_vector_a5339660cfb315ab5de7f78bdf5af4ce1}\label{class_bit_vector_a5339660cfb315ab5de7f78bdf5af4ce1} 
+\index{BitVector@{BitVector}!getElementNumber@{getElementNumber}}
+\index{getElementNumber@{getElementNumber}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{getElementNumber()}{getElementNumber()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} Bit\+Vector\+::get\+Element\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get \doxylink{class_bit_vector_a2d149d5a42b3764dbd04c599a10e2ca0}{Bit\+Vector\+::\+\_\+element\+\_\+number}. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(1)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyReturn}{Returns}
+size\+\_\+t \doxylink{class_bit_vector_a2d149d5a42b3764dbd04c599a10e2ca0}{Bit\+Vector\+::\+\_\+element\+\_\+number}. Number of element contained 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a5339660cfb315ab5de7f78bdf5af4ce1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_a4e9f0c58d94ed9bfc87866268c10ae1d}\label{class_bit_vector_a4e9f0c58d94ed9bfc87866268c10ae1d} 
+\index{BitVector@{BitVector}!getElementSize@{getElementSize}}
+\index{getElementSize@{getElementSize}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{getElementSize()}{getElementSize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{unsigned}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{short}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{int}} Bit\+Vector\+::get\+Element\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get \doxylink{class_bit_vector_a75e44d18c8d46e908a98e52dad81b7e9}{Bit\+Vector\+::\+\_\+element\+\_\+size}. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(1)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyReturn}{Returns}
+size\+\_\+t \doxylink{class_bit_vector_a75e44d18c8d46e908a98e52dad81b7e9}{Bit\+Vector\+::\+\_\+element\+\_\+size}. Number of bit used by one element 
+\end{DoxyReturn}
+\Hypertarget{class_bit_vector_af68cda7444ec4459393bbfa423f0a7dd}\label{class_bit_vector_af68cda7444ec4459393bbfa423f0a7dd} 
+\index{BitVector@{BitVector}!getSize\_tUnit@{getSize\_tUnit}}
+\index{getSize\_tUnit@{getSize\_tUnit}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{getSize\_tUnit()}{getSize\_tUnit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} Bit\+Vector\+::get\+Size\+\_\+t\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Size\+\_\+t value if a \doxylink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{Bit\+Vector\+::\+Coord\+Unit}. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(1)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyReturn}{Returns}
+Size\+\_\+t value of a coord object that represent the size of 1 element inside \doxylink{class_bit_vector_a750fa04b5cbf2b494fd4b4c5c1e06858}{Bit\+Vector\+::\+\_\+data}. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_af68cda7444ec4459393bbfa423f0a7dd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_af68cda7444ec4459393bbfa423f0a7dd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_a5af3c70f593aac387de23c7e6e5ae57e}\label{class_bit_vector_a5af3c70f593aac387de23c7e6e5ae57e} 
+\index{BitVector@{BitVector}!indexCoordinate@{indexCoordinate}}
+\index{indexCoordinate@{indexCoordinate}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{indexCoordinate()}{indexCoordinate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} Bit\+Vector\+::index\+Coordinate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}} \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}} \&}]{coord,  }\item[{error\+Mods}]{strictness = {\ttfamily ignore} }\end{DoxyParamCaption}) const}
+
+
+
+Find the element that correspond to {\ttfamily coord} . 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(1)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+
+\begin{DoxyParams}{Parameters}
+{\em coord} & Coord object \\
+\hline
+{\em strictness} & if raise / display a message is displayed {\ttfamily coord} is not the first bit of an object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size\+\_\+t The element position 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a5af3c70f593aac387de23c7e6e5ae57e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a5af3c70f593aac387de23c7e6e5ae57e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_a354c83853bc3622efa5d45efcae97286}\label{class_bit_vector_a354c83853bc3622efa5d45efcae97286} 
+\index{BitVector@{BitVector}!indexCoordinateUntreated@{indexCoordinateUntreated}}
+\index{indexCoordinateUntreated@{indexCoordinateUntreated}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{indexCoordinateUntreated()}{indexCoordinateUntreated()}}
+{\footnotesize\ttfamily std\+::tuple$<$ \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}}, \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}}, \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} $>$ Bit\+Vector\+::index\+Coordinate\+Untreated (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{const}} \mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}} \&}]{coord }\end{DoxyParamCaption}) const}
+
+
+
+Give more detailed on Bite\+Vector\+::index\+Coordinate. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(1)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+
+\begin{DoxyParams}{Parameters}
+{\em coord} & Coord object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::tuple$<$size\+\_\+t, size\+\_\+t, size\+\_\+t$>$ \{element position, really used octet, unused octet\} 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a354c83853bc3622efa5d45efcae97286_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a354c83853bc3622efa5d45efcae97286_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_a93ab8bc2ec39bf299ae28ffcad504b41}\label{class_bit_vector_a93ab8bc2ec39bf299ae28ffcad504b41} 
+\index{BitVector@{BitVector}!indexElement@{indexElement}}
+\index{indexElement@{indexElement}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{indexElement()}{indexElement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_1_1_coords}{Bit\+Vector\+::\+Coords}} Bit\+Vector\+::index\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}}}]{element\+\_\+position }\end{DoxyParamCaption}) const}
+
+
+
+Give the coords of the first bit of an element. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(1)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+
+\begin{DoxyParams}{Parameters}
+{\em element\+\_\+position} & Position of an element \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_bit_vector_1_1_coords}{Coords} of the first bit of an element 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a93ab8bc2ec39bf299ae28ffcad504b41_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a93ab8bc2ec39bf299ae28ffcad504b41_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_a04e6d0b67ee9b42ccec437b0176067fe}\label{class_bit_vector_a04e6d0b67ee9b42ccec437b0176067fe} 
+\index{BitVector@{BitVector}!indexElementUntreated@{indexElementUntreated}}
+\index{indexElementUntreated@{indexElementUntreated}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{indexElementUntreated()}{indexElementUntreated()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} Bit\+Vector\+::index\+Element\+Untreated (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}}}]{element\+\_\+position }\end{DoxyParamCaption}) const}
+
+
+
+Give A size\+\_\+t that represent the coords of the first bit of an element. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(1)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+
+\begin{DoxyParams}{Parameters}
+{\em element\+\_\+position} & Position of an element \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_bit_vector_1_1_coords}{Coords} size\+\_\+t that represent the coords of the first bit of an element 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a04e6d0b67ee9b42ccec437b0176067fe_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a04e6d0b67ee9b42ccec437b0176067fe_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_a9f86c96c013632abd9d18feafe78d72e}\label{class_bit_vector_a9f86c96c013632abd9d18feafe78d72e} 
+\index{BitVector@{BitVector}!insert@{insert}}
+\index{insert@{insert}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{void}} Bit\+Vector\+::insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}}}]{pos,  }\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}}}]{number\+\_\+of\+\_\+elements,  }\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{char}} \texorpdfstring{$\ast$}{*}}]{tab ... }\end{DoxyParamCaption})}
+
+
+
+Insert a {\ttfamily number\+\_\+of\+\_\+elements} inside the vector at the index {\ttfamily pos} . 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Without \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} modification   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ With \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} modification    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Without \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} modification   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ With \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} modification    }\\\cline{1-3}
+\endhead
+Time   &O(n)   &O(d)    \\\cline{1-3}
+Space   &O(m)   &O(2d)   \\\cline{1-3}
+\end{longtabu}
+n = \doxylink{class_bit_vector_a2d149d5a42b3764dbd04c599a10e2ca0}{Bit\+Vector\+::\+\_\+element\+\_\+number} -\/ {\ttfamily pos}, + {\ttfamily number\+\_\+of\+\_\+elements} ; m = \doxylink{class_bit_vector_a75e44d18c8d46e908a98e52dad81b7e9}{Bit\+Vector\+::\+\_\+element\+\_\+size} ; d = \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} + m; 2d = \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} \texorpdfstring{$\ast$}{*} 2 + m ; 
+\begin{DoxyParams}{Parameters}
+{\em pos} & Position od the insertion \\
+\hline
+{\em number\+\_\+of\+\_\+elements} & number of element to add \\
+\hline
+{\em tab} & list off element that should be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+If the number of {\ttfamily tab} is smaller than {\ttfamily number\+\_\+of\+\_\+elements} garbage will be inserted. 
+\end{DoxyWarning}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a9f86c96c013632abd9d18feafe78d72e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_a915743b3f94c75c22317d160bfa741ff}\label{class_bit_vector_a915743b3f94c75c22317d160bfa741ff} 
+\index{BitVector@{BitVector}!insert@{insert}}
+\index{insert@{insert}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{void}} Bit\+Vector\+::insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}}}]{pos,  }\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}}}]{number\+\_\+of\+\_\+elements,  }\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{char}}}]{c ... }\end{DoxyParamCaption})}
+
+
+
+Insert a {\ttfamily number\+\_\+of\+\_\+elements} inside the vector at the index {\ttfamily pos} . 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Without \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} modification   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ With \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} modification    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Without \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} modification   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ With \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} modification    }\\\cline{1-3}
+\endhead
+Time   &O(n)   &O(d)    \\\cline{1-3}
+Space   &O(m)   &O(2d)   \\\cline{1-3}
+\end{longtabu}
+n = \doxylink{class_bit_vector_a2d149d5a42b3764dbd04c599a10e2ca0}{Bit\+Vector\+::\+\_\+element\+\_\+number} -\/ {\ttfamily pos}, + {\ttfamily number\+\_\+of\+\_\+elements} ; m = \doxylink{class_bit_vector_a75e44d18c8d46e908a98e52dad81b7e9}{Bit\+Vector\+::\+\_\+element\+\_\+size} ; d = \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} + m; 2d = \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} \texorpdfstring{$\ast$}{*} 2 + m ; 
+\begin{DoxyParams}{Parameters}
+{\em pos} & Position od the insertion \\
+\hline
+{\em number\+\_\+of\+\_\+elements} & number of element to add \\
+\hline
+{\em c} & list off element that should be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+If the number of {\ttfamily c} is smaller than {\ttfamily number\+\_\+of\+\_\+elements} garbage will be inserted. 
+\end{DoxyWarning}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a915743b3f94c75c22317d160bfa741ff_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_ab4d98ce4b8d36ed6af1aa46e67810972}\label{class_bit_vector_ab4d98ce4b8d36ed6af1aa46e67810972} 
+\index{BitVector@{BitVector}!lastBit@{lastBit}}
+\index{lastBit@{lastBit}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{lastBit()}{lastBit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_1_1_coords}{Bit\+Vector\+::\+Coords}} Bit\+Vector\+::last\+Bit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Give the last coordinates thar can be contained inside \doxylink{class_bit_vector_a750fa04b5cbf2b494fd4b4c5c1e06858}{Bit\+Vector\+::\+\_\+data} with the current \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size}. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(1)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_bit_vector_1_1_coords}{Coords} Position of the last bit contained inside \doxylink{class_bit_vector_a750fa04b5cbf2b494fd4b4c5c1e06858}{Bit\+Vector\+::\+\_\+data}. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_ab4d98ce4b8d36ed6af1aa46e67810972_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_ab92cdd9780b949d9d762f58e1ee4a0ae}\label{class_bit_vector_ab92cdd9780b949d9d762f58e1ee4a0ae} 
+\index{BitVector@{BitVector}!lastPos@{lastPos}}
+\index{lastPos@{lastPos}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{lastPos()}{lastPos()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_1_1_coords}{Bit\+Vector\+::\+Coords}} Bit\+Vector\+::last\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Last postion of the vector. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(1)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_bit_vector_1_1_coords}{Coords} 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_ab92cdd9780b949d9d762f58e1ee4a0ae_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_ab92cdd9780b949d9d762f58e1ee4a0ae_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_a686af396e4dff1536b7588213726c4cc}\label{class_bit_vector_a686af396e4dff1536b7588213726c4cc} 
+\index{BitVector@{BitVector}!makeRoomForElement@{makeRoomForElement}}
+\index{makeRoomForElement@{makeRoomForElement}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{makeRoomForElement()}{makeRoomForElement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{void}} Bit\+Vector\+::make\+Room\+For\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}}}]{element\+\_\+position,  }\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}}}]{room\+\_\+required,  }\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{bool}}}]{erase = {\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{true}}} }\end{DoxyParamCaption})}
+
+
+
+Insert a number of blank position inside \doxylink{class_bit_vector_a750fa04b5cbf2b494fd4b4c5c1e06858}{Bit\+Vector\+::\+\_\+data}. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Without \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} modification   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ With \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} modification    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Without \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} modification   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ With \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} modification    }\\\cline{1-3}
+\endhead
+Time   &O(n)   &O(d)    \\\cline{1-3}
+Space   &O(m)   &O(2d)   \\\cline{1-3}
+\end{longtabu}
+n = \doxylink{class_bit_vector_a2d149d5a42b3764dbd04c599a10e2ca0}{Bit\+Vector\+::\+\_\+element\+\_\+number} -\/ {\ttfamily element\+\_\+position}, + {\ttfamily room\+\_\+required} ; m = \doxylink{class_bit_vector_a75e44d18c8d46e908a98e52dad81b7e9}{Bit\+Vector\+::\+\_\+element\+\_\+size} ; d = \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} + m; 2d = \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} \texorpdfstring{$\ast$}{*} 2 + m ; 
+\begin{DoxyParams}{Parameters}
+{\em element\+\_\+position} & Where should we make space ? \\
+\hline
+{\em room\+\_\+required} & How many spaces must be inserted ? \\
+\hline
+{\em erase} & Do spaces are reset to 0 ? (if false, old value is kept (like it was a duplication)) \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a686af396e4dff1536b7588213726c4cc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a686af396e4dff1536b7588213726c4cc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_a00aeec5e60b478d74e1540f34f46e37c}\label{class_bit_vector_a00aeec5e60b478d74e1540f34f46e37c} 
+\index{BitVector@{BitVector}!maxDataSizeIsReached@{maxDataSizeIsReached}}
+\index{maxDataSizeIsReached@{maxDataSizeIsReached}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{maxDataSizeIsReached()}{maxDataSizeIsReached()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{bool}} Bit\+Vector\+::max\+Data\+Size\+Is\+Reached (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Do maximum \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} is reached (With no possibility to push it further) 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(1)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyReturn}{Returns}
+true Yes 
+
+false No 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a00aeec5e60b478d74e1540f34f46e37c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a00aeec5e60b478d74e1540f34f46e37c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_ad36e7d0b4b1417ca434414fa40c72eb8}\label{class_bit_vector_ad36e7d0b4b1417ca434414fa40c72eb8} 
+\index{BitVector@{BitVector}!maxElementLimit@{maxElementLimit}}
+\index{maxElementLimit@{maxElementLimit}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{maxElementLimit()}{maxElementLimit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} Bit\+Vector\+::max\+Element\+Limit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+How many element can be contained in this object knowing \doxylink{class_bit_vector_a75e44d18c8d46e908a98e52dad81b7e9}{Bit\+Vector\+::\+\_\+element\+\_\+size}. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(1)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_ad36e7d0b4b1417ca434414fa40c72eb8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_ad36e7d0b4b1417ca434414fa40c72eb8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_a346dbe2e158d2cfda20212e7f93e8402}\label{class_bit_vector_a346dbe2e158d2cfda20212e7f93e8402} 
+\index{BitVector@{BitVector}!maxElementSizeIsReached@{maxElementSizeIsReached}}
+\index{maxElementSizeIsReached@{maxElementSizeIsReached}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{maxElementSizeIsReached()}{maxElementSizeIsReached()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{bool}} Bit\+Vector\+::max\+Element\+Size\+Is\+Reached (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Do maximum \doxylink{class_bit_vector_a2d149d5a42b3764dbd04c599a10e2ca0}{Bit\+Vector\+::\+\_\+element\+\_\+number} is reached (With no possibility to push it further) 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(1)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyReturn}{Returns}
+true Yes 
+
+false No 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a346dbe2e158d2cfda20212e7f93e8402_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a346dbe2e158d2cfda20212e7f93e8402_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_a214e556dd89acce2427a378c5520adbd}\label{class_bit_vector_a214e556dd89acce2427a378c5520adbd} 
+\index{BitVector@{BitVector}!MaximalCoordLimit@{MaximalCoordLimit}}
+\index{MaximalCoordLimit@{MaximalCoordLimit}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{MaximalCoordLimit()}{MaximalCoordLimit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_1_1_coords}{Bit\+Vector\+::\+Coords}} Bit\+Vector\+::\+Maximal\+Coord\+Limit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Last acceptable coordinate knowing \doxylink{class_bit_vector_a75e44d18c8d46e908a98e52dad81b7e9}{Bit\+Vector\+::\+\_\+element\+\_\+size}. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(1)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a214e556dd89acce2427a378c5520adbd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a214e556dd89acce2427a378c5520adbd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_a68b14af0886039ddcf55c82a250deb4c}\label{class_bit_vector_a68b14af0886039ddcf55c82a250deb4c} 
+\index{BitVector@{BitVector}!maximumElementNumber@{maximumElementNumber}}
+\index{maximumElementNumber@{maximumElementNumber}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{maximumElementNumber()}{maximumElementNumber()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} Bit\+Vector\+::maximum\+Element\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+How many element can be contained in this kind of object. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(1)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a68b14af0886039ddcf55c82a250deb4c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a68b14af0886039ddcf55c82a250deb4c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_aa3228d2bacb1bb0f6072d73d43a49456}\label{class_bit_vector_aa3228d2bacb1bb0f6072d73d43a49456} 
+\index{BitVector@{BitVector}!maximumOctetNumber@{maximumOctetNumber}}
+\index{maximumOctetNumber@{maximumOctetNumber}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{maximumOctetNumber()}{maximumOctetNumber()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} Bit\+Vector\+::maximum\+Octet\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+How many octet can be contained in this kind of object. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(1)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_aa3228d2bacb1bb0f6072d73d43a49456_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_aa3228d2bacb1bb0f6072d73d43a49456_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_acb362f03b29600195996f52c04940439}\label{class_bit_vector_acb362f03b29600195996f52c04940439} 
+\index{BitVector@{BitVector}!maxOctetLimit@{maxOctetLimit}}
+\index{maxOctetLimit@{maxOctetLimit}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{maxOctetLimit()}{maxOctetLimit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} Bit\+Vector\+::max\+Octet\+Limit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+How many octet can be contained in this object knowing \doxylink{class_bit_vector_a75e44d18c8d46e908a98e52dad81b7e9}{Bit\+Vector\+::\+\_\+element\+\_\+size}. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(1)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_acb362f03b29600195996f52c04940439_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_acb362f03b29600195996f52c04940439_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_a87e099aba27ebb0f67c07dd8314828e7}\label{class_bit_vector_a87e099aba27ebb0f67c07dd8314828e7} 
+\index{BitVector@{BitVector}!maxSizeIsReached@{maxSizeIsReached}}
+\index{maxSizeIsReached@{maxSizeIsReached}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{maxSizeIsReached()}{maxSizeIsReached()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{bool}} Bit\+Vector\+::max\+Size\+Is\+Reached (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Do maximum capacity is reached (With no possibility to push it further) 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(1)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyReturn}{Returns}
+true Yes 
+
+false No 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a87e099aba27ebb0f67c07dd8314828e7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_a687989e02777be09358779a5a1cce893}\label{class_bit_vector_a687989e02777be09358779a5a1cce893} 
+\index{BitVector@{BitVector}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{operator bool()}{operator bool()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{Bit\+Vector\+::operator}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{bool}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Do this object is not empty. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(1)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyReturn}{Returns}
+true is not empty 
+
+false is empty 
+\end{DoxyReturn}
+\Hypertarget{class_bit_vector_a1fe4772dbd79ee266a2617f842d6d826}\label{class_bit_vector_a1fe4772dbd79ee266a2617f842d6d826} 
+\index{BitVector@{BitVector}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{bool}} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{Bit\+Vector\+::operator}}\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_vector_1_1_coords}{Bit\+Vector\+::\+Coords}}}]{coord }\end{DoxyParamCaption}) const}
+
+
+
+Return the value of the bit at the position {\ttfamily coord}. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(1)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+
+\begin{DoxyParams}{Parameters}
+{\em coord} & Position of a bit \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true bit=1 
+
+false bit=0 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a1fe4772dbd79ee266a2617f842d6d826_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_adf6f5604931d8bace36496046ed30bf7}\label{class_bit_vector_adf6f5604931d8bace36496046ed30bf7} 
+\index{BitVector@{BitVector}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{Bit\+Vector\+::operator}}\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}}}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Return the element at the position {\ttfamily index}. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(n)    \\\cline{1-2}
+Space   &O(n)   \\\cline{1-2}
+\end{longtabu}
+n = size of an element → \doxylink{class_bit_vector_a75e44d18c8d46e908a98e52dad81b7e9}{Bit\+Vector\+::\+\_\+element\+\_\+size} 
+\begin{DoxyParams}{Parameters}
+{\em index} & the position of the element \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char\texorpdfstring{$\ast$}{*} the element 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_adf6f5604931d8bace36496046ed30bf7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_a87f84edf5dd56606b26e8741ba6ced02}\label{class_bit_vector_a87f84edf5dd56606b26e8741ba6ced02} 
+\index{BitVector@{BitVector}!remove@{remove}}
+\index{remove@{remove}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{void}} Bit\+Vector\+::remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}}}]{element\+\_\+position,  }\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}}}]{number\+\_\+of\+\_\+element }\end{DoxyParamCaption})}
+
+
+
+Remove a number of element from the vector. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(n)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+n = number\+\_\+of\+\_\+element 
+\begin{DoxyParams}{Parameters}
+{\em element\+\_\+position} & beginning of the deletion \\
+\hline
+{\em number\+\_\+of\+\_\+element} & number of element to delete \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a87f84edf5dd56606b26e8741ba6ced02_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_a13856f33d2350c573cf2fbe587f03757}\label{class_bit_vector_a13856f33d2350c573cf2fbe587f03757} 
+\index{BitVector@{BitVector}!resize@{resize}}
+\index{resize@{resize}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{void}} Bit\+Vector\+::resize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}}}]{element\+\_\+capacity }\end{DoxyParamCaption})}
+
+
+
+Modify the length of \doxylink{class_bit_vector_a750fa04b5cbf2b494fd4b4c5c1e06858}{Bit\+Vector\+::\+\_\+data}. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(n)    \\\cline{1-2}
+Space   &O(n)   \\\cline{1-2}
+\end{longtabu}
+n = {\ttfamily element\+\_\+capacity} 
+\begin{DoxyParams}{Parameters}
+{\em element\+\_\+capacity} & new capacity of \doxylink{class_bit_vector_a750fa04b5cbf2b494fd4b4c5c1e06858}{Bit\+Vector\+::\+\_\+data}. (in number of element) \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a13856f33d2350c573cf2fbe587f03757_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{class_bit_vector_a13856f33d2350c573cf2fbe587f03757_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_a9c63a7f853693a19595fa92d487f92b5}\label{class_bit_vector_a9c63a7f853693a19595fa92d487f92b5} 
+\index{BitVector@{BitVector}!set@{set}}
+\index{set@{set}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{void}} Bit\+Vector\+::set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_vector_1_1_coords}{Coords}}}]{coord,  }\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{bool}}}]{value,  }\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{bool}}}]{restrictions = {\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{true}}} }\end{DoxyParamCaption})}
+
+
+
+Modify a bit inside \doxylink{class_bit_vector_a750fa04b5cbf2b494fd4b4c5c1e06858}{Bit\+Vector\+::\+\_\+data}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coord} & Emplacement of the targeted bit. \\
+\hline
+{\em value} & True=1, False=0 \\
+\hline
+{\em restrictions} & Do un-\/assigned emplacement inside \doxylink{class_bit_vector_a750fa04b5cbf2b494fd4b4c5c1e06858}{Bit\+Vector\+::\+\_\+data} ( {\ttfamily coord} \texorpdfstring{$>$}{>} \doxylink{class_bit_vector_ab92cdd9780b949d9d762f58e1ee4a0ae}{Bit\+Vector\+::last\+Pos()}) are authorized. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a9c63a7f853693a19595fa92d487f92b5_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_aca24053f655c825de0f06ec86fff1cec}\label{class_bit_vector_aca24053f655c825de0f06ec86fff1cec} 
+\index{BitVector@{BitVector}!set@{set}}
+\index{set@{set}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{void}} Bit\+Vector\+::set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}}}]{index,  }\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{char}} \texorpdfstring{$\ast$}{*}}]{tab,  }\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{bool}}}]{restrictions = {\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{true}}},  }\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{bool}}}]{push = {\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{true}}} }\end{DoxyParamCaption})}
+
+
+
+Replace an element by another element. Can add an element to the list if {\ttfamily index} = \doxylink{class_bit_vector_a2d149d5a42b3764dbd04c599a10e2ca0}{Bit\+Vector\+::\+\_\+element\+\_\+number}. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Without \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} modification   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ With \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} modification    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Without \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} modification   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ With \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} modification    }\\\cline{1-3}
+\endhead
+Time   &O(n)   &O(d)    \\\cline{1-3}
+Space   &O(1)   &O(2d)   \\\cline{1-3}
+\end{longtabu}
+n = \doxylink{class_bit_vector_a75e44d18c8d46e908a98e52dad81b7e9}{Bit\+Vector\+::\+\_\+element\+\_\+size} ; d = \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} + n; 2d = \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} \texorpdfstring{$\ast$}{*} 2 + n ; 
+\begin{DoxyParams}{Parameters}
+{\em index} & Position of the element \\
+\hline
+{\em value} & The element to add. \\
+\hline
+{\em restrictions} & Do un-\/allowed emplacement inside \doxylink{class_bit_vector_a750fa04b5cbf2b494fd4b4c5c1e06858}{Bit\+Vector\+::\+\_\+data} ( {\ttfamily index} \texorpdfstring{$>$}{>} \doxylink{class_bit_vector_a2d149d5a42b3764dbd04c599a10e2ca0}{Bit\+Vector\+::\+\_\+element\+\_\+number}) are authorized. \\
+\hline
+{\em push} & Do writing the last element increase \doxylink{class_bit_vector_a2d149d5a42b3764dbd04c599a10e2ca0}{Bit\+Vector\+::\+\_\+element\+\_\+number}. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_aca24053f655c825de0f06ec86fff1cec_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_aca24053f655c825de0f06ec86fff1cec_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_a38e8be69974c874857dd7cb6a52429ac}\label{class_bit_vector_a38e8be69974c874857dd7cb6a52429ac} 
+\index{BitVector@{BitVector}!set@{set}}
+\index{set@{set}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{void}} Bit\+Vector\+::set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}}}]{index,  }\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{char}}}]{value,  }\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{bool}}}]{restrictions = {\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{true}}},  }\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{bool}}}]{push = {\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{true}}} }\end{DoxyParamCaption})}
+
+
+
+Replace an element by another element. Can add an element to the list if {\ttfamily index} = \doxylink{class_bit_vector_a2d149d5a42b3764dbd04c599a10e2ca0}{Bit\+Vector\+::\+\_\+element\+\_\+number}. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Without \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} modification   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ With \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} modification    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Without \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} modification   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ With \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} modification    }\\\cline{1-3}
+\endhead
+Time   &O(n)   &O(d)    \\\cline{1-3}
+Space   &O(1)   &O(2d)   \\\cline{1-3}
+\end{longtabu}
+n = \doxylink{class_bit_vector_a75e44d18c8d46e908a98e52dad81b7e9}{Bit\+Vector\+::\+\_\+element\+\_\+size} ; d = \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} + n; 2d = \doxylink{class_bit_vector_a282da9244afdcef423e33993288e9f49}{Bit\+Vector\+::\+\_\+data\+\_\+size} \texorpdfstring{$\ast$}{*} 2 + n ; 
+\begin{DoxyParams}{Parameters}
+{\em index} & Position of the element \\
+\hline
+{\em value} & The element to add. \\
+\hline
+{\em restrictions} & Do un-\/assigned emplacement inside \doxylink{class_bit_vector_a750fa04b5cbf2b494fd4b4c5c1e06858}{Bit\+Vector\+::\+\_\+data} ( {\ttfamily index} \texorpdfstring{$>$}{>} \doxylink{class_bit_vector_a2d149d5a42b3764dbd04c599a10e2ca0}{Bit\+Vector\+::\+\_\+element\+\_\+number}) are authorized. \\
+\hline
+{\em push} & Do writing the last element increase \doxylink{class_bit_vector_a2d149d5a42b3764dbd04c599a10e2ca0}{Bit\+Vector\+::\+\_\+element\+\_\+number}. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a38e8be69974c874857dd7cb6a52429ac_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_ad60f42244db2c82260326605916431d3}\label{class_bit_vector_ad60f42244db2c82260326605916431d3} 
+\index{BitVector@{BitVector}!setElementNumber@{setElementNumber}}
+\index{setElementNumber@{setElementNumber}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{setElementNumber()}{setElementNumber()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{void}} Bit\+Vector\+::set\+Element\+Number (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}}}]{number }\end{DoxyParamCaption})}
+
+
+
+Modify the number of known element in this object. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(1)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+
+\begin{DoxyParams}{Parameters}
+{\em number} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+simply modify \doxylink{class_bit_vector_a2d149d5a42b3764dbd04c599a10e2ca0}{Bit\+Vector\+::\+\_\+element\+\_\+number} if this function decrease the number of element, elements are not erase, they still exist in the vector. 
+\end{DoxyWarning}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_ad60f42244db2c82260326605916431d3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_ad60f42244db2c82260326605916431d3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_a80a4aa212535129b881b4fb2623ce222}\label{class_bit_vector_a80a4aa212535129b881b4fb2623ce222} 
+\index{BitVector@{BitVector}!shrink@{shrink}}
+\index{shrink@{shrink}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{shrink()}{shrink()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{void}} Bit\+Vector\+::shrink (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reduce the size of \doxylink{class_bit_vector_a750fa04b5cbf2b494fd4b4c5c1e06858}{Bit\+Vector\+::\+\_\+data} to fit \doxylink{class_bit_vector_a2d149d5a42b3764dbd04c599a10e2ca0}{Bit\+Vector\+::\+\_\+element\+\_\+number}. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(n\texorpdfstring{$\ast$}{*}m)    \\\cline{1-2}
+Space   &O(n\texorpdfstring{$\ast$}{*}m)   \\\cline{1-2}
+\end{longtabu}
+n = \doxylink{class_bit_vector_a2d149d5a42b3764dbd04c599a10e2ca0}{Bit\+Vector\+::\+\_\+element\+\_\+number} m = \doxylink{class_bit_vector_a75e44d18c8d46e908a98e52dad81b7e9}{Bit\+Vector\+::\+\_\+element\+\_\+size} Note \+: In most cases n \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} m. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_a80a4aa212535129b881b4fb2623ce222_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_bit_vector_ab30ea2b408107e4e6bc8095b5a64a1dd}\label{class_bit_vector_ab30ea2b408107e4e6bc8095b5a64a1dd} 
+\index{BitVector@{BitVector}!size@{size}}
+\index{size@{size}!BitVector@{BitVector}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_vector_aebe159444eb9d619959b7325ac5dac2d}{size\+\_\+t}} Bit\+Vector\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Number of element inside this object. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(1)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyReturn}{Returns}
+size\+\_\+t Number of element inside this object. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bit_vector_ab30ea2b408107e4e6bc8095b5a64a1dd_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Bit\+Vector.\+hpp\item 
+Bit\+Vector.\+cpp\end{DoxyCompactItemize}

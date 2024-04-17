@@ -1,0 +1,9 @@
+<map id="FastaRelated" name="FastaRelated">
+<area shape="rect" id="Node000001" title="Class inherited by all class related to FastaFiles." alt="" coords="245,5,418,211"/>
+<area shape="rect" id="Node000002" href="$class_fasta_header.html" title="A header function that is supposed to be hubble to parse Header from Fasta file." alt="" coords="5,259,255,673"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="269,224,249,260,245,257,265,221"/>
+<area shape="rect" id="Node000003" href="$class_fasta_manager.html" title="Class that should represent a Fasta File." alt="" coords="279,423,384,509"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="334,224,334,423,329,423,329,224"/>
+<area shape="rect" id="Node000004" href="$class_fasta_sequence.html" title="Class that represent Sequence inside a fasta File. Can hold comment." alt="" coords="409,343,566,589"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="384,222,436,342,431,344,379,224"/>
+</map>

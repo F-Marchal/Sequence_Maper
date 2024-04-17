@@ -1,0 +1,7 @@
+<map id="FastaHeader" name="FastaHeader">
+<area shape="rect" id="Node000001" title="A header function that is supposed to be hubble to parse Header from Fasta file." alt="" coords="54,259,303,673"/>
+<area shape="rect" id="Node000002" href="$class_fasta_related.html" title="Class inherited by all class related to FastaFiles." alt="" coords="5,5,179,211"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,223,131,258,126,259,117,224"/>
+<area shape="rect" id="Node000003" href="$class_header.html" title="Represent the header of a Fasta / FastQ file." alt="" coords="203,35,328,181"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="247,195,232,259,226,258,242,194"/>
+</map>

@@ -1,0 +1,29 @@
+<map id="BitVector::Coords::getBit" name="BitVector::Coords::getBit">
+<area shape="rect" id="Node000001" title="Get Coords::bit ." alt="" coords="1004,116,1147,156"/>
+<area shape="rect" id="Node000002" href="$class_bit_vector.html#a8c3c1f0faa0bbf35638c7217a841cbd8" title=" " alt="" coords="811,123,956,148"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="990,138,956,138,956,133,990,133"/>
+<area shape="rect" id="Node000003" href="$class_bit_vector.html#a2d0fe43b80b63edbd64dc887fd87d915" title="Return the element at the position index." alt="" coords="652,98,763,123"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="797,126,763,121,763,116,797,121"/>
+<area shape="rect" id="Node000004" href="$class_bit_vector.html#aca24053f655c825de0f06ec86fff1cec" title="Replace an element by another element. Can add an element to the list if index = BitVector::_element_..." alt="" coords="653,147,762,172"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="798,150,763,155,762,150,797,145"/>
+<area shape="rect" id="Node000005" href="$class_bit_vector.html#afbdbe8a5003f5941ffd5ab095cf87d88" title="Add an element at the end of the vector." alt="" coords="466,71,603,96"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="664,144,563,99,566,94,666,139"/>
+<area shape="rect" id="Node000006" href="$class_bit_vector.html#a5547d55a697d61de026d0a94e743624b" title="Construct a new Bit Vector object." alt="" coords="225,46,373,71"/>
+<area shape="poly" id="edge10_Node000004_Node000006" title=" " alt="" coords="658,142,650,136,634,115,627,95,620,76,603,61,571,47,537,38,467,32,401,38,346,48,345,43,400,32,467,27,538,33,573,42,605,56,624,73,632,93,639,113,654,133,661,138"/>
+<area shape="rect" id="Node000007" href="$class_bit_vector.html#a686af396e4dff1536b7588213726c4cc" title="Insert a number of blank position inside BitVector::_data." alt="" coords="180,122,417,147"/>
+<area shape="poly" id="edge13_Node000004_Node000007" title=" " alt="" coords="639,158,417,144,418,139,639,153"/>
+<area shape="rect" id="Node000008" href="$class_bit_vector.html#a9f86c96c013632abd9d18feafe78d72e" title="Insert a number_of_elements inside the vector at the index pos ." alt="" coords="5,98,132,123"/>
+<area shape="poly" id="edge11_Node000004_Node000008" title=" " alt="" coords="656,142,650,136,639,121,633,106,628,78,622,51,615,39,603,29,579,21,539,14,424,8,293,14,232,23,181,36,152,48,125,65,84,100,81,95,122,61,149,44,179,31,231,18,292,9,424,3,539,9,581,15,605,24,619,36,627,49,633,77,638,105,644,119,654,133,660,138"/>
+<area shape="rect" id="Node000009" href="$class_bit_vector.html#a915743b3f94c75c22317d160bfa741ff" title="Insert a number_of_elements inside the vector at the index pos ." alt="" coords="5,147,132,172"/>
+<area shape="poly" id="edge12_Node000004_Node000009" title=" " alt="" coords="639,162,132,162,132,157,639,157"/>
+<area shape="rect" id="Node000010" href="$class_bit_vector.html#a2af5c1a1a0050e2b52d06c38436280fd" title="Add an element at the end of the vector." alt="" coords="466,223,603,248"/>
+<area shape="poly" id="edge9_Node000004_Node000010" title=" " alt="" coords="666,181,566,225,563,221,664,176"/>
+<area shape="rect" id="Node000011" href="$class_bit_vector.html#a87f84edf5dd56606b26e8741ba6ced02" title="Remove a number of element from the vector." alt="" coords="465,272,604,298"/>
+<area shape="poly" id="edge14_Node000004_Node000011" title=" " alt="" coords="690,185,653,225,605,263,582,275,580,270,603,259,650,221,686,181"/>
+<area shape="rect" id="Node000012" href="$class_bit_vector.html#a38e8be69974c874857dd7cb6a52429ac" title="Replace an element by another element. Can add an element to the list if index = BitVector::_element_..." alt="" coords="480,322,589,347"/>
+<area shape="poly" id="edge15_Node000004_Node000012" title=" " alt="" coords="698,186,662,249,637,283,606,313,586,324,583,319,602,308,633,279,658,246,693,184"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="452,78,373,69,373,64,453,72"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="462,102,359,124,358,119,461,97"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="166,123,132,120,133,114,167,118"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="170,151,133,155,132,150,169,146"/>
+</map>

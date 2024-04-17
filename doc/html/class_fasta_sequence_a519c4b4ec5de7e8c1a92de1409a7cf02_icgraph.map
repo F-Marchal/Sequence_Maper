@@ -1,0 +1,5 @@
+<map id="FastaSequence::getComment" name="FastaSequence::getComment">
+<area shape="rect" id="Node000001" title="Retrieve the comment at the position position." alt="" coords="299,5,511,31"/>
+<area shape="rect" id="Node000002" href="$class_fasta_sequence.html#a758811b3ddc850c6cde26f4e5568eaa5" title="Change the position of a comment. If a comment is present at new_position , The two comments are merg..." alt="" coords="5,5,251,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="285,21,251,21,251,15,285,15"/>
+</map>

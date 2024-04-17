@@ -390,6 +390,14 @@ public:
     char operator[](size_t position) const {
         return this->get(position);
     }
+
+    friend std::ostream& operator<<(std::ostream& os, const Sequence& seq) {
+        for (char symbol : seq) {
+            os << symbol;
+        }
+        return os;
+    }
+
 };
 
 #endif

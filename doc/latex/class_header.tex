@@ -1,0 +1,187 @@
+\doxysection{Header Class Reference}
+\hypertarget{class_header}{}\label{class_header}\index{Header@{Header}}
+
+
+Represent the header of a Fasta / \doxylink{class_fast_q}{FastQ} file.  
+
+
+
+
+{\ttfamily \#include $<$Header.\+hpp$>$}
+
+
+
+Inheritance diagram for Header\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{class_header__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Header\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{class_header__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \& \mbox{\hyperlink{class_header_a41adb52fdc362a7ba6ca14bafa21348a}{get\+Comment}} () const
+\begin{DoxyCompactList}\small\item\em Get the comments related to this header;. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_header_ab7591583b60456a69b27c013b063aa85}{set\+Comment}} (std\+::string comment)
+\begin{DoxyCompactList}\small\item\em Change the comments related to this header;. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{class_header_a2a8a4c51db33c71988bd13c135182ada}{get\+Accession}} () const
+\begin{DoxyCompactList}\small\item\em Get the accession number / key contained inside this header;. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_header_a1734dde9c24c3d18fb6230645b3f0ab0}{set\+Accession}} (std\+::string accession)
+\begin{DoxyCompactList}\small\item\em Set the accession number / key contained inside this header;. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_header_a1767044806b7db3dd22f7a7dbd0622b0}\label{class_header_a1767044806b7db3dd22f7a7dbd0622b0} 
+std\+::string {\bfseries \+\_\+comment}
+\begin{DoxyCompactList}\small\item\em Comments that can be found inside the header (After the accession number / key) \end{DoxyCompactList}\item 
+\Hypertarget{class_header_ac8d5e9c2ebdf04c87d9504ab838965db}\label{class_header_ac8d5e9c2ebdf04c87d9504ab838965db} 
+std\+::string {\bfseries \+\_\+accession}
+\begin{DoxyCompactList}\small\item\em The Accession number contained inside the header. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represent the header of a Fasta / \doxylink{class_fast_q}{FastQ} file. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_header_a2a8a4c51db33c71988bd13c135182ada}\label{class_header_a2a8a4c51db33c71988bd13c135182ada} 
+\index{Header@{Header}!getAccession@{getAccession}}
+\index{getAccession@{getAccession}!Header@{Header}}
+\doxysubsubsection{\texorpdfstring{getAccession()}{getAccession()}}
+{\footnotesize\ttfamily const std\+::string \& Header\+::get\+Accession (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the accession number / key contained inside this header;. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(1)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyReturn}{Returns}
+std\+::string A string 
+\end{DoxyReturn}
+\Hypertarget{class_header_a41adb52fdc362a7ba6ca14bafa21348a}\label{class_header_a41adb52fdc362a7ba6ca14bafa21348a} 
+\index{Header@{Header}!getComment@{getComment}}
+\index{getComment@{getComment}!Header@{Header}}
+\doxysubsubsection{\texorpdfstring{getComment()}{getComment()}}
+{\footnotesize\ttfamily const std\+::string \& Header\+::get\+Comment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the comments related to this header;. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(1)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+\Hypertarget{class_header_a1734dde9c24c3d18fb6230645b3f0ab0}\label{class_header_a1734dde9c24c3d18fb6230645b3f0ab0} 
+\index{Header@{Header}!setAccession@{setAccession}}
+\index{setAccession@{setAccession}!Header@{Header}}
+\doxysubsubsection{\texorpdfstring{setAccession()}{setAccession()}}
+{\footnotesize\ttfamily void Header\+::set\+Accession (\begin{DoxyParamCaption}\item[{std\+::string}]{accession }\end{DoxyParamCaption})}
+
+
+
+Set the accession number / key contained inside this header;. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(1)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+
+\begin{DoxyParams}{Parameters}
+{\em accession} & An accession number / key \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_header_a1734dde9c24c3d18fb6230645b3f0ab0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_header_ab7591583b60456a69b27c013b063aa85}\label{class_header_ab7591583b60456a69b27c013b063aa85} 
+\index{Header@{Header}!setComment@{setComment}}
+\index{setComment@{setComment}!Header@{Header}}
+\doxysubsubsection{\texorpdfstring{setComment()}{setComment()}}
+{\footnotesize\ttfamily void Header\+::set\+Comment (\begin{DoxyParamCaption}\item[{std\+::string}]{comment }\end{DoxyParamCaption})}
+
+
+
+Change the comments related to this header;. 
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Complexity   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }\\\cline{1-2}
+\endhead
+Time   &O(1)    \\\cline{1-2}
+Space   &O(1)   \\\cline{1-2}
+\end{longtabu}
+
+\begin{DoxyParams}{Parameters}
+{\em comment} & New comments \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_header_ab7591583b60456a69b27c013b063aa85_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Header.\+hpp\item 
+Header.\+cpp\end{DoxyCompactItemize}

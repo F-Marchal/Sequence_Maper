@@ -1,0 +1,69 @@
+<map id="BitVector::getSize_tUnit" name="BitVector::getSize_tUnit">
+<area shape="rect" id="Node000001" title="Get the Size_t value if a BitVector::CoordUnit." alt="" coords="1773,485,1911,525"/>
+<area shape="rect" id="Node000002" href="$class_bit_vector.html#a354c83853bc3622efa5d45efcae97286" title="Give more detailed on BiteVector::indexCoordinate." alt="" coords="1525,307,1721,347"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1815,475,1774,429,1724,383,1668,350,1671,345,1727,379,1778,425,1819,472"/>
+<area shape="rect" id="Node000008" href="$class_bit_vector.html#a04e6d0b67ee9b42ccec437b0176067fe" title="Give A size_t that represent the coords of the first bit of an element." alt="" coords="1228,357,1472,383"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1788,481,1724,455,1648,432,1569,413,1431,385,1432,380,1570,408,1649,427,1726,450,1790,476"/>
+<area shape="rect" id="Node000011" href="$class_bit_vector.html#a13856f33d2350c573cf2fbe587f03757" title="Modify the length of BitVector::_data." alt="" coords="769,573,897,599"/>
+<area shape="poly" id="edge38_Node000001_Node000011" title=" " alt="" coords="1760,525,1726,531,1608,549,1487,562,1251,579,1045,587,897,589,897,584,1045,582,1251,574,1487,557,1607,543,1725,526,1759,520"/>
+<area shape="rect" id="Node000014" href="$class_bit_vector.html#a80a4aa212535129b881b4fb2623ce222" title="Reduce the size of BitVector::_data to fit BitVector::_element_number." alt="" coords="507,623,636,648"/>
+<area shape="poly" id="edge39_Node000001_Node000014" title=" " alt="" coords="1794,534,1726,563,1624,598,1542,622,1459,635,1351,639,1083,639,636,638,636,633,1083,634,1351,634,1458,630,1541,616,1622,593,1724,558,1792,529"/>
+<area shape="rect" id="Node000023" href="$class_bit_vector.html#ad36e7d0b4b1417ca434414fa40c72eb8" title="How many element can be contained in this object knowing BitVector::_element_size." alt="" coords="1520,465,1725,491"/>
+<area shape="poly" id="edge27_Node000001_Node000023" title=" " alt="" coords="1760,497,1725,493,1726,488,1760,492"/>
+<area shape="rect" id="Node000026" href="$class_bit_vector.html#a214e556dd89acce2427a378c5520adbd" title="Last acceptable coordinate knowing BitVector::_element_size." alt="" coords="1241,523,1459,548"/>
+<area shape="poly" id="edge37_Node000001_Node000026" title=" " alt="" coords="1760,512,1459,531,1459,526,1759,507"/>
+<area shape="rect" id="Node000003" href="$class_bit_vector.html#a5af3c70f593aac387de23c7e6e5ae57e" title="Find the element that correspond to coord ." alt="" coords="1252,191,1448,216"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1564,304,1378,219,1380,214,1566,299"/>
+<area shape="rect" id="Node000004" href="$class_bit_vector.html#aed5c03f3a6a9a2e5f3c58fb14768b0b4" title="Say how many items can be hold inside this object with the current BitVector::_data_size:" alt="" coords="988,133,1180,159"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1276,190,1143,161,1144,156,1278,185"/>
+<area shape="rect" id="Node000005" href="$class_bit_vector.html#ad64e921d07b9528a532477f282af135c" title="How many element can fit in this vector without having to resize the vector ?" alt="" coords="989,183,1179,223"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="1238,206,1179,206,1179,201,1238,201"/>
+<area shape="rect" id="Node000006" href="$class_bit_vector.html#ad60f42244db2c82260326605916431d3" title="Modify the number of known element in this object." alt="" coords="725,81,940,107"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1008,181,987,172,915,139,856,109,859,104,917,134,989,168,1010,176"/>
+<area shape="rect" id="Node000007" href="$class_bit_vector.html#a87f84edf5dd56606b26e8741ba6ced02" title="Remove a number of element from the vector." alt="" coords="502,5,641,31"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="774,80,615,33,617,28,776,75"/>
+<area shape="rect" id="Node000009" href="$class_bit_vector.html#a93ab8bc2ec39bf299ae28ffcad504b41" title="Give the coords of the first bit of an element." alt="" coords="995,357,1173,383"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1214,373,1174,373,1174,367,1214,367"/>
+<area shape="rect" id="Node000010" href="$class_bit_vector.html#a2d0fe43b80b63edbd64dc887fd87d915" title="Return the element at the position index." alt="" coords="777,357,888,383"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="981,373,888,373,888,367,981,367"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="1070,396,1007,488,972,534,942,563,920,574,898,581,896,576,918,569,938,558,968,530,1003,485,1065,393"/>
+<area shape="rect" id="Node000015" href="$class_bit_vector.html#aca24053f655c825de0f06ec86fff1cec" title="Replace an element by another element. Can add an element to the list if index = BitVector::_element_..." alt="" coords="778,207,887,232"/>
+<area shape="poly" id="edge14_Node000009_Node000015" title=" " alt="" coords="1049,352,854,234,857,230,1051,348"/>
+<area shape="rect" id="Node000012" href="$class_bit_vector.html#a23c1685317944b2a5c6f149a5fccc6bd" title="Construct a new Bit Vector object." alt="" coords="497,524,645,549"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="754,574,639,552,640,547,755,569"/>
+<area shape="rect" id="Node000013" href="$class_bit_vector.html#a673b530bb6e520f7f7fa90070e0034db" title="Free memory used by BitVector::_data." alt="" coords="511,573,632,599"/>
+<area shape="poly" id="edge12_Node000011_Node000013" title=" " alt="" coords="755,589,632,589,632,583,755,583"/>
+<area shape="poly" id="edge13_Node000011_Node000014" title=" " alt="" coords="755,603,637,626,636,621,754,598"/>
+<area shape="poly" id="edge25_Node000015_Node000007" title=" " alt="" coords="804,200,765,163,723,120,710,100,701,83,692,68,676,52,637,33,640,28,679,48,696,64,706,80,714,97,727,116,769,160,808,196"/>
+<area shape="rect" id="Node000016" href="$class_bit_vector.html#afbdbe8a5003f5941ffd5ab095cf87d88" title="Add an element at the end of the vector." alt="" coords="503,256,640,281"/>
+<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="765,235,640,259,639,253,764,229"/>
+<area shape="rect" id="Node000017" href="$class_bit_vector.html#a5547d55a697d61de026d0a94e743624b" title="Construct a new Bit Vector object." alt="" coords="225,181,373,207"/>
+<area shape="poly" id="edge21_Node000015_Node000017" title=" " alt="" coords="800,202,744,172,711,158,677,147,618,137,572,134,525,139,466,147,394,164,333,184,331,179,393,158,465,142,525,133,572,129,619,131,678,142,713,153,746,167,802,197"/>
+<area shape="rect" id="Node000018" href="$class_bit_vector.html#a686af396e4dff1536b7588213726c4cc" title="Insert a number of blank position inside BitVector::_data." alt="" coords="180,307,417,332"/>
+<area shape="poly" id="edge24_Node000015_Node000018" title=" " alt="" coords="800,242,745,271,678,295,612,309,544,318,418,325,417,320,544,313,611,304,677,290,742,266,798,237"/>
+<area shape="rect" id="Node000019" href="$class_bit_vector.html#a9f86c96c013632abd9d18feafe78d72e" title="Insert a number_of_elements inside the vector at the index pos ." alt="" coords="5,332,132,357"/>
+<area shape="poly" id="edge22_Node000015_Node000019" title=" " alt="" coords="810,243,753,289,717,311,678,329,605,349,528,363,451,371,376,374,238,369,132,357,132,352,238,363,376,368,451,366,528,358,604,344,676,323,715,306,750,284,807,239"/>
+<area shape="rect" id="Node000020" href="$class_bit_vector.html#a915743b3f94c75c22317d160bfa741ff" title="Insert a number_of_elements inside the vector at the index pos ." alt="" coords="5,283,132,308"/>
+<area shape="poly" id="edge23_Node000015_Node000020" title=" " alt="" coords="806,200,749,158,714,138,677,123,619,111,573,110,466,123,383,127,317,128,286,131,255,139,220,151,181,171,147,196,118,228,79,284,75,281,113,224,143,193,179,166,218,147,253,134,285,126,316,122,382,121,465,118,572,105,620,106,678,118,716,133,752,153,809,195"/>
+<area shape="rect" id="Node000021" href="$class_bit_vector.html#a2af5c1a1a0050e2b52d06c38436280fd" title="Add an element at the end of the vector." alt="" coords="503,157,640,183"/>
+<area shape="poly" id="edge20_Node000015_Node000021" title=" " alt="" coords="764,209,639,185,640,180,765,204"/>
+<area shape="rect" id="Node000022" href="$class_bit_vector.html#a38e8be69974c874857dd7cb6a52429ac" title="Replace an element by another element. Can add an element to the list if index = BitVector::_element_..." alt="" coords="517,207,626,232"/>
+<area shape="poly" id="edge26_Node000015_Node000022" title=" " alt="" coords="764,222,626,222,626,217,764,217"/>
+<area shape="poly" id="edge16_Node000016_Node000017" title=" " alt="" coords="501,255,465,246,340,209,341,204,466,241,503,250"/>
+<area shape="poly" id="edge17_Node000016_Node000018" title=" " alt="" coords="490,286,368,309,367,304,489,281"/>
+<area shape="poly" id="edge18_Node000018_Node000019" title=" " alt="" coords="170,336,133,340,132,335,169,331"/>
+<area shape="poly" id="edge19_Node000018_Node000020" title=" " alt="" coords="166,308,132,305,133,299,167,303"/>
+<area shape="poly" id="edge28_Node000023_Node000008" title=" " alt="" coords="1587,461,1533,432,1471,404,1408,385,1410,380,1473,400,1536,427,1589,456"/>
+<area shape="poly" id="edge29_Node000023_Node000018" title=" " alt="" coords="1540,465,1519,461,1471,449,1364,433,1279,426,1085,423,831,423,760,421,688,413,548,389,426,360,339,335,340,330,428,355,549,384,688,408,760,415,831,418,1085,418,1280,421,1364,428,1473,443,1521,455,1541,460"/>
+<area shape="rect" id="Node000024" href="$class_bit_vector.html#a346dbe2e158d2cfda20212e7f93e8402" title="Do maximum BitVector::_element_number is reached (With no possibility to push it further)" alt="" coords="1251,458,1449,498"/>
+<area shape="poly" id="edge30_Node000023_Node000024" title=" " alt="" coords="1506,481,1449,481,1449,475,1506,475"/>
+<area shape="poly" id="edge32_Node000023_Node000026" title=" " alt="" coords="1550,496,1473,513,1413,525,1412,520,1471,507,1549,491"/>
+<area shape="rect" id="Node000025" href="$class_bit_vector.html#a87e099aba27ebb0f67c07dd8314828e7" title="Do maximum capacity is reached (With no possibility to push it further)" alt="" coords="465,467,677,492"/>
+<area shape="poly" id="edge31_Node000024_Node000025" title=" " alt="" coords="1237,481,678,482,678,476,1237,476"/>
+<area shape="rect" id="Node000027" href="$class_bit_vector.html#acb362f03b29600195996f52c04940439" title="How many octet can be contained in this object knowing BitVector::_element_size." alt="" coords="991,523,1177,548"/>
+<area shape="poly" id="edge33_Node000026_Node000027" title=" " alt="" coords="1228,538,1178,538,1178,533,1228,533"/>
+<area shape="poly" id="edge36_Node000027_Node000011" title=" " alt="" coords="1007,553,897,576,896,571,1006,548"/>
+<area shape="rect" id="Node000028" href="$class_bit_vector.html#a00aeec5e60b478d74e1540f34f46e37c" title="Do maximum BitVector::_data_size is reached (With no possibility to push it further)" alt="" coords="739,509,926,549"/>
+<area shape="poly" id="edge34_Node000027_Node000028" title=" " alt="" coords="977,535,926,534,926,528,977,530"/>
+<area shape="poly" id="edge35_Node000028_Node000025" title=" " alt="" coords="725,511,639,495,640,489,726,506"/>
+</map>

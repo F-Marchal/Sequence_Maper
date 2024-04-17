@@ -1,0 +1,7 @@
+<map id="FastaSequence::loadComments" name="FastaSequence::loadComments">
+<area shape="rect" id="Node000001" title="Load a number of comment from a map." alt="" coords="5,5,232,31"/>
+<area shape="rect" id="Node000002" href="$class_fasta_sequence.html#aef714753277c2a10876429e3c579ef95" title="Add a comment to a position." alt="" coords="280,5,495,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="232,15,266,15,266,21,232,21"/>
+<area shape="rect" id="Node000003" href="$class_fasta_sequence.html#a2ce25dcf6751310494e59be402017036" title="Do this position is commented." alt="" coords="543,5,784,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="495,15,529,15,529,21,495,21"/>
+</map>

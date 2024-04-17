@@ -1,0 +1,7 @@
+<map id="BitVector::currentElementCapacity" name="BitVector::currentElementCapacity">
+<area shape="rect" id="Node000001" title="How many element can fit in this vector without having to resize the vector ?" alt="" coords="455,5,644,45"/>
+<area shape="rect" id="Node000002" href="$class_bit_vector.html#ad60f42244db2c82260326605916431d3" title="Modify the number of known element in this object." alt="" coords="192,13,407,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="441,28,407,28,407,23,441,23"/>
+<area shape="rect" id="Node000003" href="$class_bit_vector.html#a87f84edf5dd56606b26e8741ba6ced02" title="Remove a number of element from the vector." alt="" coords="5,13,144,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="178,28,144,28,144,23,178,23"/>
+</map>

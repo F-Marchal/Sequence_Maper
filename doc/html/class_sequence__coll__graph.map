@@ -1,0 +1,7 @@
+<map id="Sequence" name="Sequence">
+<area shape="rect" id="Node000001" title=" " alt="" coords="109,473,305,1099"/>
+<area shape="rect" id="Node000002" href="$class_bit_vector.html" title="Class that allow the storage of a number inside a char *. All element must be converted to a number o..." alt="" coords="5,5,217,411"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,411,155,456,150,457,142,411"/>
+<area shape="rect" id="Node000003" href="$class_header.html" title="Represent the header of a Fasta / FastQ file." alt="" coords="242,135,367,281"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="295,281,265,457,260,456,290,281"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="FastaManager" name="FastaManager">
+<area shape="rect" id="Node000001" title="Class that should represent a Fasta File." alt="" coords="39,259,145,344"/>
+<area shape="rect" id="Node000002" href="$class_fasta_related.html" title="Class inherited by all class related to FastaFiles." alt="" coords="5,5,179,211"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,224,95,259,89,259,89,224"/>
+</map>

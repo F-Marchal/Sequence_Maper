@@ -1,0 +1,10 @@
+<map id="BitVector::copyBits" name="BitVector::copyBits">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,59,151,84"/>
+<area shape="rect" id="Node000002" href="$class_bit_vector.html#aebe159444eb9d619959b7325ac5dac2d" title="Return the value of the bit at the position coord." alt="" coords="215,29,325,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,58,200,50,201,55,151,63"/>
+<area shape="rect" id="Node000004" href="$class_bit_vector_1_1_coords.html#a393207c752f8f9121aca38c938914154" title="Get Coords::bit ." alt="" coords="199,79,341,119"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="151,79,185,84,185,90,151,85"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="239,31,232,21,236,11,249,5,270,3,296,6,307,15,304,19,294,11,270,8,250,10,239,15,237,20,243,28"/>
+<area shape="rect" id="Node000003" href="$class_bit_vector_1_1_coords.html#a2892f7f46c4af93f9733e312229d8ec1" title="Get Coords::octet ." alt="" coords="389,22,532,62"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="326,39,376,39,376,45,326,45"/>
+</map>

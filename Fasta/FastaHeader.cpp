@@ -1,5 +1,5 @@
 #include "FastaHeader.hpp"
-#include "../Global/Utilities.hpp"
+#include "Global/Utilities.hpp"
 #include <string>
 #include <iostream>
 #include <stdexcept>
